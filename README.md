@@ -4,7 +4,7 @@ python3 -m pip install ms3
 import ms3
 in a command terminal.
 
-2. Put your sheet music Musescore (.mscz) files into the sheetmusic directory. Using the ms3 library, open a command terminal in sheetmusic and run the command:
+2. Put your sheet music Musescore (.mscz) files into the sheetmusic directory. Extract them so that you have a .mscx file. Using the ms3 library, open a command terminal in sheetmusic and run the command:
 ms3 extract -N -a
 This will extract notes regardless of whether there is metadata into a file called notes, by default is ../notes but can be changed.
 
