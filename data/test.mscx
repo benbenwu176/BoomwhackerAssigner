@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="4.30">
+  <programVersion>4.3.2</programVersion>
+  <programRevision>22b46f2</programRevision>
+  <LastEID>86</LastEID>
+  <Score>
+    <Division>480</Division>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <open>1</open>
+    <metaTag name="arranger"></metaTag>
+    <metaTag name="audioComUrl"></metaTag>
+    <metaTag name="composer">Composer / arranger</metaTag>
+    <metaTag name="copyright"></metaTag>
+    <metaTag name="creationDate">2024-02-16</metaTag>
+    <metaTag name="lyricist"></metaTag>
+    <metaTag name="movementNumber"></metaTag>
+    <metaTag name="movementTitle"></metaTag>
+    <metaTag name="platform">Microsoft Windows</metaTag>
+    <metaTag name="source"></metaTag>
+    <metaTag name="sourceRevisionId"></metaTag>
+    <metaTag name="subtitle">Subtitle</metaTag>
+    <metaTag name="translator"></metaTag>
+    <metaTag name="workNumber"></metaTag>
+    <metaTag name="workTitle">Untitled score</metaTag>
+    <Order id="orchestral">
+      <name>Orchestral</name>
+      <instrument id="piano">
+        <family id="keyboards">Keyboards</family>
+        </instrument>
+      <section id="woodwind" brackets="true" barLineSpan="true" thinBrackets="true">
+        <family>flutes</family>
+        <family>oboes</family>
+        <family>clarinets</family>
+        <family>saxophones</family>
+        <family>bassoons</family>
+        <unsorted group="woodwinds"/>
+        </section>
+      <section id="brass" brackets="true" barLineSpan="true" thinBrackets="true">
+        <family>horns</family>
+        <family>trumpets</family>
+        <family>cornets</family>
+        <family>flugelhorns</family>
+        <family>trombones</family>
+        <family>tubas</family>
+        <unsorted group="brass"/>
+        </section>
+      <section id="timpani" brackets="true" barLineSpan="true" thinBrackets="true">
+        <family>timpani</family>
+        </section>
+      <section id="percussion" brackets="true" barLineSpan="true" thinBrackets="true">
+        <family>keyboard-percussion</family>
+        <unsorted group="pitched-percussion"/>
+        <family>drums</family>
+        <family>unpitched-metal-percussion</family>
+        <family>unpitched-wooden-percussion</family>
+        <family>other-percussion</family>
+        <unsorted group="unpitched-percussion"/>
+        </section>
+      <family>keyboards</family>
+      <family>harps</family>
+      <family>organs</family>
+      <family>synths</family>
+      <unsorted/>
+      <soloists/>
+      <section id="voices" brackets="true" barLineSpan="false" thinBrackets="true">
+        <family>voices</family>
+        <family>voice-groups</family>
+        </section>
+      <section id="strings" brackets="true" barLineSpan="true" thinBrackets="true">
+        <family>orchestral-strings</family>
+        </section>
+      </Order>
+    <Part id="1">
+      <Staff id="1">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+          </StaffType>
+        <bracket type="1" span="2" col="0" visible="1"/>
+        <barLineSpan>1</barLineSpan>
+        </Staff>
+      <Staff id="2">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+          </StaffType>
+        <defaultClef>F</defaultClef>
+        </Staff>
+      <trackName>Piano</trackName>
+      <Instrument id="piano">
+        <longName>Piano</longName>
+        <shortName>Pno.</shortName>
+        <trackName>Piano</trackName>
+        <minPitchP>21</minPitchP>
+        <maxPitchP>108</maxPitchP>
+        <minPitchA>21</minPitchA>
+        <maxPitchA>108</maxPitchA>
+        <instrumentId>keyboard.piano</instrumentId>
+        <clef staff="2">F</clef>
+        <Channel>
+          <program value="0"/>
+          <synti>Fluid</synti>
+          </Channel>
+        </Instrument>
+      </Part>
+    <Staff id="1">
+      <VBox>
+        <height>10</height>
+        <eid>4294967418</eid>
+        <Text>
+          <eid>8589934598</eid>
+          <style>title</style>
+          <text>Boomwhacker Assignment Tester</text>
+          </Text>
+        <Text>
+          <eid>12884901894</eid>
+          <style>subtitle</style>
+          <text>insert subtitle here</text>
+          </Text>
+        <Text>
+          <eid>17179869190</eid>
+          <style>composer</style>
+          <text>Ben Wu</text>
+          </Text>
+        </VBox>
+      <Measure>
+        <voice>
+          <KeySig>
+            <eid>21474836502</eid>
+            <concertKey>0</concertKey>
+            </KeySig>
+          <TimeSig>
+            <eid>25769803800</eid>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Tempo>
+            <tempo>2</tempo>
+            <followText>1</followText>
+            <eid>313532612655</eid>
+            <text><sym>metNoteQuarterUp</sym><font face="Edwin"></font> = 120</text>
+            </Tempo>
+          <Dynamic>
+            <subtype>f</subtype>
+            <velocity>96</velocity>
+            <eid>313532612643</eid>
+            </Dynamic>
+          <Chord>
+            <eid>317827580019</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>322122547220</eid>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>377957122086</eid>
+            </Beam>
+          <Chord>
+            <eid>326417514611</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>330712481812</eid>
+              <pitch>71</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>335007449203</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="170" b="0" a="255"/>
+              <eid>339302416404</eid>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>390842023974</eid>
+            </Beam>
+          <Chord>
+            <eid>343597383795</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>347892350996</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>352187318387</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>356482285588</eid>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <location>
+            <fractions>-1/16</fractions>
+            </location>
+          <Tempo>
+            <tempo>0.083333</tempo>
+            <followText>1</followText>
+            <eid>373662154799</eid>
+            <text><sym>metNoteQuarterUp</sym><font face="Edwin"></font> = 1</text>
+            </Tempo>
+          <location>
+            <fractions>1/16</fractions>
+            </location>
+          <Chord>
+            <eid>360777252979</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>365072220180</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>369367187571</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>373662154772</eid>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        <voice>
+          <Dynamic>
+            <subtype>p</subtype>
+            <velocity>49</velocity>
+            <eid>377957122083</eid>
+            </Dynamic>
+          <StaffText>
+            <eid>313532612656</eid>
+            <text>s</text>
+            </StaffText>
+          <Chord>
+            <eid>382252089459</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>386547056660</eid>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>390842023956</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>395136991252</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>416611827750</eid>
+            </Beam>
+          <Chord>
+            <eid>399431958643</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>403726925844</eid>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>408021893235</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>412316860436</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>429496729638</eid>
+            </Beam>
+          <Chord>
+            <eid>416611827827</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>420906795028</eid>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>425201762419</eid>
+            <durationType>16th</durationType>
+            <Note>
+              <color r="238" g="128" b="0" a="255"/>
+              <eid>429496729620</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>433791696913</eid>
+                </Accidental>
+              <pitch>68</pitch>
+              <tpc>22</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>377957122164</eid>
+            <durationType>16th</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>382252089365</eid>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>446676598822</eid>
+            </Beam>
+          <Chord>
+            <eid>438086664307</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="170" b="0" a="255"/>
+              <eid>442381631508</eid>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>446676598899</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>450971566100</eid>
+              <pitch>71</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Rest>
+            <eid>326417514522</eid>
+            <durationType>measure</durationType>
+            <duration>4/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <TimeSig>
+            <eid>330712481817</eid>
+            <sigN>6</sigN>
+            <sigD>8</sigD>
+            </TimeSig>
+          <Rest>
+            <eid>335007449114</eid>
+            <durationType>measure</durationType>
+            <duration>6/8</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <TimeSig>
+            <eid>317827579929</eid>
+            <sigN>2</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Chord>
+            <eid>322122547316</eid>
+            <durationType>quarter</durationType>
+            <Articulation>
+              <subtype>articAccentAbove</subtype>
+              <eid>326417514528</eid>
+              </Articulation>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>330712481813</eid>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>463856468006</eid>
+            </Beam>
+          <Chord>
+            <eid>335007449204</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>339302416405</eid>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>343597383796</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>347892350997</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        <voice>
+          <Chord>
+            <eid>352187318388</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>356482285589</eid>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>481036337190</eid>
+            </Beam>
+          <Chord>
+            <eid>360777252980</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>365072220181</eid>
+              <pitch>71</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>369367187572</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="170" b="0" a="255"/>
+              <eid>373662154773</eid>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Tempo>
+            <tempo>4</tempo>
+            <followText>1</followText>
+            <eid>377957122095</eid>
+            <text><sym>metNoteQuarterUp</sym><font face="Edwin"></font> = 240</text>
+            </Tempo>
+          <Beam>
+            <eid>493921239078</eid>
+            </Beam>
+          <Chord>
+            <eid>382252089460</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>386547056661</eid>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>390842024052</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>395136991253</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>506806140966</eid>
+            </Beam>
+          <Chord>
+            <eid>399431958644</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="170" b="0" a="255"/>
+              <eid>403726925845</eid>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>408021893236</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>412316860437</eid>
+              <pitch>71</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        <voice>
+          <Beam>
+            <eid>519691042854</eid>
+            </Beam>
+          <Chord>
+            <eid>416611827828</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>420906795029</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>425201762420</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>429496729621</eid>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>532575944742</eid>
+            </Beam>
+          <Chord>
+            <eid>433791697012</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>438086664213</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>442381631604</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>446676598805</eid>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <TimeSig>
+            <eid>450971566105</eid>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Chord>
+            <eid>455266533492</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>459561500693</eid>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        <voice>
+          <Chord>
+            <eid>463856468084</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>468151435285</eid>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Chord>
+            <eid>472446402676</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>476741369877</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>481036337268</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>485331304469</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>489626271860</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>493921239061</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>498216206452</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>502511173653</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Chord>
+            <eid>373662154868</eid>
+            <durationType>whole</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>377957122069</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        <voice>
+          <Beam>
+            <eid>562640715814</eid>
+            </Beam>
+          <Chord>
+            <eid>382252089460</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>386547056661</eid>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>390842024052</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>395136991253</eid>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>399431958644</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>403726925845</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>408021893236</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="128" g="0" b="208" a="255"/>
+              <eid>412316860437</eid>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            </Chord>
+          <Beam>
+            <eid>584115552294</eid>
+            </Beam>
+          <Chord>
+            <eid>416611827828</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>420906795029</eid>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>425201762420</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="170" b="0" a="255"/>
+              <eid>429496729621</eid>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>433791697012</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>438086664213</eid>
+              <pitch>71</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>442381631604</eid>
+            <durationType>eighth</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>446676598805</eid>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
+              </Note>
+            </Chord>
+          </voice>
+        </Measure>
+      </Staff>
+    <Staff id="2">
+      <Measure>
+        <voice>
+          <KeySig>
+            <eid>167503724566</eid>
+            <concertKey>0</concertKey>
+            </KeySig>
+          <TimeSig>
+            <eid>171798691864</eid>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Rest>
+            <eid>176093659161</eid>
+            <durationType>half</durationType>
+            </Rest>
+          <Rest>
+            <eid>313532612633</eid>
+            <durationType>eighth</durationType>
+            </Rest>
+          <Tuplet>
+            <eid>317827579950</eid>
+            <normalNotes>2</normalNotes>
+            <actualNotes>3</actualNotes>
+            <baseNote>16th</baseNote>
+            <Number>
+              <style>tuplet</style>
+              <text>3</text>
+              </Number>
+            </Tuplet>
+          <Chord>
+            <eid>322122547315</eid>
+            <durationType>16th</durationType>
+            <Note>
+              <color r="255" g="0" b="0" a="255"/>
+              <eid>326417514516</eid>
+              <pitch>47</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          <Rest>
+            <eid>330712481817</eid>
+            <durationType>16th</durationType>
+            </Rest>
+          <Chord>
+            <eid>335007449203</eid>
+            <durationType>16th</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>339302416404</eid>
+              <pitch>50</pitch>
+              <tpc>16</tpc>
+              </Note>
+            </Chord>
+          <endTuplet/>
+          <Rest>
+            <eid>343597383705</eid>
+            <durationType>quarter</durationType>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Rest>
+            <eid>339302416410</eid>
+            <durationType>measure</durationType>
+            <duration>4/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <TimeSig>
+            <eid>343597383705</eid>
+            <sigN>6</sigN>
+            <sigD>8</sigD>
+            </TimeSig>
+          <Rest>
+            <eid>347892351002</eid>
+            <durationType>quarter</durationType>
+            </Rest>
+          <Rest>
+            <eid>352187318298</eid>
+            <durationType>eighth</durationType>
+            </Rest>
+          <Chord>
+            <eid>356482285684</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>360777252885</eid>
+              <pitch>55</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
+          <Rest>
+            <eid>365072220186</eid>
+            <durationType>eighth</durationType>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <TimeSig>
+            <eid>506806140953</eid>
+            <sigN>2</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Rest>
+            <eid>511101108250</eid>
+            <durationType>measure</durationType>
+            <duration>2/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Rest>
+            <eid>515396075546</eid>
+            <durationType>measure</durationType>
+            <duration>2/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <TimeSig>
+            <eid>519691042841</eid>
+            <sigN>4</sigN>
+            <sigD>4</sigD>
+            </TimeSig>
+          <Rest>
+            <eid>523986010138</eid>
+            <durationType>measure</durationType>
+            <duration>4/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Rest>
+            <eid>528280977434</eid>
+            <durationType>measure</durationType>
+            <duration>4/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      <Measure>
+        <voice>
+          <Rest>
+            <eid>450971566106</eid>
+            <durationType>measure</durationType>
+            <duration>4/4</duration>
+            </Rest>
+          </voice>
+        </Measure>
+      </Staff>
+    </Score>
+  </museScore>
