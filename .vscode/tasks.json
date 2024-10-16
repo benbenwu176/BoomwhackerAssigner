@@ -2,6 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Compile Gen Executable",
+            "type": "shell",
+            "command": "gcc",
+            "args": ["-g", "gen.c", "-o", "gen.exe"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "Run All Tasks",
             "dependsOn": [
                 "Compile gen.c to gen.o",

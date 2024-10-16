@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${file}",
             "justMyCode": false,
-            "preLaunchTask": "Compile C Shared Library"
+            "preLaunchTask": "Compile Gen Executable"
         }
     ]
 }

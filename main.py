@@ -3,9 +3,10 @@ import ctypes
 import numpy as np
 import pandas as pd
 import struct
+import subprocess
 from fractions import Fraction
 
-filename = 'island'
+filename = 'spook'
 score = ms3.Score(f'./data/{filename}.mscz').mscx
 score_bs4 = score.parsed
 
@@ -98,12 +99,17 @@ def writeParamsToFile(p, r, n, params, rates, midis, times):
         f.write(struct.pack('i'*len(midis), *midis))  # Write int array n
         f.write(struct.pack('d'*len(times), *times))  # Write double array
     
+def readOutputData(n):
+    with open('output.bin', 'rb') as file:
+        int_array = struct.unpack('i' * n, file.read(n * 4))
+    return int_array
+    
 # Run the genetic algorithm to get assignments
 def gen():
     params = {
         'generations': 10000, # number of generations to run the genetic algorithm for
         'population_size': 12, # number of subjects to run the genetic algorithm on
-        'num_players': 8, # number of players in the ensemble
+        'num_players': 5, # number of players in the ensemble
         'num_parents': 3, # number of parents to use in the genetic algorithm
         'keep_parents': 1, # functions as a boolean and quantitative number of parents to keep, must be <= num_parents
         'allow_proximates': 1, # whether to allow offloading to nearby players
@@ -121,34 +127,10 @@ def gen():
     note_times = notes_df['time'].apply(float).values
     num_elements = len(notes_df)
     
-    # C packaging
-    c_lib = ctypes.CDLL('./gen.so')
-    
-    # define argument types of the C function
-    c_assign = c_lib.assign
-    c_assign.argtypes = [
-        ctypes.c_void_p,  # Serialized array of parameters
-        ctypes.c_void_p,  # Serialized array of rates
-        ctypes.c_void_p,  # Serialized array of pitches
-        ctypes.c_void_p,  # Serialized array of times
-        ctypes.c_int,  # Number of parameters
-        ctypes.c_int,  # Number of rates
-        ctypes.c_int   # Number of notes
-    ]
-    c_assign.restype = ctypes.POINTER(ctypes.c_int) # Return type: Pointer array of ints
-    
-    # Prepare and serialize data
-    serialized_params = np.array(pvalues, dtype=np.int32).tobytes()
-    serialized_rates = np.array(rvalues, dtype=np.float64).tobytes()
-    serialized_midis = np.array(note_pitches, dtype=np.int32).tobytes()
-    serialized_times = np.array(note_times, dtype=np.float64).tobytes()
-    
-    # # Call C function with serialized data
     writeParamsToFile(len(pvalues), len(rvalues), num_elements, pvalues, rvalues, note_pitches, note_times)
-    modified_data_ptr = c_assign(serialized_params, serialized_rates, serialized_midis, serialized_times, 
-                                 len(pvalues), len(rvalues), num_elements)  
-    data_array = np.ctypeslib.as_array(modified_data_ptr, (num_elements,))
-    notes_df['player'] = data_array
+    subprocess.run(['./gen.exe'], check=True)
+    array = readOutputData(num_elements)
+    notes_df['player'] = array
     
 # recolor the notes with the generated assignments
 def recolor():

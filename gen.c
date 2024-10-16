@@ -480,6 +480,13 @@ int* getPlayerValues(Note** noteArray) {
     return playerValues;
 }
 
+void writeValues(int* values) {
+    FILE* file = fopen("output.bin", "wb");
+    fwrite(values, sizeof(int), numNotes, file);
+    fclose(file);
+    free(values);
+}
+
 /**
  * @brief Assigns player values to the notes
  * 
@@ -497,11 +504,10 @@ int* getPlayerValues(Note** noteArray) {
  * 
  * @return An int array of player assignments to each note
 */
-int* assign(void* param_data, void* rate_data, void* midi_data, void* time_data,
+void assign(void* param_data, void* rate_data, void* midi_data, void* time_data,
             int numParams, int numRates, int n) {
     srand(time(NULL)); // Initialize random number generator
     // srand(1); // Seeded RNG for testing purposes
-
     // Initialize variables
     int* params = (int*) param_data; // Deserialize the int array
     double* rates = (double*) rate_data; // Deserialize the double array
@@ -518,12 +524,10 @@ int* assign(void* param_data, void* rate_data, void* midi_data, void* time_data,
     switchTime = rates[2] + 0.001; // Add 0.001 to avoid floating point errors
     numNotes = n;
 
-    numGens = 10; // TODO: remove testing code
-    
     // Deserialize the Note array
     int* midis = (int*) midi_data;
     double* times = (double*) time_data;
-
+    // Generate the initial assignment
     Assignment* init = malloc(sizeof(Assignment));
     init->noteArray = generateNoteArray(midis, times);
     init->whackerTable = generateWhackerTable(init->noteArray);
@@ -533,7 +537,8 @@ int* assign(void* param_data, void* rate_data, void* midi_data, void* time_data,
     printf("Final pScore: %d\n", final->pScore);
     int* playerValues = getPlayerValues(final->noteArray);
     freeAssignment(final);
-    return playerValues; // Return an array of player assignments for each note
+    writeValues(playerValues);
+    // return playerValues; // Return an array of player assignments for each note
 }
 
 /**
@@ -541,7 +546,7 @@ int* assign(void* param_data, void* rate_data, void* midi_data, void* time_data,
  * 
  * @return 0 on success, 1 on failure
 */
-int main() {
+int main(int argc, char* argv[]) {
     FILE* file = fopen("data.bin", "rb");
     if (file == NULL) {
         perror("Error opening file");
@@ -560,7 +565,6 @@ int main() {
     fread(rates, sizeof(double), r, file);  // Read double array r
     fread(midis, sizeof(int), n, file);  // Read int array n
     fread(times, sizeof(double), n, file);  // Read double array
-
     assign(params, rates, midis, times, p, r, n);
 
     // Free allocated memory and close the file
