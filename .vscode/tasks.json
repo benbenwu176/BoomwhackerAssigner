@@ -2,6 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Compile C++ Executable",
+            "type": "shell",
+            "command": "g++",
+            "args": ["-g", "genplus.cpp", "-o", "genplus.exe"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+
+
+        {
             "label": "Compile Gen Executable",
             "type": "shell",
             "command": "gcc",

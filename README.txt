@@ -23,7 +23,6 @@ Positions matter - players have access to the notes of the players surrounding t
 Boomwhacker flags:
 Borrowed - used in positioning to determine whether a note is real
 Capped - used to signify a whacker's usage in budding
-Next
 
 
 Fitness - will be measured inversely; a lower "fitness" score means the individual is more fit.
@@ -43,8 +42,6 @@ Repeat until optimal
 
 File Parsing:
 Parse notes into boomwhacker objects, maybe use hash table? Handle low capped BWs
-What is important in a note object?
-Time it's played at, pitch
 
 Convert time window parameter to beat based on measure number
 Use note objects as parsed, and also parse measures for tempo for each measure

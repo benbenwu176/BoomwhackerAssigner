@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include <windows.h> // Threading functions
-#include <time.h> // TODO: implement thread-safe random number generator
 #include "gen.h"    
 
 int numGens; // The number of generations to run the genetic algorithm for

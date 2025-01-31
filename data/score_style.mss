@@ -41,6 +41,7 @@
     <lyricsDashMaxLength>0.8</lyricsDashMaxLength>
     <lyricsDashMaxDistance>16</lyricsDashMaxDistance>
     <lyricsDashForce>1</lyricsDashForce>
+    <lyricsDashFirstAndLastGapAreHalf>1</lyricsDashFirstAndLastGapAreHalf>
     <lyricsAlignVerseNumber>1</lyricsAlignVerseNumber>
     <lyricsLineThickness>0.1</lyricsLineThickness>
     <lyricsMelismaAlign>left,baseline</lyricsMelismaAlign>
@@ -1055,7 +1056,6 @@
     <repeatLeftFrameRound>0</repeatLeftFrameRound>
     <repeatLeftFrameFgColor r="0" g="0" b="0" a="255"/>
     <repeatLeftFrameBgColor r="255" g="255" b="255" a="0"/>
-    <repeatsMusicalSymbolsScale>1</repeatsMusicalSymbolsScale>
     <repeatRightFontFace>Edwin</repeatRightFontFace>
     <repeatRightFontSize>11</repeatRightFontSize>
     <repeatRightLineSpacing>1</repeatRightLineSpacing>

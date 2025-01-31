@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${file}",
             "justMyCode": false,
-            "preLaunchTask": "Compile Gen Executable"
+            "preLaunchTask": "Compile C++ Executable"
         }
     ]
 }
