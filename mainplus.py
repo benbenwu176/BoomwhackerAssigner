@@ -2,6 +2,7 @@ import ms3
 import numpy as np
 import pandas as pd
 import struct
+import io
 import subprocess
 from fractions import Fraction
 
@@ -82,6 +83,7 @@ def time_init():
 def print_params(pvalues, note_pitches, note_times, num_elements):
     print(pvalues)
     print(note_pitches)
+    print(note_times)
     for time in note_times:
         print(time, end = ", ")
     print(len(pvalues))
@@ -108,14 +110,27 @@ def gen():
     rvalues = list(rates.values())
     note_pitches = notes_df['midi'].values
     note_times = notes_df['time'].apply(float).values
-    num_elements = len(notes_df)
+    n = len(notes_df)
+    p = len(pvalues)
+    r = len(rvalues)
     
+    stream_format = 'iii' + ('i' * n) + ('f' * n) + ('i' * p) + ('f' * r)
     # Create a byte stream of # of notes, params, rates then add note pitches and times
-    stream = struct.pack('i', num_elements) + struct.pack('i'*len(pvalues), *pvalues) + struct.pack('d'*len(rvalues), *rvalues)
+    stream = struct.pack(stream_format, n, p, r, *note_pitches, *note_times, *pvalues, *rvalues)
     
-    proc = subprocess.run(['./genplus.exe'], input = stream, check = True, capture_output=True)
+    arr = []
+    for i in range(3000):
+        arr.append(i)
+        
+    stream_format = 'i' * 3000
+    stream = struct.pack(stream_format, *arr)
+    
+    proc = subprocess.run(['./genplus.exe'], input = stream, capture_output=True) # Add back check = True
+    print(proc.stderr.decode('utf-8'))
+    print(proc.stdout.decode('utf-8'))
     # IMPORTANT: Maintain this struct format with the corresponding Note struct in genplus.h
-    note_struct_format = "dPiiii???"
+    note_struct_format = "dPiiii???" # Double, pointer, integer, bool
+    
     
     
     
