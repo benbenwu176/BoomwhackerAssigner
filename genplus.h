@@ -10,9 +10,20 @@
 #define OCTAVE_INTERVAL 12 // MIDI range of an octave
 #define NUM_WHACKER_PITCHES 32 // The number of boomwhackers from G5-C3
 
+/* 
+ * TODO: Allow whackers per pitch to be unique to each pitch
+ * Allow lowest note and highest note to vary
+ * Allow different switch times per player for variable difficulty
+ * Allow different whacker overflow limits for 4 mallet boomwhacker playing
+ * Change NUM_UNIQUE_PITCHES to be a parameter and not a constant
+ */
+
 typedef struct Config {
     // Note data
     int num_notes; // number of notes in the piece
+
+    // Thread data
+    int threads;
 
     // Parameter data
     int num_gens; // The number of generations to run the genetic algorithm for
