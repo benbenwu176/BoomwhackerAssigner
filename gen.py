@@ -95,19 +95,12 @@ def print_params(pvalues, note_pitches, note_times, num_elements):
 # Run the genetic algorithm to get assignments
 def gen():
     params = {
-        'generations': 10000, # number of generations to run the genetic algorithm for
-        'population_size': 12, # number of subjects to run the genetic algorithm on
-        'num_players': 5, # number of players in the ensemble
-        'num_parents': 3, # number of parents to use in the genetic algorithm
-        'keep_parents': 1, # functions as a boolean and quantitative number of parents to keep, must be <= num_parents
-        'allow_proximates': 1, # whether to allow offloading to nearby players
+        'num_players': 9, # number of players in the ensemble
         'max_whackers': 2, # maximum number of whackers someone can play at once
         'whackers_per_pitch': 2 # the number of whackers available for each pitch, we are poor so we have 2
     }
     rates = {
         'switch_time': 2.0, # time, in seconds, it takes a player to switch boomwhackers
-        'mutation_rate': 0.10, # placeholder rate for random note assignment
-        'offload_rate': 0.33, # chance to offload a conflicting note to another player
     }
     pvalues = list(params.values())
     rvalues = np.array(list(rates.values()), dtype = np.float64)
@@ -123,9 +116,9 @@ def gen():
     stream_format = ('i' * n) + ('d' * n) + ('i' * p) + ('d' * r) + ('x' * padding)
     stream = struct.pack(stream_format, *note_pitches, *note_times, *pvalues, *rvalues)
     
-    proc = subprocess.run(['./genplus.exe', str(n), str(p), str(r)], input = stream, capture_output=True) # Add back check = True
+    proc = subprocess.run(['./gen.exe', str(n), str(p), str(r)], input = stream, capture_output=True, check = True) # Add back check = True
     print(proc.stderr.decode('utf-8'))
-        
+    """
     # IMPORTANT: Maintain this struct format with the corresponding Note struct in genplus.h
     note_struct_format = "diiiii???x" # Double, integer, bool, padding
     note_struct_size = struct.calcsize(note_struct_format)
@@ -143,7 +136,7 @@ def gen():
         time, next, id, player, pitch, whacker_index, capped, proximate, conflicting = unpacked
         notes.append(Note(time, next, id, player, pitch, whacker_index, capped, proximate, conflicting))
         
-    recolor(notes)
+    recolor(notes)"""
     
 # Recolor the notes with the generated assignments. IMPORTANT: Notes that are already colored in the original mscz file will NOT be recolored.
 def recolor(notes):

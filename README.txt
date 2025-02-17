@@ -65,3 +65,5 @@ In the directory with the sheet music you want to parse, run the following comma
 ms3 extract -N -a
 a file with name FILENAME.notes.tsv should be created. take note of this for file input when running the assigner
 dependencies: univocity-parsers 2.9.1
+
+Switchtime: The time it takes for a player to switch. Collisions that take at or below this time will be avoided.
