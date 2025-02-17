@@ -18,13 +18,13 @@ colors = ['#FF0000', '#00AA00', '#0000FF', '#8000D0', '#EE8000', '#00A0FF', '#FF
 notes_df = score.notes()
 chords_df = score.chords()
 measures_df = score.measures()
-# chords_df.to_csv('./data/chords.tsv', sep='\t', index=False) # for debugging
 
 chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(float)
 chords_df.sort_values(by=['quarterbeats'], inplace=True)
 chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(Fraction)
 
-Note = namedtuple('Note', ['time', 'next', 'id', 'player', 'pitch', 'whacker_index', 'capped', 'proximate', 'conflicting'])
+# IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
+Note = namedtuple('Note', ['time', 'id', 'player', 'pitch', 'whacker_index', 'capped', 'proximate', 'conflicting'])
 
 def compute_chord_timings():
     # Initialize variables for time calculation
@@ -117,15 +117,22 @@ def gen():
     stream = struct.pack(stream_format, *note_pitches, *note_times, *pvalues, *rvalues)
     
     proc = subprocess.run(['./gen.exe', str(n), str(p), str(r)], input = stream, capture_output=True, check = True) # Add back check = True
-    print(proc.stderr.decode('utf-8'))
-    """
-    # IMPORTANT: Maintain this struct format with the corresponding Note struct in genplus.h
-    note_struct_format = "diiiii???x" # Double, integer, bool, padding
+    # print(proc.stderr.decode('utf-8'))
+    with open('gen_output.txt', 'wb') as f:
+        f.write(proc.stderr.decode('utf-8').encode())
+    # IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
+    note_struct_format = "diiii???xxxxx" # Double, integer, bool, padding
     note_struct_size = struct.calcsize(note_struct_format)
     note_struct_parser = struct.Struct(note_struct_format)
     notes = []
     note_data = proc.stdout
-    for offset in range(0, len(proc.stdout), note_struct_size):
+    # Read num of conflicting notes from the first 4 bytes of the output
+    num_conflicting_notes = struct.unpack('i', note_data[:4])[0]
+    # Read flattened array of player indexes from the next 4 * num_players bytes of the output
+    player_indexes = np.frombuffer(note_data[4:4 + 4 * params['num_players']], dtype=np.int32)
+    # Start reading note data from the 4 * num_players + 4 bytes offset
+    byte_offset = 4 + 4 * params['num_players']
+    for offset in range(byte_offset ,len(proc.stdout), note_struct_size):
         chunk = note_data[offset : offset + note_struct_size]
         if (len(chunk) < note_struct_size):
             # End of data, just padding here
@@ -133,10 +140,10 @@ def gen():
         # Unpack the data into a tuple of Python values
         unpacked = note_struct_parser.unpack(chunk)
         
-        time, next, id, player, pitch, whacker_index, capped, proximate, conflicting = unpacked
-        notes.append(Note(time, next, id, player, pitch, whacker_index, capped, proximate, conflicting))
+        time, id, player, pitch, whacker_index, capped, proximate, conflicting = unpacked
+        notes.append(Note(time, id, player, pitch, whacker_index, capped, proximate, conflicting))
         
-    recolor(notes)"""
+    recolor(notes)
     
 # Recolor the notes with the generated assignments. IMPORTANT: Notes that are already colored in the original mscz file will NOT be recolored.
 def recolor(notes):

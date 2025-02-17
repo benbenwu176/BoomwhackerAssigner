@@ -22,9 +22,142 @@
 #include "gen.h"
 
 Config cfg;
+Assignment assignment;
+
+/**
+ * @brief Returns a random player number. Thread-safe.
+ */
+int random_player() {
+    thread_local std::mt19937 generator(std::random_device{}());
+    std::uniform_int_distribution<int> distribution(0, cfg.num_players - 1);
+    return distribution(generator);
+}
+
+Graph init_graph() {
+    Graph graph;
+    graph.nodes = std::vector<Node>(cfg.num_players);
+    for (int i = 0; i < cfg.num_players; i++) {
+        graph.nodes[i].player = i;
+        graph.nodes[i].edges = std::vector<Edge>();
+    }
+    return std::move(graph);
+}
+
+std::vector<std::vector<Note*>> init_mrp() {
+    std::vector<std::vector<Note*>> mrp(NUM_UNIQUE_PITCHES);
+    for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
+        mrp[i] = std::vector<Note*>();
+    }
+    return std::move(mrp);
+}
+
+std::vector<Player> init_players() {
+    std::vector<Player> players(cfg.num_players);
+    for (int i = 0; i < cfg.num_players; i++) {
+        players[i].id = i;
+        players[i].whackers = std::vector<Boomwhacker*>();
+        players[i].notes = std::vector<Note*>();
+        players[i].bucket = Bucket();
+    }
+    return std::move(players);
+}
+
+std::vector<Boomwhacker*> init_whackers() {
+    std::vector<Boomwhacker*> whackers(NUM_WHACKER_PITCHES * cfg.whackers_per_pitch);
+    for (int i = 0; i < NUM_WHACKER_PITCHES; i++) {
+        Boomwhacker* array = new Boomwhacker[cfg.whackers_per_pitch];
+        for (int j = 0; j < cfg.whackers_per_pitch; j++) {
+            array[j].pitch = i;
+            array[j].used = false;
+            array[j].capped = false;
+            array[j].notes = std::vector<Note*>();
+        }
+        whackers[i] = array;
+    }
+    return std::move(whackers);
+}
+
+std::vector<Note> init_notes(std::vector<int>& pitches, std::vector<double>& times) {
+    std::vector<Note> notes(cfg.num_notes);
+    for (int i = 0; i < cfg.num_notes; i++) {
+        notes[i].time = times[i];
+        notes[i].id = i;
+        notes[i].player = -1;
+        notes[i].pitch = pitches[i];
+        notes[i].whacker_index = -1;
+        notes[i].capped = false;
+        notes[i].proximate = false;
+        notes[i].conflicting = false;
+    }
+    return std::move(notes);
+}
+
+std::vector<int> flatten_graph() {
+    std::vector<int> flattened_graph(cfg.num_players);
+    for (int i = 0; i < cfg.num_players; i++) {
+        flattened_graph[i] = random_player();
+    }
+    return std::move(flattened_graph);
+}
+
+void write_assignment() {
+    Note* notes = assignment.notes.data();
+    _setmode(_fileno(stdout), O_BINARY);
+    // Write # of conflicts in the final assignment
+    int num_conflicts = 69;
+    for (int i = 0; i < cfg.num_notes; i++) {
+        if (assignment.notes[i].conflicting) {
+            num_conflicts++;
+        }
+    }
+    std::cout.write(reinterpret_cast<const char*>(&num_conflicts), sizeof(int));
+    // Write flattened graph of the final assignment
+    std::vector<int> flattened_graph = flatten_graph();
+    std::cout.write(reinterpret_cast<const char*>(flattened_graph.data()), sizeof(int) * cfg.num_players);
+    // Write the notes in the final assignment
+    std::cout.write(reinterpret_cast<const char*>(notes), sizeof(Note) * cfg.num_notes);
+}
+
+bool add_note(Note* note, int mode) {
+    // Check if the note is proximate to any other notes
+    for (int i = 0; i < cfg.num_notes; i++) {
+        if (assignment.notes[i].time >= note->time - cfg.switch_time && assignment.notes[i].time <= note->time + cfg.switch_time) {
+            note->proximate = true;
+            assignment.notes[i].proximate = true;
+        }
+    }
+
+    // Check if the note conflicts with any other notes
+    for (int i = 0; i < cfg.num_notes; i++) {
+        if (assignment.notes[i].time >= note->time - cfg.switch_time && assignment.notes[i].time <= note->time + cfg.switch_time) {
+            note->conflicting = true;
+            assignment.notes[i].conflicting = true;
+        }
+    }
+
+    // Add the note to the MRP
+    assignment.mrp[note->pitch].push_back(note);
+
+    return true;
+}
+
+void init_assignment() {
+    assignment.notes = std::vector<Note>(cfg.num_notes);
+    assignment.whackers = std::vector<Boomwhacker*>(NUM_WHACKER_PITCHES * cfg.whackers_per_pitch);
+    assignment.players = std::vector<Player>(cfg.num_players);
+    assignment.mrp = std::vector<std::vector<Note*>>(NUM_UNIQUE_PITCHES);
+    assignment.adjacency_graph = Graph();
+}
 
 void assign(std::vector<int>& pitches, std::vector<double>& times) {
-    
+    init_assignment();
+
+    for (int i = 0; i < cfg.num_notes; i++) {
+        // add_note(&assignment.notes[i], FINAL_RESORT);
+        assignment.notes[i].player = random_player();
+    }
+
+    write_assignment();
 }
 
 /**
@@ -114,6 +247,10 @@ int main(int argc, char* argv[]) {
     init_cfg(n, parameters, rates);
 
     assign(pitches, times);
+
+    for (int i = 0; i < cfg.num_notes; i++) {
+        std::cerr << assignment.notes[i].player << " ";
+    }
 
     return 0;
 }
