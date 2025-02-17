@@ -51,13 +51,34 @@ std::vector<std::vector<Note*>> init_mrp() {
     return std::move(mrp);
 }
 
+
+/**
+ * @brief Attempts to add a note to a player's bucket. Returns the inverse of the maximum time differential
+ * between notes. 
+ *  
+ */ 
+double Player::attempt_add(Note* note) {
+    int replace_index = -1;
+    for (int i = 0; i < bucket.size(); i++) {
+        if (bucket[i]->pitch == note->pitch && bucket[i]->capped == note->capped) {
+            replace_index = i;
+            break;
+        }
+    }
+    // If no dupes found, replace the oldest note
+    if (replace_index == -1) {
+        replace_index = 0;
+    }
+    
+}
+
 std::vector<Player> init_players() {
     std::vector<Player> players(cfg.num_players);
     for (int i = 0; i < cfg.num_players; i++) {
         players[i].id = i;
         players[i].whackers = std::vector<Boomwhacker*>();
         players[i].notes = std::vector<Note*>();
-        players[i].bucket = Bucket();
+        players[i].bucket = std::vector<Note*>();
     }
     return std::move(players);
 }
@@ -119,25 +140,15 @@ void write_assignment() {
 }
 
 bool add_note(Note* note, int mode) {
-    // Check if the note is proximate to any other notes
-    for (int i = 0; i < cfg.num_notes; i++) {
-        if (assignment.notes[i].time >= note->time - cfg.switch_time && assignment.notes[i].time <= note->time + cfg.switch_time) {
-            note->proximate = true;
-            assignment.notes[i].proximate = true;
+    if (note->pitch >= C2_MIDI) {
+        for (int i = 0; i < assignment.mrp[note->pitch].size(); i++) {
+            if (assignment.mrp[note->pitch][i] != nullptr) {
+                // Add the note to the player's bucket
+            }
         }
     }
-
-    // Check if the note conflicts with any other notes
-    for (int i = 0; i < cfg.num_notes; i++) {
-        if (assignment.notes[i].time >= note->time - cfg.switch_time && assignment.notes[i].time <= note->time + cfg.switch_time) {
-            note->conflicting = true;
-            assignment.notes[i].conflicting = true;
-        }
-    }
-
-    // Add the note to the MRP
-    assignment.mrp[note->pitch].push_back(note);
-
+    
+    
     return true;
 }
 

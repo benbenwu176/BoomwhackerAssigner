@@ -15,7 +15,8 @@ enum add_flags {
     RECURSE = 1 << 0, // Allows recursive offloading
     ALLOCATE = 1 << 1, // Allows allocation of new boomwhackers
     PROXIMATE = 1 << 2, // Allows proximate notes to be played by nearby players
-    FINAL_RESORT = RECURSE | ALLOCATE | PROXIMATE // Allows all options to be used
+    ROOT = 1 << 3, // Denotes the root of the recursive offloading tree
+    LAST_RESORT = RECURSE | ALLOCATE | PROXIMATE // Allows all options to be used
 };
 
 typedef struct Config {
@@ -24,7 +25,7 @@ typedef struct Config {
 
     // Parameter data
     int num_players; // The number of players in the ensemble
-    int whacker_overflow_limit; // 1 + the max # of boomwhackers that can be played at once
+    int whacker_overflow_limit; // The max # of boomwhackers that can be played at once
     int whackers_per_pitch; // The number of boomwhackers per pitch
 
     // Rate data
@@ -51,15 +52,13 @@ typedef struct Boomwhacker {
     std::vector<Note*> notes; // The notes that are played by this boomwhacker
 } Boomwhacker;
 
-typedef struct Bucket {
-    std::vector<Note*> notes; // Array of pointers to notes
-} Bucket;
-
 typedef struct Player {
     int id;
     std::vector<Boomwhacker*> whackers; // The boomwhackers that the player has
     std::vector<Note*> notes; // The notes that the player has played
-    Bucket bucket; // The bucket of notes that the player has played
+    std::vector<Note*> bucket; // The player's bucket of notes. Refer to documentation for details.
+    double attempt_add(Note* note);
+    double force_add(Note* note);
 } Player;
 
 typedef struct Edge{
