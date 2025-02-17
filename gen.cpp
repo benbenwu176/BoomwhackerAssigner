@@ -104,7 +104,7 @@ void write_assignment() {
     Note* notes = assignment.notes.data();
     _setmode(_fileno(stdout), O_BINARY);
     // Write # of conflicts in the final assignment
-    int num_conflicts = 69;
+    int num_conflicts = 0;
     for (int i = 0; i < cfg.num_notes; i++) {
         if (assignment.notes[i].conflicting) {
             num_conflicts++;
