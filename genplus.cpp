@@ -1,12 +1,11 @@
 #include <iostream>
 #include <random>
 #include <thread>
+#include <io.h>
+#include <fcntl.h>
 #include "genplus.h"
 
 Config cfg;
-
-
-
 
 /**
  * @brief Returns a random player number. Thread-safe.
@@ -22,7 +21,66 @@ int random_player() {
  */
 void thread_func(int id) {
     // Print a random player number
-    std::cout << "Thread " << id << ": " << random_player() << std::endl;
+    std::cerr << "Thread " << id << ": " << random_player() << std::endl;
+}
+
+/**
+ * @brief Creates a deep copy of the given assignment
+ * 
+ * This function allocates new memory for the copied assignment and its note array
+ * 
+ * @param src The assignment to be copied
+ * @param dst The assignment to copy to
+ * 
+ * @return None
+ */
+void copy_assignment(Assignment* src, Assignment* dst) {
+    if (src == nullptr || dst == nullptr) {
+        std::cerr << "Copy assignment: Invalid arguments, src or dst is null" << std::endl;
+        return;
+    }
+    dst->notes = src->notes;
+    // Copy whacker table pointers
+    for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
+        int id = src->whacker_table[i]->id;
+        dst->whacker_table[i] = &dst->notes[id];
+    }
+    dst->whacker_table = src->whacker_table;
+    dst->bws = src->bws;
+    dst->score = src->score;
+}
+
+/**
+ * @brief Initializes a population of assignments with the given size and number of players.
+ * 
+ * @param assignments A pointer to an array of Assignment pointers to be initialized.
+ * @param init The initial assignment to use as a starting point.
+ * 
+ * @return None
+ */
+void init_population(std::vector<Assignment>& assignments, Assignment* init) {
+    for (int i = 0; i < assignments.size(); i++) {
+        copy_assignment(init, &assignments[i]);
+        assignments[i].score = cfg.population_size - i;
+    }
+}
+
+/**
+ * @brief Generates a set of assignments based on the given parameters and initial assignment.
+ * 
+ * @param init The initial assignment to use as a starting point.
+ * 
+ * @return A pointer to an array of Assignment pointers, representing the most fit assignment generated.
+ */
+Assignment* generate_assignments(Assignment* init) {
+    std::vector<Assignment> assignments(cfg.population_size);
+    init_population(assignments, init);
+    for (int i = 0; i < cfg.num_gens; i++) {
+        // breed(assignments);
+    }
+    // Sort the assignments by playability score in ascending order
+    std::sort(assignments.begin(), assignments.end());
+    return &assignments[0];
 }
 
 /**
@@ -60,21 +118,25 @@ std::vector<Note> generate_note_array(std::vector<int>& pitches, std::vector<dou
  * 
  * @returns A vector of pointers to notes
  */
-std::vector<Note*> generate_whacker_table(std::vector<Note>& notes) {
-    std::vector<Note*> whacker_table(NUM_UNIQUE_PITCHES);
+std::vector<int> generate_whacker_table(std::vector<Note>& notes) {
+    std::vector<int> whacker_table(NUM_UNIQUE_PITCHES);
+    for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
+        whacker_table[i] = -1;
+    }
     // Traverse the note vector and construct linked lists in the whacker table
     for (int i = 0; i < cfg.num_notes; i++) {
-        int index = notes[i].pitch - C2_MIDI;
-        Note* cur = whacker_table[index];
-        if (cur == nullptr) {
+        int pitch_index = notes[i].pitch - C2_MIDI;
+        int head_id = whacker_table[pitch_index];
+        if (head_id == -1) {
             // First note of this pitch
-            whacker_table[index] = &notes[i];
+            whacker_table[pitch_index] = notes[i].id;
         } else {
-            // Add to linked list
-            while (cur->next != nullptr) {
-                cur = cur->next;
+            // Add to "linked" list
+            int cur_id = head_id;
+            while (notes[cur_id].next != -1) {
+                cur_id = notes[cur_id].next;
             }
-            cur->next = &notes[i];
+            notes[cur_id].next = notes[i].id;
         }
     }
     return std::move(whacker_table);
@@ -89,10 +151,14 @@ void randomize_player_assignments(Assignment* assignment) {
     // Iterate through each pitch and randomly assign a player
     for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
         int player = random_player();
+        int cur_id = assignment->whacker_table[i]->id;
         Note* cur = assignment->whacker_table[i];
         while (cur != nullptr) {
-            cur->player = random_player();
-            cur = cur->next;
+            cur->player = player;
+            cur = &assignment->notes[cur->next];
+            if (cur->next == -1) {
+                cur = nullptr;
+            }
         }
     }
 }
@@ -104,7 +170,7 @@ void randomize_player_assignments(Assignment* assignment) {
  * 
  * @returns A vector of boomwhackers
  */
-std::vector<Boomwhacker> generate_bws(std::vector<Note*>& whackerTable) {
+std::vector<Boomwhacker> generate_bws(std::vector<int>& whackerTable) {
     // TODO: implement this
     return std::move(std::vector<Boomwhacker>(NUM_UNIQUE_PITCHES));
 }
@@ -126,21 +192,15 @@ void assign(std::vector<int>& pitches, std::vector<double>& times) {
 
     randomize_player_assignments(&init);
     
-    // Assignment* final = generate_assignments(&init);
+    Assignment* final = generate_assignments(&init);
+
     // Print the note objects TODO: overload << operator in Note class
     // IMPORTANT: Keep this in sync with the python struct format and struct definition in genplus.h
-    for (int i = 0; i < cfg.num_notes; i++) {
-        Note note = init.notes[i];
-        std::cout.write(reinterpret_cast<const char*>(&note.time), sizeof(note.time));
-        std::cout.write(reinterpret_cast<const char*>(&note.id), sizeof(note.id));
-        std::cout.write(reinterpret_cast<const char*>(&note.player), sizeof(note.player));
-        std::cout.write(reinterpret_cast<const char*>(&note.pitch), sizeof(note.pitch));
-        std::cout.write(reinterpret_cast<const char*>(&note.whacker_index), sizeof(note.whacker_index));
-        std::cout.write(reinterpret_cast<const char*>(&note.capped), sizeof(note.capped));
-        std::cout.write(reinterpret_cast<const char*>(&note.proximate), sizeof(note.proximate));
-        std::cout.write(reinterpret_cast<const char*>(&note.conflicting), sizeof(note.conflicting));
-    }
-    std::cout << std::endl;
+    Note* notes = final->notes.data();
+    _setmode(_fileno(stdout), O_BINARY);
+    std::cout.write(reinterpret_cast<const char*>(notes), sizeof(Note) * cfg.num_notes);
+    // Note: Don't write anything else to stdout (i.e. newline), or the parsing of the note array will fail
+    // Note 2: It is necessary to set cout to binary mode, otherwise write will insert random newlines that offset the data
 }
 
 /**
@@ -240,7 +300,6 @@ int main(int argc, char* argv[]) {
     init_cfg(n, parameters, rates);
 
     assign(pitches, times);
-
 
     return 0;
 }

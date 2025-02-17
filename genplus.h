@@ -45,7 +45,7 @@ typedef struct Config {
 // Define the Note struct
 typedef struct Note {
     double time = -1; // The time, in seconds, the note occurs at in the piece
-    struct Note* next = nullptr; // Pointer to the next note of the same pitch
+    int next = -1; // Index of the next note of the same pitch
     int id = -1; // Index of the note within the note array
     int player = -1; // The player that this note is assigned to
     int pitch = -1; // MIDI pitch value
@@ -63,7 +63,7 @@ typedef struct Boomwhacker {
 
 typedef struct Assignment {
     std::vector<Note> notes; // Vector of notes
-    std::vector<Note*> whacker_table; // Hash table of pointers to note heads
+    std::vector<int> whacker_table; // Hash table of pointers to note heads
     std::vector<Boomwhacker> bws; // Array of pointers to boomwhackers
     int score; // Playability score
 
