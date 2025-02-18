@@ -57,7 +57,7 @@ typedef struct Player {
     std::vector<Boomwhacker*> whackers; // The boomwhackers that the player has
     std::vector<Note*> notes; // The notes that the player has played
     std::vector<Note*> bucket; // The player's bucket of notes. Refer to documentation for details.
-    double attempt_add(Note* note);
+    double attempt_add(Note* note, bool force);
     double force_add(Note* note);
 } Player;
 

@@ -54,22 +54,18 @@ std::vector<std::vector<Note*>> init_mrp() {
 
 /**
  * @brief Attempts to add a note to a player's bucket. Returns the inverse of the maximum time differential
- * between notes. 
+ * between notes. Successfully adds if the note is able to be played within the player's switch time.
  *  
  */ 
-double Player::attempt_add(Note* note) {
-    int replace_index = -1;
+double Player::attempt_add(Note* note, bool force) {
+    int dupe_index = -1;
     for (int i = 0; i < bucket.size(); i++) {
         if (bucket[i]->pitch == note->pitch && bucket[i]->capped == note->capped) {
-            replace_index = i;
+            dupe_index = i;
             break;
         }
     }
-    // If no dupes found, replace the oldest note
-    if (replace_index == -1) {
-        replace_index = 0;
-    }
-    
+    if (bucket.size() <= )
 }
 
 std::vector<Player> init_players() {
