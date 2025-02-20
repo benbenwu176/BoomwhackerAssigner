@@ -40,11 +40,6 @@ void copy_assignment(Assignment* src, Assignment* dst) {
         return;
     }
     dst->notes = src->notes;
-    // Copy whacker table pointers
-    for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
-        int id = src->whacker_table[i]->id;
-        dst->whacker_table[i] = &dst->notes[id];
-    }
     dst->whacker_table = src->whacker_table;
     dst->bws = src->bws;
     dst->score = src->score;
@@ -79,7 +74,6 @@ Assignment* generate_assignments(Assignment* init) {
         // breed(assignments);
     }
     // Sort the assignments by playability score in ascending order
-    std::sort(assignments.begin(), assignments.end());
     return &assignments[0];
 }
 
@@ -151,14 +145,10 @@ void randomize_player_assignments(Assignment* assignment) {
     // Iterate through each pitch and randomly assign a player
     for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
         int player = random_player();
-        int cur_id = assignment->whacker_table[i]->id;
-        Note* cur = assignment->whacker_table[i];
-        while (cur != nullptr) {
-            cur->player = player;
-            cur = &assignment->notes[cur->next];
-            if (cur->next == -1) {
-                cur = nullptr;
-            }
+        int cur_id = assignment->whacker_table[i];
+        while (cur_id != -1) {
+            assignment->notes[cur_id].player = player;
+            cur_id = assignment->notes[cur_id].next;
         }
     }
 }
@@ -192,7 +182,8 @@ void assign(std::vector<int>& pitches, std::vector<double>& times) {
 
     randomize_player_assignments(&init);
     
-    Assignment* final = generate_assignments(&init);
+    // Assignment* final = generate_assignments(&init);
+    Assignment* final = &init; // TODO: remove this line
 
     // Print the note objects TODO: overload << operator in Note class
     // IMPORTANT: Keep this in sync with the python struct format and struct definition in genplus.h
