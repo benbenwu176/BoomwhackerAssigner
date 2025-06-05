@@ -5,70 +5,11 @@
             "label": "Compile C++ Executable",
             "type": "shell",
             "command": "g++",
-            "args": ["-g", "genplus.cpp", "-o", "genplus.exe"],
+            "args": ["-g", "gen.cpp", "-o", "gen.exe"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        }
-
-
-        {
-            "label": "Compile Gen Executable",
-            "type": "shell",
-            "command": "gcc",
-            "args": ["-g", "gen.c", "-o", "gen.exe"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "Run All Tasks",
-            "dependsOn": [
-                "Compile gen.c to gen.o",
-                "Create shared library gen.so",
-                "Run Python Program"
-            ]
-        },
-        {
-            "label": "Compile C Shared Library",
-            "dependsOn": [
-                "Compile gen.c to gen.o",
-                "Create shared library gen.so",
-            ]
-        },
-        {
-            "label": "Compile gen.c to gen.o",
-            "type": "shell",
-            "command": "gcc",
-            "args": ["-c", "-fPIC", "gen.c", "-o", "gen.o"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "Create shared library gen.so",
-            "type": "shell",
-            "command": "gcc",
-            "args": ["-shared", "-o", "gen.so", "gen.o"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "dependsOn": ["Compile gen.c to gen.o"]
-        },
-        {
-            "label": "Run Python Program",
-            "type": "shell",
-            "command": "python",
-            "args": ["main.py", "-v"],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "dependsOn": ["Create shared library gen.so"]
         }
     ]
 }
