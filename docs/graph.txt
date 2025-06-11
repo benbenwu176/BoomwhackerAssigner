@@ -1,0 +1,10 @@
+(P1, P2) (P2, P3) (P0, P1) (P5, P6)
+Given a list of edges, can we form an array such that the nodes of each edge are always adjacent?
+Separate into subgraphs
+i.e.
+[P0, P1, P2, P3, P5, P6]
+
+Simplest fail condition:
+Player i has more than 3 edges.
+
+Otherwise, to fail

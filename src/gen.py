@@ -10,9 +10,12 @@ from fractions import Fraction
 from collections import namedtuple
 from datetime import datetime
 
-filename = 'mario'
-score = ms3.Score(f'./data/{filename}.mscz').mscx
-  
+gen_out_path = 'output\\gen_output.txt'
+notes_out_path = 'output\\notes.csv'
+gen_exe_path = 'build\\gen.exe'
+
+filename = 'jazz'
+score = ms3.Score(f'.\\data\\{filename}.mscz').mscx
 score_bs4 = score.parsed
 
 # red, green, blue, purple, orange, light blue, pink, brown, black, TODO: gray?, light green but like different
@@ -106,6 +109,7 @@ def gen():
   rates = {
     'switch_time': 2.0, # time, in seconds, it takes a player to switch boomwhackers
   }
+  # Convert params, rates, and note times into numpy lists
   pvalues = list(params.values())
   rvalues = np.array(list(rates.values()), dtype = np.float64)
   note_pitches = notes_df['midi'].values
@@ -120,21 +124,20 @@ def gen():
   stream_format = ('i' * n) + ('d' * n) + ('i' * p) + ('d' * r) + ('x' * padding)
   stream = struct.pack(stream_format, *note_pitches, *note_times, *pvalues, *rvalues)
   
-  proc = subprocess.run(['./gen.exe', str(n), str(p), str(r)], input = stream, capture_output=True) # Add back check = True
+  # Run the assignment generation program
+  proc = subprocess.run([gen_exe_path, str(n), str(p), str(r)], input = stream, capture_output=True, shell=True) # Add back check = True
   print(n)
   # Get the current date and time
   current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-  # Write the date and time to the file
-  with open('gen_output.txt', 'w') as f:
+  # Write the stderr from the subprocess to an output file for debugging
+  with open(gen_out_path, 'w') as f:
     f.write(f"Date and Time: {current_datetime}\n")
-
-  # Append the stderr contents to the file
-  with open('gen_output.txt', 'ab') as f:
+  with open(gen_out_path, 'ab') as f:
     f.write(proc.stderr.decode('utf-8').encode())
     
   if (proc.returncode != 0):
-    print("Error in subprocess")
+    print("Error in assignment generating process.")
     return
 
   # IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
@@ -165,17 +168,19 @@ def gen():
   
 # Recolor the notes with the generated assignments. IMPORTANT: Notes that are already colored in the original mscz file will NOT be recolored.
 def recolor(notes):
-  # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and on top of each other
+  # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and durations overlap
   STUPID_PEOPLE_BUF = 0.001
+  # Recolor notes to their assigned player
   for index, row in notes_df.iterrows():
     score_bs4.color_notes(row['mc'], row['mc_onset'], row['mc'], row['mc_onset'] + STUPID_PEOPLE_BUF,
                 midi=[row['midi']], color_html = colors[notes[index].player])
     
+  score.store_score(f'./data/{filename}.mscx')
+  # Output assignment configuration to a CSV file
   notes_df['time'] = [note.time for note in notes]
   notes_df['player'] = [note.player for note in notes]
   notes_df['capped'] = [note.capped for note in notes]
-  score.store_score(f'./data/{filename}.mscx')
-  notes_df.to_csv("notes.csv")
+  notes_df.to_csv(notes_out_path)
 
 
 time_init()

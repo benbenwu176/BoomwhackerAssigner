@@ -1,0 +1,41 @@
+install vscode
+
+install python (3.13.3)
+install python vscode extension
+
+install gcc compiler
+
+# Linux: sudo apt update
+# sudo apt install build-essential
+
+Windows: 
+https://www.mingw-w64.org/
+https://code.visualstudio.com/docs/cpp/config-mingw
+https://www.youtube.com/watch?v=oC69vlWofJQ
+
+https://www.msys2.org/
+Download the installer
+Default settings
+Run MSYS2 terminal
+pacman -S mingw-w64-ucrt-x86_64-gcc
+(middle click to paste)
+
+Edit PATH env
+Follow youtube tutorial:
+https://www.youtube.com/watch?v=oC69vlWofJQ
+
+pip install ms3
+https://ms3.readthedocs.io/en/latest/#
+
+If mingw64 numpy warnings, reinstall numpy:
+pip uninstall -y numpy
+python -m pip install --upgrade pip wheel
+python -m pip install --only-binary :all: numpy
+
+install musescore
+https://musescore.org/en/download
+
+download c and c++ extension
+
+clone git branch
+git clone -b dp https://github.com/benbenwu176/BoomwhackerAssigner.git
