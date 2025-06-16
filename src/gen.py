@@ -2,21 +2,23 @@ import ms3
 import numpy as np
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-import pandas as pd
 import struct
-import io
 import subprocess
+import time
 from fractions import Fraction
 from collections import namedtuple
 from datetime import datetime
 
+print("Starting...")
 gen_out_path = 'output\\gen_output.txt'
 notes_out_path = 'output\\notes.csv'
 gen_exe_path = 'build\\gen.exe'
 
+start_time = time.perf_counter()
 filename = 'jazz'
 score = ms3.Score(f'.\\data\\{filename}.mscz').mscx
 score_bs4 = score.parsed
+build_time = time.perf_counter()
 
 # red, green, blue, purple, orange, light blue, pink, brown, black, TODO: gray?, light green but like different
 colors = ['#FF0000', '#00AA00', '#0000FF', "#D752FF", '#EE8000', '#00A0FF', '#FF90FF', '#AA5500', '#000000']
@@ -30,10 +32,7 @@ chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(float)
 chords_df.sort_values(by=['quarterbeats'], inplace=True)
 chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(Fraction)
 
-# IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
-Note = namedtuple('Note', ['time', 'id', 'player', 'pitch', 'whacker_index', 'capped', 'proximate', 'conflicting'])
-
-def compute_chord_timings():
+def get_chord_timings():
   # Initialize variables for time calculation
   current_time = Fraction(0) # start at the beginning of the piece
   current_qpm = 120 # default to 120
@@ -78,17 +77,12 @@ def compute_chord_timings():
     measures_df.at[index, 'time_end'] = Fraction(current_time + Fraction(SECONDS_PER_MINUTE / current_qpm) * remaining_duration)
     current_time = measures_df.iloc[index]['time_end']
 
-def update_note_timings():
   # Update note timings to match the timing of the chord they belong to
   notes_df['time'] = Fraction(0) # initialize time field
   for index, row in notes_df.iterrows():
     note_chord_id = row['chord_id']
     chord_time = chords_df.loc[chords_df['chord_id'] == note_chord_id, 'time'].values[0]
     notes_df.at[index, 'time'] = chord_time
-
-def time_init():
-  compute_chord_timings()
-  update_note_timings()
 
 def print_params(pvalues, note_pitches, note_times, num_elements):
   print(pvalues)
@@ -104,7 +98,8 @@ def gen():
   params = {
     'num_players': 9, # number of players in the ensemble
     'max_whackers': 2, # maximum number of whackers someone can play at once
-    'whackers_per_pitch': 2 # the number of whackers available for each pitch, we are poor so we have 2
+    'whackers_per_pitch': 2, # the number of whackers available for each pitch, we are poor so we have 2
+    'seed': 0, # optional RNG seed
   }
   rates = {
     'switch_time': 2.0, # time, in seconds, it takes a player to switch boomwhackers
@@ -126,7 +121,7 @@ def gen():
   
   # Run the assignment generation program
   proc = subprocess.run([gen_exe_path, str(n), str(p), str(r)], input = stream, capture_output=True, shell=True) # Add back check = True
-  print(n)
+  print(f"Number of notes: {n:d}")
   # Get the current date and time
   current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -141,6 +136,7 @@ def gen():
     return
 
   # IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
+  Note = namedtuple('Note', ['time', 'id', 'player', 'pitch', 'whacker_index', 'capped', 'proximate', 'conflicting'])
   note_struct_format = "diiii???xxxxx" # Double, integer, bool, padding
   note_struct_size = struct.calcsize(note_struct_format)
   note_struct_parser = struct.Struct(note_struct_format)
@@ -159,11 +155,9 @@ def gen():
       break
     # Unpack the data into a tuple of Python values
     unpacked = note_struct_parser.unpack(chunk)
-    
-    time, id, player, pitch, whacker_index, capped, proximate, conflicting = unpacked
-    notes.append(Note(time, id, player, pitch, whacker_index, capped, proximate, conflicting))
-    
-  recolor(notes)
+    notes.append(Note(*unpacked))
+  
+  return notes
 
   
 # Recolor the notes with the generated assignments. IMPORTANT: Notes that are already colored in the original mscz file will NOT be recolored.
@@ -182,6 +176,20 @@ def recolor(notes):
   notes_df['capped'] = [note.capped for note in notes]
   notes_df.to_csv(notes_out_path)
 
+# TODO: create a list of all the colors of each colored note in the piece
+# TODO: strip color tags from original musescore
+# TODO: strip other instruments besides piano from original musescore
+# TODO: remove ties
 
-time_init()
-gen()
+get_chord_timings()
+chords_time = time.perf_counter()
+notes = gen()
+gen_time = time.perf_counter()
+recolor(notes)
+color_time = time.perf_counter()
+
+print(f"MSCX construction time: {build_time - start_time:.6f}")
+print(f"Chord computation time: {chords_time - build_time:.6f}")
+print(f"Assignment generation time: {gen_time - chords_time:.6f}")
+print(f"Recoloring time: {color_time - gen_time:.6f}")
+# TODO: Add note heads

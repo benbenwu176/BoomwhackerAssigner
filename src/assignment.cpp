@@ -1,5 +1,6 @@
 #include "gen.hpp"
 #include "assignment.hpp"
+#include <thread>
 #include <io.h>
 #include <iostream>
 #include <fcntl.h>
@@ -19,16 +20,9 @@ Assignment::Assignment(std::vector<int> &pitches, std::vector<double> &times) {
  * @brief Initialize the array of notes representing the piece.
  */
 void Assignment::init_notes(std::vector<int> &pitches, std::vector<double> &times) {
-  notes = std::vector<Note>(cfg->num_notes);
+  notes.reserve(cfg->num_notes);
   for (int i = 0; i < cfg->num_notes; i++) {
-    notes[i].time = times[i];
-    notes[i].id = i;
-    notes[i].player = -1;
-    notes[i].pitch = pitches[i];
-    notes[i].whacker_index = -1;
-    notes[i].capped = false;
-    notes[i].proximate = false;
-    notes[i].conflicting = false;
+    notes.emplace_back(i, pitches[i], times[i]);
   }
 }
 
@@ -36,12 +30,9 @@ void Assignment::init_notes(std::vector<int> &pitches, std::vector<double> &time
  * @brief Initialize an array of players.
  */
 void Assignment::init_players() {
-  players = std::vector<Player>(cfg->num_players);
+  players.reserve(cfg->num_players);
   for (int i = 0; i < cfg->num_players; i++) {
-    players[i].id = i;
-    players[i].whackers = std::vector<Boomwhacker *>();
-    players[i].notes = std::vector<Note *>();
-    players[i].bucket = std::vector<Note *>();
+    players.emplace_back(i, cfg->whacker_overflow_limit, cfg->switch_time);
   }
 }
 
@@ -104,4 +95,23 @@ void Assignment::write()
   std::cout.write(reinterpret_cast<const char *>(flattened_graph.data()), sizeof(int) * cfg->num_players);
   // Write the notes in the final assignment
   std::cout.write(reinterpret_cast<const char *>(note_data), sizeof(Note) * cfg->num_notes);
+}
+
+/**
+ * @brief Iterates through all notes and tries to assign them
+ */
+void Assignment::assign() {
+  /*
+  for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
+    int rplayer = random_player();
+    for (int j = 0; j < cfg->num_notes; j++) {
+      if (i + C2_MIDI == notes[j].pitch) {
+        notes[j].player = rplayer;
+      }
+    }
+  }
+  */
+  for (int i = 0; i < cfg->num_notes; i++) {
+    // add_note(&assignment.notes[i], FINAL_RESORT);
+  }
 }

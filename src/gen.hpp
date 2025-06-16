@@ -4,6 +4,8 @@
 #pragma once
 
 #include <vector>
+#include <random>
+#include "random_utils.hpp"
 #include "assignment.hpp"
 #include "boomwhacker.hpp"
 #include "graph.hpp"

@@ -14,12 +14,8 @@
  * Change NUM_UNIQUE_PITCHES to be a parameter and not a constant
  * Split functions into multiple files
  */
-#include <iostream>
-#include <io.h>
-#include <random>
-#include <thread>
-#include <fcntl.h>
 
+#include <iostream>
 #include "gen.hpp"
 
 Config* cfg;
@@ -29,29 +25,7 @@ Assignment* assignment;
  * @brief Returns a random player number. Thread-safe.
  */
 int random_player() {
-  thread_local std::mt19937 generator(std::random_device{}());
-  std::uniform_int_distribution<int> distribution(0, cfg->num_players - 1);
-  return distribution(generator);
-}
-
-/**
- * @brief Iterates through all notes and tries to assign them
- */
-void assign() {
-
-  for (int i = 0; i < NUM_UNIQUE_PITCHES; i++) {
-    int rplayer = random_player();
-    for (int j = 0; j < cfg->num_notes; j++) {
-      if (i + C2_MIDI == assignment->notes[j].pitch) {
-        assignment->notes[j].player = rplayer;
-      }
-    }
-  }
-  for (int i = 0; i < cfg->num_notes; i++) {
-    // add_note(&assignment.notes[i], FINAL_RESORT);
-  }
-
-  assignment->write();
+  return random_utils::randInt(0, cfg->num_players - 1);
 }
 
 /**
@@ -144,8 +118,10 @@ int main(int argc, char *argv[]) {
 
   cfg = new Config(n, params, rates);
   assignment = new Assignment(pitches, times);
+  random_utils::seed(cfg->seed);
 
-  assign();
+  assignment->assign();
+  assignment->write();
 
   return 0;
 }

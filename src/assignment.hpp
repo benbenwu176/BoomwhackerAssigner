@@ -20,4 +20,5 @@ public:
   void init_mrp();
   void init_graph();
   void write();
+  void assign();
 };
