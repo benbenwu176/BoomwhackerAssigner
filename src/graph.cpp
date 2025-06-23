@@ -1,5 +1,6 @@
 #include "gen.hpp"
 #include "graph.hpp"
+#include "assignment.hpp"
 
 /**
  * @brief Constructor for player adjacency graph

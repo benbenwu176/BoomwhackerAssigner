@@ -1,6 +1,6 @@
 ### Toolchain ###
 CXX       := g++
-CXXFLAGS  := -std=c++17 -O2 -Wall
+CXXFLAGS  := -std=c++17 -O2 -Wall -lstdc++ -g
 LDFLAGS 	:=
 ### Directories ###
 SOURCEDIR	:= src

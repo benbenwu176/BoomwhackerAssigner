@@ -37,5 +37,5 @@ namespace random_utils {
     std::uniform_real_distribution<double> dist(lo, hi);
     return dist(engine());
   }
-
+  
 }

@@ -8,7 +8,7 @@ typedef struct Config {
 
   // Parameter data
   int num_players; // The number of players in the ensemble
-  int whacker_overflow_limit; // The max # of boomwhackers that can be played at once
+  int hold_limit; // The max # of boomwhackers that can be played at once
   int whackers_per_pitch; // The number of boomwhackers per pitch
   int seed; // Optional RNG seed
 
@@ -33,7 +33,7 @@ inline Config::Config(int num_notes, const std::vector<int> &params, const std::
 
   // Parameter data
   num_players = params[0];
-  whacker_overflow_limit = params[1];
+  hold_limit = params[1];
   whackers_per_pitch = params[2];
   seed = params[3];
 

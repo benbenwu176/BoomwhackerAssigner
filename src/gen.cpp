@@ -15,18 +15,10 @@
  * Split functions into multiple files
  */
 
-#include <iostream>
 #include "gen.hpp"
 
 Config* cfg;
 Assignment* assignment;
-
-/**
- * @brief Returns a random player number. Thread-safe.
- */
-int random_player() {
-  return random_utils::randInt(0, cfg->num_players - 1);
-}
 
 /**
  * @brief Print the data from stdin containing pitches, times, parameters, and rates.
@@ -78,6 +70,7 @@ void check_params(int n, int p, int r, std::vector<int> &pitches, std::vector<do
  * @return 0 on success, 1 on failure
  */
 int main(int argc, char *argv[]) {
+  error_handler::initialize_error_handlers();
   // Read n, p, r from args
   int n = atoi(argv[1]);
   int p = atoi(argv[2]);
@@ -120,8 +113,14 @@ int main(int argc, char *argv[]) {
   assignment = new Assignment(pitches, times);
   random_utils::seed(cfg->seed);
 
-  assignment->assign();
-  assignment->write();
+  try {
+    assignment->assign();
+    assignment->write();
+  } catch (const std::runtime_error& e) {
+      std::cerr << "Error: " << e.what() << std::endl;
+  } catch (...) {
+    std::cerr << "An unknown error has occurred." << std::endl;
+  }
 
   return 0;
 }

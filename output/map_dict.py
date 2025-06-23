@@ -1,8 +1,8 @@
 import pandas as pd
 
-df = pd.readcsv('notes.csv')
+df = pd.read_csv('notes.csv')
 numPlayers = df["player"].max()+1
-players = [[] for  in range(numPlayers)]
+players = [[] for _ in range(numPlayers)]
 midiNotes = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"]
 
 def noteToString(midi, capped):
@@ -32,4 +32,4 @@ for index, player in enumerate(players):
         string+= player[i] + ", "
     if len(player) >= 1:
         string += player[len(player)-1]
-    print(string) 
+    print(string)

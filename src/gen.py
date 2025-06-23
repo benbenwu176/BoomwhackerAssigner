@@ -15,13 +15,13 @@ notes_out_path = 'output\\notes.csv'
 gen_exe_path = 'build\\gen.exe'
 
 start_time = time.perf_counter()
-filename = 'jazz'
+filename = 'humu'
 score = ms3.Score(f'.\\data\\{filename}.mscz').mscx
 score_bs4 = score.parsed
 build_time = time.perf_counter()
 
 # red, green, blue, purple, orange, light blue, pink, brown, black, TODO: gray?, light green but like different
-colors = ['#FF0000', '#00AA00', '#0000FF', "#D752FF", '#EE8000', '#00A0FF', '#FF90FF', '#AA5500', '#000000']
+colors = ['#FF0000', '#006622', '#0000FF', "#D752FF", '#EE8000', '#00A0FF', '#FF90FF', '#AA5500', '#33DD00']
 # TODO: Add more colors
 
 notes_df = score.notes()
@@ -97,7 +97,7 @@ def print_params(pvalues, note_pitches, note_times, num_elements):
 def gen():
   params = {
     'num_players': 9, # number of players in the ensemble
-    'max_whackers': 2, # maximum number of whackers someone can play at once
+    'hold_limit': 2, # maximum number of whackers someone can play at once
     'whackers_per_pitch': 2, # the number of whackers available for each pitch, we are poor so we have 2
     'seed': 0, # optional RNG seed
   }
@@ -119,8 +119,11 @@ def gen():
   stream_format = ('i' * n) + ('d' * n) + ('i' * p) + ('d' * r) + ('x' * padding)
   stream = struct.pack(stream_format, *note_pitches, *note_times, *pvalues, *rvalues)
   
+  args = [str(n), str(p), str(r)]
+  exe = [gen_exe_path, *args]
+  cmd = exe
   # Run the assignment generation program
-  proc = subprocess.run([gen_exe_path, str(n), str(p), str(r)], input = stream, capture_output=True, shell=True) # Add back check = True
+  proc = subprocess.run(cmd, input = stream, capture_output=True, shell=True) # Add back check = True
   print(f"Number of notes: {n:d}")
   # Get the current date and time
   current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -133,17 +136,18 @@ def gen():
     
   if (proc.returncode != 0):
     print("Error in assignment generating process.")
-    return
+    return None
 
   # IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
-  Note = namedtuple('Note', ['time', 'id', 'player', 'pitch', 'whacker_index', 'capped', 'proximate', 'conflicting'])
-  note_struct_format = "diiii???xxxxx" # Double, integer, bool, padding
+  Note = namedtuple('Note', ['time', 'whacker', 'id', 'player', 'pitch', 'capped', 'proximate', 'conflicting'])
+  note_struct_format = "dPiii???x" # Double, pointer, integer, bool, padding
   note_struct_size = struct.calcsize(note_struct_format)
   note_struct_parser = struct.Struct(note_struct_format)
   notes = []
   note_data = proc.stdout
   # Read num of conflicting notes from the first 4 bytes of the output
   num_conflicting_notes = struct.unpack('i', note_data[:4])[0]
+  print("Conflicts: " + str(num_conflicting_notes))
   # Read flattened array of player indexes from the next 4 * num_players bytes of the output
   player_indexes = np.frombuffer(note_data[4:4 + 4 * params['num_players']], dtype=np.int32)
   # Start reading note data from the 4 * num_players + 4 bytes offset
@@ -162,28 +166,38 @@ def gen():
   
 # Recolor the notes with the generated assignments. IMPORTANT: Notes that are already colored in the original mscz file will NOT be recolored.
 def recolor(notes):
-  # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and durations overlap
-  STUPID_PEOPLE_BUF = 0.001
-  # Recolor notes to their assigned player
-  for index, row in notes_df.iterrows():
-    score_bs4.color_notes(row['mc'], row['mc_onset'], row['mc'], row['mc_onset'] + STUPID_PEOPLE_BUF,
-                midi=[row['midi']], color_html = colors[notes[index].player])
-    
-  score.store_score(f'./data/{filename}.mscx')
   # Output assignment configuration to a CSV file
   notes_df['time'] = [note.time for note in notes]
   notes_df['player'] = [note.player for note in notes]
   notes_df['capped'] = [note.capped for note in notes]
   notes_df.to_csv(notes_out_path)
+  # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and durations overlap
+  STUPID_PEOPLE_BUF = 0.001
+  # Recolor notes to their assigned player
+  for index, row in notes_df.iterrows():
+    color = ''
+    if (notes[index].player == -1):
+      color = "#000000"
+    else:
+      color = colors[notes[index].player]
+    score_bs4.color_notes(row['mc'], row['mc_onset'], row['mc'], row['mc_onset'] + STUPID_PEOPLE_BUF,
+                midi=[row['midi']], color_html = color)
+  
+  # Write recolored assignment to file
+  score.store_score(f'./data/{filename}.mscx')
+  
 
 # TODO: create a list of all the colors of each colored note in the piece
 # TODO: strip color tags from original musescore
 # TODO: strip other instruments besides piano from original musescore
 # TODO: remove ties
+# TODO: remove trills (see macabre.mscx)
 
 get_chord_timings()
 chords_time = time.perf_counter()
 notes = gen()
+if (notes == None):
+  exit(1)
 gen_time = time.perf_counter()
 recolor(notes)
 color_time = time.perf_counter()
