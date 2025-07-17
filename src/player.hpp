@@ -10,7 +10,7 @@ public:
   std::vector<Note*> data;
 
   Bucket(int hold_limit, double switch_time);
-  bool try_add(Note* note, bool force);
+  bool try_add(Note* note);
   bool bucket_conflict();
 };
 

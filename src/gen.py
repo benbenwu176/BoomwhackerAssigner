@@ -15,10 +15,11 @@ notes_out_path = 'output\\notes.csv'
 gen_exe_path = 'build\\gen.exe'
 
 start_time = time.perf_counter()
-filename = 'humu'
+filename = 'time'
 score = ms3.Score(f'.\\data\\{filename}.mscz').mscx
 score_bs4 = score.parsed
 build_time = time.perf_counter()
+show_conflicting = True
 
 # red, green, blue, purple, orange, light blue, pink, brown, black, TODO: gray?, light green but like different
 colors = ['#FF0000', '#006622', '#0000FF', "#D752FF", '#EE8000', '#00A0FF', '#FF90FF', '#AA5500', '#33DD00']
@@ -98,7 +99,7 @@ def gen():
   params = {
     'num_players': 9, # number of players in the ensemble
     'hold_limit': 2, # maximum number of whackers someone can play at once
-    'whackers_per_pitch': 2, # the number of whackers available for each pitch, we are poor so we have 2
+    'whackers_per_pitch': 4, # the number of whackers available for each pitch, we are poor so we have 2
     'seed': 0, # optional RNG seed
   }
   rates = {
@@ -135,8 +136,7 @@ def gen():
     f.write(proc.stderr.decode('utf-8').encode())
     
   if (proc.returncode != 0):
-    print("Error in assignment generating process.")
-    return None
+    raise Exception("Assignment generation failed.")
 
   # IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
   Note = namedtuple('Note', ['time', 'whacker', 'id', 'player', 'pitch', 'capped', 'proximate', 'conflicting'])
@@ -145,6 +145,9 @@ def gen():
   note_struct_parser = struct.Struct(note_struct_format)
   notes = []
   note_data = proc.stdout
+  if (len(note_data) == 0):
+    raise Exception("No data in stdout.")
+  
   # Read num of conflicting notes from the first 4 bytes of the output
   num_conflicting_notes = struct.unpack('i', note_data[:4])[0]
   print("Conflicts: " + str(num_conflicting_notes))
@@ -170,18 +173,23 @@ def recolor(notes):
   notes_df['time'] = [note.time for note in notes]
   notes_df['player'] = [note.player for note in notes]
   notes_df['capped'] = [note.capped for note in notes]
+  notes_df['conflicting'] = [note.conflicting for note in notes]
   notes_df.to_csv(notes_out_path)
   # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and durations overlap
   STUPID_PEOPLE_BUF = 0.001
   # Recolor notes to their assigned player
-  for index, row in notes_df.iterrows():
-    color = ''
-    if (notes[index].player == -1):
-      color = "#000000"
-    else:
-      color = colors[notes[index].player]
-    score_bs4.color_notes(row['mc'], row['mc_onset'], row['mc'], row['mc_onset'] + STUPID_PEOPLE_BUF,
-                midi=[row['midi']], color_html = color)
+  with open(gen_out_path, 'a') as f:
+    for index, row in notes_df.iterrows():
+      color = ''
+      if (notes[index].player == -1):
+        color = "#000000"
+      else:
+        color = colors[notes[index].player]
+      score_bs4.color_notes(row['mc'], row['mc_onset'], row['mc'], row['mc_onset'] + STUPID_PEOPLE_BUF,
+                  midi=[row['midi']], color_html = color)
+      if (show_conflicting and row['conflicting'] == True):
+        minutes, seconds = divmod(row['time'], 60)
+        f.write(f"Conflicting note in measure {row['mc']}, time: {int(minutes)}:{seconds:.2f}\n")
   
   # Write recolored assignment to file
   score.store_score(f'./data/{filename}.mscx')
@@ -192,6 +200,7 @@ def recolor(notes):
 # TODO: strip other instruments besides piano from original musescore
 # TODO: remove ties
 # TODO: remove trills (see macabre.mscx)
+# TODO: count number of caps used
 
 get_chord_timings()
 chords_time = time.perf_counter()

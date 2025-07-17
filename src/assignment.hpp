@@ -42,7 +42,8 @@ public:
   void init_graph();
   void write();
   void assign();
-  int add_note(Note* note, add_flags flags);
+  int add_existing(Note* note);
+  int add_note(Note* note);
   Boomwhacker* find_whacker(int pitch);
 };
 

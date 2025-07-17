@@ -4,6 +4,8 @@
 #pragma once
 
 #include <vector>
+#include <stdexcept>
+#include <string>
 #include <random>
 #include <iostream>
 #include "error_handler.hpp"

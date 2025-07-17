@@ -47,7 +47,7 @@ bool Bucket::bucket_conflict() {
  * 
  * @return True if no conflict, false otherwise
 */
-bool Bucket::try_add(Note* note, bool force) {
+bool Bucket::try_add(Note* note) {
   std::vector<Note*> old(data);
   int dupe_index = -1;
   for (int i = 0; i < data.size(); i++) {
@@ -77,13 +77,9 @@ bool Bucket::try_add(Note* note, bool force) {
   note->conflicting = bucket_conflict();
   
   if (note->conflicting) {
-    if (force) {
-      return false;
-    } else {
-      data = old;
-      note->conflicting = false;
-      return false;   
-    }
+    data = old;
+    note->conflicting = false;
+    return false;   
   } else {
     return true;
   }

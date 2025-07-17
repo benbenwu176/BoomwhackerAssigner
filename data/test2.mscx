@@ -143,17 +143,212 @@
             <text><sym>metNoteQuarterUp</sym><font face="Edwin"></font> = 120</text>
             </Tempo>
           <Rest>
-            <eid>akcw3Nr8wkB_CNQmOPB+pgJ</eid>
-            <durationType>measure</durationType>
-            <duration>4/4</duration>
+            <eid>xM13T4w7kmD_vGyUleLxcoE</eid>
+            <durationType>quarter</durationType>
             </Rest>
+          <Rest>
+            <eid>og+OXHVLd7L_opddz9+ZBqO</eid>
+            <durationType>quarter</durationType>
+            </Rest>
+          <Chord>
+            <eid>VHUYX/CLwHM_RMhkT2l/PAC</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>uit4sseei3N_3C0ebk/2vGP</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>RZzqQ+iFC7_woV594gjPiL</eid>
+                </Accidental>
+              <pitch>60</pitch>
+              <tpc>14</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>R06vpbO41DL_nUaQ8oeZ1pC</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>C5JzmIhl6GO_SFR+8vtsdOE</eid>
+                </Accidental>
+              <pitch>61</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>OnSguo3V1wN_9pxrG3h6sWD</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>KkjH9aEIcwK_5KeBfSbAB4I</eid>
+                </Accidental>
+              <pitch>62</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>He+VGws6oUP_Ou8Lkr9bxxC</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>BVLq/rgM0BI_Lu5A8Pwk+8I</eid>
+                </Accidental>
+              <pitch>63</pitch>
+              <tpc>23</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>lnpYYqqFOd_c8Rqce07/tB</eid>
+              <pitch>64</pitch>
+              <tpc>18</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>XmIAF5anCKF_DdscwZW2Us</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>0eBdKMTxPXO_Gwmaaj4uJfO</eid>
+                </Accidental>
+              <pitch>65</pitch>
+              <tpc>13</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>wUdHgLxRfHK_bXzIDfNr1yD</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>/WOqGsHMCAJ_91AYbLM5AML</eid>
+                </Accidental>
+              <pitch>66</pitch>
+              <tpc>20</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>nzV4L88cGAE_BKKwD0m0XwK</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>WpfTyTphBp_em8DxZ9iCSB</eid>
+                </Accidental>
+              <pitch>67</pitch>
+              <tpc>15</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>jmPIwMBUce_RF0WHuKLreE</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>5Cl7JJEtuhN_xQyk+0tZ5lD</eid>
+                </Accidental>
+              <pitch>68</pitch>
+              <tpc>22</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>KA6/VTFBLCM_7l1fnVElTlN</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>PpFIpcfkQeL_ufDwuabLaBK</eid>
+                </Accidental>
+              <pitch>69</pitch>
+              <tpc>17</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>xtTftRdOfCG_+YPhaPTknPB</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>u3HyVRhOOmJ_ZhRAgWsP+VK</eid>
+                </Accidental>
+              <pitch>70</pitch>
+              <tpc>24</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>bNEqa67iQi_09xDV+imBXM</eid>
+              <pitch>71</pitch>
+              <tpc>19</tpc>
+              </Note>
+            </Chord>
+          <Chord>
+            <eid>MkondjJFacP_Ng2nv+Zd9+O</eid>
+            <durationType>quarter</durationType>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>X0ddESRhoAB_/JULu+CLoIO</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>A13YLAMJVaB_zE/Ag0Cp5JE</eid>
+                </Accidental>
+              <pitch>72</pitch>
+              <tpc>14</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>2IYC6UFAJCD_qAdbfQtUJNF</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>r+VCHtxiaPP_8/RIBzElGJJ</eid>
+                </Accidental>
+              <pitch>73</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>RrmXKHxWGlO_aPQvQC0wJdP</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>y8aoambPvqD_KNOVmGvoa8I</eid>
+                </Accidental>
+              <pitch>74</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>Hyt+j1XV9pJ_NdpEqaB49eP</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>HLG92FTsoAL_zndhzNDrb3F</eid>
+                </Accidental>
+              <pitch>75</pitch>
+              <tpc>23</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>iUWi+qw+2+I_wHrHchF8uOB</eid>
+              <pitch>76</pitch>
+              <tpc>18</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>fKVzo+kFoyN_NqEM7aTv/5P</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>M+a1M+0E34I_adc48utGSFK</eid>
+                </Accidental>
+              <pitch>77</pitch>
+              <tpc>13</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>nYz77SEpmsE_Ni0TD/Pvg6F</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>KpUbY8hJF+G_zcyIbgCBWKJ</eid>
+                </Accidental>
+              <pitch>78</pitch>
+              <tpc>20</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>q1jL2bM2NTJ_ZwBBu1nxDK</eid>
+              <pitch>79</pitch>
+              <tpc>15</tpc>
+              </Note>
+            </Chord>
           </voice>
         </Measure>
       <Measure>
         <eid>gUBrpLVBWU_QVLdKYSsJFC</eid>
         <voice>
           <Rest>
-            <eid>yDTRvbqP3ZG_AtEYgWKUhXB</eid>
+            <eid>CTl6TetYl/D_CxW+Co/Dp2O</eid>
             <durationType>measure</durationType>
             <duration>4/4</duration>
             </Rest>
@@ -473,121 +668,241 @@
             <sigD>4</sigD>
             </TimeSig>
           <Chord>
-            <eid>9K6F9mydKIL_FLLVwMhTEcI</eid>
+            <eid>eMvrb9f+x8D_43O2bvVm1KI</eid>
             <durationType>quarter</durationType>
             <Note>
               <color r="255" g="0" b="0" a="255"/>
-              <eid>72P0foD/XFE_EW+qr9ylBuF</eid>
+              <eid>efPPukwoLuF_ybGmghl5ip</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>/IRL3SWejnC_DXaxQIuZRrE</eid>
+                </Accidental>
+              <pitch>36</pitch>
+              <tpc>14</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="102" b="34" a="255"/>
+              <eid>B9Emr9MCbFL_3gtG2Vpwb9C</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>vbp7o/H33fH_q72Zee1ySXK</eid>
+                </Accidental>
+              <pitch>37</pitch>
+              <tpc>21</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>G8xEQYCM3NG_NbAuxRdPizK</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>326bIhFafTC_tG+5y2FmfxD</eid>
+                </Accidental>
+              <pitch>38</pitch>
+              <tpc>16</tpc>
+              </Note>
+            <Note>
+              <color r="215" g="82" b="255" a="255"/>
+              <eid>jnjJLn1fNDF_vo952AsVdmF</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>Qeiv6fSgC/P_OAka2ayrTgI</eid>
+                </Accidental>
+              <pitch>39</pitch>
+              <tpc>23</tpc>
+              </Note>
+            <Note>
+              <color r="238" g="128" b="0" a="255"/>
+              <eid>LFKYcJPcsZN_XUzWAI5wXYF</eid>
+              <pitch>40</pitch>
+              <tpc>18</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>57WKI9yRHRJ_B6/Xp4ZrImE</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>ek6XOE71xDN_X2AmAfjqwDN</eid>
+                </Accidental>
+              <pitch>41</pitch>
+              <tpc>13</tpc>
+              </Note>
+            <Note>
+              <color r="255" g="144" b="255" a="255"/>
+              <eid>dXXXP/bluCH_wii6T/b+8jK</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>x+Nvd82I7KB_9m196ivYo7I</eid>
+                </Accidental>
+              <pitch>42</pitch>
+              <tpc>20</tpc>
+              </Note>
+            <Note>
+              <color r="170" g="85" b="0" a="255"/>
+              <eid>wtcsNIjCjkK_iqlp00a7VQO</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>4F9kySqGMEM_GBwx/f7rJGI</eid>
+                </Accidental>
               <pitch>43</pitch>
               <tpc>15</tpc>
               </Note>
             <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>In49INGcQOI_8CLX30ieyUH</eid>
+              <color r="51" g="221" b="0" a="255"/>
+              <eid>5ONjJrlhFGD_MqZX7b37t8C</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>kVEPhPkecuM_N6j4iZ/fAkC</eid>
+                </Accidental>
+              <pitch>44</pitch>
+              <tpc>22</tpc>
+              </Note>
+            <Note>
+              <color r="51" g="221" b="0" a="255"/>
+              <eid>2eYJ8qlksDL_OOhHUgTrhVB</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>eaQV0BBj+0H_9lpSyTl4FZM</eid>
+                </Accidental>
+              <pitch>45</pitch>
+              <tpc>17</tpc>
+              </Note>
+            <Note>
+              <color r="170" g="85" b="0" a="255"/>
+              <eid>nbH8zeXuMbK_MizRIS5mDPP</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>4fwbRCMjgyK_s3PmuQxbGwD</eid>
+                </Accidental>
+              <pitch>46</pitch>
+              <tpc>24</tpc>
+              </Note>
+            <Note>
+              <color r="255" g="144" b="255" a="255"/>
+              <eid>nO52ZzXVocP_8yMgGvhqVxO</eid>
               <pitch>47</pitch>
               <tpc>19</tpc>
               </Note>
             </Chord>
           <Chord>
-            <eid>g7Hu7BDpiLI_DlzTRc3ixAD</eid>
-            <durationType>eighth</durationType>
+            <eid>ffu8NIxl0fF_BgnTukgzs1I</eid>
+            <durationType>quarter</durationType>
             <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>/Rud+g/kbHH_oi3x52/PVEB</eid>
-              <pitch>43</pitch>
-              <tpc>15</tpc>
+              <color r="0" g="160" b="255" a="255"/>
+              <eid>zXgKEyQkBtM_RzpgHr+NRsK</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>IBMmkUV2Ud_Q3qTOz8BEdP</eid>
+                </Accidental>
+              <pitch>48</pitch>
+              <tpc>14</tpc>
               </Note>
             <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>RpXJVUkDKnH_a6UVwSpoSeB</eid>
-              <pitch>47</pitch>
-              <tpc>19</tpc>
+              <color r="238" g="128" b="0" a="255"/>
+              <eid>QWmxfQnZ0eN_oUwqExqqBeF</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>pgoTrhwu9KD_eUfA8NdEMRP</eid>
+                </Accidental>
+              <pitch>49</pitch>
+              <tpc>21</tpc>
               </Note>
-            </Chord>
-          <Chord>
-            <eid>sjPRjii4GcN_5wcFDtSuq9O</eid>
-            <durationType>16th</durationType>
             <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>jxN8CkYCuqO_FmCtY8juCr</eid>
-              <pitch>47</pitch>
-              <tpc>19</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <eid>c8BFKP10F5M_AjK47GxId0C</eid>
-            <durationType>16th</durationType>
-            <Note>
-              <color r="0" g="0" b="0" a="255"/>
-              <eid>jfm5wQ/hlyF_8Vwdd1xn35G</eid>
+              <color r="215" g="82" b="255" a="255"/>
+              <eid>ddNrVr6bUCG_1EZWsoIjNHH</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>XhJgQ5PRUzL_P6gIOolfUyJ</eid>
+                </Accidental>
               <pitch>50</pitch>
               <tpc>16</tpc>
               </Note>
-            </Chord>
-          <Chord>
-            <eid>YtBw8Nc2lDM_UV7TruEMxeK</eid>
-            <durationType>eighth</durationType>
+            <Note>
+              <color r="0" g="0" b="255" a="255"/>
+              <eid>/9yOvFfegoC_0fS80QuBKM</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>lBUXtgDWEME_YiDDDanX1XM</eid>
+                </Accidental>
+              <pitch>51</pitch>
+              <tpc>23</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="102" b="34" a="255"/>
+              <eid>Tb2dRdXNUAH_+3SZACnbDXK</eid>
+              <pitch>52</pitch>
+              <tpc>18</tpc>
+              </Note>
             <Note>
               <color r="255" g="0" b="0" a="255"/>
-              <eid>nTH6qgnWTeH_5V7lVI57x5L</eid>
-              <pitch>43</pitch>
+              <eid>SGOz7bpCQ5_pf/bZBNJQuK</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>cRkohh4dmYM_Kt6ojPK36jC</eid>
+                </Accidental>
+              <pitch>53</pitch>
+              <tpc>13</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>i1UghQaZhiL_mLU383avwrP</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>UAl7hOSRHAL_xJADh4jz8hO</eid>
+                </Accidental>
+              <pitch>54</pitch>
+              <tpc>20</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>6ainItAyDDE_kC5+W74dHlC</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>gMOU8s6qodG_y0eF50NoPpO</eid>
+                </Accidental>
+              <pitch>55</pitch>
               <tpc>15</tpc>
               </Note>
             <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>S27MPC9W6GP_jYBp55uBBJP</eid>
-              <pitch>47</pitch>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>bgy1UbE1ieH_mQmF+utlBqJ</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>HtQFCLbjWNF_gc98PaNYx7K</eid>
+                </Accidental>
+              <pitch>56</pitch>
+              <tpc>22</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>n93L5criN5F_vIkli6lv0bN</eid>
+              <Accidental>
+                <subtype>accidentalNatural</subtype>
+                <eid>jH8m4DDLLrE_EvuEx50NjGO</eid>
+                </Accidental>
+              <pitch>57</pitch>
+              <tpc>17</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>oOcQQTAuZEH_M7fym1/hcAN</eid>
+              <Accidental>
+                <subtype>accidentalSharp</subtype>
+                <eid>iGn6YQhwOON_vTCDBKy+zTE</eid>
+                </Accidental>
+              <pitch>58</pitch>
+              <tpc>24</tpc>
+              </Note>
+            <Note>
+              <color r="0" g="0" b="0" a="255"/>
+              <eid>n5LDz/6H10O_r9MoLlPWwOP</eid>
+              <pitch>59</pitch>
               <tpc>19</tpc>
               </Note>
             </Chord>
-          <Chord>
-            <eid>XDCGjbuDtkN_OZY8NbSQqUC</eid>
-            <durationType>eighth</durationType>
-            <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>ilhcCjs1BNH_2f7U/0pR9bD</eid>
-              <pitch>43</pitch>
-              <tpc>15</tpc>
-              </Note>
-            <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>8Lihj7FefCM_gSebGT5kiIN</eid>
-              <pitch>47</pitch>
-              <tpc>19</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <eid>MSU1JzObyzP_JtVNVxKt4jM</eid>
-            <durationType>eighth</durationType>
-            <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>95cTALBzNgO_2qS6VPhJ9WD</eid>
-              <pitch>43</pitch>
-              <tpc>15</tpc>
-              </Note>
-            <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>tsKVhv7PSOP_TW7rSl66rZK</eid>
-              <pitch>47</pitch>
-              <tpc>19</tpc>
-              </Note>
-            </Chord>
-          <Chord>
-            <eid>J7a8BZsrJ9G_lovTKU05TbM</eid>
-            <durationType>eighth</durationType>
-            <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>U6Lt6bd1tgE_jlMqQ8TZlVG</eid>
-              <pitch>43</pitch>
-              <tpc>15</tpc>
-              </Note>
-            <Note>
-              <color r="255" g="0" b="0" a="255"/>
-              <eid>bnYPizu5QFO_7JqTB0gYZHH</eid>
-              <pitch>47</pitch>
-              <tpc>19</tpc>
-              </Note>
-            </Chord>
+          <Rest>
+            <eid>k988cd95v6K_cEo1gf+QltP</eid>
+            <durationType>half</durationType>
+            </Rest>
           </voice>
         </Measure>
       <Measure>

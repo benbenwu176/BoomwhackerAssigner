@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.hex": "hexEditor.hexedit",
         "stdio.h": "c",
         "gen.h": "c",
         "atomic": "cpp",
@@ -78,6 +79,7 @@
         "xlocmes": "cpp",
         "xlocmon": "cpp",
         "xloctime": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "csignal": "cpp"
     }
 }

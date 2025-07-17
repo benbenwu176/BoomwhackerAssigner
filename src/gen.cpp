@@ -117,9 +117,11 @@ int main(int argc, char *argv[]) {
     assignment->assign();
     assignment->write();
   } catch (const std::runtime_error& e) {
-      std::cerr << "Error: " << e.what() << std::endl;
+      std::cerr << "\nError: " << e.what() << std::endl;
+      return 1;
   } catch (...) {
-    std::cerr << "An unknown error has occurred." << std::endl;
+    std::cerr << "\nAn unknown error has occurred. " << std::endl;
+    return 1;
   }
 
   return 0;
