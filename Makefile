@@ -39,3 +39,7 @@ genpy:
 genpyall: all genpy
 
 .PHONY: all clean genpy genpyall
+
+test:
+	g++ archive/test.cpp -o archive/test
+	./archive/test

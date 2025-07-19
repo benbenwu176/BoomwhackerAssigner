@@ -9,11 +9,29 @@ typedef struct Config {
   // Parameter data
   int num_players; // The number of players in the ensemble
   int hold_limit; // The max # of boomwhackers that can be played at once
-  int whackers_per_pitch; // The number of boomwhackers per pitch
   int seed; // Optional RNG seed
 
   // Rate data
   double switch_time; // The time, in seconds, it takes a player to switch boomwhackers
+
+  bool enable_whacker_priority = true;
+  
+  // std::vector<int> whacker_quantities = {
+  //   2,3,5,3,5,5,3,5,3,5,3,5,
+  //   7,4,4,4,4,4,4,5,4,4,4,4,
+  //   2,2,2,2,2,2,2,2
+  // };
+  std::vector<int> whacker_quantities = {
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    2, 2, 2, 2, 2, 2, 2, 2
+  };
+
+  std::vector<double> switch_times = {
+    2, 2, 2, 
+    2, 2, 2,
+    2, 2, 2
+  };
 
   Config(int num_notes, const std::vector<int> &params, const std::vector<double> &rates);
 } Config;
@@ -34,9 +52,9 @@ inline Config::Config(int num_notes, const std::vector<int> &params, const std::
   // Parameter data
   num_players = params[0];
   hold_limit = params[1];
-  whackers_per_pitch = params[2];
-  seed = params[3];
+  seed = params[2];
+
 
   // Rate data
-  switch_time = rates[0] + 0.0001; // Add by small amount to avoid floating point errors
+  switch_time = rates[0] - 0.0001; // Add by small amount to avoid floating point errors
 }

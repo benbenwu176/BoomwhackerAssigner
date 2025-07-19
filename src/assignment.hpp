@@ -42,7 +42,8 @@ public:
   void init_graph();
   void write();
   void assign();
-  int add_existing(Note* note);
+  std::vector<Note*> add_existing(Note* note);
+  int add_new_whacker(Note* note);
   int add_note(Note* note);
   Boomwhacker* find_whacker(int pitch);
 };

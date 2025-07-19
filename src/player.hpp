@@ -2,6 +2,9 @@
 
 #include "note.hpp"
 #include "boomwhacker.hpp"
+#include <unordered_set>
+#include <iterator>
+#include <type_traits>
 
 class Bucket {
 public:
@@ -24,4 +27,6 @@ public:
   Bucket* bucket; // The player's bucket of notes. Refer to documentation for details.
 
   Player(int id, int hold_limit, double switch_time);
+  std::vector<Note*> conflicts(std::vector<Note*>::iterator end, Note* note);
+  void add_note_to_whacker(Note* note);
 };

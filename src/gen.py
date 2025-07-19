@@ -12,17 +12,19 @@ from datetime import datetime
 print("Starting...")
 gen_out_path = 'output\\gen_output.txt'
 notes_out_path = 'output\\notes.csv'
+chords_out_path = 'output\\chords.csv'
+measures_out_path = 'output\\measures.csv'
 gen_exe_path = 'build\\gen.exe'
 
 start_time = time.perf_counter()
-filename = 'time'
+filename = 'humu'
 score = ms3.Score(f'.\\data\\{filename}.mscz').mscx
 score_bs4 = score.parsed
 build_time = time.perf_counter()
 show_conflicting = True
 
 # red, green, blue, purple, orange, light blue, pink, brown, black, TODO: gray?, light green but like different
-colors = ['#FF0000', '#006622', '#0000FF', "#D752FF", '#EE8000', '#00A0FF', '#FF90FF', '#AA5500', '#33DD00']
+colors = ['#FF0000', '#006622', '#0000FF', "#720AD3", '#EE8000', '#00A0FF', '#FF90FF', '#AA5500', '#33DD00']
 # TODO: Add more colors
 
 notes_df = score.notes()
@@ -99,7 +101,6 @@ def gen():
   params = {
     'num_players': 9, # number of players in the ensemble
     'hold_limit': 2, # maximum number of whackers someone can play at once
-    'whackers_per_pitch': 4, # the number of whackers available for each pitch, we are poor so we have 2
     'seed': 0, # optional RNG seed
   }
   rates = {
@@ -175,6 +176,9 @@ def recolor(notes):
   notes_df['capped'] = [note.capped for note in notes]
   notes_df['conflicting'] = [note.conflicting for note in notes]
   notes_df.to_csv(notes_out_path)
+  # measures_df.to_csv(chords_out_path)
+  # measures_df.to_csv(measures_out_path)
+
   # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and durations overlap
   STUPID_PEOPLE_BUF = 0.001
   # Recolor notes to their assigned player
@@ -189,7 +193,7 @@ def recolor(notes):
                   midi=[row['midi']], color_html = color)
       if (show_conflicting and row['conflicting'] == True):
         minutes, seconds = divmod(row['time'], 60)
-        f.write(f"Conflicting note in measure {row['mc']}, time: {int(minutes)}:{seconds:.2f}\n")
+        f.write(f"Conflicting note in measure {row['mc']}, time: {int(minutes)}:{seconds:05.2f}\n")
   
   # Write recolored assignment to file
   score.store_score(f'./data/{filename}.mscx')
@@ -201,6 +205,8 @@ def recolor(notes):
 # TODO: remove ties
 # TODO: remove trills (see macabre.mscx)
 # TODO: count number of caps used
+# TODO: fix time calculations to not jump an extra partial when switching time mid measure, and reformat to handle note duration/trills
+# TODO: when conflicting, color with optimal player and add cross notehead
 
 get_chord_timings()
 chords_time = time.perf_counter()

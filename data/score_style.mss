@@ -1244,10 +1244,10 @@
     <copyrightFrameFgColor r="0" g="0" b="0" a="255"/>
     <copyrightFrameBgColor r="255" g="255" b="255" a="0"/>
     <pageNumberFontFace>Edwin</pageNumberFontFace>
-    <pageNumberFontSize>11</pageNumberFontSize>
+    <pageNumberFontSize>9</pageNumberFontSize>
     <pageNumberLineSpacing>1</pageNumberLineSpacing>
     <pageNumberFontSpatiumDependent>0</pageNumberFontSpatiumDependent>
-    <pageNumberFontStyle>1</pageNumberFontStyle>
+    <pageNumberFontStyle>0</pageNumberFontStyle>
     <pageNumberColor r="0" g="0" b="0" a="255"/>
     <pageNumberAlign>center,top</pageNumberAlign>
     <pageNumberOffset x="0" y="0"/>

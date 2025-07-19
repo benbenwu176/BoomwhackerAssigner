@@ -1,0 +1,3 @@
+,mc,mn,quarterbeats,duration_qb,keysig,timesig,act_dur,mc_offset,numbering_offset,dont_count,barline,breaks,repeats,next
+0,1,1,0,4.0,0,4/4,1,0,,,,,firstMeasure,"(2,)"
+1,2,2,4,4.0,0,4/4,1,0,,,,,lastMeasure,"(-1,)"

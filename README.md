@@ -31,3 +31,5 @@ That being said, the steps it takes are given as follows.
 3. Attempts to find a boomwhacker available to allocate to a new, non-conflicting player.
 
 If the note was not assigned by any of the attempts, then the note is marked as conflicting and is left uncolored.
+
+Uses C++ 17
