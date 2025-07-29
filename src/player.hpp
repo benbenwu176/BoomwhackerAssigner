@@ -28,5 +28,7 @@ public:
 
   Player(int id, int hold_limit, double switch_time);
   std::vector<Note*> conflicts(std::vector<Note*>::iterator end, Note* note);
-  void add_note_to_whacker(Note* note);
+  void add_whacker(Boomwhacker* whacker);
+  void add_note(Note* note);
+  Boomwhacker* get_whacker(int pitch);
 };

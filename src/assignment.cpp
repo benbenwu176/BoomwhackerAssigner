@@ -110,14 +110,11 @@ void Assignment::init_graph() {
  */
 void Assignment::write()
 {
-  Note *note_data = notes.data();
   _setmode(_fileno(stdout), O_BINARY);
   // Write # of conflicts in the final assignment
   int num_conflicts = 0;
-  for (int i = 0; i < cfg->num_notes; i++)
-  {
-    if (notes[i].conflicting)
-    {
+  for (int i = 0; i < cfg->num_notes; i++) {
+    if (notes[i].conflicting) {
       num_conflicts++;
     }
   }
@@ -127,13 +124,86 @@ void Assignment::write()
   // Write flattened graph of the final assignment
   std::vector<int> flattened_graph = adjacency_graph->flatten();
   std::cout.write(reinterpret_cast<const char *>(flattened_graph.data()), sizeof(int) * cfg->num_players);
-  // Write the notes in the final assignment
-  std::cout.write(reinterpret_cast<const char *>(note_data), sizeof(Note) * cfg->num_notes);
+
+  // Write relevant note fields to genpy.py
+  for (int i = 0; i < notes.size(); i++) {
+    Note note = notes[i];
+    int player_id = note.player != nullptr ? note.player->id : -1;
+    std::cout.write(reinterpret_cast<const char*>(&note.time), sizeof(double));
+    std::cout.write(reinterpret_cast<const char*>(&player_id), sizeof(int));
+    std::cout.write(reinterpret_cast<const char*>(&note.capped), sizeof(bool));
+    std::cout.write(reinterpret_cast<const char*>(&note.conflicting), sizeof(bool));
+  }
+  std::cout.flush();
 }
 
-/**
- * @brief Whacker search condition
- */
+// Find and return all used whackers of a given pitch
+std::vector<Boomwhacker*> Assignment::find_used_whackers(int pitch) {
+  std::vector<Boomwhacker*> ret;
+  int table_index = pitch - C3_MIDI;
+  int table_index_capped = table_index + OCTAVE_INTERVAL;
+
+  // Find all natural used whackers
+  if (table_index >= 0 && table_index < NUM_WHACKER_PITCHES) {
+    std::vector<Boomwhacker*> uncapped_whackers = whacker_table[table_index];
+    for (auto& w : uncapped_whackers) {
+      if (w->used && w->get_real_pitch() == pitch) {
+        ret.push_back(w);
+      }
+    }
+  }
+
+  // Find all capped used whackers
+  if (table_index_capped >= 0 && table_index_capped < NUM_WHACKER_PITCHES) {
+    std::vector<Boomwhacker*> capped_whackers = whacker_table[table_index_capped];
+    for (auto&w : capped_whackers) {
+      if (w->used && w->get_real_pitch() == pitch) {
+        ret.push_back(w);
+      }
+    }
+  }
+  return ret;
+}
+
+// Find note in note array at or before the given time
+Note* Assignment::find_closest_before(const std::vector<Note*> notes, double target) {
+  auto comp = [](double value, const Note* note) {
+    return value < note->time;
+  };
+  auto it = std::upper_bound(notes.begin(), notes.end(), target, comp);
+  if (it == notes.begin()) {
+    return nullptr;
+  } else {
+    --it;
+    return *it;
+  }
+}
+
+// Returns a list of the players who most recently played this note pitch at or before a given time.
+std::vector<Note*> Assignment::get_mrp_queue(int pitch, double time) {
+  // Conjure up a list of used whackers at pitch
+  std::vector<Boomwhacker*> used_whackers = find_used_whackers(pitch);
+
+  // Binary search whacker note list by time to find the nearest notes
+  std::vector<Note*> ret;
+  for (auto& whacker : used_whackers) {
+    std::vector<Note*> whacker_notes = whacker->notes;
+    Note* nearest = find_closest_before(whacker_notes, time);
+    if (nearest != nullptr) {
+      // Insert to return vector
+      int i = 0;
+      while (i < ret.size() && nearest->time < ret[i]->time) {
+        i++;
+      }
+      ret.insert(ret.begin() + i, nearest);
+    }
+  }
+
+  // Return list of most recently played notes in increasing order of closeness to target time
+  return ret;
+}
+
+// Whacker search cond
 bool unused(Boomwhacker* w) {
   return !w->used;
 }
@@ -185,22 +255,18 @@ Boomwhacker* Assignment::find_whacker(int pitch) {
     } else {
       return *uncapped_whacker;
     }
-    
-  // Return whatever is left
   } else if (uncapped_found) {
+    // Return the only found whacker (uncapped)
     return *uncapped_whacker;
   } else if (capped_found) {
+    // Return the only found whacker (capped)
     (*capped_whacker)->cap();
     return *capped_whacker;
   } else {
+    // No whacker found
     return nullptr;
   }
 
-}
-
-// Assign notes to players giving priority to whoever has the least
-bool whackers_asc(const Player* a, const Player* b) {
-  return a->whackers.size() < b->whackers.size();
 }
 
 /**
@@ -209,25 +275,43 @@ bool whackers_asc(const Player* a, const Player* b) {
  * 
  * @return A list of all conflicting notes to be used for offloading
  */
-std::vector<Note*> Assignment::add_existing(Note* note) {
-  std::vector<Player*> queue = mrp->get_queue(note->pitch);
-  std::vector<Note*> all_conflicts = {note};
+std::optional<std::vector<Note*>> Assignment::add_existing(Note* note) {
+  std::vector<Note*> queue = get_mrp_queue(note->pitch, note->time);
+  std::vector<Note*> all_conflicts;
   for (int i = 0; i < queue.size(); i++) {
     // Search for non-conflicting player in the MRP to add this to
-    Player* player = queue[i];
+    Player* player = queue[i]->player;
     std::vector<Note*> conflicts = player->conflicts(player->notes.end(), note);
+
+    // Assign to first player with no conflicts
     if (conflicts.empty()) {
-      player->notes.push_back(note);
-      note->player = player->id;
-      mrp->add(player, note);
-      player->add_note_to_whacker(note);
+      // Assign note
+      assign_note(note, player->get_whacker(note->pitch), player, false);
       std::cerr << "MRP ";
-      return conflicts;
+
+      // Return successful add (nullopt)
+      return std::nullopt;
     } else {
       all_conflicts.insert(all_conflicts.end(), conflicts.begin(), conflicts.end());
     }
   }
+  // Return all notes that conflict
   return all_conflicts;
+}
+
+/*
+ * Attempt to offload to other players that have this note
+ *
+ * Tries a breadth-first search of the options at the first level,
+ * then resorts to depth-first if the previous attempts failed.
+ */
+int Assignment::add_offload(Note* note, std::vector<Note*> all_conflicts) {
+  return 1;
+}
+
+// Sort in increasing order of BWs
+bool whackers_asc(const Player* a, const Player* b) {
+  return a->whackers.size() < b->whackers.size();
 }
 
 /**
@@ -238,25 +322,26 @@ int Assignment::add_new_whacker(Note* note) {
   Boomwhacker* whacker = find_whacker(note->pitch);
   if (whacker == nullptr) {
     return 1;
-  }
-  // TODO: insert player with new bw in sorted place in list instead of sorting every time
-  std::sort(players.begin(), players.end(), whackers_asc);
-  // Find player who should play this note
-  auto p = find_if(players.begin(), players.end(), [note](Player* p){
+  }  
+
+  // Find player that has no conflicts with this note
+  auto it = find_if(players.begin(), players.end(), [note](Player* p){
     return p->conflicts(p->notes.end(), note).empty();
   });
-  if (p != players.end()) {
+  if (it != players.end()) {
     // On successful add, Add note to whacker & player, whacker to player, player to MRP
-    Player* player = *p;
-    note->whacker = whacker;
-    note->player = player->id;
-    note->capped = whacker->capped;
-    whacker->used = true;
-    whacker->notes.push_back(note);
-    player->notes.push_back(note);
-    player->whackers.push_back(whacker);
-    mrp->add(player, note);
-    std::cerr << "Whacker " << whacker->pitch << " " << (whacker->capped ? "capped":"uncapped");
+    Player* player = *it;
+    assign_note(note, whacker, player, true);
+    std::cerr << "Whacker " << whacker->pitch << " ";
+    if (whacker->capped) {
+      std::cerr << "capped " << whacker->get_real_pitch() << " ";
+    } else {
+      std::cerr << "uncapped" << " ";
+    }
+
+    // Resort to assign notes to players giving priority to whoever has the least
+    std::sort(players.begin(), players.end(), whackers_asc);
+
     return 0;
   } else {
     whacker->used = false;
@@ -265,34 +350,58 @@ int Assignment::add_new_whacker(Note* note) {
   }
 }
 
+// Skip assignment of this note
+void Assignment::skip(Note* note) {
+  std::cerr << "Conflicting ";
+  note->player = nullptr;
+  note->conflicting = true;
+}
+
+void Assignment::assign_note(Note* note, Boomwhacker* whacker, Player* player, bool new_whacker) {
+  // Assign note whacker, player, and capped status
+  note->whacker = whacker;
+  note->player = player;
+  note->capped = whacker->capped;
+
+  // Set whacker as used and add note to vector of played notes
+  whacker->used = true;
+  whacker->add_note(note);
+
+  // Add player note and whacker if new
+  if (new_whacker) {
+    player->add_whacker(whacker);
+  }
+  player->add_note(note);
+
+  std::cerr << "P" << player->id << " ";
+}
 
 /**
  * @brief Adds a note to the assignment
  */
 int Assignment::add_note(Note* note) {
   if (note->pitch < C2_MIDI || note->pitch > G5_MIDI) {
-    // goto skip;
-    throw std::runtime_error("Pitch not within range: " + std::to_string(note->pitch));
+    skip(note);
+    return 1;
+    // throw std::runtime_error("Pitch not within range: " + std::to_string(note->pitch));
   }
 
   std::cerr << "\nStart " << note->pitch << " " << note->id << " ";
   // Try to add to MRP
-  std::vector<Note*> all_conflicts = add_existing(note);
-  int success = all_conflicts.empty();
+  auto conflicts = add_existing(note);
+  bool success = conflicts == std::nullopt;
   if (success) return 0;
+
   std::cerr << "Middle ";
-  all_conflicts.erase(all_conflicts.begin());
+  std::vector<Note*> all_conflicts = *conflicts;
   // Try to offload a conflicting note of players in MRP
-  // if (add_offload(note) == 0) return 0;
+  if (add_offload(note, all_conflicts) == 0) return 0;
   std::cerr << "End ";
   // Try to allocate new BW
   if (add_new_whacker(note) == 0) return 0;
   
   // All attempts to add have failed thus far. get fucked.
-skip:
-  std::cerr << "Conflicting ";
-  note->player = -1;
-  note->conflicting = true;
+  skip(note);
   return 1;
 }
 

@@ -169,15 +169,22 @@ std::vector<Note*> Player::conflicts(std::vector<Note*>::iterator end, Note* not
 
 }
 
-/**
- * @brief Adds a note to the player's corresponding boomwhacker
- */
-void Player::add_note_to_whacker(Note* note) {
-  int pitch = note->pitch;
+void Player::add_whacker(Boomwhacker* whacker) {
+  whackers.push_back(whacker);
+}
+
+void Player::add_note(Note* note) {
+  notes.push_back(note);
+}
+
+
+// Finds a whacker in this player's inventory that matches the given note's pitch
+Boomwhacker* Player::get_whacker(int pitch) {
   auto whacker = std::find_if(whackers.begin(), whackers.end(), [pitch](Boomwhacker* w){return w->get_real_pitch() == pitch;});
   if (whacker == whackers.end()) {
-    throw std::runtime_error("Player lacks corresponding whacker.");
+    std::string s = "Player " + std::to_string(id) + " lacks corresponding whacker.";
+    throw std::runtime_error(s);
   } else {
-    (*whacker)->add_note(note);
+    return *whacker;
   }
 }

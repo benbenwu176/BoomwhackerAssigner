@@ -1,12 +1,13 @@
 #pragma once
 
 class Boomwhacker;
+class Player;
 
 typedef struct Note {
   double time;          // The time, in seconds, the note occurs at in the piece
-  Boomwhacker* whacker; // The index of the boomwhacker that is used for this note
+  Boomwhacker* whacker; // The boomwhacker that is used for this note
+  Player* player;       // The player (ptr) that plays this note
   int id;               // Index of the note within the note array
-  int player;           // The player that this note is assigned to
   int pitch;            // MIDI pitch value
   bool capped;          // Whether the note is played with a capped boomwhacker
   bool proximate;       // Whether the note is proximate
@@ -18,8 +19,8 @@ typedef struct Note {
 inline Note::Note(int id, int pitch, double time) {
   this->time = time;
   whacker = nullptr;
+  player = nullptr;
   this->id = id;
-  player = -1;
   this->pitch = pitch;
   capped = false;
   proximate = false;

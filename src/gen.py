@@ -1,5 +1,6 @@
 import ms3
 import numpy as np
+import pandas as pd
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import struct
@@ -17,7 +18,7 @@ measures_out_path = 'output\\measures.csv'
 gen_exe_path = 'build\\gen.exe'
 
 start_time = time.perf_counter()
-filename = 'humu'
+filename = 'mario'
 score = ms3.Score(f'.\\data\\{filename}.mscz').mscx
 score_bs4 = score.parsed
 build_time = time.perf_counter()
@@ -31,9 +32,24 @@ notes_df = score.notes()
 chords_df = score.chords()
 measures_df = score.measures()
 
+notes_df.to_csv(notes_out_path)
+measures_df.to_csv(chords_out_path)
+measures_df.to_csv(measures_out_path)
+
+def to_fraction(val):
+    if pd.isna(val) or val == '':
+        return None               # or Fraction(0), or leave as NaN
+    try:
+        # Fraction can parse strings like '3/4' or '5', but not '2.5'
+        return Fraction(val)
+    except ValueError:
+        # Fallback for float strings
+        return Fraction(float(val))
+
 chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(float)
 chords_df.sort_values(by=['quarterbeats'], inplace=True)
-chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(Fraction)
+# chords_df['quarterbeats'] = chords_df['quarterbeats'].apply(Fraction)
+chords_df['quarterbeats'] = chords_df['quarterbeats'].map(to_fraction)
 
 def get_chord_timings():
   # Initialize variables for time calculation
@@ -139,9 +155,9 @@ def gen():
   if (proc.returncode != 0):
     raise Exception("Assignment generation failed.")
 
-  # IMPORTANT: Maintain this struct format with the corresponding Note struct in gen.h
-  Note = namedtuple('Note', ['time', 'whacker', 'id', 'player', 'pitch', 'capped', 'proximate', 'conflicting'])
-  note_struct_format = "dPiii???x" # Double, pointer, integer, bool, padding
+  # IMPORTANT: Maintain this struct format with written fields in assignment.cpp
+  Note = namedtuple('Note', ['time', 'player', 'capped', 'conflicting'])
+  note_struct_format = "di??" # Double, pointer, integer, bool, padding
   note_struct_size = struct.calcsize(note_struct_format)
   note_struct_parser = struct.Struct(note_struct_format)
   notes = []
@@ -152,6 +168,7 @@ def gen():
   # Read num of conflicting notes from the first 4 bytes of the output
   num_conflicting_notes = struct.unpack('i', note_data[:4])[0]
   print("Conflicts: " + str(num_conflicting_notes))
+
   # Read flattened array of player indexes from the next 4 * num_players bytes of the output
   player_indexes = np.frombuffer(note_data[4:4 + 4 * params['num_players']], dtype=np.int32)
   # Start reading note data from the 4 * num_players + 4 bytes offset
@@ -207,6 +224,11 @@ def recolor(notes):
 # TODO: count number of caps used
 # TODO: fix time calculations to not jump an extra partial when switching time mid measure, and reformat to handle note duration/trills
 # TODO: when conflicting, color with optimal player and add cross notehead
+# TODO: handle repeats (volta in runaway)
+# TODO: Add note heads
+# TODO: add optimize for highest global switch time
+# TODO: return file config csv filename_timestamp_hash (6 character hash based on filename, timestamp, and crypto rand)
+# TODO: MRP creation from time using used whacker binary search indexing
 
 get_chord_timings()
 chords_time = time.perf_counter()
@@ -221,4 +243,3 @@ print(f"MSCX construction time: {build_time - start_time:.6f}")
 print(f"Chord computation time: {chords_time - build_time:.6f}")
 print(f"Assignment generation time: {gen_time - chords_time:.6f}")
 print(f"Recoloring time: {color_time - gen_time:.6f}")
-# TODO: Add note heads
