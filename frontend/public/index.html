@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Boomwhacker Assigner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Boomwhacker Assigner</h1><br>
+    <text>Authored by Benjamin Wu from the Texas Society of Unconventional Drummers</text><br><br>
+    <input type="file" id="scoreFile" accept=".mscz"/>
+    <button id="sendBtn" style="background-color: rgb(255, 180, 180);">Color File</button><br>
+    <button class="preset-btn" data-preset="basic" style="background-color: rgb(17, 0, 255); color: white;">Basic</button>
+    <button class="preset-btn" data-preset="sound" style="background-color: #bf5700; color: white;">Texas SOUnD</button>
+    <button class="preset-btn" data-preset="harvard" style="background-color: #A51C30; color: white;">Harvard THUD</button>
+    <button class="preset-btn" data-preset="studio" style="background-color: #500000; color: white;">A&M Percussion Studio</button>
+    <button class="preset-btn" data-preset="clear">Clear All</button>
+    <div id="status"></div>
+  </div>
+
+  <div class="main">
+    <!-- Left half -->
+    <div class="column" id="left-col">
+      <h2><span class="tooltip" data-tooltip="The # of each boomwhacker available.">Whacker Quantities<span class="tooltip-text"></span></span></h2>
+      <div class="param-grid">
+        <div class="param-col" id="col0"></div>
+        <div class="param-col" id="col1"></div>
+        <div class="param-col" id="col2"></div>
+      </div>
+    </div>
+
+    <!-- Right half -->
+    <div class="column" id="right-col">
+      <h2>Player Settings &amp; Other Parameters</h2>
+
+      <label>
+        <span class="tooltip" data-tooltip="The # of players in your ensemble.">
+          Number of players:<span class="tooltip-text"></span>
+        </span>
+        <input id="numPlayers" type="number" min="0" max="99" value="0"/>
+      </label>
+
+      <table id="players-table">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th><span class="tooltip" data-tooltip="The number of boomwhackers a player can hold at once. (integer)">Hold limit<span class="tooltip-text"></span></span></th>
+            <th><span class="tooltip" data-tooltip="The time it takes for a player to switch from one boomwhacker to another. (double)">Switch time (seconds)<span class="tooltip-text"></span></span></th>
+          </tr>
+        </thead>
+        <tbody id="players-body"></tbody>
+      </table>
+
+      <!-- <h2><span class="tooltip" data-tooltip="Additional string parameters">Params F–H<span class="tooltip-text"></span></span></h2> -->
+      <!-- <label>
+        <span class="tooltip" data-tooltip="Explanation for Param F">Param F:<span class="tooltip-text"></span></span>
+        <input id="paramF" type="text"/>
+      </label>
+      <label>
+        <span class="tooltip" data-tooltip="Explanation for Param G">Param G:<span class="tooltip-text"></span></span>
+        <input id="paramG" type="text"/>
+      </label>
+      <label>
+        <span class="tooltip" data-tooltip="Explanation for Param H">Param H:<span class="tooltip-text"></span></span>
+        <input id="paramH" type="text"/>
+      </label> -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -102,40 +102,33 @@ Player::Player(int id, int hold_limit, double switch_time) {
  */
 template<typename Iter, typename Proj>
 std::vector<typename std::iterator_traits<Iter>::value_type>
-last_n_unique_by(Iter first,
-                 Iter last,
-                 std::size_t n,
-                 typename std::iterator_traits<Iter>::value_type initial,
-                 Proj proj)
-{
-    using T   = typename std::iterator_traits<Iter>::value_type;
-    using Key = std::invoke_result_t<Proj, T>;
+last_n_unique_by(Iter first, Iter last, std::size_t n,
+                 typename std::iterator_traits<Iter>::value_type initial, Proj proj) {
+  using T   = typename std::iterator_traits<Iter>::value_type;
+  using Key = std::invoke_result_t<Proj, T>;
 
-    std::vector<T>          result;
-    std::unordered_set<Key> seen;
+  std::vector<T>          result;
+  std::unordered_set<Key> seen;
 
-    // 1) Insert the initial element first:
-    Key init_key = proj(initial);
-    seen.insert(init_key);
-    result.push_back(initial);
+  // 1) Insert the initial element first:
+  Key init_key = proj(initial);
+  seen.insert(init_key);
+  result.push_back(initial);
 
-    // 2) Now walk backwards through [first, last),
-    //    stopping when we've collected n total elements:
-    auto rbegin = std::make_reverse_iterator(last);
-    auto rend   = std::make_reverse_iterator(first);
+  // 2) Now walk backwards through [first, last),
+  //    stopping when we've collected n total elements:
+  auto rbegin = std::make_reverse_iterator(last);
+  auto rend   = std::make_reverse_iterator(first);
 
-    for (auto rit = rbegin;
-         rit != rend && result.size() < n;
-         ++rit)
-    {
-        T elem = *rit;
-        Key key = proj(elem);
-        if (seen.insert(key).second) { 
-            result.push_back(elem);
-        }
+  for (auto rit = rbegin; rit != rend && result.size() < n; ++rit) {
+    T elem = *rit;
+    Key key = proj(elem);
+    if (seen.insert(key).second) { 
+        result.push_back(elem);
     }
+  }
 
-    return result;
+  return result;
 }
 
 /**
@@ -144,9 +137,68 @@ last_n_unique_by(Iter first,
  * @return A list of conflicting notes, excluding the note to be added. Returns an empty vector if 
  * no conflicts occurred.
  */
-std::vector<Note*> Player::conflicts(std::vector<Note*>::iterator end, Note* note) {
+std::vector<Note*> Player::conflicts_back(std::vector<Note*>::iterator end, Note* note) {
   // Create ordered set of notes by pitch
+  log(notes.size());
   auto bucket = last_n_unique_by(notes.begin(), end, hold_limit + 1, note,
+    [](Note* n){return n->pitch;});
+  
+  // Bucket size = hold capacity (# of hands), no confict
+  if (bucket.size() <= hold_limit) {
+    bucket.clear();
+  } else {
+    // Bucket full, check for timing conflict
+    double latest_time = bucket.front()->time;
+    double earliest_time = bucket.back()->time;
+    double delta = std::abs(latest_time - earliest_time);
+    if (delta < switch_time) {
+      // Conflict between played note and last note, return list of conflicting notes (excluding the note that was attempted to be added)
+      bucket.erase(bucket.begin());
+    } else {
+      // Time to switch, no conflict
+      bucket.clear();
+    }
+  }
+  return bucket;
+
+}
+
+template<typename Iter, typename Proj>
+std::vector<typename std::iterator_traits<Iter>::value_type>
+first_n_unique_by(Iter first, Iter last, std::size_t n, 
+                  typename std::iterator_traits<Iter>::value_type initial, Proj proj) {
+  using T   = typename std::iterator_traits<Iter>::value_type;
+  using Key = std::invoke_result_t<Proj, T>;
+
+  std::vector<T>          result;
+  std::unordered_set<Key> seen;
+
+  // 1) Seed with the initial element:
+  Key init_key = proj(initial);
+  seen.insert(init_key);
+  result.push_back(initial);
+  // 2) Walk forward through [first, last),
+  //    stopping when we've collected n total elements:
+  for (auto it = first; it != last && result.size() < n; ++it) {
+      T const& elem = *it;
+      Key key = proj(elem);
+      if (seen.insert(key).second) {
+          result.push_back(elem);
+      }
+  }
+
+  return result;
+}
+
+/**
+ * @brief Checks if a note is conflicting with the player at a given point in time
+ * 
+ * @return A list of conflicting notes, excluding the note to be added. Returns an empty vector if 
+ * no conflicts occurred.
+ */
+std::vector<Note*> Player::conflicts_front(std::vector<Note*>::iterator start, Note* note) {
+  // Create ordered set of notes by pitch
+  auto bucket = first_n_unique_by(start, notes.end(), hold_limit + 1, note,
     [](Note* n){return n->pitch;});
 
   // Bucket size = hold capacity (# of hands), no confict
@@ -156,10 +208,10 @@ std::vector<Note*> Player::conflicts(std::vector<Note*>::iterator end, Note* not
     // Bucket full, check for timing conflict
     double latest_time = bucket.front()->time;
     double earliest_time = bucket.back()->time;
-    double delta = latest_time - earliest_time;
+    double delta = std::abs(latest_time - earliest_time);
     if (delta < switch_time) {
       // Conflict between played note and last note, return list of conflicting notes (excluding the note that was attempted to be added)
-      bucket.pop_back();
+      bucket.erase(bucket.begin());
     } else {
       // Time to switch, no conflict
       bucket.clear();
@@ -174,6 +226,7 @@ void Player::add_whacker(Boomwhacker* whacker) {
 }
 
 void Player::add_note(Note* note) {
+  note->player_idx = notes.size();
   notes.push_back(note);
 }
 

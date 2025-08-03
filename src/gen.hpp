@@ -16,6 +16,7 @@
 #include "note.hpp"
 #include "player.hpp"
 #include "config.hpp"
+#include "globals.hpp"
 
 extern Config* cfg;
 extern Assignment* assignment;

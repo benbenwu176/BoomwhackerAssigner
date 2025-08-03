@@ -43,3 +43,6 @@ genpyall: all genpy
 test:
 	g++ archive/test.cpp -o archive/test
 	./archive/test
+
+server:
+	node ./frontend/server.js

@@ -10,6 +10,7 @@
 #include "player.hpp"
 #include "boomwhacker.hpp"
 #include "graph.hpp"
+#include <cassert>
 
 
 /* 
@@ -47,14 +48,13 @@ public:
 
   // Assignment functions
   std::optional<std::vector<Note*>> add_existing(Note* note);
-  int add_offload(Note* note, std::vector<Note*> all_conflicts);
+  int add_offload(Note* note, std::vector<Note*> all_conflicts, add_flags flags);
   int add_new_whacker(Note* note);
   void skip(Note* note);
   void assign_note(Note* note, Boomwhacker* whacker, Player* player, bool new_whacker);
   int add_note(Note* note);
   Boomwhacker* find_whacker(int pitch);
   std::vector<Boomwhacker*> find_used_whackers(int pitch);
-  Note* find_closest_before(const std::vector<Note*> notes, double time);
   std::vector<Note*> get_mrp_queue(int pitch, double time);
 };
 

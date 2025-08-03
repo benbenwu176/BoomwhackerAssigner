@@ -10,6 +10,8 @@
 
 #define PITCH_TO_INDEX(pitch) (pitch - C2_MIDI)
 
+#include <iostream>
+
 typedef enum {
     NO_RECURSE = 0 << 0, // Disables recursive offloading
     RECURSE = 1 << 0, // Allows recursive offloading
@@ -18,3 +20,13 @@ typedef enum {
     ROOT = 1 << 3, // Denotes the root of the recursive offloading tree
     LAST_RESORT = RECURSE | ALLOCATE | PROXIMATE // Allows all options to be used
 } add_flags;
+
+// Basic variadic log function: prints each argument followed by a space
+template<typename... Args>
+inline void log(Args&&... args) {
+  ((std::cerr << std::forward<Args>(args) << ' '), ...);
+}
+
+inline void log_line() {
+  std::cerr << std::endl;
+}

@@ -6,11 +6,14 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 import struct
 import subprocess
 import time
+from pathlib import Path
 from fractions import Fraction
 from collections import namedtuple
 from datetime import datetime
 
 print("Starting...")
+# source_dir = Path(__file__).parent.resolve()
+# root_dir = source_dir.parent.resolve()
 gen_out_path = 'output\\gen_output.txt'
 notes_out_path = 'output\\notes.csv'
 chords_out_path = 'output\\chords.csv'

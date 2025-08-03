@@ -1,4 +1,4 @@
-Date and Time: 2025-07-29 18:36:24
+Date and Time: 2025-07-31 22:43:27
 Number of notes: 2715
 Number of parameters: 3
 Number of rates: 1
@@ -7,2954 +7,694 @@ Times: 0 0 0.15625 0.15625 0.46875 0.46875 0.625 0.625 0.78125 0.78125 0.9375 0.
 Parameters: 9 2 0 
 Rates: 2 
 
-Start 72 0 Middle End P0 Whacker 72 uncapped 
-Start 76 1 Middle End P1 Whacker 76 uncapped 
-Start 72 2 P0 MRP 
-Start 76 3 P1 MRP 
-Start 72 4 P0 MRP 
-Start 76 5 P1 MRP 
-Start 72 6 P0 MRP 
-Start 76 7 P1 MRP 
-Start 67 8 Middle End P2 Whacker 67 uncapped 
-Start 72 9 P0 MRP 
-Start 72 10 P0 MRP 
-Start 76 11 P1 MRP 
-Start 76 12 P1 MRP 
-Start 79 13 Middle End P3 Whacker 79 uncapped 
-Start 47 14 Middle End P4 Whacker 59 capped 47 
-Start 55 15 Middle End P5 Whacker 55 uncapped 
-Start 52 16 Middle End P6 Whacker 52 uncapped 
-Start 60 17 Middle End P7 Whacker 60 uncapped 
-Start 67 18 P2 MRP 
-Start 72 19 P0 MRP 
-Start 64 20 Middle End P8 Whacker 64 uncapped 
-Start 67 21 P2 MRP 
-Start 48 22 Middle End P8 Whacker 48 uncapped 
-Start 55 23 P5 MRP 
-Start 64 24 P8 MRP 
-Start 67 25 P2 MRP 
-Start 60 26 P7 MRP 
-Start 64 27 P8 MRP 
-Start 48 28 P8 MRP 
-Start 57 29 Middle End P7 Whacker 57 uncapped 
-Start 69 30 Middle End P6 Whacker 69 uncapped 
-Start 71 31 Middle End P5 Whacker 71 uncapped 
-Start 43 32 Middle End P4 Whacker 55 capped 43 
-Start 52 33 P6 MRP 
-Start 71 34 P5 MRP 
-Start 70 35 Middle End P3 Whacker 70 uncapped 
-Start 69 36 P6 MRP 
-Start 52 37 P6 MRP 
-Start 60 38 P7 MRP 
-Start 67 39 P2 MRP 
-Start 64 40 P8 MRP 
-Start 67 41 P2 MRP 
-Start 48 42 P8 MRP 
-Start 55 43 P5 MRP 
-Start 69 44 P6 MRP 
-Start 65 45 Middle End P2 Whacker 65 uncapped 
-Start 67 46 P2 MRP 
-Start 52 47 P6 MRP 
-Start 60 48 P7 MRP 
-Start 67 49 P2 MRP 
-Start 64 50 P8 MRP 
-Start 60 51 P7 MRP 
-Start 50 52 Middle End P1 Whacker 50 uncapped 
-Start 59 53 Middle End P0 Whacker 59 uncapped 
-Start 62 54 Middle End P0 Whacker 62 uncapped 
-Start 59 55 P0 MRP 
-Start 52 56 P6 MRP 
-Start 60 57 P7 MRP 
-Start 67 58 P2 MRP 
-Start 72 59 Middle End P1 Whacker 72 uncapped 
-Start 64 60 P8 MRP 
-Start 67 61 P2 MRP 
-Start 48 62 P8 MRP 
-Start 55 63 P5 MRP 
-Start 64 64 P8 MRP 
-Start 67 65 P2 MRP 
-Start 60 66 P7 MRP 
-Start 64 67 P8 MRP 
-Start 48 68 P8 MRP 
-Start 57 69 P7 MRP 
-Start 69 70 P6 MRP 
-Start 71 71 P5 MRP 
-Start 43 72 P4 MRP 
-Start 52 73 P6 MRP 
-Start 71 74 P5 MRP 
-Start 70 75 P3 MRP 
-Start 69 76 P6 MRP 
-Start 52 77 P6 MRP 
-Start 60 78 P7 MRP 
-Start 67 79 P2 MRP 
-Start 64 80 P8 MRP 
-Start 67 81 P2 MRP 
-Start 48 82 P8 MRP 
-Start 55 83 P5 MRP 
-Start 69 84 P6 MRP 
-Start 65 85 P2 MRP 
-Start 67 86 P2 MRP 
-Start 52 87 P6 MRP 
-Start 60 88 P7 MRP 
-Start 67 89 P2 MRP 
-Start 64 90 P8 MRP 
-Start 60 91 P7 MRP 
-Start 50 92 P1 MRP 
-Start 59 93 P0 MRP 
-Start 62 94 P0 MRP 
-Start 59 95 P0 MRP 
-Start 40 96 Middle End P3 Whacker 52 capped 40 
-Start 48 97 P8 MRP 
-Start 79 98 P3 MRP 
-Start 48 99 P8 MRP 
-Start 55 100 P5 MRP 
-Start 78 101 Middle End P2 Whacker 78 uncapped 
-Start 48 102 P8 MRP 
-Start 55 103 P5 MRP 
-Start 77 104 Middle End P4 Whacker 77 uncapped 
-Start 75 105 Middle End P5 Whacker 75 uncapped 
-Start 52 106 P6 MRP 
-Start 60 107 P7 MRP 
-Start 76 108 P1 MRP 
-Start 45 109 Middle End P6 Whacker 57 capped 45 
-Start 53 110 Middle End P7 Whacker 53 uncapped 
-Start 67 111 P2 MRP 
-Start 69 112 Middle End P8 Whacker 69 uncapped 
-Start 52 113 P6 MRP 
-Start 60 114 P7 MRP 
-Start 72 115 P1 MRP 
-Start 52 116 P6 MRP 
-Start 60 117 P7 MRP 
-Start 52 118 P6 MRP 
-Start 60 119 P7 MRP 
-Start 69 120 P8 MRP 
-Start 45 121 P6 MRP 
-Start 53 122 P7 MRP 
-Start 72 123 P1 MRP 
-Start 74 124 Middle End P4 Whacker 74 uncapped 
-Start 40 125 P3 MRP 
-Start 48 126 P8 MRP 
-Start 79 127 P3 MRP 
-Start 43 128 P4 MRP 
-Start 52 129 P6 MRP 
-Start 78 130 P2 MRP 
-Start 43 131 P4 MRP 
-Start 52 132 P6 MRP 
-Start 77 133 Middle End P5 Whacker 77 uncapped 
-Start 75 134 P5 MRP 
-Start 48 135 P8 MRP 
-Start 55 136 Middle End P2 Whacker 67 capped 55 
-Start 52 137 P6 MRP 
-Start 60 138 P7 MRP 
-Start 76 139 P1 MRP 
-Start 72 140 P1 MRP 
-Start 72 141 P1 MRP 
-Start 72 142 P1 MRP 
-Start 47 143 P4 MRP 
-Start 55 144 P2 MRP 
-Start 40 145 P3 MRP 
-Start 48 146 P8 MRP 
-Start 79 147 P3 MRP 
-Start 48 148 P8 MRP 
-Start 55 149 P2 MRP 
-Start 78 150 P2 MRP 
-Start 48 151 P8 MRP 
-Start 55 152 P2 MRP 
-Start 77 153 P5 MRP 
-Start 75 154 P5 MRP 
-Start 52 155 P6 MRP 
-Start 60 156 P7 MRP 
-Start 76 157 P1 MRP 
-Start 45 158 P6 MRP 
-Start 53 159 P7 MRP 
-Start 67 160 Middle End P8 Whacker 79 capped 67 
-Start 69 161 Middle End Conflicting 
-Start 52 162 P6 MRP 
-Start 60 163 P7 MRP 
-Start 72 164 P1 MRP 
-Start 52 165 P6 MRP 
-Start 60 166 P7 MRP 
-Start 52 167 P6 MRP 
-Start 60 168 P7 MRP 
-Start 69 169 Middle End Conflicting 
-Start 45 170 P6 MRP 
-Start 53 171 P7 MRP 
-Start 72 172 P1 MRP 
-Start 74 173 P4 MRP 
-Start 40 174 P3 MRP 
-Start 48 175 P8 MRP 
-Start 44 176 Middle End P3 Whacker 56 capped 44 
-Start 51 177 Middle End P0 Whacker 51 uncapped 
-Start 72 178 P1 MRP 
-Start 75 179 P5 MRP 
-Start 44 180 P3 MRP 
-Start 51 181 P0 MRP 
-Start 72 182 P1 MRP 
-Start 75 183 P5 MRP 
-Start 41 184 Middle End P1 Whacker 53 capped 41 
-Start 50 185 Middle End P0 Whacker 50 uncapped 
-Start 70 186 Middle End P2 Whacker 70 uncapped 
-Start 74 187 P4 MRP 
-Start 40 188 P3 MRP 
-Start 48 189 P8 MRP 
-Start 67 190 P8 MRP 
-Start 72 191 P1 MRP 
-Start 52 192 P6 MRP 
-Start 55 193 P2 MRP 
-Start 52 194 P6 MRP 
-Start 55 195 P2 MRP 
-Start 43 196 P4 MRP 
-Start 48 197 P8 MRP 
-Start 40 198 P3 MRP 
-Start 48 199 P8 MRP 
-Start 79 200 P3 MRP 
-Start 48 201 P8 MRP 
-Start 55 202 P2 MRP 
-Start 78 203 P2 MRP 
-Start 48 204 P8 MRP 
-Start 55 205 P2 MRP 
-Start 77 206 P5 MRP 
-Start 75 207 P5 MRP 
-Start 52 208 P6 MRP 
-Start 60 209 P7 MRP 
-Start 76 210 P1 MRP 
-Start 45 211 P6 MRP 
-Start 53 212 P7 MRP 
-Start 67 213 P8 MRP 
-Start 69 214 Middle End Conflicting 
-Start 52 215 P6 MRP 
-Start 60 216 P7 MRP 
-Start 72 217 P1 MRP 
-Start 52 218 P6 MRP 
-Start 60 219 P7 MRP 
-Start 52 220 P6 MRP 
-Start 60 221 P7 MRP 
-Start 69 222 Middle End Conflicting 
-Start 45 223 P6 MRP 
-Start 53 224 P7 MRP 
-Start 72 225 P1 MRP 
-Start 74 226 P4 MRP 
-Start 40 227 P3 MRP 
-Start 48 228 P8 MRP 
-Start 79 229 P3 MRP 
-Start 43 230 P4 MRP 
-Start 52 231 P6 MRP 
-Start 78 232 P2 MRP 
-Start 43 233 P4 MRP 
-Start 52 234 P6 MRP 
-Start 77 235 P5 MRP 
-Start 75 236 P5 MRP 
-Start 48 237 P8 MRP 
-Start 55 238 P2 MRP 
-Start 52 239 P6 MRP 
-Start 60 240 P7 MRP 
-Start 76 241 P1 MRP 
-Start 72 242 P1 MRP 
-Start 72 243 P1 MRP 
-Start 72 244 P1 MRP 
-Start 47 245 P4 MRP 
-Start 55 246 P2 MRP 
-Start 40 247 P3 MRP 
-Start 48 248 P8 MRP 
-Start 79 249 P3 MRP 
-Start 48 250 P8 MRP 
-Start 55 251 P2 MRP 
-Start 78 252 P2 MRP 
-Start 48 253 P8 MRP 
-Start 55 254 P2 MRP 
-Start 77 255 P5 MRP 
-Start 75 256 P5 MRP 
-Start 52 257 P6 MRP 
-Start 60 258 P7 MRP 
-Start 76 259 P1 MRP 
-Start 45 260 P6 MRP 
-Start 53 261 P7 MRP 
-Start 67 262 P8 MRP 
-Start 69 263 Middle End Conflicting 
-Start 52 264 P6 MRP 
-Start 60 265 P7 MRP 
-Start 72 266 P1 MRP 
-Start 52 267 P6 MRP 
-Start 60 268 P7 MRP 
-Start 52 269 P6 MRP 
-Start 60 270 P7 MRP 
-Start 69 271 Middle End Conflicting 
-Start 45 272 P6 MRP 
-Start 53 273 P7 MRP 
-Start 72 274 P1 MRP 
-Start 74 275 P4 MRP 
-Start 40 276 P3 MRP 
-Start 48 277 P8 MRP 
-Start 44 278 P3 MRP 
-Start 51 279 P0 MRP 
-Start 72 280 P1 MRP 
-Start 75 281 P5 MRP 
-Start 44 282 P3 MRP 
-Start 51 283 P0 MRP 
-Start 72 284 P1 MRP 
-Start 75 285 P5 MRP 
-Start 41 286 P1 MRP 
-Start 50 287 P0 MRP 
-Start 70 288 P2 MRP 
-Start 74 289 P4 MRP 
-Start 40 290 P3 MRP 
-Start 48 291 P8 MRP 
-Start 67 292 P8 MRP 
-Start 72 293 P1 MRP 
-Start 52 294 P6 MRP 
-Start 55 295 P2 MRP 
-Start 52 296 P6 MRP 
-Start 55 297 P2 MRP 
-Start 43 298 P4 MRP 
-Start 48 299 P8 MRP 
-Start 36 300 Middle End P7 Whacker 48 capped 36 
-Start 44 301 P3 MRP 
-Start 68 302 Middle End P6 Whacker 68 uncapped 
-Start 72 303 P1 MRP 
-Start 68 304 P6 MRP 
-Start 72 305 P1 MRP 
-Start 44 306 P3 MRP 
-Start 51 307 P0 MRP 
-Start 68 308 P6 MRP 
-Start 72 309 P1 MRP 
-Start 44 310 P3 MRP 
-Start 51 311 P0 MRP 
-Start 68 312 P6 MRP 
-Start 72 313 P1 MRP 
-Start 72 314 P1 MRP 
-Start 48 315 P8 MRP 
-Start 56 316 Middle End P7 Whacker 56 uncapped 
-Start 74 317 P4 MRP 
-Start 48 318 P8 MRP 
-Start 55 319 P2 MRP 
-Start 76 320 P1 MRP 
-Start 72 321 P1 MRP 
-Start 40 322 P3 MRP 
-Start 48 323 P8 MRP 
-Start 69 324 P8 MRP 
-Start 40 325 P3 MRP 
-Start 48 326 P8 MRP 
-Start 67 327 P2 MRP 
-Start 36 328 P7 MRP 
-Start 43 329 P4 MRP 
-Start 36 330 P7 MRP 
-Start 44 331 P3 MRP 
-Start 68 332 P6 MRP 
-Start 72 333 P1 MRP 
-Start 68 334 P6 MRP 
-Start 72 335 P1 MRP 
-Start 44 336 P3 MRP 
-Start 51 337 P0 MRP 
-Start 68 338 P6 MRP 
-Start 72 339 P1 MRP 
-Start 44 340 P3 MRP 
-Start 51 341 P0 MRP 
-Start 68 342 P6 MRP 
-Start 72 343 P1 MRP 
-Start 72 344 P1 MRP 
-Start 48 345 P8 MRP 
-Start 56 346 P7 MRP 
-Start 74 347 P4 MRP 
-Start 76 348 P1 MRP 
-Start 48 349 P8 MRP 
-Start 55 350 P2 MRP 
-Start 40 351 P3 MRP 
-Start 48 352 P8 MRP 
-Start 40 353 P3 MRP 
-Start 48 354 P8 MRP 
-Start 36 355 P7 MRP 
-Start 43 356 P4 MRP 
-Start 36 357 P7 MRP 
-Start 44 358 P3 MRP 
-Start 68 359 P6 MRP 
-Start 72 360 P1 MRP 
-Start 68 361 P6 MRP 
-Start 72 362 P1 MRP 
-Start 44 363 P3 MRP 
-Start 51 364 P0 MRP 
-Start 68 365 P6 MRP 
-Start 72 366 P1 MRP 
-Start 44 367 P3 MRP 
-Start 51 368 P0 MRP 
-Start 68 369 P6 MRP 
-Start 72 370 P1 MRP 
-Start 72 371 P1 MRP 
-Start 48 372 P8 MRP 
-Start 56 373 P7 MRP 
-Start 74 374 P4 MRP 
-Start 48 375 P8 MRP 
-Start 55 376 P2 MRP 
-Start 76 377 P1 MRP 
-Start 72 378 P1 MRP 
-Start 40 379 P3 MRP 
-Start 48 380 P8 MRP 
-Start 69 381 P8 MRP 
-Start 40 382 P3 MRP 
-Start 48 383 P8 MRP 
-Start 67 384 P2 MRP 
-Start 36 385 P7 MRP 
-Start 43 386 P4 MRP 
-Start 72 387 P1 MRP 
-Start 76 388 P1 MRP 
-Start 72 389 P1 MRP 
-Start 76 390 P1 MRP 
-Start 72 391 P1 MRP 
-Start 76 392 P1 MRP 
-Start 72 393 P1 MRP 
-Start 76 394 P1 MRP 
-Start 67 395 P2 MRP 
-Start 72 396 P1 MRP 
-Start 72 397 P1 MRP 
-Start 76 398 P1 MRP 
-Start 76 399 P1 MRP 
-Start 79 400 P3 MRP 
-Start 67 401 P2 MRP 
-Start 60 402 P7 MRP 
-Start 60 403 P7 MRP 
-Start 64 404 P8 MRP 
-Start 55 405 P2 MRP 
-Start 60 406 P7 MRP 
-Start 52 407 P6 MRP 
-Start 55 408 P2 MRP 
-Start 55 409 P2 MRP 
-Start 55 410 P2 MRP 
-Start 55 411 P2 MRP 
-Start 67 412 P2 MRP 
-Start 67 413 P2 MRP 
-Start 67 414 P2 MRP 
-Start 43 415 P4 MRP 
-Start 55 416 P2 MRP 
-Start 67 417 P2 MRP 
-Start 71 418 P5 MRP 
-Start 79 419 P3 MRP 
-Start 47 420 P4 MRP 
-Start 59 421 P0 MRP 
-Start 77 422 P5 MRP 
-Start 45 423 P6 MRP 
-Start 57 424 P7 MRP 
-Start 69 425 P8 MRP 
-Start 70 426 P3 MRP 
-Start 47 427 P4 MRP 
-Start 59 428 P0 MRP 
-Start 71 429 P5 MRP 
-Start 67 430 P2 MRP 
-Start 79 431 P3 MRP 
-Start 55 432 P2 MRP 
-Start 43 433 P4 MRP 
-Start 48 434 P8 MRP 
-Start 76 435 P1 MRP 
-Start 75 436 P5 MRP 
-Start 52 437 P6 MRP 
-Start 76 438 P1 MRP 
-Start 55 439 P2 MRP 
-Start 75 440 P5 MRP 
-Start 76 441 P1 MRP 
-Start 55 442 P2 MRP 
-Start 69 443 P8 MRP 
-Start 53 444 P7 MRP 
-Start 72 445 P1 MRP 
-Start 45 446 P6 MRP 
-Start 45 447 P6 MRP 
-Start 48 448 P8 MRP 
-Start 48 449 P8 MRP 
-Start 76 450 P1 MRP 
-Start 48 451 P8 MRP 
-Start 75 452 P5 MRP 
-Start 52 453 P6 MRP 
-Start 76 454 P1 MRP 
-Start 76 455 P1 MRP 
-Start 55 456 P2 MRP 
-Start 72 457 P1 MRP 
-Start 74 458 P4 MRP 
-Start 43 459 P4 MRP 
-Start 47 460 Middle End Conflicting 
-Start 47 461 Middle End Conflicting 
-Start 50 462 P0 MRP 
-Start 76 463 P1 MRP 
-Start 48 464 P8 MRP 
-Start 75 465 P5 MRP 
-Start 52 466 P6 MRP 
-Start 76 467 P1 MRP 
-Start 55 468 P2 MRP 
-Start 75 469 P5 MRP 
-Start 76 470 P1 MRP 
-Start 69 471 P8 MRP 
-Start 53 472 P7 MRP 
-Start 72 473 P1 MRP 
-Start 45 474 P6 MRP 
-Start 45 475 P6 MRP 
-Start 48 476 P8 MRP 
-Start 76 477 P1 MRP 
-Start 48 478 P8 MRP 
-Start 76 479 P1 MRP 
-Start 52 480 P6 MRP 
-Start 76 481 P1 MRP 
-Start 67 482 P2 MRP 
-Start 43 483 P4 MRP 
-Start 69 484 P8 MRP 
-Start 48 485 P8 MRP 
-Start 72 486 P1 MRP 
-Start 67 487 P2 MRP 
-Start 68 488 P6 MRP 
-Start 53 489 P7 MRP 
-Start 69 490 P8 MRP 
-Start 69 491 P8 MRP 
-Start 53 492 P7 MRP 
-Start 72 493 P1 MRP 
-Start 72 494 P1 MRP 
-Start 65 495 P2 MRP 
-Start 57 496 P7 MRP 
-Start 69 497 P8 MRP 
-Start 52 498 P6 MRP 
-Start 67 499 P2 MRP 
-Start 67 500 P2 MRP 
-Start 52 501 P6 MRP 
-Start 72 502 P1 MRP 
-Start 72 503 P1 MRP 
-Start 64 504 P8 MRP 
-Start 55 505 P5 MRP 
-Start 67 506 P2 MRP 
-Start 50 507 P0 MRP 
-Start 65 508 P2 MRP 
-Start 65 509 P2 MRP 
-Start 50 510 P0 MRP 
-Start 69 511 P8 MRP 
-Start 69 512 P8 MRP 
-Start 62 513 P0 MRP 
-Start 53 514 P7 MRP 
-Start 65 515 P2 MRP 
-Start 48 516 P8 MRP 
-Start 64 517 Middle End P6 Whacker 64 uncapped 
-Start 64 518 P6 MRP 
-Start 48 519 P8 MRP 
-Start 67 520 P2 MRP 
-Start 67 521 P2 MRP 
-Start 60 522 P7 MRP 
-Start 52 523 P6 MRP 
-Start 64 524 P6 MRP 
-Start 53 525 P7 MRP 
-Start 69 526 P8 MRP 
-Start 69 527 P8 MRP 
-Start 53 528 P7 MRP 
-Start 72 529 P1 MRP 
-Start 72 530 P1 MRP 
-Start 65 531 P2 MRP 
-Start 57 532 Middle End Conflicting 
-Start 69 533 P8 MRP 
-Start 54 534 Middle End P1 Whacker 54 uncapped 
-Start 69 535 P8 MRP 
-Start 69 536 P8 MRP 
-Start 54 537 P1 MRP 
-Start 72 538 P1 MRP 
-Start 72 539 P1 MRP 
-Start 66 540 Middle End P3 Whacker 66 uncapped 
-Start 57 541 P7 MRP 
-Start 69 542 P8 MRP 
-Start 55 543 P5 MRP 
-Start 71 544 P5 MRP 
-Start 71 545 P5 MRP 
-Start 57 546 P7 MRP 
-Start 72 547 P1 MRP 
-Start 72 548 P1 MRP 
-Start 58 549 Middle End P8 Whacker 58 uncapped 
-Start 73 550 Middle End P4 Whacker 73 uncapped 
-Start 73 551 P4 MRP 
-Start 59 552 P0 MRP 
-Start 74 553 P4 MRP 
-Start 74 554 P4 MRP 
-Start 55 555 P5 MRP 
-Start 79 556 P3 MRP 
-Start 43 557 Middle End Conflicting 
-Start 55 558 P5 MRP 
-Start 79 559 P3 MRP 
-Start 47 560 P4 MRP 
-Start 53 561 P7 MRP 
-Start 71 562 P5 MRP 
-Start 69 563 P8 MRP 
-Start 65 564 P2 MRP 
-Start 47 565 P4 MRP 
-Start 53 566 P7 MRP 
-Start 71 567 P5 MRP 
-Start 47 568 P4 MRP 
-Start 53 569 P7 MRP 
-Start 71 570 P5 MRP 
-Start 69 571 P8 MRP 
-Start 65 572 P2 MRP 
-Start 44 573 P3 MRP 
-Start 47 574 P4 MRP 
-Start 52 575 P6 MRP 
-Start 64 576 P6 MRP 
-Start 71 577 P5 MRP 
-Start 76 578 P1 MRP 
-Start 71 579 P5 MRP 
-Start 76 580 P1 MRP 
-Start 40 581 P3 MRP 
-Start 45 582 Middle End Conflicting 
-Start 64 583 P6 MRP 
-Start 49 584 Middle End P5 Whacker 49 uncapped 
-Start 52 585 P6 MRP 
-Start 69 586 P8 MRP 
-Start 64 587 P6 MRP 
-Start 40 588 P3 MRP 
-Start 45 589 Middle End Conflicting 
-Start 67 590 P2 MRP 
-Start 69 591 P8 MRP 
-Start 49 592 P5 MRP 
-Start 52 593 P6 MRP 
-Start 64 594 P6 MRP 
-Start 40 595 P3 MRP 
-Start 45 596 Middle End Conflicting 
-Start 69 597 P8 MRP 
-Start 64 598 P6 MRP 
-Start 49 599 P5 MRP 
-Start 52 600 P6 MRP 
-Start 67 601 P2 MRP 
-Start 69 602 P8 MRP 
-Start 40 603 P3 MRP 
-Start 45 604 Middle End Conflicting 
-Start 69 605 P8 MRP 
-Start 49 606 P5 MRP 
-Start 52 607 P6 MRP 
-Start 61 608 Middle End P5 Whacker 61 uncapped 
-Start 64 609 P6 MRP 
-Start 45 610 Middle End Conflicting 
-Start 50 611 P0 MRP 
-Start 62 612 P0 MRP 
-Start 53 613 P7 MRP 
-Start 57 614 P7 MRP 
-Start 69 615 P8 MRP 
-Start 57 616 P7 MRP 
-Start 45 617 Middle End Conflicting 
-Start 50 618 P0 MRP 
-Start 62 619 P0 MRP 
-Start 69 620 P8 MRP 
-Start 53 621 P7 MRP 
-Start 57 622 P7 MRP 
-Start 62 623 P0 MRP 
-Start 45 624 Middle End Conflicting 
-Start 50 625 P0 MRP 
-Start 69 626 P8 MRP 
-Start 57 627 P7 MRP 
-Start 53 628 P7 MRP 
-Start 57 629 P7 MRP 
-Start 62 630 P0 MRP 
-Start 69 631 P8 MRP 
-Start 45 632 Middle End Conflicting 
-Start 50 633 P0 MRP 
-Start 69 634 P8 MRP 
-Start 53 635 P7 MRP 
-Start 57 636 P7 MRP 
-Start 57 637 P7 MRP 
-Start 62 638 P0 MRP 
-Start 47 639 P4 MRP 
-Start 50 640 P0 MRP 
-Start 62 641 P0 MRP 
-Start 50 642 P0 MRP 
-Start 55 643 P5 MRP 
-Start 67 644 P2 MRP 
-Start 62 645 P0 MRP 
-Start 47 646 P4 MRP 
-Start 50 647 P0 MRP 
-Start 65 648 P2 MRP 
-Start 67 649 P2 MRP 
-Start 50 650 P0 MRP 
-Start 55 651 P5 MRP 
-Start 62 652 P0 MRP 
-Start 47 653 P4 MRP 
-Start 50 654 P0 MRP 
-Start 67 655 P2 MRP 
-Start 62 656 P0 MRP 
-Start 50 657 P0 MRP 
-Start 55 658 P5 MRP 
-Start 65 659 P2 MRP 
-Start 67 660 P2 MRP 
-Start 47 661 P4 MRP 
-Start 50 662 P0 MRP 
-Start 67 663 P2 MRP 
-Start 50 664 P0 MRP 
-Start 55 665 P5 MRP 
-Start 59 666 Middle End P4 Whacker 71 capped 59 
-Start 62 667 P0 MRP 
-Start 43 668 Middle End Conflicting 
-Start 48 669 P8 MRP 
-Start 60 670 P7 MRP 
-Start 52 671 P6 MRP 
-Start 55 672 P5 MRP 
-Start 67 673 P2 MRP 
-Start 60 674 P7 MRP 
-Start 43 675 Middle End Conflicting 
-Start 48 676 P8 MRP 
-Start 64 677 P6 MRP 
-Start 67 678 P2 MRP 
-Start 52 679 P6 MRP 
-Start 55 680 P5 MRP 
-Start 60 681 P7 MRP 
-Start 58 682 P8 MRP 
-Start 64 683 P6 MRP 
-Start 67 684 P2 MRP 
-Start 58 685 P8 MRP 
-Start 64 686 P6 MRP 
-Start 67 687 P2 MRP 
-Start 57 688 P7 MRP 
-Start 63 689 Middle End P3 Whacker 63 uncapped 
-Start 66 690 P3 MRP 
-Start 56 691 Middle End P1 Whacker 68 capped 56 
-Start 62 692 P0 MRP 
-Start 65 693 P2 MRP 
-Start 40 694 Middle End Conflicting 
-Start 45 695 Middle End Conflicting 
-Start 64 696 P6 MRP 
-Start 49 697 P5 MRP 
-Start 52 698 P6 MRP 
-Start 69 699 Middle End Conflicting 
-Start 64 700 P6 MRP 
-Start 40 701 Middle End Conflicting 
-Start 45 702 Middle End Conflicting 
-Start 67 703 P2 MRP 
-Start 69 704 P8 MRP 
-Start 49 705 P5 MRP 
-Start 52 706 P6 MRP 
-Start 64 707 P6 MRP 
-Start 40 708 Middle End Conflicting 
-Start 45 709 Middle End Conflicting 
-Start 69 710 P8 MRP 
-Start 64 711 P6 MRP 
-Start 49 712 P5 MRP 
-Start 52 713 P6 MRP 
-Start 67 714 P2 MRP 
-Start 69 715 P8 MRP 
-Start 40 716 P3 MRP 
-Start 45 717 Middle End Conflicting 
-Start 69 718 P8 MRP 
-Start 49 719 P5 MRP 
-Start 52 720 P6 MRP 
-Start 61 721 P5 MRP 
-Start 64 722 P6 MRP 
-Start 45 723 Middle End Conflicting 
-Start 50 724 P0 MRP 
-Start 62 725 P0 MRP 
-Start 53 726 P7 MRP 
-Start 57 727 P7 MRP 
-Start 69 728 P8 MRP 
-Start 57 729 P7 MRP 
-Start 45 730 Middle End Conflicting 
-Start 50 731 P0 MRP 
-Start 62 732 P0 MRP 
-Start 69 733 P8 MRP 
-Start 53 734 P7 MRP 
-Start 57 735 P7 MRP 
-Start 62 736 P0 MRP 
-Start 45 737 Middle End Conflicting 
-Start 50 738 P0 MRP 
-Start 69 739 P8 MRP 
-Start 57 740 P7 MRP 
-Start 53 741 P7 MRP 
-Start 57 742 P7 MRP 
-Start 62 743 P0 MRP 
-Start 69 744 P8 MRP 
-Start 45 745 Middle End Conflicting 
-Start 50 746 P0 MRP 
-Start 69 747 P8 MRP 
-Start 53 748 P7 MRP 
-Start 57 749 P7 MRP 
-Start 57 750 P7 MRP 
-Start 62 751 P0 MRP 
-Start 47 752 P4 MRP 
-Start 50 753 P0 MRP 
-Start 67 754 P2 MRP 
-Start 50 755 P0 MRP 
-Start 55 756 P5 MRP 
-Start 71 757 P5 MRP 
-Start 67 758 P2 MRP 
-Start 47 759 P4 MRP 
-Start 50 760 P0 MRP 
-Start 69 761 P8 MRP 
-Start 71 762 P5 MRP 
-Start 50 763 P0 MRP 
-Start 55 764 P5 MRP 
-Start 67 765 P2 MRP 
-Start 47 766 P4 MRP 
-Start 50 767 P0 MRP 
-Start 71 768 P5 MRP 
-Start 67 769 P2 MRP 
-Start 50 770 P0 MRP 
-Start 55 771 P5 MRP 
-Start 69 772 P8 MRP 
-Start 71 773 P5 MRP 
-Start 47 774 P4 MRP 
-Start 50 775 P0 MRP 
-Start 71 776 P5 MRP 
-Start 50 777 P0 MRP 
-Start 55 778 P5 MRP 
-Start 59 779 P4 MRP 
-Start 62 780 P0 MRP 
-Start 43 781 Middle End Conflicting 
-Start 48 782 P8 MRP 
-Start 67 783 P2 MRP 
-Start 52 784 P6 MRP 
-Start 55 785 P5 MRP 
-Start 72 786 P1 MRP 
-Start 67 787 P2 MRP 
-Start 43 788 Middle End Conflicting 
-Start 48 789 P8 MRP 
-Start 67 790 P2 MRP 
-Start 67 791 P2 MRP 
-Start 52 792 P6 MRP 
-Start 55 793 P5 MRP 
-Start 69 794 P8 MRP 
-Start 71 795 P5 MRP 
-Start 43 796 Middle End Conflicting 
-Start 48 797 P8 MRP 
-Start 67 798 P2 MRP 
-Start 72 799 P1 MRP 
-Start 52 800 P6 MRP 
-Start 55 801 P5 MRP 
-Start 67 802 P2 MRP 
-Start 71 803 P5 MRP 
-Start 43 804 P4 MRP 
-Start 48 805 P8 MRP 
-Start 67 806 P2 MRP 
-Start 72 807 P1 MRP 
-Start 40 808 P3 MRP 
-Start 43 809 P4 MRP 
-Start 43 810 P4 MRP 
-Start 48 811 P8 MRP 
-Start 76 812 P1 MRP 
-Start 55 813 P5 MRP 
-Start 60 814 P7 MRP 
-Start 52 815 P6 MRP 
-Start 55 816 P5 MRP 
-Start 72 817 P1 MRP 
-Start 55 818 P5 MRP 
-Start 60 819 P7 MRP 
-Start 67 820 P2 MRP 
-Start 53 821 P7 MRP 
-Start 57 822 Middle End Conflicting 
-Start 69 823 P8 MRP 
-Start 72 824 P1 MRP 
-Start 57 825 Middle End Conflicting 
-Start 60 826 P7 MRP 
-Start 72 827 P1 MRP 
-Start 54 828 Middle End P6 Whacker 54 uncapped 
-Start 57 829 Middle End Conflicting 
-Start 54 830 P6 MRP 
-Start 57 831 Middle End Conflicting 
-Start 60 832 P7 MRP 
-Start 69 833 P8 MRP 
-Start 43 834 P4 MRP 
-Start 48 835 P8 MRP 
-Start 67 836 P2 MRP 
-Start 52 837 P6 MRP 
-Start 55 838 P5 MRP 
-Start 72 839 P1 MRP 
-Start 43 840 P4 MRP 
-Start 48 841 P8 MRP 
-Start 72 842 P1 MRP 
-Start 52 843 P6 MRP 
-Start 55 844 P5 MRP 
-Start 79 845 P3 MRP 
-Start 43 846 P4 MRP 
-Start 48 847 P8 MRP 
-Start 76 848 P1 MRP 
-Start 53 849 P7 MRP 
-Start 57 850 Middle End Conflicting 
-Start 74 851 P4 MRP 
-Start 47 852 Middle End Conflicting 
-Start 50 853 P0 MRP 
-Start 50 854 P0 MRP 
-Start 55 855 P5 MRP 
-Start 67 856 P2 MRP 
-Start 43 857 P4 MRP 
-Start 48 858 P8 MRP 
-Start 76 859 P1 MRP 
-Start 55 860 P5 MRP 
-Start 60 861 P7 MRP 
-Start 52 862 P6 MRP 
-Start 55 863 P5 MRP 
-Start 72 864 P1 MRP 
-Start 55 865 P5 MRP 
-Start 60 866 P7 MRP 
-Start 67 867 P2 MRP 
-Start 53 868 P7 MRP 
-Start 57 869 Middle End Conflicting 
-Start 69 870 P8 MRP 
-Start 72 871 P1 MRP 
-Start 57 872 Middle End Conflicting 
-Start 60 873 P7 MRP 
-Start 72 874 P1 MRP 
-Start 54 875 P6 MRP 
-Start 57 876 Middle End Conflicting 
-Start 57 877 Middle End Conflicting 
-Start 60 878 P7 MRP 
-Start 69 879 P8 MRP 
-Start 47 880 P4 MRP 
-Start 50 881 P0 MRP 
-Start 67 882 P2 MRP 
-Start 53 883 P7 MRP 
-Start 57 884 Middle End Conflicting 
-Start 72 885 P1 MRP 
-Start 43 886 P4 MRP 
-Start 48 887 P8 MRP 
-Start 77 888 P5 MRP 
-Start 76 889 P1 MRP 
-Start 50 890 P0 MRP 
-Start 55 891 P5 MRP 
-Start 74 892 Middle End P2 Whacker 74 uncapped 
-Start 72 893 P1 MRP 
-Start 43 894 P4 MRP 
-Start 48 895 P8 MRP 
-Start 52 896 P6 MRP 
-Start 55 897 P5 MRP 
-Start 43 898 P4 MRP 
-Start 48 899 P8 MRP 
-Start 52 900 P6 MRP 
-Start 55 901 P5 MRP 
-Start 43 902 P4 MRP 
-Start 48 903 P8 MRP 
-Start 76 904 P1 MRP 
-Start 55 905 P5 MRP 
-Start 60 906 P7 MRP 
-Start 52 907 P6 MRP 
-Start 55 908 P5 MRP 
-Start 72 909 P1 MRP 
-Start 55 910 P5 MRP 
-Start 60 911 P7 MRP 
-Start 67 912 P2 MRP 
-Start 53 913 P7 MRP 
-Start 57 914 Middle End Conflicting 
-Start 69 915 P8 MRP 
-Start 72 916 P1 MRP 
-Start 57 917 Middle End Conflicting 
-Start 60 918 P7 MRP 
-Start 72 919 P1 MRP 
-Start 54 920 P6 MRP 
-Start 57 921 Middle End Conflicting 
-Start 57 922 Middle End Conflicting 
-Start 60 923 P7 MRP 
-Start 69 924 P8 MRP 
-Start 43 925 P4 MRP 
-Start 48 926 P8 MRP 
-Start 67 927 P2 MRP 
-Start 52 928 P6 MRP 
-Start 55 929 P5 MRP 
-Start 72 930 P1 MRP 
-Start 45 931 Middle End Conflicting 
-Start 48 932 P8 MRP 
-Start 72 933 P1 MRP 
-Start 52 934 P6 MRP 
-Start 55 935 P5 MRP 
-Start 79 936 P3 MRP 
-Start 43 937 P4 MRP 
-Start 48 938 P8 MRP 
-Start 76 939 P1 MRP 
-Start 53 940 P7 MRP 
-Start 57 941 Middle End Conflicting 
-Start 74 942 P2 MRP 
-Start 47 943 P4 MRP 
-Start 50 944 P0 MRP 
-Start 50 945 P0 MRP 
-Start 55 946 P5 MRP 
-Start 67 947 P2 MRP 
-Start 43 948 P4 MRP 
-Start 48 949 P8 MRP 
-Start 76 950 P1 MRP 
-Start 55 951 P5 MRP 
-Start 60 952 P7 MRP 
-Start 52 953 P6 MRP 
-Start 55 954 P5 MRP 
-Start 72 955 P1 MRP 
-Start 55 956 P5 MRP 
-Start 60 957 P7 MRP 
-Start 67 958 P2 MRP 
-Start 53 959 P7 MRP 
-Start 57 960 Middle End Conflicting 
-Start 69 961 P8 MRP 
-Start 72 962 P1 MRP 
-Start 57 963 Middle End Conflicting 
-Start 60 964 P7 MRP 
-Start 72 965 P1 MRP 
-Start 54 966 P6 MRP 
-Start 57 967 Middle End Conflicting 
-Start 57 968 Middle End Conflicting 
-Start 60 969 P7 MRP 
-Start 69 970 P8 MRP 
-Start 47 971 P4 MRP 
-Start 50 972 P0 MRP 
-Start 67 973 P2 MRP 
-Start 53 974 P7 MRP 
-Start 57 975 Middle End Conflicting 
-Start 72 976 P1 MRP 
-Start 43 977 P4 MRP 
-Start 48 978 P8 MRP 
-Start 77 979 P5 MRP 
-Start 76 980 P1 MRP 
-Start 50 981 P0 MRP 
-Start 55 982 P5 MRP 
-Start 74 983 P2 MRP 
-Start 72 984 P1 MRP 
-Start 43 985 P4 MRP 
-Start 48 986 P8 MRP 
-Start 48 987 P8 MRP 
-Start 55 988 P5 MRP 
-Start 72 989 P1 MRP 
-Start 48 990 P8 MRP 
-Start 55 991 P5 MRP 
-Start 72 992 P1 MRP 
-Start 48 993 P8 MRP 
-Start 55 994 P5 MRP 
-Start 72 995 P1 MRP 
-Start 45 996 P6 MRP 
-Start 69 997 P8 MRP 
-Start 48 998 P8 MRP 
-Start 72 999 P1 MRP 
-Start 50 1000 P0 MRP 
-Start 74 1001 P2 MRP 
-Start 48 1002 P8 MRP 
-Start 72 1003 P1 MRP 
-Start 40 1004 P3 MRP 
-Start 64 1005 P6 MRP 
-Start 41 1006 P1 MRP 
-Start 65 1007 P2 MRP 
-Start 42 1008 Middle End Conflicting 
-Start 66 1009 P3 MRP 
-Start 43 1010 P4 MRP 
-Start 67 1011 Middle End Conflicting 
-Start 43 1012 P4 MRP 
-Start 67 1013 P8 MRP 
-Start 79 1014 Middle End Conflicting 
-Start 43 1015 P4 MRP 
-Start 67 1016 P8 MRP 
-Start 79 1017 Middle End Conflicting 
-Start 43 1018 P4 MRP 
-Start 67 1019 P8 MRP 
-Start 79 1020 Middle End Conflicting 
-Start 72 1021 P1 MRP 
-Start 60 1022 P7 MRP 
-Start 62 1023 P0 MRP 
-Start 63 1024 P3 MRP 
-Start 48 1025 P8 MRP 
-Start 64 1026 P6 MRP 
-Start 63 1027 P3 MRP 
-Start 64 1028 P6 MRP 
-Start 48 1029 P8 MRP 
-Start 67 1030 P8 MRP 
-Start 69 1031 P6 MRP 
-Start 48 1032 P8 MRP 
-Start 67 1033 P8 MRP 
-Start 60 1034 P7 MRP 
-Start 40 1035 P3 MRP 
-Start 48 1036 P8 MRP 
-Start 40 1037 P3 MRP 
-Start 48 1038 P8 MRP 
-Start 55 1039 P5 MRP 
-Start 56 1040 P1 MRP 
-Start 45 1041 Middle End Conflicting 
-Start 57 1042 P7 MRP 
-Start 56 1043 P1 MRP 
-Start 57 1044 P7 MRP 
-Start 45 1045 P6 MRP 
-Start 60 1046 P7 MRP 
-Start 62 1047 P0 MRP 
-Start 45 1048 P6 MRP 
-Start 60 1049 P7 MRP 
-Start 57 1050 P7 MRP 
-Start 36 1051 Middle End Conflicting 
-Start 45 1052 P6 MRP 
-Start 36 1053 Middle End Conflicting 
-Start 45 1054 P6 MRP 
-Start 57 1055 P7 MRP 
-Start 56 1056 P1 MRP 
-Start 43 1057 P4 MRP 
-Start 55 1058 P5 MRP 
-Start 54 1059 P6 MRP 
-Start 55 1060 P5 MRP 
-Start 55 1061 P5 MRP 
-Start 67 1062 P8 MRP 
-Start 43 1063 P4 MRP 
-Start 55 1064 P5 MRP 
-Start 54 1065 P6 MRP 
-Start 55 1066 P5 MRP 
-Start 55 1067 P5 MRP 
-Start 67 1068 P8 MRP 
-Start 43 1069 P4 MRP 
-Start 55 1070 P5 MRP 
-Start 54 1071 P6 MRP 
-Start 55 1072 P5 MRP 
-Start 55 1073 P5 MRP 
-Start 67 1074 P8 MRP 
-Start 55 1075 P5 MRP 
-Start 67 1076 P8 MRP 
-Start 55 1077 P5 MRP 
-Start 69 1078 P6 MRP 
-Start 67 1079 P8 MRP 
-Start 43 1080 P4 MRP 
-Start 62 1081 P0 MRP 
-Start 50 1082 P0 MRP 
-Start 40 1083 P3 MRP 
-Start 43 1084 P4 MRP 
-Start 50 1085 P0 MRP 
-Start 62 1086 P0 MRP 
-Start 63 1087 P3 MRP 
-Start 52 1088 P6 MRP 
-Start 64 1089 P8 MRP 
-Start 63 1090 P3 MRP 
-Start 64 1091 P8 MRP 
-Start 52 1092 P6 MRP 
-Start 67 1093 P8 MRP 
-Start 69 1094 P6 MRP 
-Start 52 1095 P6 MRP 
-Start 67 1096 P8 MRP 
-Start 70 1097 P2 MRP 
-Start 52 1098 P6 MRP 
-Start 58 1099 Middle End P7 Whacker 58 uncapped 
-Start 52 1100 P6 MRP 
-Start 58 1101 P7 MRP 
-Start 68 1102 Middle End Conflicting 
-Start 57 1103 P7 MRP 
-Start 69 1104 P6 MRP 
-Start 68 1105 Middle End Conflicting 
-Start 69 1106 P6 MRP 
-Start 57 1107 P7 MRP 
-Start 72 1108 P1 MRP 
-Start 74 1109 P2 MRP 
-Start 57 1110 P7 MRP 
-Start 72 1111 P1 MRP 
-Start 69 1112 P6 MRP 
-Start 53 1113 Middle End P8 Whacker 65 capped 53 
-Start 57 1114 P7 MRP 
-Start 53 1115 P8 MRP 
-Start 57 1116 P7 MRP 
-Start 69 1117 P6 MRP 
-Start 55 1118 P5 MRP 
-Start 67 1119 P8 MRP 
-Start 66 1120 P3 MRP 
-Start 67 1121 P8 MRP 
-Start 43 1122 P4 MRP 
-Start 55 1123 P5 MRP 
-Start 55 1124 P5 MRP 
-Start 67 1125 P8 MRP 
-Start 66 1126 P3 MRP 
-Start 67 1127 P8 MRP 
-Start 43 1128 P4 MRP 
-Start 55 1129 P5 MRP 
-Start 43 1130 P4 MRP 
-Start 55 1131 P5 MRP 
-Start 55 1132 P5 MRP 
-Start 64 1133 P8 MRP 
-Start 55 1134 P5 MRP 
-Start 64 1135 P8 MRP 
-Start 48 1136 Middle End P0 Whacker 60 capped 48 
-Start 55 1137 P5 MRP 
-Start 60 1138 P7 MRP 
-Start 48 1139 P0 MRP 
-Start 55 1140 P5 MRP 
-Start 60 1141 P7 MRP 
-Start 46 1142 Middle End Conflicting 
-Start 53 1143 P7 MRP 
-Start 58 1144 Middle End Conflicting 
-Start 47 1145 P4 MRP 
-Start 54 1146 P6 MRP 
-Start 59 1147 P0 MRP 
-Start 48 1148 P0 MRP 
-Start 55 1149 P5 MRP 
-Start 60 1150 P7 MRP 
-Start 60 1151 P7 MRP 
-Start 60 1152 P7 MRP 
-Start 46 1153 Middle End Conflicting 
-Start 53 1154 P7 MRP 
-Start 58 1155 P8 MRP 
-Start 47 1156 P4 MRP 
-Start 54 1157 P6 MRP 
-Start 59 1158 P0 MRP 
-Start 48 1159 P0 MRP 
-Start 55 1160 P5 MRP 
-Start 60 1161 P7 MRP 
-Start 48 1162 P0 MRP 
-Start 55 1163 P5 MRP 
-Start 60 1164 P7 MRP 
-Start 46 1165 Middle End Conflicting 
-Start 53 1166 P7 MRP 
-Start 58 1167 P8 MRP 
-Start 47 1168 P4 MRP 
-Start 54 1169 P6 MRP 
-Start 59 1170 P0 MRP 
-Start 48 1171 P0 MRP 
-Start 55 1172 P5 MRP 
-Start 60 1173 P7 MRP 
-Start 60 1174 P7 MRP 
-Start 60 1175 P7 MRP 
-Start 59 1176 P0 MRP 
-Start 62 1177 Middle End P8 Whacker 62 uncapped 
-Start 60 1178 P7 MRP 
-Start 63 1179 P3 MRP 
-Start 48 1180 P0 MRP 
-Start 52 1181 P6 MRP 
-Start 55 1182 P5 MRP 
-Start 60 1183 P7 MRP 
-Start 64 1184 Middle End P2 Whacker 76 capped 64 
-Start 48 1185 P0 MRP 
-Start 50 1186 P1 MRP 
-Start 54 1187 P6 MRP 
-Start 62 1188 P8 MRP 
-Start 66 1189 P3 MRP 
-Start 62 1190 P8 MRP 
-Start 66 1191 P3 MRP 
-Start 60 1192 P7 MRP 
-Start 64 1193 P2 MRP 
-Start 62 1194 P8 MRP 
-Start 66 1195 P3 MRP 
-Start 51 1196 P0 MRP 
-Start 55 1197 P5 MRP 
-Start 63 1198 P3 MRP 
-Start 67 1199 P8 MRP 
-Start 51 1200 P0 MRP 
-Start 53 1201 P7 MRP 
-Start 57 1202 Middle End Conflicting 
-Start 65 1203 P2 MRP 
-Start 69 1204 P6 MRP 
-Start 65 1205 P2 MRP 
-Start 69 1206 P6 MRP 
-Start 63 1207 P3 MRP 
-Start 67 1208 P8 MRP 
-Start 65 1209 P2 MRP 
-Start 69 1210 P6 MRP 
-Start 51 1211 P0 MRP 
-Start 55 1212 P5 MRP 
-Start 58 1213 P8 MRP 
-Start 63 1214 P3 MRP 
-Start 52 1215 P6 MRP 
-Start 56 1216 P1 MRP 
-Start 59 1217 P0 MRP 
-Start 64 1218 P2 MRP 
-Start 53 1219 P7 MRP 
-Start 57 1220 P7 MRP 
-Start 60 1221 Middle End Conflicting 
-Start 65 1222 P2 MRP 
-Start 65 1223 P2 MRP 
-Start 61 1224 P5 MRP 
-Start 65 1225 P2 MRP 
-Start 63 1226 P3 MRP 
-Start 67 1227 P8 MRP 
-Start 65 1228 P2 MRP 
-Start 69 1229 P6 MRP 
-Start 62 1230 P8 MRP 
-Start 67 1231 P8 MRP 
-Start 71 1232 P5 MRP 
-Start 62 1233 P8 MRP 
-Start 67 1234 P8 MRP 
-Start 71 1235 P5 MRP 
-Start 38 1236 Middle End Conflicting 
-Start 60 1237 P7 MRP 
-Start 64 1238 P2 MRP 
-Start 60 1239 P7 MRP 
-Start 64 1240 P2 MRP 
-Start 40 1241 P3 MRP 
-Start 62 1242 P8 MRP 
-Start 66 1243 P3 MRP 
-Start 62 1244 P8 MRP 
-Start 66 1245 P3 MRP 
-Start 42 1246 Middle End Conflicting 
-Start 64 1247 P2 MRP 
-Start 68 1248 P6 MRP 
-Start 42 1249 Middle End Conflicting 
-Start 64 1250 P2 MRP 
-Start 68 1251 P6 MRP 
-Start 44 1252 Middle End Conflicting 
-Start 66 1253 P3 MRP 
-Start 70 1254 P2 MRP 
-Start 44 1255 Middle End Conflicting 
-Start 66 1256 P3 MRP 
-Start 70 1257 P2 MRP 
-Start 57 1258 P7 MRP 
-Start 57 1259 P7 MRP 
-Start 57 1260 P7 MRP 
-Start 69 1261 P6 MRP 
-Start 69 1262 P6 MRP 
-Start 76 1263 P1 MRP 
-Start 65 1264 P2 MRP 
-Start 60 1265 P7 MRP 
-Start 69 1266 P6 MRP 
-Start 76 1267 P1 MRP 
-Start 67 1268 P8 MRP 
-Start 74 1269 P2 MRP 
-Start 67 1270 P8 MRP 
-Start 74 1271 P2 MRP 
-Start 65 1272 P2 MRP 
-Start 67 1273 P8 MRP 
-Start 74 1274 P2 MRP 
-Start 60 1275 P7 MRP 
-Start 67 1276 P8 MRP 
-Start 74 1277 P2 MRP 
-Start 60 1278 P7 MRP 
-Start 69 1279 P6 MRP 
-Start 65 1280 P2 MRP 
-Start 60 1281 P7 MRP 
-Start 60 1282 P7 MRP 
-Start 60 1283 P7 MRP 
-Start 69 1284 P6 MRP 
-Start 58 1285 P8 MRP 
-Start 67 1286 P8 MRP 
-Start 58 1287 P8 MRP 
-Start 67 1288 P8 MRP 
-Start 63 1289 P3 MRP 
-Start 58 1290 P8 MRP 
-Start 67 1291 P8 MRP 
-Start 63 1292 P3 MRP 
-Start 58 1293 P8 MRP 
-Start 67 1294 P8 MRP 
-Start 69 1295 P6 MRP 
-Start 76 1296 P1 MRP 
-Start 65 1297 P2 MRP 
-Start 60 1298 P7 MRP 
-Start 60 1299 P7 MRP 
-Start 69 1300 P6 MRP 
-Start 76 1301 P1 MRP 
-Start 67 1302 P8 MRP 
-Start 74 1303 P2 MRP 
-Start 67 1304 P8 MRP 
-Start 74 1305 P2 MRP 
-Start 65 1306 P2 MRP 
-Start 67 1307 P8 MRP 
-Start 74 1308 P2 MRP 
-Start 60 1309 P7 MRP 
-Start 67 1310 P8 MRP 
-Start 74 1311 P2 MRP 
-Start 60 1312 P7 MRP 
-Start 69 1313 P6 MRP 
-Start 65 1314 P2 MRP 
-Start 60 1315 P7 MRP 
-Start 76 1316 P1 MRP 
-Start 36 1317 P7 MRP 
-Start 48 1318 P0 MRP 
-Start 36 1319 P7 MRP 
-Start 48 1320 P0 MRP 
-Start 36 1321 P7 MRP 
-Start 48 1322 P0 MRP 
-Start 36 1323 P7 MRP 
-Start 48 1324 P0 MRP 
-Start 36 1325 P7 MRP 
-Start 48 1326 P0 MRP 
-Start 36 1327 P7 MRP 
-Start 48 1328 P0 MRP 
-Start 43 1329 P4 MRP 
-Start 52 1330 P6 MRP 
-Start 67 1331 P8 MRP 
-Start 74 1332 P2 MRP 
-Start 67 1333 P8 MRP 
-Start 75 1334 P5 MRP 
-Start 40 1335 P3 MRP 
-Start 48 1336 P0 MRP 
-Start 67 1337 P8 MRP 
-Start 76 1338 P1 MRP 
-Start 43 1339 P4 MRP 
-Start 52 1340 P6 MRP 
-Start 74 1341 P2 MRP 
-Start 43 1342 P4 MRP 
-Start 52 1343 P6 MRP 
-Start 74 1344 P2 MRP 
-Start 43 1345 P4 MRP 
-Start 52 1346 P6 MRP 
-Start 74 1347 P2 MRP 
-Start 43 1348 P4 MRP 
-Start 52 1349 P6 MRP 
-Start 76 1350 P1 MRP 
-Start 40 1351 P3 MRP 
-Start 48 1352 P0 MRP 
-Start 77 1353 P5 MRP 
-Start 69 1354 P6 MRP 
-Start 72 1355 P1 MRP 
-Start 45 1356 Middle End Conflicting 
-Start 53 1357 P7 MRP 
-Start 70 1358 P2 MRP 
-Start 74 1359 P2 MRP 
-Start 69 1360 P6 MRP 
-Start 72 1361 P1 MRP 
-Start 40 1362 P3 MRP 
-Start 48 1363 P0 MRP 
-Start 70 1364 P2 MRP 
-Start 74 1365 P2 MRP 
-Start 69 1366 P6 MRP 
-Start 72 1367 P1 MRP 
-Start 45 1368 Middle End Conflicting 
-Start 53 1369 P7 MRP 
-Start 45 1370 Middle End Conflicting 
-Start 53 1371 P7 MRP 
-Start 70 1372 P2 MRP 
-Start 45 1373 Middle End Conflicting 
-Start 53 1374 P7 MRP 
-Start 69 1375 P6 MRP 
-Start 67 1376 P8 MRP 
-Start 45 1377 P6 MRP 
-Start 53 1378 P7 MRP 
-Start 65 1379 Middle End Conflicting 
-Start 40 1380 P3 MRP 
-Start 48 1381 P0 MRP 
-Start 72 1382 P1 MRP 
-Start 43 1383 P4 MRP 
-Start 52 1384 Middle End Conflicting 
-Start 67 1385 P8 MRP 
-Start 74 1386 P2 MRP 
-Start 67 1387 P8 MRP 
-Start 75 1388 P5 MRP 
-Start 40 1389 P3 MRP 
-Start 48 1390 P0 MRP 
-Start 67 1391 P8 MRP 
-Start 76 1392 P1 MRP 
-Start 43 1393 P4 MRP 
-Start 52 1394 Middle End Conflicting 
-Start 74 1395 P2 MRP 
-Start 43 1396 P4 MRP 
-Start 52 1397 Middle End Conflicting 
-Start 74 1398 P2 MRP 
-Start 43 1399 P4 MRP 
-Start 52 1400 P6 MRP 
-Start 74 1401 P2 MRP 
-Start 43 1402 P4 MRP 
-Start 52 1403 P6 MRP 
-Start 76 1404 P1 MRP 
-Start 40 1405 P3 MRP 
-Start 48 1406 P0 MRP 
-Start 77 1407 P5 MRP 
-Start 69 1408 P6 MRP 
-Start 72 1409 P1 MRP 
-Start 45 1410 Middle End Conflicting 
-Start 53 1411 P7 MRP 
-Start 72 1412 P1 MRP 
-Start 77 1413 P5 MRP 
-Start 69 1414 P6 MRP 
-Start 72 1415 P1 MRP 
-Start 40 1416 P3 MRP 
-Start 48 1417 P0 MRP 
-Start 70 1418 P2 MRP 
-Start 69 1419 P6 MRP 
-Start 67 1420 P8 MRP 
-Start 45 1421 Middle End Conflicting 
-Start 53 1422 P7 MRP 
-Start 65 1423 Middle End Conflicting 
-Start 36 1424 P7 MRP 
-Start 48 1425 P0 MRP 
-Start 36 1426 P7 MRP 
-Start 48 1427 P0 MRP 
-Start 36 1428 P7 MRP 
-Start 48 1429 P0 MRP 
-Start 36 1430 P7 MRP 
-Start 48 1431 P0 MRP 
-Start 72 1432 P1 MRP 
-Start 73 1433 P4 MRP 
-Start 43 1434 P4 MRP 
-Start 52 1435 P6 MRP 
-Start 67 1436 P8 MRP 
-Start 74 1437 P2 MRP 
-Start 67 1438 P8 MRP 
-Start 75 1439 P5 MRP 
-Start 40 1440 P3 MRP 
-Start 48 1441 P0 MRP 
-Start 67 1442 P8 MRP 
-Start 76 1443 P1 MRP 
-Start 43 1444 P4 MRP 
-Start 52 1445 P6 MRP 
-Start 74 1446 P2 MRP 
-Start 43 1447 P4 MRP 
-Start 52 1448 P6 MRP 
-Start 74 1449 P2 MRP 
-Start 43 1450 P4 MRP 
-Start 52 1451 P6 MRP 
-Start 74 1452 P2 MRP 
-Start 43 1453 P4 MRP 
-Start 52 1454 P6 MRP 
-Start 76 1455 P1 MRP 
-Start 40 1456 P3 MRP 
-Start 48 1457 P0 MRP 
-Start 77 1458 P5 MRP 
-Start 69 1459 P6 MRP 
-Start 72 1460 P1 MRP 
-Start 45 1461 Middle End Conflicting 
-Start 53 1462 P7 MRP 
-Start 70 1463 P2 MRP 
-Start 74 1464 P2 MRP 
-Start 69 1465 P6 MRP 
-Start 72 1466 P1 MRP 
-Start 40 1467 P3 MRP 
-Start 48 1468 P0 MRP 
-Start 70 1469 P2 MRP 
-Start 74 1470 P2 MRP 
-Start 69 1471 P6 MRP 
-Start 72 1472 P1 MRP 
-Start 45 1473 Middle End Conflicting 
-Start 53 1474 P7 MRP 
-Start 45 1475 Middle End Conflicting 
-Start 53 1476 P7 MRP 
-Start 70 1477 P2 MRP 
-Start 45 1478 Middle End Conflicting 
-Start 53 1479 P7 MRP 
-Start 69 1480 P6 MRP 
-Start 67 1481 P8 MRP 
-Start 45 1482 P6 MRP 
-Start 53 1483 P7 MRP 
-Start 65 1484 Middle End Conflicting 
-Start 40 1485 P3 MRP 
-Start 48 1486 P0 MRP 
-Start 72 1487 P1 MRP 
-Start 46 1488 Middle End Conflicting 
-Start 55 1489 P5 MRP 
-Start 72 1490 P1 MRP 
-Start 77 1491 P5 MRP 
-Start 70 1492 P2 MRP 
-Start 74 1493 P2 MRP 
-Start 47 1494 P4 MRP 
-Start 56 1495 P1 MRP 
-Start 69 1496 P6 MRP 
-Start 72 1497 P1 MRP 
-Start 65 1498 Middle End Conflicting 
-Start 70 1499 P2 MRP 
-Start 48 1500 P0 MRP 
-Start 57 1501 P7 MRP 
-Start 48 1502 P0 MRP 
-Start 57 1503 P7 MRP 
-Start 69 1504 P6 MRP 
-Start 70 1505 P2 MRP 
-Start 71 1506 Middle End Conflicting 
-Start 50 1507 P0 MRP 
-Start 57 1508 P7 MRP 
-Start 72 1509 P1 MRP 
-Start 72 1510 P1 MRP 
-Start 50 1511 P0 MRP 
-Start 57 1512 P7 MRP 
-Start 74 1513 P2 MRP 
-Start 65 1514 Middle End Conflicting 
-Start 43 1515 P4 MRP 
-Start 52 1516 P6 MRP 
-Start 65 1517 Middle End Conflicting 
-Start 69 1518 P6 MRP 
-Start 60 1519 P7 MRP 
-Start 65 1520 Middle End Conflicting 
-Start 40 1521 P3 MRP 
-Start 48 1522 P0 MRP 
-Start 62 1523 P8 MRP 
-Start 64 1524 P8 MRP 
-Start 45 1525 Middle End Conflicting 
-Start 53 1526 Middle End Conflicting 
-Start 65 1527 Middle End Conflicting 
-Start 40 1528 P3 MRP 
-Start 48 1529 P0 MRP 
-Start 62 1530 P8 MRP 
-Start 64 1531 P8 MRP 
-Start 45 1532 Middle End Conflicting 
-Start 53 1533 P7 MRP 
-Start 65 1534 P2 MRP 
-Start 40 1535 P3 MRP 
-Start 48 1536 P0 MRP 
-Start 62 1537 P8 MRP 
-Start 64 1538 P8 MRP 
-Start 45 1539 P6 MRP 
-Start 53 1540 P7 MRP 
-Start 65 1541 P2 MRP 
-Start 39 1542 Middle End P0 Whacker 51 capped 39 
-Start 51 1543 Middle End P7 Whacker 63 capped 51 
-Start 70 1544 P2 MRP 
-Start 39 1545 P0 MRP 
-Start 51 1546 P7 MRP 
-Start 69 1547 P6 MRP 
-Start 39 1548 P0 MRP 
-Start 51 1549 P7 MRP 
-Start 67 1550 Middle End Conflicting 
-Start 41 1551 P1 MRP 
-Start 65 1552 P2 MRP 
-Start 41 1553 P1 MRP 
-Start 41 1554 P1 MRP 
-Start 41 1555 P1 MRP 
-Start 41 1556 P1 MRP 
-Start 41 1557 P1 MRP 
-Start 41 1558 P1 MRP 
-Start 41 1559 P1 MRP 
-Start 42 1560 Middle End Conflicting 
-Start 42 1561 Middle End Conflicting 
-Start 42 1562 Middle End Conflicting 
-Start 42 1563 Middle End Conflicting 
-Start 42 1564 Middle End Conflicting 
-Start 42 1565 Middle End Conflicting 
-Start 42 1566 Middle End Conflicting 
-Start 42 1567 Middle End Conflicting 
-Start 44 1568 P3 MRP 
-Start 44 1569 P3 MRP 
-Start 44 1570 P3 MRP 
-Start 44 1571 P3 MRP 
-Start 44 1572 P3 MRP 
-Start 44 1573 P3 MRP 
-Start 44 1574 P3 MRP 
-Start 44 1575 P3 MRP 
-Start 42 1576 Middle End Conflicting 
-Start 42 1577 Middle End Conflicting 
-Start 42 1578 Middle End Conflicting 
-Start 42 1579 Middle End Conflicting 
-Start 42 1580 Middle End Conflicting 
-Start 42 1581 Middle End Conflicting 
-Start 42 1582 Middle End Conflicting 
-Start 42 1583 Middle End Conflicting 
-Start 46 1584 Middle End Conflicting 
-Start 51 1585 P7 MRP 
-Start 58 1586 P8 MRP 
-Start 46 1587 Middle End Conflicting 
-Start 51 1588 P7 MRP 
-Start 46 1589 Middle End Conflicting 
-Start 51 1590 P7 MRP 
-Start 58 1591 P8 MRP 
-Start 46 1592 Middle End Conflicting 
-Start 51 1593 P7 MRP 
-Start 58 1594 P8 MRP 
-Start 46 1595 Middle End Conflicting 
-Start 51 1596 P7 MRP 
-Start 65 1597 P2 MRP 
-Start 46 1598 Middle End Conflicting 
-Start 51 1599 P7 MRP 
-Start 46 1600 Middle End Conflicting 
-Start 51 1601 P7 MRP 
-Start 46 1602 Middle End Conflicting 
-Start 51 1603 P7 MRP 
-Start 41 1604 P1 MRP 
-Start 50 1605 P0 MRP 
-Start 41 1606 P1 MRP 
-Start 50 1607 P0 MRP 
-Start 53 1608 P7 MRP 
-Start 58 1609 P8 MRP 
-Start 41 1610 P1 MRP 
-Start 50 1611 P0 MRP 
-Start 58 1612 P8 MRP 
-Start 62 1613 P8 MRP 
-Start 41 1614 P1 MRP 
-Start 50 1615 P0 MRP 
-Start 41 1616 P1 MRP 
-Start 50 1617 P0 MRP 
-Start 62 1618 P8 MRP 
-Start 65 1619 P2 MRP 
-Start 41 1620 P1 MRP 
-Start 50 1621 P0 MRP 
-Start 58 1622 P8 MRP 
-Start 62 1623 P8 MRP 
-Start 41 1624 P1 MRP 
-Start 50 1625 P0 MRP 
-Start 62 1626 P8 MRP 
-Start 65 1627 P2 MRP 
-Start 41 1628 P1 MRP 
-Start 50 1629 P0 MRP 
-Start 44 1630 P3 MRP 
-Start 49 1631 P5 MRP 
-Start 65 1632 P2 MRP 
-Start 68 1633 P6 MRP 
-Start 44 1634 P3 MRP 
-Start 49 1635 P5 MRP 
-Start 44 1636 P3 MRP 
-Start 49 1637 P5 MRP 
-Start 44 1638 P3 MRP 
-Start 49 1639 P5 MRP 
-Start 44 1640 P3 MRP 
-Start 49 1641 P5 MRP 
-Start 65 1642 P2 MRP 
-Start 68 1643 P6 MRP 
-Start 44 1644 P3 MRP 
-Start 49 1645 P5 MRP 
-Start 44 1646 P3 MRP 
-Start 49 1647 P5 MRP 
-Start 61 1648 P5 MRP 
-Start 65 1649 P2 MRP 
-Start 44 1650 P3 MRP 
-Start 49 1651 P5 MRP 
-Start 46 1652 Middle End Conflicting 
-Start 51 1653 P7 MRP 
-Start 58 1654 P8 MRP 
-Start 70 1655 P2 MRP 
-Start 46 1656 Middle End Conflicting 
-Start 51 1657 P7 MRP 
-Start 55 1658 Middle End Conflicting 
-Start 67 1659 P8 MRP 
-Start 46 1660 Middle End Conflicting 
-Start 51 1661 P7 MRP 
-Start 46 1662 Middle End Conflicting 
-Start 51 1663 P7 MRP 
-Start 58 1664 P8 MRP 
-Start 70 1665 P2 MRP 
-Start 46 1666 Middle End Conflicting 
-Start 51 1667 P7 MRP 
-Start 58 1668 P8 MRP 
-Start 70 1669 P2 MRP 
-Start 60 1670 P7 MRP 
-Start 72 1671 P1 MRP 
-Start 46 1672 Middle End Conflicting 
-Start 51 1673 P7 MRP 
-Start 46 1674 Middle End Conflicting 
-Start 51 1675 P7 MRP 
-Start 67 1676 P8 MRP 
-Start 79 1677 P3 MRP 
-Start 41 1678 P1 MRP 
-Start 45 1679 P6 MRP 
-Start 60 1680 P7 MRP 
-Start 67 1681 P8 MRP 
-Start 41 1682 P1 MRP 
-Start 45 1683 P6 MRP 
-Start 41 1684 P1 MRP 
-Start 45 1685 P6 MRP 
-Start 41 1686 P1 MRP 
-Start 45 1687 P6 MRP 
-Start 57 1688 Middle End Conflicting 
-Start 65 1689 P2 MRP 
-Start 41 1690 P1 MRP 
-Start 45 1691 P6 MRP 
-Start 65 1692 P2 MRP 
-Start 41 1693 P1 MRP 
-Start 45 1694 P6 MRP 
-Start 60 1695 P7 MRP 
-Start 41 1696 P1 MRP 
-Start 45 1697 P6 MRP 
-Start 60 1698 P7 MRP 
-Start 41 1699 P1 MRP 
-Start 45 1700 P6 MRP 
-Start 57 1701 Middle End Conflicting 
-Start 38 1702 Middle End Conflicting 
-Start 41 1703 P1 MRP 
-Start 67 1704 P8 MRP 
-Start 38 1705 Middle End Conflicting 
-Start 41 1706 P1 MRP 
-Start 57 1707 P7 MRP 
-Start 38 1708 Middle End Conflicting 
-Start 41 1709 P1 MRP 
-Start 60 1710 P7 MRP 
-Start 38 1711 Middle End Conflicting 
-Start 41 1712 P1 MRP 
-Start 65 1713 P2 MRP 
-Start 38 1714 Middle End Conflicting 
-Start 41 1715 P1 MRP 
-Start 57 1716 P7 MRP 
-Start 65 1717 P2 MRP 
-Start 38 1718 Middle End Conflicting 
-Start 41 1719 P1 MRP 
-Start 60 1720 P7 MRP 
-Start 38 1721 Middle End Conflicting 
-Start 41 1722 P1 MRP 
-Start 60 1723 P7 MRP 
-Start 38 1724 Middle End Conflicting 
-Start 41 1725 P1 MRP 
-Start 41 1726 P1 MRP 
-Start 46 1727 Middle End Conflicting 
-Start 69 1728 P6 MRP 
-Start 41 1729 P1 MRP 
-Start 46 1730 Middle End Conflicting 
-Start 62 1731 P8 MRP 
-Start 41 1732 P1 MRP 
-Start 46 1733 Middle End Conflicting 
-Start 41 1734 P1 MRP 
-Start 46 1735 Middle End Conflicting 
-Start 57 1736 P7 MRP 
-Start 67 1737 P8 MRP 
-Start 41 1738 P1 MRP 
-Start 46 1739 Middle End Conflicting 
-Start 67 1740 P8 MRP 
-Start 41 1741 P1 MRP 
-Start 46 1742 Middle End Conflicting 
-Start 62 1743 P8 MRP 
-Start 41 1744 P1 MRP 
-Start 46 1745 Middle End Conflicting 
-Start 41 1746 P1 MRP 
-Start 46 1747 Middle End Conflicting 
-Start 57 1748 P7 MRP 
-Start 40 1749 P3 MRP 
-Start 43 1750 P4 MRP 
-Start 60 1751 P7 MRP 
-Start 40 1752 P3 MRP 
-Start 43 1753 P4 MRP 
-Start 60 1754 P7 MRP 
-Start 40 1755 P3 MRP 
-Start 43 1756 P4 MRP 
-Start 67 1757 P8 MRP 
-Start 40 1758 P3 MRP 
-Start 43 1759 P4 MRP 
-Start 60 1760 P7 MRP 
-Start 40 1761 P3 MRP 
-Start 43 1762 P4 MRP 
-Start 69 1763 P6 MRP 
-Start 40 1764 P3 MRP 
-Start 43 1765 P4 MRP 
-Start 60 1766 P7 MRP 
-Start 40 1767 P3 MRP 
-Start 43 1768 P4 MRP 
-Start 60 1769 P7 MRP 
-Start 70 1770 P2 MRP 
-Start 40 1771 P3 MRP 
-Start 43 1772 P4 MRP 
-Start 41 1773 P1 MRP 
-Start 45 1774 P6 MRP 
-Start 60 1775 P7 MRP 
-Start 72 1776 P1 MRP 
-Start 41 1777 P1 MRP 
-Start 45 1778 P6 MRP 
-Start 41 1779 P1 MRP 
-Start 45 1780 P6 MRP 
-Start 41 1781 P1 MRP 
-Start 45 1782 P6 MRP 
-Start 41 1783 P1 MRP 
-Start 45 1784 P6 MRP 
-Start 41 1785 P1 MRP 
-Start 45 1786 P6 MRP 
-Start 62 1787 P8 MRP 
-Start 72 1788 P1 MRP 
-Start 41 1789 P1 MRP 
-Start 45 1790 P6 MRP 
-Start 74 1791 P2 MRP 
-Start 41 1792 P1 MRP 
-Start 45 1793 P6 MRP 
-Start 57 1794 P7 MRP 
-Start 69 1795 P6 MRP 
-Start 38 1796 Middle End Conflicting 
-Start 42 1797 Middle End Conflicting 
-Start 69 1798 P6 MRP 
-Start 38 1799 Middle End Conflicting 
-Start 42 1800 Middle End Conflicting 
-Start 57 1801 P7 MRP 
-Start 38 1802 Middle End Conflicting 
-Start 42 1803 Middle End Conflicting 
-Start 62 1804 P8 MRP 
-Start 38 1805 Middle End Conflicting 
-Start 42 1806 Middle End Conflicting 
-Start 38 1807 Middle End Conflicting 
-Start 42 1808 Middle End Conflicting 
-Start 57 1809 P7 MRP 
-Start 69 1810 P6 MRP 
-Start 38 1811 Middle End Conflicting 
-Start 42 1812 Middle End Conflicting 
-Start 67 1813 P8 MRP 
-Start 62 1814 P8 MRP 
-Start 38 1815 Middle End Conflicting 
-Start 42 1816 Middle End Conflicting 
-Start 69 1817 P6 MRP 
-Start 38 1818 Middle End Conflicting 
-Start 42 1819 Middle End Conflicting 
-Start 57 1820 P7 MRP 
-Start 70 1821 P2 MRP 
-Start 39 1822 P0 MRP 
-Start 43 1823 P4 MRP 
-Start 70 1824 P2 MRP 
-Start 39 1825 P0 MRP 
-Start 43 1826 P4 MRP 
-Start 58 1827 P7 MRP 
-Start 39 1828 P0 MRP 
-Start 43 1829 P4 MRP 
-Start 39 1830 P0 MRP 
-Start 43 1831 P4 MRP 
-Start 39 1832 P0 MRP 
-Start 43 1833 P4 MRP 
-Start 70 1834 P2 MRP 
-Start 39 1835 P0 MRP 
-Start 43 1836 P4 MRP 
-Start 62 1837 P8 MRP 
-Start 72 1838 P1 MRP 
-Start 39 1839 P0 MRP 
-Start 43 1840 P4 MRP 
-Start 70 1841 P2 MRP 
-Start 39 1842 P0 MRP 
-Start 43 1843 P4 MRP 
-Start 57 1844 P7 MRP 
-Start 69 1845 P6 MRP 
-Start 36 1846 Middle End Conflicting 
-Start 43 1847 P4 MRP 
-Start 69 1848 P6 MRP 
-Start 36 1849 Middle End Conflicting 
-Start 43 1850 P4 MRP 
-Start 65 1851 P2 MRP 
-Start 36 1852 Middle End Conflicting 
-Start 43 1853 P4 MRP 
-Start 69 1854 P6 MRP 
-Start 36 1855 Middle End Conflicting 
-Start 43 1856 P4 MRP 
-Start 67 1857 P8 MRP 
-Start 36 1858 P7 MRP 
-Start 43 1859 P4 MRP 
-Start 67 1860 P8 MRP 
-Start 36 1861 P7 MRP 
-Start 43 1862 P4 MRP 
-Start 36 1863 P7 MRP 
-Start 43 1864 P4 MRP 
-Start 48 1865 P0 MRP 
-Start 60 1866 Middle End Conflicting 
-Start 36 1867 P7 MRP 
-Start 43 1868 P4 MRP 
-Start 41 1869 P1 MRP 
-Start 45 1870 P6 MRP 
-Start 55 1871 P5 MRP 
-Start 67 1872 P8 MRP 
-Start 41 1873 P1 MRP 
-Start 45 1874 P6 MRP 
-Start 55 1875 P5 MRP 
-Start 41 1876 P1 MRP 
-Start 45 1877 P6 MRP 
-Start 55 1878 P5 MRP 
-Start 41 1879 P1 MRP 
-Start 45 1880 P6 MRP 
-Start 53 1881 P7 MRP 
-Start 65 1882 P2 MRP 
-Start 41 1883 P1 MRP 
-Start 45 1884 P6 MRP 
-Start 53 1885 P7 MRP 
-Start 65 1886 P2 MRP 
-Start 41 1887 P1 MRP 
-Start 45 1888 P6 MRP 
-Start 53 1889 P7 MRP 
-Start 41 1890 P1 MRP 
-Start 45 1891 P6 MRP 
-Start 48 1892 P0 MRP 
-Start 60 1893 Middle End Conflicting 
-Start 41 1894 P1 MRP 
-Start 45 1895 P6 MRP 
-Start 48 1896 P0 MRP 
-Start 38 1897 Middle End Conflicting 
-Start 41 1898 P1 MRP 
-Start 55 1899 P5 MRP 
-Start 67 1900 P8 MRP 
-Start 38 1901 Middle End Conflicting 
-Start 41 1902 P1 MRP 
-Start 55 1903 P5 MRP 
-Start 38 1904 Middle End Conflicting 
-Start 41 1905 P1 MRP 
-Start 55 1906 P5 MRP 
-Start 38 1907 Middle End Conflicting 
-Start 41 1908 P1 MRP 
-Start 53 1909 P7 MRP 
-Start 65 1910 P2 MRP 
-Start 38 1911 Middle End Conflicting 
-Start 41 1912 P1 MRP 
-Start 53 1913 P7 MRP 
-Start 65 1914 P2 MRP 
-Start 38 1915 Middle End Conflicting 
-Start 41 1916 P1 MRP 
-Start 53 1917 P7 MRP 
-Start 38 1918 Middle End Conflicting 
-Start 41 1919 P1 MRP 
-Start 48 1920 P0 MRP 
-Start 60 1921 P7 MRP 
-Start 38 1922 Middle End Conflicting 
-Start 41 1923 P1 MRP 
-Start 48 1924 P0 MRP 
-Start 41 1925 P1 MRP 
-Start 46 1926 Middle End Conflicting 
-Start 57 1927 Middle End Conflicting 
-Start 69 1928 P6 MRP 
-Start 41 1929 P1 MRP 
-Start 46 1930 Middle End Conflicting 
-Start 57 1931 Middle End Conflicting 
-Start 41 1932 P1 MRP 
-Start 46 1933 Middle End Conflicting 
-Start 60 1934 P7 MRP 
-Start 72 1935 P1 MRP 
-Start 41 1936 P1 MRP 
-Start 46 1937 Middle End Conflicting 
-Start 55 1938 P5 MRP 
-Start 67 1939 P8 MRP 
-Start 41 1940 P1 MRP 
-Start 46 1941 Middle End Conflicting 
-Start 55 1942 P5 MRP 
-Start 67 1943 P8 MRP 
-Start 41 1944 P1 MRP 
-Start 46 1945 Middle End Conflicting 
-Start 55 1946 P5 MRP 
-Start 41 1947 P1 MRP 
-Start 46 1948 Middle End Conflicting 
-Start 55 1949 P5 MRP 
-Start 41 1950 P1 MRP 
-Start 46 1951 Middle End Conflicting 
-Start 55 1952 P5 MRP 
-Start 40 1953 P3 MRP 
-Start 43 1954 P4 MRP 
-Start 40 1955 P3 MRP 
-Start 43 1956 P4 MRP 
-Start 40 1957 P3 MRP 
-Start 43 1958 P4 MRP 
-Start 55 1959 P5 MRP 
-Start 67 1960 P8 MRP 
-Start 40 1961 P3 MRP 
-Start 43 1962 P4 MRP 
-Start 40 1963 P3 MRP 
-Start 43 1964 P4 MRP 
-Start 64 1965 P8 MRP 
-Start 76 1966 Middle End Conflicting 
-Start 40 1967 P3 MRP 
-Start 43 1968 P4 MRP 
-Start 40 1969 P3 MRP 
-Start 43 1970 P4 MRP 
-Start 62 1971 P0 MRP 
-Start 74 1972 P2 MRP 
-Start 40 1973 P3 MRP 
-Start 43 1974 P4 MRP 
-Start 41 1975 P1 MRP 
-Start 45 1976 P6 MRP 
-Start 60 1977 P7 MRP 
-Start 72 1978 P1 MRP 
-Start 41 1979 P1 MRP 
-Start 45 1980 P6 MRP 
-Start 41 1981 P1 MRP 
-Start 45 1982 P6 MRP 
-Start 41 1983 P1 MRP 
-Start 45 1984 P6 MRP 
-Start 41 1985 P1 MRP 
-Start 45 1986 P6 MRP 
-Start 41 1987 P1 MRP 
-Start 45 1988 P6 MRP 
-Start 60 1989 P7 MRP 
-Start 72 1990 P1 MRP 
-Start 41 1991 P1 MRP 
-Start 45 1992 P6 MRP 
-Start 62 1993 P0 MRP 
-Start 74 1994 P2 MRP 
-Start 41 1995 P1 MRP 
-Start 45 1996 P6 MRP 
-Start 63 1997 P3 MRP 
-Start 75 1998 P5 MRP 
-Start 38 1999 Middle End Conflicting 
-Start 42 2000 Middle End Conflicting 
-Start 63 2001 P3 MRP 
-Start 75 2002 P5 MRP 
-Start 38 2003 Middle End Conflicting 
-Start 42 2004 Middle End Conflicting 
-Start 38 2005 Middle End Conflicting 
-Start 42 2006 Middle End Conflicting 
-Start 62 2007 P0 MRP 
-Start 74 2008 P2 MRP 
-Start 38 2009 Middle End Conflicting 
-Start 42 2010 Middle End Conflicting 
-Start 60 2011 P7 MRP 
-Start 72 2012 P1 MRP 
-Start 38 2013 Middle End Conflicting 
-Start 42 2014 Middle End Conflicting 
-Start 38 2015 Middle End Conflicting 
-Start 42 2016 Middle End Conflicting 
-Start 57 2017 P7 MRP 
-Start 69 2018 P6 MRP 
-Start 38 2019 Middle End Conflicting 
-Start 42 2020 Middle End Conflicting 
-Start 38 2021 Middle End Conflicting 
-Start 42 2022 Middle End Conflicting 
-Start 58 2023 P8 MRP 
-Start 70 2024 P2 MRP 
-Start 39 2025 P0 MRP 
-Start 43 2026 P4 MRP 
-Start 58 2027 P8 MRP 
-Start 70 2028 P2 MRP 
-Start 39 2029 P0 MRP 
-Start 43 2030 P4 MRP 
-Start 39 2031 P0 MRP 
-Start 43 2032 P4 MRP 
-Start 39 2033 P0 MRP 
-Start 43 2034 P4 MRP 
-Start 39 2035 P0 MRP 
-Start 43 2036 P4 MRP 
-Start 39 2037 P0 MRP 
-Start 43 2038 P4 MRP 
-Start 58 2039 P8 MRP 
-Start 70 2040 P2 MRP 
-Start 39 2041 P0 MRP 
-Start 43 2042 P4 MRP 
-Start 60 2043 P7 MRP 
-Start 72 2044 P1 MRP 
-Start 39 2045 P0 MRP 
-Start 43 2046 P4 MRP 
-Start 61 2047 P5 MRP 
-Start 73 2048 P4 MRP 
-Start 36 2049 P7 MRP 
-Start 43 2050 P4 MRP 
-Start 61 2051 P5 MRP 
-Start 73 2052 P4 MRP 
-Start 36 2053 P7 MRP 
-Start 43 2054 P4 MRP 
-Start 36 2055 P7 MRP 
-Start 43 2056 P4 MRP 
-Start 60 2057 P7 MRP 
-Start 72 2058 P1 MRP 
-Start 36 2059 P7 MRP 
-Start 43 2060 P4 MRP 
-Start 61 2061 P5 MRP 
-Start 73 2062 P4 MRP 
-Start 36 2063 P7 MRP 
-Start 43 2064 P4 MRP 
-Start 36 2065 P7 MRP 
-Start 43 2066 P4 MRP 
-Start 63 2067 P3 MRP 
-Start 75 2068 P5 MRP 
-Start 36 2069 P7 MRP 
-Start 43 2070 P4 MRP 
-Start 36 2071 P7 MRP 
-Start 43 2072 P4 MRP 
-Start 60 2073 P7 MRP 
-Start 65 2074 P2 MRP 
-Start 72 2075 P1 MRP 
-Start 77 2076 Middle End Conflicting 
-Start 41 2077 P1 MRP 
-Start 45 2078 P6 MRP 
-Start 60 2079 P7 MRP 
-Start 65 2080 P2 MRP 
-Start 72 2081 P1 MRP 
-Start 77 2082 Middle End Conflicting 
-Start 41 2083 P1 MRP 
-Start 45 2084 P6 MRP 
-Start 41 2085 P1 MRP 
-Start 45 2086 P6 MRP 
-Start 41 2087 P1 MRP 
-Start 45 2088 P6 MRP 
-Start 41 2089 P1 MRP 
-Start 45 2090 P6 MRP 
-Start 41 2091 P1 MRP 
-Start 45 2092 P6 MRP 
-Start 41 2093 P1 MRP 
-Start 45 2094 P6 MRP 
-Start 41 2095 P1 MRP 
-Start 45 2096 P6 MRP 
-Start 44 2097 P3 MRP 
-Start 44 2098 P3 MRP 
-Start 44 2099 P3 MRP 
-Start 44 2100 P3 MRP 
-Start 44 2101 P3 MRP 
-Start 44 2102 P3 MRP 
-Start 44 2103 P3 MRP 
-Start 44 2104 P3 MRP 
-Start 41 2105 P1 MRP 
-Start 41 2106 P1 MRP 
-Start 41 2107 P1 MRP 
-Start 41 2108 P1 MRP 
-Start 41 2109 P1 MRP 
-Start 41 2110 P1 MRP 
-Start 41 2111 P1 MRP 
-Start 41 2112 P1 MRP 
-Start 43 2113 P4 MRP 
-Start 43 2114 P4 MRP 
-Start 43 2115 P4 MRP 
-Start 43 2116 P4 MRP 
-Start 43 2117 P4 MRP 
-Start 43 2118 P4 MRP 
-Start 43 2119 P4 MRP 
-Start 43 2120 P4 MRP 
-Start 41 2121 P1 MRP 
-Start 68 2122 P6 MRP 
-Start 41 2123 P1 MRP 
-Start 65 2124 P2 MRP 
-Start 41 2125 P1 MRP 
-Start 60 2126 P7 MRP 
-Start 41 2127 P1 MRP 
-Start 39 2128 P0 MRP 
-Start 62 2129 P0 MRP 
-Start 42 2130 Middle End Conflicting 
-Start 65 2131 P2 MRP 
-Start 41 2132 P1 MRP 
-Start 36 2133 P7 MRP 
-Start 41 2134 P1 MRP 
-Start 60 2135 P7 MRP 
-Start 41 2136 P1 MRP 
-Start 65 2137 P2 MRP 
-Start 41 2138 P1 MRP 
-Start 72 2139 P1 MRP 
-Start 41 2140 P1 MRP 
-Start 39 2141 P0 MRP 
-Start 68 2142 P6 MRP 
-Start 42 2143 Middle End Conflicting 
-Start 36 2144 P7 MRP 
-Start 67 2145 P8 MRP 
-Start 43 2146 P4 MRP 
-Start 48 2147 P0 MRP 
-Start 55 2148 P5 MRP 
-Start 64 2149 P8 MRP 
-Start 72 2150 P1 MRP 
-Start 43 2151 P4 MRP 
-Start 52 2152 P6 MRP 
-Start 60 2153 P7 MRP 
-Start 67 2154 P8 MRP 
-Start 40 2155 P3 MRP 
-Start 48 2156 P0 MRP 
-Start 55 2157 P5 MRP 
-Start 64 2158 P8 MRP 
-Start 53 2159 P7 MRP 
-Start 60 2160 P7 MRP 
-Start 65 2161 P2 MRP 
-Start 69 2162 P6 MRP 
-Start 71 2163 P5 MRP 
-Start 69 2164 P6 MRP 
-Start 49 2165 Middle End P1 Whacker 49 uncapped 
-Start 56 2166 P1 MRP 
-Start 65 2167 P2 MRP 
-Start 68 2168 Middle End Conflicting 
-Start 70 2169 P2 MRP 
-Start 68 2170 P6 MRP 
-Start 48 2171 P0 MRP 
-Start 55 2172 P5 MRP 
-Start 64 2173 P8 MRP 
-Start 67 2174 P8 MRP 
-Start 62 2175 P0 MRP 
-Start 64 2176 P8 MRP 
-Start 64 2177 P8 MRP 
-Start 67 2178 P8 MRP 
-Start 76 2179 P1 MRP 
-Start 72 2180 P1 MRP 
-Start 74 2181 P2 MRP 
-Start 79 2182 P3 MRP 
-Start 69 2183 P6 MRP 
-Start 72 2184 P1 MRP 
-Start 69 2185 P6 MRP 
-Start 72 2186 P1 MRP 
-Start 69 2187 P6 MRP 
-Start 72 2188 P1 MRP 
-Start 62 2189 P0 MRP 
-Start 69 2190 P6 MRP 
-Start 72 2191 P1 MRP 
-Start 69 2192 P6 MRP 
-Start 72 2193 P1 MRP 
-Start 62 2194 P0 MRP 
-Start 69 2195 P6 MRP 
-Start 72 2196 P1 MRP 
-Start 62 2197 P0 MRP 
-Start 69 2198 P6 MRP 
-Start 72 2199 P1 MRP 
-Start 67 2200 P8 MRP 
-Start 71 2201 P5 MRP 
-Start 67 2202 P8 MRP 
-Start 71 2203 P5 MRP 
-Start 67 2204 P8 MRP 
-Start 71 2205 P5 MRP 
-Start 60 2206 P7 MRP 
-Start 67 2207 P8 MRP 
-Start 71 2208 P5 MRP 
-Start 67 2209 P8 MRP 
-Start 71 2210 P5 MRP 
-Start 60 2211 P7 MRP 
-Start 67 2212 P8 MRP 
-Start 71 2213 P5 MRP 
-Start 60 2214 P7 MRP 
-Start 67 2215 P8 MRP 
-Start 71 2216 P5 MRP 
-Start 69 2217 P6 MRP 
-Start 72 2218 P1 MRP 
-Start 69 2219 P6 MRP 
-Start 72 2220 P1 MRP 
-Start 69 2221 P6 MRP 
-Start 72 2222 P1 MRP 
-Start 62 2223 P0 MRP 
-Start 69 2224 P6 MRP 
-Start 72 2225 P1 MRP 
-Start 69 2226 P6 MRP 
-Start 72 2227 P1 MRP 
-Start 62 2228 P0 MRP 
-Start 69 2229 P6 MRP 
-Start 72 2230 P1 MRP 
-Start 62 2231 P0 MRP 
-Start 69 2232 P6 MRP 
-Start 72 2233 P1 MRP 
-Start 67 2234 P8 MRP 
-Start 71 2235 P5 MRP 
-Start 67 2236 P8 MRP 
-Start 71 2237 P5 MRP 
-Start 67 2238 P8 MRP 
-Start 71 2239 P5 MRP 
-Start 60 2240 P7 MRP 
-Start 67 2241 P8 MRP 
-Start 71 2242 P5 MRP 
-Start 67 2243 P8 MRP 
-Start 71 2244 P5 MRP 
-Start 60 2245 P7 MRP 
-Start 67 2246 P8 MRP 
-Start 71 2247 P5 MRP 
-Start 60 2248 P7 MRP 
-Start 67 2249 P8 MRP 
-Start 71 2250 P5 MRP 
-Start 38 2251 Middle End Conflicting 
-Start 69 2252 P6 MRP 
-Start 72 2253 P1 MRP 
-Start 69 2254 P6 MRP 
-Start 72 2255 P1 MRP 
-Start 45 2256 P6 MRP 
-Start 69 2257 P6 MRP 
-Start 72 2258 P1 MRP 
-Start 50 2259 P0 MRP 
-Start 62 2260 P0 MRP 
-Start 69 2261 P6 MRP 
-Start 72 2262 P1 MRP 
-Start 69 2263 P6 MRP 
-Start 72 2264 P1 MRP 
-Start 45 2265 P6 MRP 
-Start 62 2266 P0 MRP 
-Start 50 2267 P0 MRP 
-Start 69 2268 P6 MRP 
-Start 72 2269 P1 MRP 
-Start 62 2270 P0 MRP 
-Start 45 2271 P6 MRP 
-Start 69 2272 P6 MRP 
-Start 72 2273 P1 MRP 
-Start 36 2274 P7 MRP 
-Start 67 2275 P8 MRP 
-Start 71 2276 P5 MRP 
-Start 67 2277 P8 MRP 
-Start 71 2278 P5 MRP 
-Start 43 2279 P4 MRP 
-Start 67 2280 P8 MRP 
-Start 71 2281 P5 MRP 
-Start 48 2282 P8 MRP 
-Start 60 2283 P7 MRP 
-Start 67 2284 P8 MRP 
-Start 71 2285 P5 MRP 
-Start 67 2286 P8 MRP 
-Start 71 2287 P5 MRP 
-Start 43 2288 P4 MRP 
-Start 60 2289 P7 MRP 
-Start 48 2290 P8 MRP 
-Start 67 2291 P8 MRP 
-Start 71 2292 P5 MRP 
-Start 60 2293 P7 MRP 
-Start 43 2294 P4 MRP 
-Start 67 2295 P8 MRP 
-Start 71 2296 P5 MRP 
-Start 38 2297 Middle End Conflicting 
-Start 69 2298 P6 MRP 
-Start 72 2299 P1 MRP 
-Start 69 2300 P6 MRP 
-Start 72 2301 P1 MRP 
-Start 45 2302 P6 MRP 
-Start 69 2303 P6 MRP 
-Start 72 2304 P1 MRP 
-Start 50 2305 P0 MRP 
-Start 62 2306 P0 MRP 
-Start 69 2307 P6 MRP 
-Start 72 2308 P1 MRP 
-Start 69 2309 P6 MRP 
-Start 72 2310 P1 MRP 
-Start 45 2311 P6 MRP 
-Start 62 2312 P0 MRP 
-Start 50 2313 P0 MRP 
-Start 69 2314 P6 MRP 
-Start 72 2315 P1 MRP 
-Start 62 2316 P0 MRP 
-Start 45 2317 P6 MRP 
-Start 69 2318 P6 MRP 
-Start 72 2319 P1 MRP 
-Start 36 2320 P7 MRP 
-Start 67 2321 P8 MRP 
-Start 71 2322 P5 MRP 
-Start 67 2323 P8 MRP 
-Start 71 2324 P5 MRP 
-Start 43 2325 P4 MRP 
-Start 67 2326 P8 MRP 
-Start 71 2327 P5 MRP 
-Start 48 2328 P8 MRP 
-Start 60 2329 P7 MRP 
-Start 67 2330 P8 MRP 
-Start 71 2331 P5 MRP 
-Start 67 2332 P8 MRP 
-Start 71 2333 P5 MRP 
-Start 43 2334 P4 MRP 
-Start 60 2335 P7 MRP 
-Start 48 2336 P8 MRP 
-Start 67 2337 P8 MRP 
-Start 71 2338 P5 MRP 
-Start 60 2339 P7 MRP 
-Start 43 2340 P4 MRP 
-Start 67 2341 P8 MRP 
-Start 71 2342 P5 MRP 
-Start 52 2343 Middle End Conflicting 
-Start 64 2344 P2 MRP 
-Start 76 2345 P1 MRP 
-Start 52 2346 Middle End Conflicting 
-Start 64 2347 P2 MRP 
-Start 76 2348 P1 MRP 
-Start 52 2349 P6 MRP 
-Start 64 2350 P2 MRP 
-Start 76 2351 P1 MRP 
-Start 48 2352 P8 MRP 
-Start 60 2353 P7 MRP 
-Start 72 2354 P1 MRP 
-Start 52 2355 P6 MRP 
-Start 64 2356 P2 MRP 
-Start 76 2357 P1 MRP 
-Start 55 2358 P5 MRP 
-Start 67 2359 P8 MRP 
-Start 79 2360 P3 MRP 
-Start 43 2361 P4 MRP 
-Start 55 2362 P5 MRP 
-Start 67 2363 P8 MRP 
-Start 38 2364 Middle End Conflicting 
-Start 69 2365 P6 MRP 
-Start 72 2366 P1 MRP 
-Start 69 2367 P6 MRP 
-Start 72 2368 P1 MRP 
-Start 45 2369 Middle End Conflicting 
-Start 69 2370 P6 MRP 
-Start 72 2371 P1 MRP 
-Start 50 2372 P0 MRP 
-Start 62 2373 P0 MRP 
-Start 69 2374 P6 MRP 
-Start 72 2375 P1 MRP 
-Start 69 2376 P6 MRP 
-Start 72 2377 P1 MRP 
-Start 45 2378 P6 MRP 
-Start 62 2379 P0 MRP 
-Start 50 2380 P0 MRP 
-Start 69 2381 P6 MRP 
-Start 72 2382 P1 MRP 
-Start 62 2383 P0 MRP 
-Start 45 2384 P6 MRP 
-Start 69 2385 P6 MRP 
-Start 72 2386 P1 MRP 
-Start 36 2387 P7 MRP 
-Start 67 2388 P8 MRP 
-Start 71 2389 P5 MRP 
-Start 67 2390 P8 MRP 
-Start 71 2391 P5 MRP 
-Start 43 2392 P4 MRP 
-Start 67 2393 P8 MRP 
-Start 71 2394 P5 MRP 
-Start 48 2395 P8 MRP 
-Start 60 2396 P7 MRP 
-Start 67 2397 P8 MRP 
-Start 71 2398 P5 MRP 
-Start 67 2399 P8 MRP 
-Start 71 2400 P5 MRP 
-Start 43 2401 P4 MRP 
-Start 60 2402 P7 MRP 
-Start 48 2403 P8 MRP 
-Start 67 2404 P8 MRP 
-Start 71 2405 P5 MRP 
-Start 60 2406 P7 MRP 
-Start 43 2407 P4 MRP 
-Start 67 2408 P8 MRP 
-Start 71 2409 P5 MRP 
-Start 38 2410 Middle End Conflicting 
-Start 69 2411 P6 MRP 
-Start 72 2412 P1 MRP 
-Start 69 2413 P6 MRP 
-Start 72 2414 P1 MRP 
-Start 45 2415 P6 MRP 
-Start 69 2416 P6 MRP 
-Start 72 2417 P1 MRP 
-Start 50 2418 P0 MRP 
-Start 62 2419 P0 MRP 
-Start 69 2420 P6 MRP 
-Start 72 2421 P1 MRP 
-Start 69 2422 P6 MRP 
-Start 72 2423 P1 MRP 
-Start 45 2424 P6 MRP 
-Start 62 2425 P0 MRP 
-Start 50 2426 P0 MRP 
-Start 69 2427 P6 MRP 
-Start 72 2428 P1 MRP 
-Start 62 2429 P0 MRP 
-Start 45 2430 P6 MRP 
-Start 69 2431 P6 MRP 
-Start 72 2432 P1 MRP 
-Start 36 2433 P7 MRP 
-Start 67 2434 P8 MRP 
-Start 71 2435 P5 MRP 
-Start 67 2436 P8 MRP 
-Start 71 2437 P5 MRP 
-Start 43 2438 P4 MRP 
-Start 67 2439 P8 MRP 
-Start 71 2440 P5 MRP 
-Start 48 2441 P8 MRP 
-Start 60 2442 P7 MRP 
-Start 67 2443 P8 MRP 
-Start 71 2444 P5 MRP 
-Start 67 2445 P8 MRP 
-Start 71 2446 P5 MRP 
-Start 43 2447 P4 MRP 
-Start 60 2448 P7 MRP 
-Start 48 2449 P8 MRP 
-Start 67 2450 P8 MRP 
-Start 71 2451 P5 MRP 
-Start 60 2452 P7 MRP 
-Start 43 2453 P4 MRP 
-Start 67 2454 P8 MRP 
-Start 71 2455 P5 MRP 
-Start 48 2456 P8 MRP 
-Start 60 2457 P7 MRP 
-Start 45 2458 P6 MRP 
-Start 57 2459 Middle End Conflicting 
-Start 46 2460 Middle End Conflicting 
-Start 58 2461 P7 MRP 
-Start 38 2462 Middle End Conflicting 
-Start 69 2463 P6 MRP 
-Start 72 2464 P1 MRP 
-Start 69 2465 P6 MRP 
-Start 72 2466 P1 MRP 
-Start 45 2467 P6 MRP 
-Start 69 2468 P6 MRP 
-Start 72 2469 P1 MRP 
-Start 50 2470 P0 MRP 
-Start 62 2471 P0 MRP 
-Start 69 2472 P6 MRP 
-Start 72 2473 P1 MRP 
-Start 69 2474 P6 MRP 
-Start 72 2475 P1 MRP 
-Start 45 2476 P6 MRP 
-Start 62 2477 P0 MRP 
-Start 50 2478 P0 MRP 
-Start 69 2479 P6 MRP 
-Start 72 2480 P1 MRP 
-Start 62 2481 P0 MRP 
-Start 45 2482 P6 MRP 
-Start 69 2483 P6 MRP 
-Start 72 2484 P1 MRP 
-Start 36 2485 P7 MRP 
-Start 67 2486 P8 MRP 
-Start 71 2487 P5 MRP 
-Start 67 2488 P8 MRP 
-Start 71 2489 P5 MRP 
-Start 43 2490 P4 MRP 
-Start 67 2491 P8 MRP 
-Start 71 2492 P5 MRP 
-Start 48 2493 P8 MRP 
-Start 60 2494 P7 MRP 
-Start 67 2495 P8 MRP 
-Start 71 2496 P5 MRP 
-Start 67 2497 P8 MRP 
-Start 71 2498 P5 MRP 
-Start 43 2499 P4 MRP 
-Start 60 2500 P7 MRP 
-Start 48 2501 P8 MRP 
-Start 67 2502 P8 MRP 
-Start 71 2503 P5 MRP 
-Start 60 2504 P7 MRP 
-Start 43 2505 P4 MRP 
-Start 67 2506 P8 MRP 
-Start 71 2507 P5 MRP 
-Start 38 2508 Middle End Conflicting 
-Start 69 2509 P6 MRP 
-Start 72 2510 P1 MRP 
-Start 69 2511 P6 MRP 
-Start 72 2512 P1 MRP 
-Start 45 2513 P6 MRP 
-Start 69 2514 P6 MRP 
-Start 72 2515 P1 MRP 
-Start 50 2516 P0 MRP 
-Start 62 2517 P0 MRP 
-Start 69 2518 P6 MRP 
-Start 72 2519 P1 MRP 
-Start 69 2520 P6 MRP 
-Start 72 2521 P1 MRP 
-Start 45 2522 P6 MRP 
-Start 62 2523 P0 MRP 
-Start 50 2524 P0 MRP 
-Start 69 2525 P6 MRP 
-Start 72 2526 P1 MRP 
-Start 62 2527 P0 MRP 
-Start 45 2528 P6 MRP 
-Start 69 2529 P6 MRP 
-Start 72 2530 P1 MRP 
-Start 36 2531 P7 MRP 
-Start 67 2532 P8 MRP 
-Start 71 2533 P5 MRP 
-Start 67 2534 P8 MRP 
-Start 71 2535 P5 MRP 
-Start 43 2536 P4 MRP 
-Start 67 2537 P8 MRP 
-Start 71 2538 P5 MRP 
-Start 48 2539 P8 MRP 
-Start 60 2540 P7 MRP 
-Start 67 2541 P8 MRP 
-Start 71 2542 P5 MRP 
-Start 67 2543 P8 MRP 
-Start 71 2544 P5 MRP 
-Start 43 2545 P4 MRP 
-Start 60 2546 P7 MRP 
-Start 48 2547 P8 MRP 
-Start 67 2548 P8 MRP 
-Start 71 2549 P5 MRP 
-Start 60 2550 P7 MRP 
-Start 43 2551 P4 MRP 
-Start 67 2552 P8 MRP 
-Start 71 2553 P5 MRP 
-Start 38 2554 Middle End Conflicting 
-Start 69 2555 P6 MRP 
-Start 72 2556 P1 MRP 
-Start 69 2557 P6 MRP 
-Start 72 2558 P1 MRP 
-Start 45 2559 P6 MRP 
-Start 69 2560 P6 MRP 
-Start 72 2561 P1 MRP 
-Start 50 2562 P0 MRP 
-Start 62 2563 P0 MRP 
-Start 69 2564 P6 MRP 
-Start 72 2565 P1 MRP 
-Start 69 2566 P6 MRP 
-Start 72 2567 P1 MRP 
-Start 45 2568 P6 MRP 
-Start 62 2569 P0 MRP 
-Start 50 2570 P0 MRP 
-Start 69 2571 P6 MRP 
-Start 72 2572 P1 MRP 
-Start 62 2573 P0 MRP 
-Start 45 2574 P6 MRP 
-Start 69 2575 P6 MRP 
-Start 72 2576 P1 MRP 
-Start 36 2577 P7 MRP 
-Start 67 2578 P8 MRP 
-Start 71 2579 P5 MRP 
-Start 67 2580 P8 MRP 
-Start 71 2581 P5 MRP 
-Start 43 2582 P4 MRP 
-Start 67 2583 P8 MRP 
-Start 71 2584 P5 MRP 
-Start 48 2585 P8 MRP 
-Start 60 2586 P7 MRP 
-Start 67 2587 P8 MRP 
-Start 71 2588 P5 MRP 
-Start 67 2589 P8 MRP 
-Start 71 2590 P5 MRP 
-Start 43 2591 P4 MRP 
-Start 60 2592 P7 MRP 
-Start 48 2593 P8 MRP 
-Start 67 2594 P8 MRP 
-Start 71 2595 P5 MRP 
-Start 60 2596 P7 MRP 
-Start 43 2597 P4 MRP 
-Start 67 2598 P8 MRP 
-Start 71 2599 P5 MRP 
-Start 38 2600 Middle End Conflicting 
-Start 69 2601 P6 MRP 
-Start 72 2602 P1 MRP 
-Start 69 2603 P6 MRP 
-Start 72 2604 P1 MRP 
-Start 45 2605 P6 MRP 
-Start 69 2606 P6 MRP 
-Start 72 2607 P1 MRP 
-Start 50 2608 P0 MRP 
-Start 62 2609 P0 MRP 
-Start 69 2610 P6 MRP 
-Start 72 2611 P1 MRP 
-Start 69 2612 P6 MRP 
-Start 72 2613 P1 MRP 
-Start 45 2614 P6 MRP 
-Start 62 2615 P0 MRP 
-Start 50 2616 P0 MRP 
-Start 69 2617 P6 MRP 
-Start 72 2618 P1 MRP 
-Start 62 2619 P0 MRP 
-Start 45 2620 P6 MRP 
-Start 69 2621 P6 MRP 
-Start 72 2622 P1 MRP 
-Start 36 2623 P7 MRP 
-Start 67 2624 P8 MRP 
-Start 71 2625 P5 MRP 
-Start 67 2626 P8 MRP 
-Start 71 2627 P5 MRP 
-Start 43 2628 P4 MRP 
-Start 67 2629 P8 MRP 
-Start 71 2630 P5 MRP 
-Start 48 2631 P8 MRP 
-Start 60 2632 P7 MRP 
-Start 67 2633 P8 MRP 
-Start 71 2634 P5 MRP 
-Start 67 2635 P8 MRP 
-Start 71 2636 P5 MRP 
-Start 43 2637 P4 MRP 
-Start 60 2638 P7 MRP 
-Start 48 2639 P8 MRP 
-Start 67 2640 P8 MRP 
-Start 71 2641 P5 MRP 
-Start 60 2642 P7 MRP 
-Start 43 2643 P4 MRP 
-Start 67 2644 P8 MRP 
-Start 71 2645 P5 MRP 
-Start 43 2646 P4 MRP 
-Start 40 2647 P3 MRP 
-Start 48 2648 P8 MRP 
-Start 43 2649 P4 MRP 
-Start 52 2650 P6 MRP 
-Start 40 2651 P3 MRP 
-Start 48 2652 P8 MRP 
-Start 55 2653 P5 MRP 
-Start 43 2654 P4 MRP 
-Start 52 2655 P6 MRP 
-Start 60 2656 P7 MRP 
-Start 48 2657 P8 MRP 
-Start 55 2658 P5 MRP 
-Start 64 2659 P2 MRP 
-Start 52 2660 P6 MRP 
-Start 60 2661 P7 MRP 
-Start 67 2662 P8 MRP 
-Start 48 2663 P8 MRP 
-Start 55 2664 P5 MRP 
-Start 64 2665 P2 MRP 
-Start 44 2666 P3 MRP 
-Start 39 2667 P0 MRP 
-Start 48 2668 P8 MRP 
-Start 44 2669 P3 MRP 
-Start 51 2670 P7 MRP 
-Start 39 2671 P0 MRP 
-Start 48 2672 P8 MRP 
-Start 56 2673 P1 MRP 
-Start 44 2674 P3 MRP 
-Start 51 2675 P7 MRP 
-Start 60 2676 P7 MRP 
-Start 48 2677 P8 MRP 
-Start 56 2678 P1 MRP 
-Start 63 2679 P3 MRP 
-Start 51 2680 P7 MRP 
-Start 60 2681 P7 MRP 
-Start 68 2682 P6 MRP 
-Start 48 2683 P8 MRP 
-Start 56 2684 P1 MRP 
-Start 63 2685 P3 MRP 
-Start 46 2686 Middle End Conflicting 
-Start 41 2687 P1 MRP 
-Start 50 2688 P0 MRP 
-Start 46 2689 Middle End Conflicting 
-Start 53 2690 P8 MRP 
-Start 41 2691 P1 MRP 
-Start 50 2692 P0 MRP 
-Start 58 2693 Middle End Conflicting 
-Start 46 2694 Middle End Conflicting 
-Start 53 2695 P8 MRP 
-Start 62 2696 P0 MRP 
-Start 50 2697 P0 MRP 
-Start 58 2698 Middle End Conflicting 
-Start 65 2699 P2 MRP 
-Start 53 2700 P8 MRP 
-Start 62 2701 P0 MRP 
-Start 70 2702 P2 MRP 
-Start 50 2703 P0 MRP 
-Start 62 2704 P0 MRP 
-Start 70 2705 P2 MRP 
-Start 50 2706 P0 MRP 
-Start 62 2707 P0 MRP 
-Start 70 2708 P2 MRP 
-Start 50 2709 P0 MRP 
-Start 62 2710 P0 MRP 
-Start 70 2711 P2 MRP 
-Start 48 2712 P8 MRP 
-Start 64 2713 P6 MRP 
-Start 72 2714 P1 MRP 
-Number of conflicts: 235
-Conflicting note in measure 8, time: 0:19.06
-Conflicting note in measure 8, time: 0:19.53
-Conflicting note in measure 10, time: 0:24.06
-Conflicting note in measure 10, time: 0:24.53
-Conflicting note in measure 12, time: 0:29.06
-Conflicting note in measure 12, time: 0:29.53
-Conflicting note in measure 25, time: 0:54.58
-Conflicting note in measure 25, time: 0:54.86
-Conflicting note in measure 34, time: 1:10.00
-Conflicting note in measure 37, time: 1:14.44
-Conflicting note in measure 42, time: 1:22.75
-Conflicting note in measure 42, time: 1:23.25
-Conflicting note in measure 42, time: 1:23.75
-Conflicting note in measure 42, time: 1:24.25
-Conflicting note in measure 43, time: 1:24.75
-Conflicting note in measure 43, time: 1:25.25
-Conflicting note in measure 43, time: 1:25.75
-Conflicting note in measure 43, time: 1:26.25
-Conflicting note in measure 45, time: 1:28.75
-Conflicting note in measure 45, time: 1:29.25
-Conflicting note in measure 46, time: 1:30.75
-Conflicting note in measure 46, time: 1:30.75
-Conflicting note in measure 46, time: 1:31.00
-Conflicting note in measure 46, time: 1:31.25
-Conflicting note in measure 46, time: 1:31.25
-Conflicting note in measure 46, time: 1:31.75
-Conflicting note in measure 46, time: 1:31.75
-Conflicting note in measure 46, time: 1:32.25
-Conflicting note in measure 47, time: 1:32.75
-Conflicting note in measure 47, time: 1:33.25
-Conflicting note in measure 47, time: 1:33.75
-Conflicting note in measure 47, time: 1:34.25
-Conflicting note in measure 49, time: 1:36.75
-Conflicting note in measure 49, time: 1:37.25
-Conflicting note in measure 49, time: 1:37.75
-Conflicting note in measure 50, time: 1:39.75
-Conflicting note in measure 50, time: 1:40.00
-Conflicting note in measure 50, time: 1:40.25
-Conflicting note in measure 50, time: 1:40.50
-Conflicting note in measure 51, time: 1:42.00
-Conflicting note in measure 51, time: 1:42.25
-Conflicting note in measure 52, time: 1:43.75
-Conflicting note in measure 52, time: 1:44.00
-Conflicting note in measure 52, time: 1:44.25
-Conflicting note in measure 52, time: 1:44.50
-Conflicting note in measure 53, time: 1:45.00
-Conflicting note in measure 54, time: 1:47.75
-Conflicting note in measure 54, time: 1:48.00
-Conflicting note in measure 54, time: 1:48.25
-Conflicting note in measure 54, time: 1:48.50
-Conflicting note in measure 55, time: 1:49.25
-Conflicting note in measure 55, time: 1:50.00
-Conflicting note in measure 56, time: 1:51.75
-Conflicting note in measure 56, time: 1:52.00
-Conflicting note in measure 56, time: 1:52.25
-Conflicting note in measure 56, time: 1:52.50
-Conflicting note in measure 57, time: 1:53.00
-Conflicting note in measure 58, time: 1:56.50
-Conflicting note in measure 59, time: 1:56.75
-Conflicting note in measure 59, time: 1:57.25
-Conflicting note in measure 59, time: 1:57.37
-Conflicting note in measure 59, time: 1:57.62
-Conflicting note in measure 61, time: 2:00.75
-Conflicting note in measure 61, time: 2:02.00
-Conflicting note in measure 61, time: 2:02.25
-Conflicting note in measure 64, time: 2:08.50
-Conflicting note in measure 65, time: 2:08.87
-Conflicting note in measure 67, time: 2:13.25
-Conflicting note in measure 67, time: 2:13.25
-Conflicting note in measure 67, time: 2:14.25
-Conflicting note in measure 68, time: 2:15.25
-Conflicting note in measure 70, time: 2:20.50
-Conflicting note in measure 73, time: 2:24.75
-Conflicting note in measure 75, time: 2:28.75
-Conflicting note in measure 75, time: 2:29.62
-Conflicting note in measure 75, time: 2:29.75
-Conflicting note in measure 75, time: 2:30.00
-Conflicting note in measure 75, time: 2:30.25
-Conflicting note in measure 84, time: 2:46.75
-Conflicting note in measure 84, time: 2:47.62
-Conflicting note in measure 84, time: 2:47.75
-Conflicting note in measure 84, time: 2:47.87
-Conflicting note in measure 84, time: 2:48.12
-Conflicting note in measure 85, time: 2:48.75
-Conflicting note in measure 85, time: 2:49.62
-Conflicting note in measure 85, time: 2:49.75
-Conflicting note in measure 86, time: 2:50.75
-Conflicting note in measure 86, time: 2:51.62
-Conflicting note in measure 86, time: 2:51.62
-Conflicting note in measure 88, time: 2:54.75
-Conflicting note in measure 88, time: 2:55.62
-Conflicting note in measure 88, time: 2:55.75
-Conflicting note in measure 88, time: 2:55.87
-Conflicting note in measure 88, time: 2:56.12
-Conflicting note in measure 89, time: 2:56.75
-Conflicting note in measure 89, time: 2:57.50
-Conflicting note in measure 89, time: 2:58.00
-Conflicting note in measure 89, time: 2:58.62
-Conflicting note in measure 90, time: 2:58.75
-Conflicting note in measure 90, time: 2:59.00
-Conflicting note in measure 90, time: 2:59.62
-Conflicting note in measure 90, time: 2:59.62
-Conflicting note in measure 90, time: 2:59.62
-Conflicting note in measure 90, time: 3:00.62
-Conflicting note in measure 91, time: 3:02.50
-Conflicting note in measure 93, time: 3:04.75
-Conflicting note in measure 93, time: 3:05.00
-Conflicting note in measure 93, time: 3:05.25
-Conflicting note in measure 93, time: 3:05.50
-Conflicting note in measure 93, time: 3:05.75
-Conflicting note in measure 93, time: 3:06.00
-Conflicting note in measure 93, time: 3:06.25
-Conflicting note in measure 93, time: 3:06.50
-Conflicting note in measure 95, time: 3:08.33
-Conflicting note in measure 95, time: 3:08.53
-Conflicting note in measure 95, time: 3:08.72
-Conflicting note in measure 95, time: 3:08.92
-Conflicting note in measure 95, time: 3:09.12
-Conflicting note in measure 95, time: 3:09.32
-Conflicting note in measure 95, time: 3:09.51
-Conflicting note in measure 95, time: 3:09.71
-Conflicting note in measure 96, time: 3:09.91
-Conflicting note in measure 96, time: 3:10.11
-Conflicting note in measure 96, time: 3:10.30
-Conflicting note in measure 96, time: 3:10.50
-Conflicting note in measure 96, time: 3:10.70
-Conflicting note in measure 96, time: 3:10.89
-Conflicting note in measure 96, time: 3:11.09
-Conflicting note in measure 96, time: 3:11.29
-Conflicting note in measure 99, time: 3:14.64
-Conflicting note in measure 99, time: 3:14.84
-Conflicting note in measure 99, time: 3:14.94
-Conflicting note in measure 99, time: 3:15.04
-Conflicting note in measure 99, time: 3:15.24
-Conflicting note in measure 99, time: 3:15.43
-Conflicting note in measure 99, time: 3:15.63
-Conflicting note in measure 99, time: 3:15.83
-Conflicting note in measure 100, time: 3:16.82
-Conflicting note in measure 100, time: 3:17.61
-Conflicting note in measure 101, time: 3:17.80
-Conflicting note in measure 101, time: 3:18.00
-Conflicting note in measure 101, time: 3:18.20
-Conflicting note in measure 101, time: 3:18.39
-Conflicting note in measure 101, time: 3:18.59
-Conflicting note in measure 101, time: 3:18.79
-Conflicting note in measure 101, time: 3:18.99
-Conflicting note in measure 101, time: 3:19.18
-Conflicting note in measure 102, time: 3:19.38
-Conflicting note in measure 102, time: 3:19.58
-Conflicting note in measure 102, time: 3:19.78
-Conflicting note in measure 102, time: 3:19.97
-Conflicting note in measure 102, time: 3:20.17
-Conflicting note in measure 102, time: 3:20.37
-Conflicting note in measure 102, time: 3:20.57
-Conflicting note in measure 102, time: 3:20.76
-Conflicting note in measure 105, time: 3:24.12
-Conflicting note in measure 105, time: 3:24.12
-Conflicting note in measure 105, time: 3:24.32
-Conflicting note in measure 105, time: 3:24.32
-Conflicting note in measure 105, time: 3:24.51
-Conflicting note in measure 105, time: 3:24.51
-Conflicting note in measure 105, time: 3:24.71
-Conflicting note in measure 105, time: 3:24.71
-Conflicting note in measure 105, time: 3:24.91
-Conflicting note in measure 105, time: 3:24.91
-Conflicting note in measure 105, time: 3:25.11
-Conflicting note in measure 105, time: 3:25.11
-Conflicting note in measure 105, time: 3:25.30
-Conflicting note in measure 105, time: 3:25.30
-Conflicting note in measure 105, time: 3:25.50
-Conflicting note in measure 105, time: 3:25.50
-Conflicting note in measure 107, time: 3:27.28
-Conflicting note in measure 107, time: 3:27.47
-Conflicting note in measure 107, time: 3:27.67
-Conflicting note in measure 107, time: 3:27.87
-Conflicting note in measure 107, time: 3:28.46
-Conflicting note in measure 108, time: 3:30.04
-Conflicting note in measure 109, time: 3:30.43
-Conflicting note in measure 109, time: 3:30.63
-Conflicting note in measure 109, time: 3:30.83
-Conflicting note in measure 109, time: 3:31.03
-Conflicting note in measure 109, time: 3:31.22
-Conflicting note in measure 109, time: 3:31.42
-Conflicting note in measure 109, time: 3:31.62
-Conflicting note in measure 109, time: 3:31.82
-Conflicting note in measure 110, time: 3:32.01
-Conflicting note in measure 110, time: 3:32.01
-Conflicting note in measure 110, time: 3:32.21
-Conflicting note in measure 110, time: 3:32.21
-Conflicting note in measure 110, time: 3:32.41
-Conflicting note in measure 110, time: 3:32.61
-Conflicting note in measure 110, time: 3:32.80
-Conflicting note in measure 110, time: 3:33.00
-Conflicting note in measure 110, time: 3:33.20
-Conflicting note in measure 110, time: 3:33.39
-Conflicting note in measure 111, time: 3:34.38
-Conflicting note in measure 113, time: 3:36.75
-Conflicting note in measure 113, time: 3:36.75
-Conflicting note in measure 113, time: 3:36.95
-Conflicting note in measure 113, time: 3:36.95
-Conflicting note in measure 113, time: 3:37.14
-Conflicting note in measure 113, time: 3:37.14
-Conflicting note in measure 113, time: 3:37.34
-Conflicting note in measure 113, time: 3:37.34
-Conflicting note in measure 113, time: 3:37.54
-Conflicting note in measure 113, time: 3:37.54
-Conflicting note in measure 113, time: 3:37.74
-Conflicting note in measure 113, time: 3:37.74
-Conflicting note in measure 113, time: 3:37.93
-Conflicting note in measure 113, time: 3:37.93
-Conflicting note in measure 113, time: 3:38.13
-Conflicting note in measure 113, time: 3:38.13
-Conflicting note in measure 115, time: 3:41.29
-Conflicting note in measure 116, time: 3:41.49
-Conflicting note in measure 121, time: 3:49.78
-Conflicting note in measure 123, time: 3:52.93
-Conflicting note in measure 125, time: 3:56.62
-Conflicting note in measure 133, time: 4:09.12
-Conflicting note in measure 135, time: 4:12.45
-Conflicting note in measure 137, time: 4:15.79
-Conflicting note in measure 137, time: 4:15.89
-Conflicting note in measure 138, time: 4:17.45
-Conflicting note in measure 138, time: 4:17.76
-Conflicting note in measure 140, time: 4:20.79
-Conflicting note in measure 142, time: 4:24.43
-Conflicting note in measure 142, time: 4:24.54
-Conflicting note in measure 143, time: 4:25.79
-Conflicting note in measure 145, time: 4:29.12
-Conflicting note in measure 147, time: 4:32.45
-Conflicting note in measure 149, time: 4:35.79
-Conflicting note in measure 154, time: 4:44.79
-Conflicting note in measure 154, time: 4:45.12
-Conflicting note in measure 154, time: 4:45.29
-Conflicting note in measure 154, time: 4:45.45
-Conflicting note in measure 154, time: 4:45.62
+Start 72 0 0 Middle 0 End 0 Player 0 Whacker 72 uncapped 
+Start 76 1 0 Middle 0 End 0 Player 1 Whacker 76 uncapped 
+Start 72 2 0.15625 1 Player 0 MRP 
+Start 76 3 0.15625 1 Player 1 MRP 
+Start 72 4 0.46875 2 Player 0 MRP 
+Start 76 5 0.46875 2 Player 1 MRP 
+Start 72 6 0.625 3 Player 0 MRP 
+Start 76 7 0.625 3 Player 1 MRP 
+Start 67 8 0.78125 Middle 0 End 0 Player 2 Whacker 67 uncapped 
+Start 72 9 0.78125 4 Player 0 MRP 
+Start 72 10 0.9375 5 Player 0 MRP 
+Start 76 11 0.9375 4 Player 1 MRP 
+Start 76 12 1.25 5 Player 1 MRP 
+Start 79 13 1.25 Middle 0 End 0 Player 3 Whacker 79 uncapped 
+Start 47 14 1.875 Middle 0 End 0 Player 4 Whacker 59 capped 47 
+Start 55 15 1.875 Middle 0 End 0 Player 5 Whacker 55 uncapped 
+Start 52 16 2.5 Middle 0 End 0 Player 6 Whacker 52 uncapped 
+Start 60 17 2.5 Middle 0 End 0 Player 7 Whacker 60 uncapped 
+Start 67 18 2.5 1 Player 2 MRP 
+Start 72 19 2.5 6 Player 0 MRP 
+Start 64 20 2.96875 Middle 0 End 0 Player 8 Whacker 64 uncapped 
+Start 67 21 2.96875 2 Player 2 MRP 
+Start 48 22 3.125 Middle 0 End 1 Player 8 Whacker 48 uncapped 
+Start 55 23 3.125 1 Player 5 MRP 
+Start 64 24 3.125 2 Player 8 MRP 
+Start 67 25 3.125 3 Player 2 MRP 
+Start 60 26 3.4375 1 Player 7 MRP 
+Start 64 27 3.4375 3 Player 8 MRP 
+Start 48 28 3.75 4 Player 8 MRP 
+Start 57 29 3.75 Middle 0 End 2 Player 7 Whacker 57 uncapped 
+Start 69 30 3.90625 Middle 0 End 1 Player 6 Whacker 69 uncapped 
+Start 71 31 4.21875 Middle 0 End 2 Player 5 Whacker 71 uncapped 
+Start 43 32 4.375 Middle 0 End 1 Player 4 Whacker 55 capped 43 
+Start 52 33 4.375 2 Player 6 MRP 
+Start 71 34 4.375 3 Player 5 MRP 
+Start 70 35 4.53125 Middle 0 End 1 Player 3 Whacker 70 uncapped 
+Start 69 36 4.6875 3 Player 6 MRP 
+Start 52 37 5 4 Player 6 MRP 
+Start 60 38 5 3 Player 7 MRP 
+Start 67 39 5 4 Player 2 MRP 
+Start 64 40 5.20833 5 Player 8 MRP 
+Start 67 41 5.41667 5 Player 2 MRP 
+Start 48 42 5.625 6 Player 8 MRP 
+Start 55 43 5.625 4 Player 5 MRP 
+Start 69 44 5.625 5 Player 6 MRP 
+Start 65 45 5.9375 Middle 0 End 6 Player 2 Whacker 65 uncapped 
+Start 67 46 6.09375 7 Player 2 MRP 
+Start 52 47 6.25 6 Player 6 MRP 
+Start 60 48 6.25 4 Player 7 MRP 
+Start 67 49 6.25 8 Player 2 MRP 
+Start 64 50 6.40625 7 Player 8 MRP 
+Start 60 51 6.71875 5 Player 7 MRP 
+Start 50 52 6.875 Middle 0 End 6 Player 1 Whacker 50 uncapped 
+Start 59 53 6.875 Middle 0 End 7 Player 0 Whacker 59 uncapped 
+Start 62 54 6.875 Middle 0 End 8 Player 0 Whacker 62 uncapped 
+Start 59 55 7.03125 9 Player 0 MRP 
+Start 52 56 7.5 7 Player 6 MRP 
+Start 60 57 7.5 6 Player 7 MRP 
+Start 67 58 7.5 9 Player 2 MRP 
+Start 72 59 7.5 10 Middle 2 Checking conflict 0 Player: 0 Pitch: 59 Time: 7.03125 Checking conflict 1 Player: 0 Pitch: 62 Time: 6.875 End 7 Player 1 Whacker 72 uncapped 
+Start 64 60 7.96875 8 Player 8 MRP 
+Start 67 61 7.96875 10 Player 2 MRP 
+Start 48 62 8.125 9 Player 8 MRP 
+Start 55 63 8.125 5 Player 5 MRP 
+Start 64 64 8.125 10 Player 8 MRP 
+Start 67 65 8.125 11 Player 2 MRP 
+Start 60 66 8.4375 7 Player 7 MRP 
+Start 64 67 8.4375 11 Player 8 MRP 
+Start 48 68 8.75 12 Player 8 MRP 
+Start 57 69 8.75 8 Player 7 MRP 
+Start 69 70 8.90625 8 Player 6 MRP 
+Start 71 71 9.21875 6 Player 5 MRP 
+Start 43 72 9.375 2 Player 4 MRP 
+Start 52 73 9.375 9 Player 6 MRP 
+Start 71 74 9.375 7 Player 5 MRP 
+Start 70 75 9.53125 2 Player 3 MRP 
+Start 69 76 9.6875 10 Player 6 MRP 
+Start 52 77 10 11 Player 6 MRP 
+Start 60 78 10 9 Player 7 MRP 
+Start 67 79 10 12 Player 2 MRP 
+Start 64 80 10.2083 13 Player 8 MRP 
+Start 67 81 10.4167 13 Player 2 MRP 
+Start 48 82 10.625 14 Player 8 MRP 
+Start 55 83 10.625 8 Player 5 MRP 
+Start 69 84 10.625 12 Player 6 MRP 
+Start 65 85 10.9375 14 Player 2 MRP 
+Start 67 86 11.0938 15 Player 2 MRP 
+Start 52 87 11.25 13 Player 6 MRP 
+Start 60 88 11.25 10 Player 7 MRP 
+Start 67 89 11.25 16 Player 2 MRP 
+Start 64 90 11.4062 15 Player 8 MRP 
+Start 60 91 11.7188 11 Player 7 MRP 
+Start 50 92 11.875 8 Player 1 MRP 
+Start 59 93 11.875 10 Player 0 MRP 
+Start 62 94 11.875 11 Player 0 MRP 
+Start 59 95 12.0312 12 Player 0 MRP 
+Start 40 96 12.5 Middle 0 End 17 3 Player 3 Whacker 52 capped 40 
+Start 48 97 12.5 16 Player 8 MRP 
+Start 79 98 12.8125 4 Player 3 MRP 
+Start 48 99 12.9688 17 Player 8 MRP 
+Start 55 100 12.9688 9 Player 5 MRP 
+Start 78 101 12.9688 Middle 0 End 17 Player 2 Whacker 78 uncapped 
+Start 48 102 13.125 18 Player 8 MRP 
+Start 55 103 13.125 10 Player 5 MRP 
+Start 77 104 13.125 Middle 0 End 3 Player 4 Whacker 77 uncapped 
+Start 75 105 13.2812 Middle 0 End 11 Player 5 Whacker 75 uncapped 
+Start 52 106 13.4375 14 Player 6 MRP 
+Start 60 107 13.4375 12 Player 7 MRP 
+Start 76 108 13.5938 9 Player 1 MRP 
+Start 45 109 13.75 Middle 0 End 15 Player 6 Whacker 57 capped 45 
+Start 53 110 13.75 Middle 0 End 13 Player 7 Whacker 53 uncapped 
+Start 67 111 13.9062 18 Player 2 MRP 
+Start 69 112 14.0625 16 Middle 2 Checking conflict 0 Player: 6 Pitch: 45 Time: 13.75 Checking conflict 1 Player: 6 Pitch: 52 Time: 13.4375 End 19 Player 8 Whacker 69 uncapped 
+Start 52 113 14.2188 16 Player 6 MRP 
+Start 60 114 14.2188 14 Player 7 MRP 
+Start 72 115 14.2188 10 Player 1 MRP 
+Start 52 116 14.375 17 Player 6 MRP 
+Start 60 117 14.375 15 Player 7 MRP 
+Start 52 118 14.5312 18 Player 6 MRP 
+Start 60 119 14.5312 16 Player 7 MRP 
+Start 69 120 14.5312 20 Player 8 MRP 
+Start 45 121 14.6875 19 Player 6 MRP 
+Start 53 122 14.6875 17 Player 7 MRP 
+Start 72 123 14.6875 11 Player 1 MRP 
+Start 74 124 14.8438 Middle 0 End 21 18 20 12 4 Player 4 Whacker 74 uncapped 
+Start 40 125 15 5 Player 3 MRP 
+Start 48 126 15 21 Player 8 MRP 
+Start 79 127 15.3125 6 Player 3 MRP 
+Start 43 128 15.4688 5 Player 4 MRP 
+Start 52 129 15.4688 20 Player 6 MRP 
+Start 78 130 15.4688 19 Player 2 MRP 
+Start 43 131 15.625 6 Player 4 MRP 
+Start 52 132 15.625 21 Player 6 MRP 
+Start 77 133 15.625 7 Middle 2 Checking conflict 0 Player: 4 Pitch: 43 Time: 15.625 Checking conflict 1 Player: 4 Pitch: 74 Time: 14.8438 End 22 18 22 12 Player 5 Whacker 77 uncapped 
+Start 75 134 15.7812 13 Player 5 MRP 
+Start 48 135 15.9375 22 Player 8 MRP 
+Start 55 136 15.9375 14 Middle 2 Checking conflict 0 Player: 5 Pitch: 75 Time: 15.7812 Checking conflict 1 Player: 5 Pitch: 77 Time: 15.625 Other player: 4 Checking back 131 Prebucket 133 6 7 Back check done Checking front 131 End 23 18 22 20 Player 2 Whacker 67 capped 55 
+Start 52 137 16.0938 22 Player 6 MRP 
+Start 60 138 16.0938 18 Player 7 MRP 
+Start 76 139 16.0938 12 Player 1 MRP 
+Start 72 140 16.4062 13 Player 1 MRP 
+Start 72 141 16.7188 14 Player 1 MRP 
+Start 72 142 16.875 15 Player 1 MRP 
+Start 47 143 17.1875 7 Player 4 MRP 
+Start 55 144 17.1875 21 Player 2 MRP 
+Start 40 145 17.5 7 Player 3 MRP 
+Start 48 146 17.5 23 Player 8 MRP 
+Start 79 147 17.8125 8 Player 3 MRP 
+Start 48 148 17.9688 24 Player 8 MRP 
+Start 55 149 17.9688 22 Player 2 MRP 
+Start 78 150 17.9688 23 Player 2 MRP 
+Start 48 151 18.125 25 Player 8 MRP 
+Start 55 152 18.125 24 Player 2 MRP 
+Start 77 153 18.125 14 Player 5 MRP 
+Start 75 154 18.2812 15 Player 5 MRP 
+Start 52 155 18.4375 23 Player 6 MRP 
+Start 60 156 18.4375 19 Player 7 MRP 
+Start 76 157 18.5938 16 Player 1 MRP 
+Start 45 158 18.75 24 Player 6 MRP 
+Start 53 159 18.75 20 Player 7 MRP 
+Start 67 160 18.9062 25 Middle 2 Checking conflict 0 Player: 2 Pitch: 55 Time: 18.125 Other player: 5 Checking back 153 Prebucket 152 14 16 Back check done Checking front 153 Checking conflict 1 Player: 2 Pitch: 78 Time: 17.9688 End 26 Player 8 Whacker 79 capped 67 
+Start 69 161 19.0625 27 25 Middle 4 Checking conflict 0 Player: 8 Pitch: 67 Time: 18.9062 Other player: 2 Checking back 152 Prebucket 160 24 25 Back check done Checking conflict 1 Player: 8 Pitch: 48 Time: 18.125 Checking conflict 2 Player: 6 Pitch: 45 Time: 18.75 Checking conflict 3 Player: 6 Pitch: 52 Time: 18.4375 End Conflicting 
+Start 52 162 19.2188 25 Player 6 MRP 
+Start 60 163 19.2188 21 Player 7 MRP 
+Start 72 164 19.2188 17 Player 1 MRP 
+Start 52 165 19.375 26 Player 6 MRP 
+Start 60 166 19.375 22 Player 7 MRP 
+Start 52 167 19.5312 27 Player 6 MRP 
+Start 60 168 19.5312 23 Player 7 MRP 
+Start 69 169 19.5312 27 28 Middle 4 Checking conflict 0 Player: 8 Pitch: 67 Time: 18.9062 Other player: 2 Checking back 152 Prebucket 160 24 25 Back check done Checking conflict 1 Player: 8 Pitch: 48 Time: 18.125 Checking conflict 2 Player: 6 Pitch: 52 Time: 19.5312 Checking conflict 3 Player: 6 Pitch: 45 Time: 18.75 End Conflicting 
+Start 45 170 19.6875 28 Player 6 MRP 
+Start 53 171 19.6875 24 Player 7 MRP 
+Start 72 172 19.6875 18 Player 1 MRP 
+Start 74 173 19.8438 8 Player 4 MRP 
+Start 40 174 20 9 Player 3 MRP 
+Start 48 175 20 27 Player 8 MRP 
+Start 44 176 20.3125 Middle 0 End 25 29 10 Player 3 Whacker 56 capped 44 
+Start 51 177 20.3125 Middle 0 End 25 29 19 13 Player 0 Whacker 51 uncapped 
+Start 72 178 20.3125 19 Player 1 MRP 
+Start 75 179 20.3125 16 Player 5 MRP 
+Start 44 180 20.625 11 Player 3 MRP 
+Start 51 181 20.625 14 Player 0 MRP 
+Start 72 182 20.625 20 Player 1 MRP 
+Start 75 183 20.625 17 Player 5 MRP 
+Start 41 184 20.7812 Middle 0 End 25 29 21 Player 1 Whacker 53 capped 41 
+Start 50 185 20.7812 22 Middle 2 Checking conflict 0 Player: 1 Pitch: 41 Time: 20.7812 Checking conflict 1 Player: 1 Pitch: 72 Time: 20.625 Other player: 0 Checking back 181 Prebucket 182 14 15 Back check done Checking front 181 Offloading 182 to player 0 Checking back 177 Prebucket 178 13 16 Back check done Checking front 177 Offloading 178 to player 0 Checking back 95 Prebucket 172 12 17 Back check done Checking front 177 Offloading 172 to player 0 Checking back 95 Prebucket 164 12 18 Back check done Checking front 172 Offloading 164 to player 0 Checking back 95 Prebucket 142 12 19 Back check done Checking front 164 Offloading 142 to player 0 Checking back 95 Prebucket 141 12 20 Back check done Checking front 142 Offloading 141 to player 0 Checking back 95 Prebucket 140 12 21 Back check done Checking front 141 Offloading 140 to player 0 Checking back 95 Prebucket 123 12 22 Back check done Checking front 140 Offloading 123 to player 0 Checking back 95 Prebucket 115 12 23 Back check done Checking front 123 Offloading 115 to player 0 Checking back 55 Prebucket 59 9 24 Back check done Checking front 93 Player 0 
+Start 70 186 20.7812 12 Middle 2 Checking conflict 0 Player: 3 Pitch: 44 Time: 20.625 Checking conflict 1 Player: 3 Pitch: 40 Time: 20 End 25 29 22 25 12 28 25 Player 2 Whacker 70 uncapped 
+Start 74 187 20.7812 9 Player 4 MRP 
+Start 40 188 21.25 12 Player 3 MRP 
+Start 48 189 21.25 28 Player 8 MRP 
+Start 67 190 21.25 29 Player 8 MRP 
+Start 72 191 21.25 25 25 Middle 4 Checking conflict 0 Player: 0 Pitch: 50 Time: 20.7812 Other player: 1 Checking back 184 Prebucket 185 21 22 Back check done Checking front 184 Checking conflict 1 Player: 0 Pitch: 51 Time: 20.625 Checking conflict 2 Player: 0 Pitch: 50 Time: 20.7812 Other player: 1 Checking back 184 Prebucket 185 21 22 Back check done Checking front 184 Checking conflict 3 Player: 0 Pitch: 51 Time: 20.625 Can offload to whacker 50 Can offload to whacker 50 End Conflicting 
+Start 52 192 21.7188 29 Player 6 MRP 
+Start 55 193 21.7188 26 Player 2 MRP 
+Start 52 194 21.875 30 Player 6 MRP 
+Start 55 195 21.875 27 Player 2 MRP 
+Start 43 196 22.1875 10 Player 4 MRP 
+Start 48 197 22.1875 30 Player 8 MRP 
+Start 40 198 22.5 13 Player 3 MRP 
+Start 48 199 22.5 31 Player 8 MRP 
+Start 79 200 22.8125 14 Player 3 MRP 
+Start 48 201 22.9688 32 Player 8 MRP 
+Start 55 202 22.9688 28 Player 2 MRP 
+Start 78 203 22.9688 29 Player 2 MRP 
+Start 48 204 23.125 33 Player 8 MRP 
+Start 55 205 23.125 30 Player 2 MRP 
+Start 77 206 23.125 18 Player 5 MRP 
+Start 75 207 23.2812 19 Player 5 MRP 
+Start 52 208 23.4375 31 Player 6 MRP 
+Start 60 209 23.4375 25 Player 7 MRP 
+Start 76 210 23.5938 22 Player 1 MRP 
+Start 45 211 23.75 32 Player 6 MRP 
+Start 53 212 23.75 26 Player 7 MRP 
+Start 67 213 23.9062 34 Player 8 MRP 
+Start 69 214 24.0625 35 33 Middle 4 Checking conflict 0 Player: 8 Pitch: 67 Time: 23.9062 Other player: 2 Checking back 205 Prebucket 213 30 31 Back check done Checking conflict 1 Player: 8 Pitch: 48 Time: 23.125 Checking conflict 2 Player: 6 Pitch: 45 Time: 23.75 Checking conflict 3 Player: 6 Pitch: 52 Time: 23.4375 End Conflicting 
+Start 52 215 24.2188 33 Player 6 MRP 
+Start 60 216 24.2188 27 Player 7 MRP 
+Start 72 217 24.2188 25 Player 0 MRP 
+Start 52 218 24.375 34 Player 6 MRP 
+Start 60 219 24.375 28 Player 7 MRP 
+Start 52 220 24.5312 35 Player 6 MRP 
+Start 60 221 24.5312 29 Player 7 MRP 
+Start 69 222 24.5312 35 36 Middle 4 Checking conflict 0 Player: 8 Pitch: 67 Time: 23.9062 Other player: 2 Checking back 205 Prebucket 213 30 31 Back check done Checking conflict 1 Player: 8 Pitch: 48 Time: 23.125 Checking conflict 2 Player: 6 Pitch: 52 Time: 24.5312 Checking conflict 3 Player: 6 Pitch: 45 Time: 23.75 End Conflicting 
+Start 45 223 24.6875 36 Player 6 MRP 
+Start 53 224 24.6875 30 Player 7 MRP 
+Start 72 225 24.6875 26 Player 0 MRP 
+Start 74 226 24.8438 11 Player 4 MRP 
+Start 40 227 25 15 Player 3 MRP 
+Start 48 228 25 35 Player 8 MRP 
+Start 79 229 25.3125 16 Player 3 MRP 
+Start 43 230 25.4688 12 Player 4 MRP 
+Start 52 231 25.4688 37 Player 6 MRP 
+Start 78 232 25.4688 31 Player 2 MRP 
+Start 43 233 25.625 13 Player 4 MRP 
+Start 52 234 25.625 38 Player 6 MRP 
+Start 77 235 25.625 20 Player 5 MRP 
+Start 75 236 25.7812 21 Player 5 MRP 
+Start 48 237 25.9375 36 Player 8 MRP 
+Start 55 238 25.9375 32 Player 2 MRP 
+Start 52 239 26.0938 39 Player 6 MRP 
+Start 60 240 26.0938 31 Player 7 MRP 
+Start 76 241 26.0938 23 Player 1 MRP 
+Start 72 242 26.4062 27 Player 0 MRP 
+Start 72 243 26.7188 28 Player 0 MRP 
+Start 72 244 26.875 29 Player 0 MRP 
+Start 47 245 27.1875 14 Player 4 MRP 
+Start 55 246 27.1875 33 Player 2 MRP 
+Start 40 247 27.5 17 Player 3 MRP 
+Start 48 248 27.5 37 Player 8 MRP 
+Start 79 249 27.8125 18 Player 3 MRP 
+Start 48 250 27.9688 38 Player 8 MRP 
+Start 55 251 27.9688 34 Player 2 MRP 
+Start 78 252 27.9688 35 Player 2 MRP 
+Start 48 253 28.125 39 Player 8 MRP 
+Start 55 254 28.125 36 Player 2 MRP 
+Start 77 255 28.125 22 Player 5 MRP 
+Start 75 256 28.2812 23 Player 5 MRP 
+Start 52 257 28.4375 40 Player 6 MRP 
+Start 60 258 28.4375 32 Player 7 MRP 
+Start 76 259 28.5938 24 Player 1 MRP 
+Start 45 260 28.75 41 Player 6 MRP 
+Start 53 261 28.75 33 Player 7 MRP 
+Start 67 262 28.9062 40 Player 8 MRP 
+Start 69 263 29.0625 41 42 Middle 4 Checking conflict 0 Player: 8 Pitch: 67 Time: 28.9062 Other player: 2 Checking back 254 Prebucket 262 36 37 Back check done Checking conflict 1 Player: 8 Pitch: 48 Time: 28.125 Checking conflict 2 Player: 6 Pitch: 45 Time: 28.75 Checking conflict 3 Player: 6 Pitch: 52 Time: 28.4375 End Conflicting 
+Start 52 264 29.2188 42 Player 6 MRP 
+Start 60 265 29.2188 34 Player 7 MRP 
+Start 72 266 29.2188 30 Player 0 MRP 
+Start 52 267 29.375 43 Player 6 MRP 
+Start 60 268 29.375 35 Player 7 MRP 
+Start 52 269 29.5312 44 Player 6 MRP 
+Start 60 270 29.5312 36 Player 7 MRP 
+Start 69 271 29.5312 41 45 Middle 4 Checking conflict 0 Player: 8 Pitch: 67 Time: 28.9062 Other player: 2 Checking back 254 Prebucket 262 36 37 Back check done Checking conflict 1 Player: 8 Pitch: 48 Time: 28.125 Checking conflict 2 Player: 6 Pitch: 52 Time: 29.5312 Checking conflict 3 Player: 6 Pitch: 45 Time: 28.75 End Conflicting 
+Start 45 272 29.6875 45 Player 6 MRP 
+Start 53 273 29.6875 37 Player 7 MRP 
+Start 72 274 29.6875 31 Player 0 MRP 
+Start 74 275 29.8438 15 Player 4 MRP 
+Start 40 276 30 19 Player 3 MRP 
+Start 48 277 30 41 Player 8 MRP 
+Start 44 278 30.3125 20 Player 3 MRP 
+Start 51 279 30.3125 32 Player 0 MRP 
+Start 72 280 30.3125 33 Player 0 MRP 
+Start 75 281 30.3125 24 Player 5 MRP 
+Start 44 282 30.625 21 Player 3 MRP 
+Start 51 283 30.625 34 Player 0 MRP 
+Start 72 284 30.625 35 Player 0 MRP 
+Start 75 285 30.625 25 Player 5 MRP 
+Start 41 286 30.7812 25 Player 1 MRP 
+Start 50 287 30.7812 26 Player 1 MRP 
+Start 70 288 30.7812 37 Player 2 MRP 
+Start 74 289 30.7812 16 Player 4 MRP 
+Start 40 290 31.25 22 Player 3 MRP 
+Start 48 291 31.25 42 Player 8 MRP 
+Start 67 292 31.25 43 Player 8 MRP 
+Start 72 293 31.25 36 Player 0 MRP 
+Start 52 294 31.7188 46 Player 6 MRP 
+Start 55 295 31.7188 38 Player 2 MRP 
+Start 52 296 31.875 47 Player 6 MRP 
+Start 55 297 31.875 39 Player 2 MRP 
+Start 43 298 32.1875 17 Player 4 MRP 
+Start 48 299 32.1875 44 Player 8 MRP 
+Start 36 300 32.5 Middle 0 End 38 Player 7 Whacker 48 capped 36 
+Start 44 301 32.5 23 Player 3 MRP 
+Start 68 302 32.5 Middle 0 End 48 Player 6 Whacker 68 uncapped 
+Start 72 303 32.5 37 Player 0 MRP 
+Start 68 304 32.6562 49 Player 6 MRP 
+Start 72 305 32.6562 38 Player 0 MRP 
+Start 44 306 32.9688 24 Player 3 MRP 
+Start 51 307 32.9688 39 Player 0 MRP 
+Start 68 308 32.9688 50 Player 6 MRP 
+Start 72 309 32.9688 40 Player 0 MRP 
+Start 44 310 33.125 25 Player 3 MRP 
+Start 51 311 33.125 41 Player 0 MRP 
+Start 68 312 33.125 51 Player 6 MRP 
+Start 72 313 33.125 42 Player 0 MRP 
+Start 72 314 33.2812 43 Player 0 MRP 
+Start 48 315 33.4375 45 Player 8 MRP 
+Start 56 316 33.4375 Middle 0 End 52 39 Player 7 Whacker 56 uncapped 
+Start 74 317 33.4375 18 Player 4 MRP 
+Start 48 318 33.75 46 Player 8 MRP 
+Start 55 319 33.75 40 Player 2 MRP 
+Start 76 320 33.75 27 Player 1 MRP 
+Start 72 321 33.9062 44 Player 0 MRP 
+Start 40 322 34.2188 26 Player 3 MRP 
+Start 48 323 34.2188 47 Player 8 MRP 
+Start 69 324 34.2188 48 Player 8 MRP 
+Start 40 325 34.375 27 Player 3 MRP 
+Start 48 326 34.375 49 Player 8 MRP 
+Start 67 327 34.375 50 41 Player 2 MRP 
+Start 36 328 34.6875 40 Player 7 MRP 
+Start 43 329 34.6875 19 Player 4 MRP 
+Start 36 330 35 41 Player 7 MRP 
+Start 44 331 35 28 Player 3 MRP 
+Start 68 332 35 52 Player 6 MRP 
+Start 72 333 35 45 Player 0 MRP 
+Start 68 334 35.1562 53 Player 6 MRP 
+Start 72 335 35.1562 46 Player 0 MRP 
+Start 44 336 35.4688 29 Player 3 MRP 
+Start 51 337 35.4688 47 Player 0 MRP 
+Start 68 338 35.4688 54 Player 6 MRP 
+Start 72 339 35.4688 48 Player 0 MRP 
+Start 44 340 35.625 30 Player 3 MRP 
+Start 51 341 35.625 49 Player 0 MRP 
+Start 68 342 35.625 55 Player 6 MRP 
+Start 72 343 35.625 50 Player 0 MRP 
+Start 72 344 35.7812 51 Player 0 MRP 
+Start 48 345 35.9375 50 Player 8 MRP 
+Start 56 346 35.9375 42 Player 7 MRP 
+Start 74 347 35.9375 20 Player 4 MRP 
+Start 76 348 36.0938 28 Player 1 MRP 
+Start 48 349 36.25 51 Player 8 MRP 
+Start 55 350 36.25 42 Player 2 MRP 
+Start 40 351 36.7188 31 Player 3 MRP 
+Start 48 352 36.7188 52 Player 8 MRP 
+Start 40 353 36.875 32 Player 3 MRP 
+Start 48 354 36.875 53 Player 8 MRP 
+Start 36 355 37.1875 43 Player 7 MRP 
+Start 43 356 37.1875 21 Player 4 MRP 
+Start 36 357 37.5 44 Player 7 MRP 
+Start 44 358 37.5 33 Player 3 MRP 
+Start 68 359 37.5 56 Player 6 MRP 
+Start 72 360 37.5 52 Player 0 MRP 
+Start 68 361 37.6562 57 Player 6 MRP 
+Start 72 362 37.6562 53 Player 0 MRP 
+Start 44 363 37.9688 34 Player 3 MRP 
+Start 51 364 37.9688 54 Player 0 MRP 
+Start 68 365 37.9688 58 Player 6 MRP 
+Start 72 366 37.9688 55 Player 0 MRP 
+Start 44 367 38.125 35 Player 3 MRP 
+Start 51 368 38.125 56 Player 0 MRP 
+Start 68 369 38.125 59 Player 6 MRP 
+Start 72 370 38.125 57 Player 0 MRP 
+Start 72 371 38.2812 58 Player 0 MRP 
+Start 48 372 38.4375 54 Player 8 MRP 
+Start 56 373 38.4375 45 Player 7 MRP 
+Start 74 374 38.4375 22 Player 4 MRP 
+Start 48 375 38.75 55 Player 8 MRP 
+Start 55 376 38.75 43 Player 2 MRP 
+Start 76 377 38.75 29 Player 1 MRP 
+Start 72 378 38.9062 59 Player 0 MRP 
+Start 40 379 39.2188 36 Player 3 MRP 
+Start 48 380 39.2188 56 Player 8 MRP 
+Start 69 381 39.2188 57 Player 8 MRP 
+Start 40 382 39.375 37 Player 3 MRP 
+Start 48 383 39.375 58 Player 8 MRP 
+Start 67 384 39.375 44 Player 2 MRP 
+Start 36 385 39.6875 46 Player 7 MRP 
+Start 43 386 39.6875 23 Player 4 MRP 
+Start 72 387 40 60 Player 0 MRP 
+Start 76 388 40 30 Player 1 MRP 
+Start 72 389 40.1562 61 Player 0 MRP 
+Start 76 390 40.1562 31 Player 1 MRP 
+Start 72 391 40.4688 62 Player 0 MRP 
+Start 76 392 40.4688 32 Player 1 MRP 
+Start 72 393 40.625 63 Player 0 MRP 
+Start 76 394 40.625 33 Player 1 MRP 
+Start 67 395 40.7812 45 Player 2 MRP 
+Start 72 396 40.7812 64 Player 0 MRP 
+Start 72 397 40.9375 65 Player 0 MRP 
+Start 76 398 40.9375 34 Player 1 MRP 
+Start 76 399 41.25 35 Player 1 MRP 
+Start 79 400 41.25 38 Player 3 MRP 
+Start 67 401 41.6667 46 Player 2 MRP 
+Start 60 402 42.0833 47 Player 7 MRP 
+Start 60 403 42.5 48 Player 7 MRP 
+Start 64 404 42.5 59 Player 8 MRP 
+Start 55 405 42.9167 47 Player 2 MRP 
+Start 60 406 42.9167 49 Player 7 MRP 
+Start 52 407 43.3333 60 Player 6 MRP 
+Start 55 408 43.3333 48 Player 2 MRP 
+Start 55 409 43.75 49 Player 2 MRP 
+Start 55 410 44.0278 50 Player 2 MRP 
+Start 55 411 44.1667 51 Player 2 MRP 
+Start 67 412 44.5833 52 Player 2 MRP 
+Start 67 413 44.8611 53 Player 2 MRP 
+Start 67 414 45 54 Player 2 MRP 
+Start 43 415 45.4167 24 Player 4 MRP 
+Start 55 416 45.4167 55 Player 2 MRP 
+Start 67 417 45.4167 56 Player 2 MRP 
+Start 71 418 45.6944 26 Player 5 MRP 
+Start 79 419 45.8333 39 Player 3 MRP 
+Start 47 420 46.1111 25 Player 4 MRP 
+Start 59 421 46.1111 66 Player 0 MRP 
+Start 77 422 46.1111 27 Player 5 MRP 
+Start 45 423 46.5278 61 Player 6 MRP 
+Start 57 424 46.5278 50 Player 7 MRP 
+Start 69 425 46.5278 60 Player 8 MRP 
+Start 70 426 46.6667 57 40 Player 3 MRP 
+Start 47 427 46.9444 26 Player 4 MRP 
+Start 59 428 46.9444 67 Player 0 MRP 
+Start 71 429 46.9444 28 Player 5 MRP 
+Start 67 430 47.7778 57 Player 2 MRP 
+Start 79 431 47.9167 41 Player 3 MRP 
+Start 55 432 48.3333 58 Player 2 MRP 
+Start 43 433 48.75 27 Player 4 MRP 
+Start 48 434 49.0278 61 Player 8 MRP 
+Start 76 435 49.0278 36 Player 1 MRP 
+Start 75 436 49.4444 29 Player 5 MRP 
+Start 52 437 49.5833 62 Player 6 MRP 
+Start 76 438 49.5833 37 Player 1 MRP 
+Start 55 439 50 59 Player 2 MRP 
+Start 75 440 50.2778 30 Player 5 MRP 
+Start 76 441 50.4167 38 Player 1 MRP 
+Start 55 442 50.6944 60 Player 2 MRP 
+Start 69 443 50.8333 62 Player 8 MRP 
+Start 53 444 51.1111 51 Player 7 MRP 
+Start 72 445 51.1111 68 Player 0 MRP 
+Start 45 446 51.25 63 Player 6 MRP 
+Start 45 447 51.5278 64 Player 6 MRP 
+Start 48 448 51.6667 63 Player 8 MRP 
+Start 48 449 51.9444 64 Player 8 MRP 
+Start 76 450 52.3611 39 Player 1 MRP 
+Start 48 451 52.7778 65 Player 8 MRP 
+Start 75 452 52.7778 31 Player 5 MRP 
+Start 52 453 52.9167 65 Player 6 MRP 
+Start 76 454 52.9167 40 Player 1 MRP 
+Start 76 455 53.1944 41 Player 1 MRP 
+Start 55 456 53.3333 61 Player 2 MRP 
+Start 72 457 53.4722 69 Player 0 MRP 
+Start 74 458 53.75 28 Player 4 MRP 
+Start 43 459 54.4444 29 Player 4 MRP 
+Start 47 460 54.5833 30 Middle 2 Checking conflict 0 Player: 4 Pitch: 43 Time: 54.4444 Checking conflict 1 Player: 4 Pitch: 74 Time: 53.75 End Conflicting 
+Start 47 461 54.8611 30 Middle 2 Checking conflict 0 Player: 4 Pitch: 43 Time: 54.4444 Checking conflict 1 Player: 4 Pitch: 74 Time: 53.75 End Conflicting 
+Start 50 462 55 42 Player 1 MRP 
+Start 76 463 55.6944 43 Player 1 MRP 
+Start 48 464 56.1111 66 Player 8 MRP 
+Start 75 465 56.1111 32 Player 5 MRP 
+Start 52 466 56.25 66 Player 6 MRP 
+Start 76 467 56.25 44 Player 1 MRP 
+Start 55 468 56.6667 62 Player 2 MRP 
+Start 75 469 56.9444 33 Player 5 MRP 
+Start 76 470 57.0833 45 Player 1 MRP 
+Start 69 471 57.5 67 Player 8 MRP 
+Start 53 472 57.7778 52 Player 7 MRP 
+Start 72 473 57.7778 70 Player 0 MRP 
+Start 45 474 57.9167 67 Player 6 MRP 
+Start 45 475 58.1944 68 Player 6 MRP 
+Start 48 476 58.3333 68 Player 8 MRP 
+Start 76 477 59.0278 46 Player 1 MRP 
+Start 48 478 59.4444 69 Player 8 MRP 
+Start 76 479 59.4444 47 Player 1 MRP 
+Start 52 480 59.5833 69 Player 6 MRP 
+Start 76 481 59.5833 48 Player 1 MRP 
+Start 67 482 59.8611 63 Player 2 MRP 
+Start 43 483 60 30 Player 4 MRP 
+Start 69 484 60.1389 70 Player 8 MRP 
+Start 48 485 60.4167 71 Player 8 MRP 
+Start 72 486 60.4167 71 Player 0 MRP 
+Start 67 487 61.25 64 Player 2 MRP 
+Start 68 488 61.6667 70 Player 6 MRP 
+Start 53 489 62.0833 53 Player 7 MRP 
+Start 69 490 62.0833 72 Player 8 MRP 
+Start 69 491 62.3611 73 Player 8 MRP 
+Start 53 492 62.5 54 Player 7 MRP 
+Start 72 493 62.5 72 Player 0 MRP 
+Start 72 494 62.7778 73 Player 0 MRP 
+Start 65 495 63.1944 65 Player 2 MRP 
+Start 57 496 63.3333 55 Player 7 MRP 
+Start 69 497 63.3333 74 Player 8 MRP 
+Start 52 498 63.75 71 Player 6 MRP 
+Start 67 499 63.75 66 Player 2 MRP 
+Start 67 500 64.0278 67 Player 2 MRP 
+Start 52 501 64.1667 72 Player 6 MRP 
+Start 72 502 64.1667 74 Player 0 MRP 
+Start 72 503 64.4444 75 Player 0 MRP 
+Start 64 504 64.8611 75 Player 8 MRP 
+Start 55 505 65 68 34 Player 5 MRP 
+Start 67 506 65 68 Player 2 MRP 
+Start 50 507 65.4167 49 Player 1 MRP 
+Start 65 508 65.4167 69 Player 2 MRP 
+Start 65 509 65.6944 70 Player 2 MRP 
+Start 50 510 65.8333 50 Player 1 MRP 
+Start 69 511 65.8333 76 Player 8 MRP 
+Start 69 512 66.1111 77 Player 8 MRP 
+Start 62 513 66.5278 76 Player 0 MRP 
+Start 53 514 66.6667 56 Player 7 MRP 
+Start 65 515 66.6667 71 Player 2 MRP 
+Start 48 516 67.0833 78 Player 8 MRP 
+Start 64 517 67.0833 79 Middle 2 Checking conflict 0 Player: 8 Pitch: 48 Time: 67.0833 Checking conflict 1 Player: 8 Pitch: 69 Time: 66.1111 Other player: 6 Checking back 501 Prebucket 512 72 73 Back check done Offloading 512 to player 6 Checking back 501 Prebucket 511 72 74 Back check done Checking front 512 Offloading 511 to player 6 Checking back 488 Prebucket 497 70 75 Back check done Checking front 498 Offloading 497 to player 6 Checking back 488 Prebucket 491 70 76 Back check done Checking front 497 Offloading 491 to player 6 Checking back 488 Prebucket 490 70 77 Back check done Checking front 491 Offloading 490 to player 6 Checking back 480 Prebucket 484 69 78 Back check done Checking front 488 Player 6 
+Start 64 518 67.3611 79 Middle 2 Checking conflict 0 Player: 8 Pitch: 48 Time: 67.0833 Checking conflict 1 Player: 6 Pitch: 69 Time: 66.1111 End 79 Player 6 Whacker 64 uncapped 
+Start 48 519 67.5 79 Player 8 MRP 
+Start 67 520 67.5 72 Player 2 MRP 
+Start 67 521 67.7778 73 Player 2 MRP 
+Start 60 522 68.1944 57 Player 7 MRP 
+Start 52 523 68.3333 80 Player 6 MRP 
+Start 64 524 68.3333 81 Player 6 MRP 
+Start 53 525 68.75 58 Player 7 MRP 
+Start 69 526 68.75 82 82 Middle 4 Checking conflict 0 Player: 6 Pitch: 64 Time: 68.3333 Other player: 8 Checking back 519 Prebucket 524 79 80 Back check done Offloading 524 to player 8 Checking back 516 Prebucket 518 78 81 Back check done Checking front 519 Player 8 
+Start 69 527 69.0278 82 82 Middle 4 Checking conflict 0 Player: 8 Pitch: 64 Time: 68.3333 Checking conflict 1 Player: 6 Pitch: 52 Time: 68.3333 Checking conflict 2 Player: 8 Pitch: 64 Time: 68.3333 Checking conflict 3 Player: 6 Pitch: 52 Time: 68.3333 End Conflicting 
+Start 53 528 69.1667 59 Player 7 MRP 
+Start 72 529 69.1667 77 Player 0 MRP 
+Start 72 530 69.4444 78 Player 0 MRP 
+Start 65 531 69.8611 74 Player 2 MRP 
+Start 57 532 70 60 Middle 2 Checking conflict 0 Player: 7 Pitch: 53 Time: 69.1667 Checking conflict 1 Player: 7 Pitch: 60 Time: 68.1944 End Conflicting 
+Start 69 533 70 82 82 Middle 4 Checking conflict 0 Player: 8 Pitch: 64 Time: 68.3333 Checking conflict 1 Player: 6 Pitch: 52 Time: 68.3333 Checking conflict 2 Player: 8 Pitch: 64 Time: 68.3333 Checking conflict 3 Player: 6 Pitch: 52 Time: 68.3333 End Conflicting 
+Start 54 534 70.4167 Middle 0 End 51 Player 1 Whacker 54 uncapped 
+Start 69 535 70.4167 82 Player 6 MRP 
+Start 69 536 70.6944 83 Player 6 MRP 
+Start 54 537 70.8333 52 Player 1 MRP 
+Start 72 538 70.8333 79 Player 0 MRP 
+Start 72 539 71.1111 80 Player 0 MRP 
+Start 66 540 71.5278 Middle 0 End 81 Player 0 Whacker 66 uncapped 
+Start 57 541 71.6667 60 Player 7 MRP 
+Start 69 542 71.6667 84 Player 6 MRP 
+Start 55 543 72.0833 35 Player 5 MRP 
+Start 71 544 72.0833 36 Player 5 MRP 
+Start 71 545 72.3611 37 Player 5 MRP 
+Start 57 546 72.5 61 Player 7 MRP 
+Start 72 547 72.5 82 Player 0 MRP 
+Start 72 548 72.7778 83 Player 0 MRP 
+Start 58 549 72.9167 Middle 0 End 42 Player 3 Whacker 58 uncapped 
+Start 73 550 72.9167 Middle 0 End 82 Player 8 Whacker 73 uncapped 
+Start 73 551 73.1944 83 Player 8 MRP 
+Start 59 552 73.3333 84 Middle 2 Checking conflict 0 Player: 0 Pitch: 72 Time: 72.7778 Checking conflict 1 Player: 0 Pitch: 66 Time: 71.5278 End 38 31 Player 4 Whacker 71 capped 59 
+Start 74 553 73.3333 32 Player 4 MRP 
+Start 74 554 73.6111 33 Player 4 MRP 
+Start 55 555 73.75 38 Player 5 MRP 
+Start 79 556 74.0278 43 Player 3 MRP 
+Start 43 557 74.4444 34 Middle 2 Checking conflict 0 Player: 4 Pitch: 74 Time: 73.6111 Checking conflict 1 Player: 4 Pitch: 59 Time: 73.3333 Other player: 0 Checking back 548 Prebucket 552 83 84 Back check done End Conflicting 
+Start 55 558 74.5833 39 Player 5 MRP 
+Start 79 559 74.5833 44 Player 3 MRP 
+Start 47 560 80.75 34 Player 4 MRP 
+Start 53 561 80.75 62 Player 7 MRP 
+Start 71 562 80.75 40 Player 5 MRP 
+Start 69 563 80.875 85 Player 6 MRP 
+Start 65 564 81 75 Player 2 MRP 
+Start 47 565 81.125 35 Player 4 MRP 
+Start 53 566 81.125 63 Player 7 MRP 
+Start 71 567 81.125 41 Player 5 MRP 
+Start 47 568 81.25 36 Player 4 MRP 
+Start 53 569 81.25 64 Player 7 MRP 
+Start 71 570 81.25 42 Player 5 MRP 
+Start 69 571 81.5 86 Player 6 MRP 
+Start 65 572 81.625 76 Player 2 MRP 
+Start 44 573 81.75 45 Player 3 MRP 
+Start 47 574 81.75 37 Player 4 MRP 
+Start 52 575 81.75 87 Player 6 MRP 
+Start 64 576 81.75 84 Player 8 MRP 
+Start 71 577 82 43 Player 5 MRP 
+Start 76 578 82 53 Player 1 MRP 
+Start 71 579 82.25 44 Player 5 MRP 
+Start 76 580 82.25 54 Player 1 MRP 
+Start 40 581 82.75 46 Player 3 MRP 
+Start 45 582 82.75 88 Middle 2 Checking conflict 0 Player: 6 Pitch: 52 Time: 81.75 Checking conflict 1 Player: 6 Pitch: 69 Time: 81.5 End Conflicting 
+Start 64 583 82.875 85 Player 8 MRP 
+Start 49 584 83 Middle 0 End 45 Player 5 Whacker 49 uncapped 
+Start 52 585 83 88 Player 6 MRP 
+Start 69 586 83 89 Player 6 MRP 
+Start 64 587 83.125 86 Player 8 MRP 
+Start 40 588 83.25 47 Player 3 MRP 
+Start 45 589 83.25 90 Middle 2 Checking conflict 0 Player: 6 Pitch: 69 Time: 83 Checking conflict 1 Player: 6 Pitch: 52 Time: 83 End Conflicting 
+Start 67 590 83.25 77 Player 2 MRP 
+Start 69 591 83.375 90 Player 6 MRP 
+Start 49 592 83.5 46 Player 5 MRP 
+Start 52 593 83.5 91 Player 6 MRP 
+Start 64 594 83.625 87 Player 8 MRP 
+Start 40 595 83.75 48 Player 3 MRP 
+Start 45 596 83.75 92 Middle 2 Checking conflict 0 Player: 6 Pitch: 52 Time: 83.5 Checking conflict 1 Player: 6 Pitch: 69 Time: 83.375 End Conflicting 
+Start 69 597 83.75 92 Player 6 MRP 
+Start 64 598 83.875 88 Player 8 MRP 
+Start 49 599 84 47 Player 5 MRP 
+Start 52 600 84 93 Player 6 MRP 
+Start 67 601 84 78 Player 2 MRP 
+Start 69 602 84.125 94 Player 6 MRP 
+Start 40 603 84.25 49 Player 3 MRP 
+Start 45 604 84.25 95 Middle 2 Checking conflict 0 Player: 6 Pitch: 69 Time: 84.125 Checking conflict 1 Player: 6 Pitch: 52 Time: 84 End Conflicting 
+Start 69 605 84.25 95 Player 6 MRP 
+Start 49 606 84.5 48 Player 5 MRP 
+Start 52 607 84.5 96 Player 6 MRP 
+Start 61 608 84.5 Middle 0 End 49 Player 5 Whacker 61 uncapped 
+Start 64 609 84.5 89 Player 8 MRP 
+Start 45 610 84.75 97 Middle 2 Checking conflict 0 Player: 6 Pitch: 52 Time: 84.5 Checking conflict 1 Player: 6 Pitch: 69 Time: 84.25 End Conflicting 
+Start 50 611 84.75 55 Player 1 MRP 
+Start 62 612 84.875 84 Player 0 MRP 
+Start 53 613 85 65 Player 7 MRP 
+Start 57 614 85 66 Player 7 MRP 
+Start 69 615 85 97 Player 6 MRP 
+Start 57 616 85.125 67 Player 7 MRP 
+Start 45 617 85.25 98 Middle 2 Checking conflict 0 Player: 6 Pitch: 69 Time: 85 Checking conflict 1 Player: 6 Pitch: 52 Time: 84.5 End Conflicting 
+Start 50 618 85.25 56 Player 1 MRP 
+Start 62 619 85.25 85 Player 0 MRP 
+Start 69 620 85.375 98 Player 6 MRP 
+Start 53 621 85.5 68 Player 7 MRP 
+Start 57 622 85.5 69 Player 7 MRP 
+Start 62 623 85.625 86 Player 0 MRP 
+Start 45 624 85.75 99 Middle 2 Checking conflict 0 Player: 6 Pitch: 69 Time: 85.375 Checking conflict 1 Player: 6 Pitch: 52 Time: 84.5 End Conflicting 
+Start 50 625 85.75 57 Player 1 MRP 
+Start 69 626 85.75 99 Player 6 MRP 
+Start 57 627 85.875 70 Player 7 MRP 
+Start 53 628 86 71 Player 7 MRP 
+Start 57 629 86 72 Player 7 MRP 
+Start 62 630 86 87 Player 0 MRP 
+Start 69 631 86.125 100 Player 6 MRP 
+Start 45 632 86.25 101 Middle 2 Checking conflict 0 Player: 6 Pitch: 69 Time: 86.125 Checking conflict 1 Player: 6 Pitch: 52 Time: 84.5 End Conflicting 
+Start 50 633 86.25 58 Player 1 MRP 
+Start 69 634 86.25 101 Player 6 MRP 
+Start 53 635 86.5 73 Player 7 MRP 
+Start 57 636 86.5 74 Player 7 MRP 
+Start 57 637 86.5 75 Player 7 MRP 
+Start 62 638 86.5 88 Player 0 MRP 
+Start 47 639 86.75 38 Player 4 MRP 
+Start 50 640 86.75 59 Player 1 MRP 
+Start 62 641 86.875 89 Player 0 MRP 
+Start 50 642 87 60 Player 1 MRP 
+Start 55 643 87 50 Player 5 MRP 
+Start 67 644 87 79 Player 2 MRP 
+Start 62 645 87.125 90 Player 0 MRP 
+Start 47 646 87.25 39 Player 4 MRP 
+Start 50 647 87.25 61 Player 1 MRP 
+Start 65 648 87.25 80 Player 2 MRP 
+Start 67 649 87.375 81 Player 2 MRP 
+Start 50 650 87.5 62 Player 1 MRP 
+Start 55 651 87.5 51 Player 5 MRP 
+Start 62 652 87.625 91 Player 0 MRP 
+Start 47 653 87.75 40 Player 4 MRP 
+Start 50 654 87.75 63 Player 1 MRP 
+Start 67 655 87.75 82 Player 2 MRP 
+Start 62 656 87.875 92 Player 0 MRP 
+Start 50 657 88 64 Player 1 MRP 
+Start 55 658 88 52 Player 5 MRP 
+Start 65 659 88 83 Player 2 MRP 
+Start 67 660 88.125 84 Player 2 MRP 
+Start 47 661 88.25 41 Player 4 MRP 
+Start 50 662 88.25 65 Player 1 MRP 
+Start 67 663 88.25 85 Player 2 MRP 
+Start 50 664 88.5 66 Player 1 MRP 
+Start 55 665 88.5 53 Player 5 MRP 
+Start 59 666 88.5 42 Player 4 MRP 
+Start 62 667 88.5 93 Player 0 MRP 
+Start 43 668 88.75 43 Middle 2 Checking conflict 0 Player: 4 Pitch: 59 Time: 88.5 Other player: 0 Checking back 667 Prebucket 666 93 94 Back check done Checking front 667 Offloading 666 to player 0 Checking back 548 Prebucket 552 83 95 Back check done Checking front 612 Player 0 
+Start 48 669 88.75 90 Player 8 MRP 
+Start 60 670 88.875 76 Player 7 MRP 
+Start 52 671 89 102 Player 6 MRP 
+Start 55 672 89 54 Player 5 MRP 
+Start 67 673 89 86 Player 2 MRP 
+Start 60 674 89.125 77 Player 7 MRP 
+Start 43 675 89.25 43 Middle 2 Checking conflict 0 Player: 0 Pitch: 59 Time: 88.5 Checking conflict 1 Player: 4 Pitch: 47 Time: 88.25 End Conflicting 
+Start 48 676 89.25 91 Player 8 MRP 
+Start 64 677 89.25 92 Player 8 MRP 
+Start 67 678 89.375 87 Player 2 MRP 
+Start 52 679 89.5 103 Player 6 MRP 
+Start 55 680 89.5 55 Player 5 MRP 
+Start 60 681 89.625 78 Player 7 MRP 
+Start 58 682 89.75 50 Player 3 MRP 
+Start 64 683 89.75 93 Player 8 MRP 
+Start 67 684 89.75 88 Player 2 MRP 
+Start 58 685 90 51 Player 3 MRP 
+Start 64 686 90 94 Player 8 MRP 
+Start 67 687 90 89 Player 2 MRP 
+Start 57 688 90.25 79 Player 7 MRP 
+Start 63 689 90.25 Middle 0 End 43 Player 4 Whacker 63 uncapped 
+Start 66 690 90.25 96 Middle 2 Checking conflict 0 Player: 0 Pitch: 43 Time: 88.75 Other player: 4 Checking back 666 Prebucket 668 94 44 Error: Caught signal SIGSEGV (segmentation fault) (signal number 11)

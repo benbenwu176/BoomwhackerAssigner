@@ -56,5 +56,5 @@ inline Config::Config(int num_notes, const std::vector<int> &params, const std::
 
 
   // Rate data
-  switch_time = rates[0] - 0.0001; // Add by small amount to avoid floating point errors
+  switch_time = rates[0] - 0.0001; // Subtract by small amount to avoid floating point errors
 }

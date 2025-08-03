@@ -16,14 +16,16 @@ void Boomwhacker::uncap() {
 }
 
 void Boomwhacker::alloc() {
-
+  used = true;
 }
 
 void Boomwhacker::dealloc() {
-
+  used = false;
+  capped = false;
 }
 
 void Boomwhacker::add_note(Note* note) {
+  note->whacker_idx = notes.size();
   notes.push_back(note);
 }
 
