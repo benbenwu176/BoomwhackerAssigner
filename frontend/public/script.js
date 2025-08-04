@@ -1,5 +1,5 @@
 // WebSocket setup
-const ws = new WebSocket(`ws://${location.host}`);
+const ws = new WebSocket(`ws://www.wulabs.com:81`);
 ws.binaryType = 'arraybuffer';
 
 // Load tooltips
@@ -169,6 +169,7 @@ document.getElementById('sendBtn').onclick = async () => {
 };
 
 let incomingName = 'default.zip';
+let ok = true;
 
 // --- Response handling ---
 ws.onmessage = msg => {
@@ -183,13 +184,21 @@ ws.onmessage = msg => {
         case 'filename':
           incomingName = pkt.message;
           break;
-        case 'error':
+        case 'error': {
+          let errMsg = 'Error: ' + pkt.message;
+          console.error(errMsg);
+          ok = window.confirm(errMsg + "\nDownload anyway?");
+          break;
+        }
+        case 'shutdown': {
           let errMsg = 'Error: ' + pkt.message;
           console.error(errMsg);
           alert(errMsg);
           break;
+        }
         case 'debug':
           console.log('Debug:', pkt.message);
+          break;
         default:
           console.error('Unknown packet type:', pkt.type);
           console.error('Message contents:', pkt);
@@ -197,6 +206,10 @@ ws.onmessage = msg => {
     } catch {
       console.warn('Text message', msg.data);
     }
+    return;
+  }
+
+  if (!ok) {
     return;
   }
 

@@ -1,4 +1,3 @@
-import ms3
 import numpy as np
 import pandas as pd
 import warnings
@@ -11,6 +10,7 @@ from fractions import Fraction
 from collections import namedtuple
 from datetime import datetime
 import sys
+import ms3
 
 print("Starting...")
 args = sys.argv[1:]
@@ -124,7 +124,7 @@ def gen():
   # Run the assignment generation program
   cmd = [gen_path, tmp_dir, params_path, data_out_path, str(len(notes_df))]
   print(f"Running {cmd}")
-  proc = subprocess.run(cmd, capture_output=True, shell=True)
+  proc = subprocess.run(cmd, capture_output=True)
 
   # Write the stderr from the subprocess to an output file for debugging
   current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -180,10 +180,10 @@ def recolor(notes):
         minutes, seconds = divmod(row['time'], 60)
         f.write(f"Conflicting note {row['midi']} in measure {row['mc']}, time: {int(minutes)}:{seconds:05.2f}\n")
   
-  print("Number of conflicts:" + str(num_conflicting))
+  print("Number of conflicts: " + str(num_conflicting))
   # Write recolored assignment to file
   root, ext = os.path.splitext(score_path)
-  mscx_path = root + ".mscx"
+  mscx_path = root + "_colored" + ".mscx"
   score.store_score(mscx_path)
 
 # TODO: create a list of all the colors of each colored note in the piece

@@ -5,15 +5,17 @@ const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
-const crypto = require('crypto');
 const archiver = require('archiver');
 const { clearInterval } = require('timers');
 
+// Run webserver
+const wsPort = 81;
 const app = express();
 let publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 const server = http.createServer(app);
 
+// Run websocket server
 const wss = new WebSocketServer({ server });
 let connections = [];
 
@@ -25,7 +27,7 @@ const projectDir = path.dirname(__dirname);
 const script = 'gen.py';
 const scriptDir = 'src';
 const scriptPath = path.join(projectDir, scriptDir, script);
-const genExe = 'gen.exe';
+const genExe = 'gen';
 const genDir = 'build';
 const genPath = path.join(projectDir, genDir, genExe);
 
@@ -47,6 +49,7 @@ function zipDirectory(sourceDir, outPath) {
   });
 }
 
+// Send pseudo-progress messages
 function sendProgress(ws, progressIndex) {
   if (ws.readyState === WebSocket.OPEN) {
     let msg = {type: 'progress', message: progressMessages[progressIndex]};
@@ -71,7 +74,7 @@ function generateAssignment(ws, params, fileName, fileBuf) {
   fs.writeFileSync(paramsPath, JSON.stringify(params, null, 2) + '\n');
 
   // Call python script
-  const py = spawn('python', [scriptPath, tmpDir, scorePath, paramsPath, genPath]);
+  const py = spawn('python3', [scriptPath, tmpDir, scorePath, paramsPath, genPath]);
 
   // Send pseudo-progress commands
   sendProgress(ws, 0);
@@ -93,7 +96,10 @@ function generateAssignment(ws, params, fileName, fileBuf) {
   py.on('exit', code => {
     clearInterval(ticker);
     console.log('Python:', stdoutBuf);
-    console.log('Python debug:', stderrBuf);
+    if (stderrBuf.length > 0) {
+      console.log('Python debug:', stderrBuf);
+    }
+
     if (code !== 0) {
       let errorMsg = {type: 'error', message: 'Python script failed.'};
       let debugMsg = {type: 'debug', message: stdoutBuf};
@@ -101,15 +107,23 @@ function generateAssignment(ws, params, fileName, fileBuf) {
       ws.send(JSON.stringify(debugMsg));
     }
 
+    // Write gen output to ./frontend for quick debug
+    const logName = 'gen_output.log';
+    const logPath = path.join(tmpDir, 'gen_output.log');
+    const logBuf = fs.readFileSync(logPath);
+    const outPath = path.join(__dirname, logName);
+    fs.writeFileSync(outPath, logBuf);
+
     // Format final zip file name
     const now = new Date();
     const mm = String(now.getMonth() + 1).padStart(2, '0');
     const dd   = String(now.getDate()).padStart(2, '0');
     const yy   = String(now.getFullYear()).slice(-2);
-    const timestamp = `${mm}-${dd}-${yy}`;
-    const curTime = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-    const seconds = String(curTime).padStart(5, '0');
-    const zipName = `${fileBase}_${timestamp}_${seconds}.zip`;
+    const timestamp = `${mm}${dd}${yy}`;
+    const h = String(now.getHours()).padStart(2, '0');
+    const m = String(now.getMinutes()).padStart(2, '0');
+    const s = String(now.getSeconds()).padStart(2, '0');
+    const zipName = `${fileBase}_${timestamp}_${h}-${m}-${s}.zip`;
     const zipPath = path.join(tmpDir, zipName);
 
     // Zip all files in temporary directory and send zip file over websocket
@@ -184,14 +198,13 @@ wss.on('connection', ws => {
 });
 
 // Listen on webserver
-const PORT = process.env.PORT || 8081;
-server.listen(PORT, () => {
-  console.log(`Listening on http://localhost:${PORT}`);
+server.listen(wsPort, () => {
+  console.log(`Listening on http://www.wulabs.com:${wsPort}`);
 });
 
 // 3) Helper to broadcast an error to *your* array
 function broadcastError(text) {
-  const msg = JSON.stringify({ type: 'error', message: text});
+  const msg = JSON.stringify({ type: 'shutdown', message: text});
   for (const sock of connections) {
     if (sock.readyState === WebSocket.OPEN) {
       sock.send(msg);

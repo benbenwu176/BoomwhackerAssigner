@@ -1,7 +1,6 @@
 #include "gen.hpp"
 #include "assignment.hpp"
 #include <thread>
-#include <io.h>
 #include <fcntl.h>
 
 template<typename T>
@@ -75,7 +74,7 @@ void Assignment::init_graph() {
 }
 
 /**
- * @brief Writes the player assignments to STDOUT
+ * @brief Writes the player assignments to 'recolor_data.bin'
  */
 void Assignment::write()
 {
@@ -86,7 +85,6 @@ void Assignment::write()
       num_conflicts++;
     }
   }
-  log_line(); log("Number of conflicts:", num_conflicts, "\n"); log_line();
 
   // Print whacker data
   for (int i = 0; i < whacker_table.size(); i++) {
@@ -121,8 +119,8 @@ void Assignment::write()
     ofs.write(reinterpret_cast<const char*>(&note.capped), sizeof(bool));
     ofs.write(reinterpret_cast<const char*>(&note.conflicting), sizeof(bool));
   }
-  std::cout.flush();
-
+  log("Wrote recoloring data.");
+  log_line(); log("Number of conflicts:", num_conflicts, "\n"); log_line();
   // TODO: write entire assignment struct
 }
 

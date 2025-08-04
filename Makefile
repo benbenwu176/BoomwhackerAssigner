@@ -9,14 +9,14 @@ BUILDDIR	:= build
 SOURCES		:= $(wildcard $(SOURCEDIR)/*.cpp)
 OBJECTS		:= $(patsubst $(SOURCEDIR)/%.cpp, $(BUILDDIR)/%.o, $(SOURCES))
 ### Target executable (compiled gen.cpp) ###
-TARGET		:= build/gen.exe
+TARGET		:= build/gen
 
 # make all - Compile all .cpp files in ./src to ./build
 all: $(BUILDDIR) $(TARGET)
 
 # Create build directory if it doesn't exist yet
 $(BUILDDIR):
-	@if not exist "$(BUILDDIR)" mkdir "$(BUILDDIR)"
+	mkdir -p $(BUILDDIR)
 
 # Compile .cpp -> .o
 $(BUILDDIR)/%.o: $(SOURCEDIR)/%.cpp
@@ -28,8 +28,8 @@ $(TARGET): $(OBJECTS)
 
 # make clean - Remove all exe files from ./build
 clean:
-	@if exist "$(BUILDDIR)" rmdir /S /Q "$(BUILDDIR)"
-	@if exist "$(TARGET)" del /Q "$(TARGET)"
+	rm -rf $(BUILDDIR)
+	rm -f $(TARGET)
 
 # make genpy - Run only the python program at ./src/gen.py
 genpy:
@@ -45,4 +45,4 @@ test:
 	./archive/test
 
 server:
-	node ./frontend/server.js
+	authbind node ./frontend/server.js

@@ -22,9 +22,12 @@ Assignment* assignment;
 
 // Print the data from stdin containing pitches, times, parameters, and rates.
 void check_params(int num_notes, std::vector<int> pitches, std::vector<double> times, const nlohmann::json& params) {
-  log("Number of notes:", num_notes, "\n");
-  log("Number of players:", params["numPlayers"], "\n");
-  log("Parameters:", params.dump(2), "\n");
+  log("Number of notes:", num_notes);
+  log_line();
+  log("Number of players:", params["numPlayers"]);
+  log_line();
+  log("Parameters:", params.dump(2));
+  log_line();
   log("Pitches:");
   for (uint32_t pitch : pitches) {
     log(pitch);
@@ -43,12 +46,13 @@ void check_params(int num_notes, std::vector<int> pitches, std::vector<double> t
  *
  * @return 0 on success, 1 on failure
  */
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   // Initialize error signal handlers
   error_handler::initialize_error_handlers();
 
   // Read in file path arguments
   if (argc != 5) {
+    log(argc, argv[0]);
     log("Usage:", argv[0], "<tmp_dir> <params_path> <data_out_path> <num_notes>");
     return 1;
   }
