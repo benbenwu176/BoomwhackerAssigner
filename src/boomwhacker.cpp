@@ -1,8 +1,10 @@
 #include "gen.hpp"
 #include "boomwhacker.hpp"
+#include <cassert>
 
-Boomwhacker::Boomwhacker(int pitch) {
+Boomwhacker::Boomwhacker(int pitch, int id) {
   this->pitch = pitch;
+  this->id = id;
   used = false;
   capped = false;
 }
@@ -25,7 +27,7 @@ void Boomwhacker::dealloc() {
 }
 
 void Boomwhacker::add_note(Note* note) {
-  note->whacker_idx = notes.size();
+  assert(note->pitch == get_real_pitch());
   notes.push_back(note);
 }
 

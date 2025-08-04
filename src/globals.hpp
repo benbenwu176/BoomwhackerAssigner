@@ -13,11 +13,10 @@
 #include <iostream>
 
 typedef enum {
-    NO_RECURSE = 0 << 0, // Disables recursive offloading
+    BASIC = 0,        // Basic offload (no recursion or allocation)
     RECURSE = 1 << 0, // Allows recursive offloading
     ALLOCATE = 1 << 1, // Allows allocation of new boomwhackers
     PROXIMATE = 1 << 2, // Allows proximate notes to be played by nearby players
-    ROOT = 1 << 3, // Denotes the root of the recursive offloading tree
     LAST_RESORT = RECURSE | ALLOCATE | PROXIMATE // Allows all options to be used
 } add_flags;
 

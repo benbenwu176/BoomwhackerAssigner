@@ -16,16 +16,23 @@ typedef struct Config {
 
   bool enable_whacker_priority = true;
   
-  // std::vector<int> whacker_quantities = {
-  //   2,3,5,3,5,5,3,5,3,5,3,5,
-  //   7,4,4,4,4,4,4,5,4,4,4,4,
-  //   2,2,2,2,2,2,2,2
-  // };
   std::vector<int> whacker_quantities = {
-    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-    2, 2, 2, 2, 2, 2, 2, 2
+    2,3,5,3,5,5,3,5,3,5,3,5,
+    7,4,4,4,4,4,4,5,4,4,4,4,
+    2,2,2,2,2,2,2,2
   };
+
+  // std::vector<int> whacker_quantities = {
+  //   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  //   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+  //   2, 2, 2, 2, 2, 2, 2, 2
+  // };
+
+  // std::vector<int> whacker_quantities = {
+  //   4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+  //   4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+  //   4, 4, 4, 4, 4, 4, 4, 4
+  // };
 
   std::vector<double> switch_times = {
     2, 2, 2, 

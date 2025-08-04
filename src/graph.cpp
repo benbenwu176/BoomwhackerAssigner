@@ -20,7 +20,7 @@ std::vector<int> Graph::flatten() {
   std::vector<int> flattened_graph(cfg->num_players);
   for (int i = 0; i < cfg->num_players; i++)
   {
-    flattened_graph[i] = random_player();
+    flattened_graph[i] = 0;
   }
   return flattened_graph;
 }

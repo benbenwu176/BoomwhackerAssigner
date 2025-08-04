@@ -8,24 +8,17 @@
 #include "globals.hpp"
 #include "note.hpp"
 #include "player.hpp"
+#include <string>
 #include "boomwhacker.hpp"
 #include "graph.hpp"
 #include <cassert>
 
+struct Option {
+  Note* note;
+  std::vector<Note*> conflicts;
 
-/* 
- * The MRP contains a pitch-indexable array of Players who have most recently played this
- * note. The array of players is organized as a pseudo priority queue. The person who most
- * recently played the note is at the front.
- */
-class MRP {
-public:
-  MRP();
-  std::vector<Player*>& get_queue(int pitch);
-  void add(Player* player, Note* note);
-
-private:
-  std::vector<std::vector<Player*>> data;
+  Option(Note* _note) : note(_note){}
+  Option(Note* _note, std::vector<Note*>& _conflicts) : note(_note) , conflicts(_conflicts){}
 };
 
 class Assignment {
@@ -33,7 +26,6 @@ public:
   std::vector<Note> notes;
   std::vector<std::vector<Boomwhacker*>> whacker_table;
   std::vector<Player*> players;
-  MRP* mrp;
   Graph* adjacency_graph;
 
   // Root functions
@@ -48,7 +40,7 @@ public:
 
   // Assignment functions
   std::optional<std::vector<Note*>> add_existing(Note* note);
-  int add_offload(Note* note, std::vector<Note*> all_conflicts, add_flags flags);
+  int add_offload(Option* opt, add_flags flags);
   int add_new_whacker(Note* note);
   void skip(Note* note);
   void assign_note(Note* note, Boomwhacker* whacker, Player* player, bool new_whacker);
@@ -57,5 +49,3 @@ public:
   std::vector<Boomwhacker*> find_used_whackers(int pitch);
   std::vector<Note*> get_mrp_queue(int pitch, double time);
 };
-
-int random_player();

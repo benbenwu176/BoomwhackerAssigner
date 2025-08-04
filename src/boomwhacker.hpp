@@ -6,11 +6,12 @@
 class Boomwhacker {
 public:
   int pitch; // The pitch of the boomwhacker
+  int id;
   bool used; // Whether the boomwhacker has been used
   bool capped; // Whether the boomwhacker is capped
   std::vector<Note*> notes; // The notes that are played by this boomwhacker
 
-  Boomwhacker(int pitch);
+  Boomwhacker(int pitch, int id);
   void cap();
   void uncap();
   void alloc();

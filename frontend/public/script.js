@@ -13,7 +13,7 @@ document.querySelectorAll('.tooltip').forEach(tooltip => {
 const statusEl = document.getElementById('status');
 
 // Whacker name mapping
-const scale = ["C", "C#", "D ", "D#", "E ", "F ", "F#", "G ", "G#", "A ", "A#", "B "]
+const scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 const octaves = ["Low", "Mid", "High"];
 
 // Create Whacker Quantity parameter list

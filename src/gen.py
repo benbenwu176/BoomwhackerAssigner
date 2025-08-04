@@ -213,7 +213,7 @@ def recolor(notes):
                   midi=[row['midi']], color_html = color)
       if (show_conflicting and row['conflicting'] == True):
         minutes, seconds = divmod(row['time'], 60)
-        f.write(f"Conflicting note in measure {row['mc']}, time: {int(minutes)}:{seconds:05.2f}\n")
+        f.write(f"Conflicting note {row['midi']} in measure {row['mc']}, time: {int(minutes)}:{seconds:05.2f}\n")
   
   # Write recolored assignment to file
   score.store_score(f'./data/{filename}.mscx')
