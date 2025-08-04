@@ -297,8 +297,7 @@ std::optional<std::vector<Note*>> Assignment::add_existing(Note* note) {
       for (Note* conflict : conflicts) {
         if (conflict->player != player) {
           log_line();
-          log(conflict->id);
-          log(conflict->player->id, conflict->whacker->id, conflict->whacker->get_real_pitch());
+          log(conflict->id, conflict->player->id, conflict->whacker->id, conflict->whacker->get_real_pitch());
           for (Player* p : players) {
             log_line();
             log("Player", p->id);
@@ -332,9 +331,7 @@ bool comp_id(Note* a, Note* b) {
 int Assignment::add_offload(Option* opt, add_flags flags) {
   Note* note = opt->note;
   const std::vector<Note*>& conflicts = opt->conflicts;
-  std::vector<Boomwhacker*> offload_allocatable;
   std::vector<Option*> options;
-  offload_allocatable.reserve(conflicts.size());
   options.reserve(conflicts.size());
 
   // Try to find a conflicting note that can be offloaded
@@ -421,14 +418,30 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
         Boomwhacker* new_whacker = *con_old_player->get_whacker(note->pitch);
         assign_note(note, new_whacker, con_old_player, false);
         return 0;
-      } else {
-        if ((flags & ALLOCATE) != 0) {
-          Boomwhacker* whacker = find_whacker(con->pitch);
-          offload_allocatable[i] = whacker;
-        }
       }
     }
   }
+
+  // Try to allocate a boomwhacker to cover the conflicting note
+  // if ((flags & ALLOCATE) != 0) {
+  //   for (int i = 0; i < conflicts.size(); i++) {
+  //     Note* con = conflicts[i];
+  //     if (add_new_whacker(con) == 0) {
+  //       return 0;
+  //     } // else, continue
+  //   }
+  // }  
+
+  // Attempt to recursively offload
+  // if ((flags & RECURSE) != 0) {
+  //   for (Option* opt : options) {
+  //     if (add_offload(opt, flags) == 0) {
+  //       return 0;
+  //     }
+  //     delete opt;
+  //   }
+  // }
+
   return 1;
 }
 
@@ -449,10 +462,10 @@ int Assignment::add_new_whacker(Note* note) {
 
   // Find player that has no conflicts with this note
   auto it = find_if(players.begin(), players.end(), [note](Player* p){
-    return p->conflicts_back(p->notes.end(), note).empty();
+    return (p != note->player) && p->conflicts_back(p->notes.end(), note).empty();
   });
   if (it != players.end()) {
-    // On successful add, Add note to whacker & player, whacker to player, player to MRP
+    // Successful add
     Player* player = *it;
     assign_note(note, whacker, player, true);
     log("Whacker", whacker->pitch);
@@ -520,7 +533,7 @@ int Assignment::add_note(Note* note) {
   // Try to allocate new BW
   if (add_new_whacker(note) == 0) return 0;
   // log("Try Offload LR");
-  // if (add_offload(opt, LAST_RESORT) == 0) return 0;
+  if (add_offload(opt, LAST_RESORT) == 0) return 0;
 
   // All attempts to add have failed thus far. get fucked.
   skip(note);
