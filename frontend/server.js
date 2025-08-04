@@ -20,8 +20,14 @@ let connections = [];
 const progressPath = path.join(__dirname, 'progress.txt');
 const progressMessages = fs.readFileSync(progressPath, 'utf-8').split(/\r?\n/);
 
-const script = 'compute.py';
-const scriptPath = path.join(__dirname, script);
+// Gen script locations
+const projectDir = path.dirname(__dirname);
+const script = 'gen.py';
+const scriptDir = 'src';
+const scriptPath = path.join(projectDir, scriptDir, script);
+const genExe = 'gen.exe';
+const genDir = 'build';
+const genPath = path.join(projectDir, genDir, genExe);
 
 // Zip a directory
 function zipDirectory(sourceDir, outPath) {
@@ -65,7 +71,7 @@ function generateAssignment(ws, params, fileName, fileBuf) {
   fs.writeFileSync(paramsPath, JSON.stringify(params, null, 2) + '\n');
 
   // Call python script
-  const py = spawn('python', [scriptPath, tmpDir, scorePath, paramsPath]);
+  const py = spawn('python', [scriptPath, tmpDir, scorePath, paramsPath, genPath]);
 
   // Send pseudo-progress commands
   sendProgress(ws, 0);
@@ -78,15 +84,21 @@ function generateAssignment(ws, params, fileName, fileBuf) {
     stdoutBuf += chunk;
   });
 
+  let stderrBuf = '';
+  py.stderr.setEncoding('utf8');
+  py.stderr.on('data', chunk => {
+    stderrBuf += chunk;
+  });
+
   py.on('exit', code => {
     clearInterval(ticker);
+    console.log('Python:', stdoutBuf);
+    console.log('Python debug:', stderrBuf);
     if (code !== 0) {
       let errorMsg = {type: 'error', message: 'Python script failed.'};
       let debugMsg = {type: 'debug', message: stdoutBuf};
       ws.send(JSON.stringify(errorMsg));
       ws.send(JSON.stringify(debugMsg));
-      fs.rmSync(tmpDir, { recursive: true, force: true });
-      return;
     }
 
     // Format final zip file name
@@ -172,7 +184,7 @@ wss.on('connection', ws => {
 });
 
 // Listen on webserver
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8081;
 server.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`);
 });

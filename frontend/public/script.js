@@ -77,8 +77,8 @@ const presets = {
     players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
   },
   harvard: {
-    whackers: Array.from({length:32}, () => 99),
-    players: Array.from({length: 8}, () => ({holdLimit: 2, switchTime: 1.5})),
+    whackers: Array.from({length:32}, () => 4),
+    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
   },
   studio: {
     whackers: Array.from({length:32}, ()=>1),

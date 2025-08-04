@@ -46,10 +46,9 @@ void Assignment::init_notes(std::vector<int> &pitches, std::vector<double> &time
  * @brief Initialize an array of players.
  */
 void Assignment::init_players() {
-
   players.reserve(cfg->num_players);
   for (int i = 0; i < cfg->num_players; i++) {
-    players.push_back(new Player(i, cfg->hold_limit, cfg->switch_times[i]));
+    players.push_back(new Player(i, cfg->hold_limits[i], cfg->switch_times[i]));
   }
 }
 
@@ -80,35 +79,16 @@ void Assignment::init_graph() {
  */
 void Assignment::write()
 {
-  _setmode(_fileno(stdout), O_BINARY);
-  // Write # of conflicts in the final assignment
+  // Print # of conflicts in the final assignment
   int num_conflicts = 0;
   for (int i = 0; i < cfg->num_notes; i++) {
     if (notes[i].conflicting) {
       num_conflicts++;
     }
   }
+  log_line(); log("Number of conflicts:", num_conflicts, "\n"); log_line();
 
-  log_line();
-  log("Number of conflicts:", num_conflicts);
-  log_line();
-
-  std::cout.write(reinterpret_cast<const char *>(&num_conflicts), sizeof(int));
-  // Write flattened graph of the final assignment
-  std::vector<int> flattened_graph = adjacency_graph->flatten();
-  std::cout.write(reinterpret_cast<const char *>(flattened_graph.data()), sizeof(int) * cfg->num_players);
-
-  // Write relevant note fields to genpy.py
-  for (int i = 0; i < notes.size(); i++) {
-    Note note = notes[i];
-    int player_id = note.player != nullptr ? note.player->id : -1;
-    std::cout.write(reinterpret_cast<const char*>(&note.time), sizeof(double));
-    std::cout.write(reinterpret_cast<const char*>(&player_id), sizeof(int));
-    std::cout.write(reinterpret_cast<const char*>(&note.capped), sizeof(bool));
-    std::cout.write(reinterpret_cast<const char*>(&note.conflicting), sizeof(bool));
-  }
-  std::cout.flush();
-
+  // Print whacker data
   for (int i = 0; i < whacker_table.size(); i++) {
     log_line();
     log("Whacker", i);
@@ -125,10 +105,25 @@ void Assignment::write()
     for (int j = 0; j < players[i]->whackers.size(); j++) {
       Boomwhacker* whacker = player->whackers[j];
       int pitch = whacker->pitch;
-      std::cerr << (whacker->capped ? "*" : "") << octaves[(pitch - C2_MIDI) / 12] << " " << scale[pitch % 12] << " ";
+      std::cout << (whacker->capped ? "*" : "") << octaves[(pitch - C2_MIDI) / 12] << " " << scale[pitch % 12] << " ";
     }
   }
   log_line();
+
+  // Write relevant note fields to binary
+  std::filesystem::path recolor_data_path = cfg->tmp_dir / "recolor_data.bin";
+  std::ofstream ofs(recolor_data_path, std::ios::binary | std::ios::trunc);
+  for (int i = 0; i < notes.size(); i++) {
+    Note note = notes[i];
+    int player_id = note.player != nullptr ? note.player->id : -1;
+    ofs.write(reinterpret_cast<const char*>(&note.time), sizeof(double));
+    ofs.write(reinterpret_cast<const char*>(&player_id), sizeof(int));
+    ofs.write(reinterpret_cast<const char*>(&note.capped), sizeof(bool));
+    ofs.write(reinterpret_cast<const char*>(&note.conflicting), sizeof(bool));
+  }
+  std::cout.flush();
+
+  // TODO: write entire assignment struct
 }
 
 // Find and return all used whackers of a given pitch

@@ -20,46 +20,20 @@
 Config* cfg;
 Assignment* assignment;
 
-/**
- * @brief Print the data from stdin containing pitches, times, parameters, and rates.
- *
- * @param n The number of notes.
- * @param p The number of parameters.
- * @param r The number of rates.
- * @param pitches The pitches of the notes.
- * @param times The times of the notes.
- * @param params The integer parameters.
- * @param rates The rate parameters.
- */
-void check_params(int n, int p, int r, std::vector<int> &pitches, std::vector<double> &times,
-                  std::vector<int> &params, std::vector<double> &rates) {
-  std::cerr << "Number of notes: " << n << std::endl;
-  std::cerr << "Number of parameters: " << p << std::endl;
-  std::cerr << "Number of rates: " << r << std::endl;
-  std::cerr << "Pitches: ";
-  for (int i = 0; i < n; i++)
-  {
-    std::cerr << pitches[i] << " ";
+// Print the data from stdin containing pitches, times, parameters, and rates.
+void check_params(int num_notes, std::vector<int> pitches, std::vector<double> times, const nlohmann::json& params) {
+  log("Number of notes:", num_notes, "\n");
+  log("Number of players:", params["numPlayers"], "\n");
+  log("Parameters:", params.dump(2), "\n");
+  log("Pitches:");
+  for (uint32_t pitch : pitches) {
+    log(pitch);
   }
-  std::cerr << std::endl;
-  std::cerr << "Times: ";
-  for (int i = 0; i < n; i++)
-  {
-    std::cerr << times[i] << " ";
+  log_line();
+  for (double time : times) {
+    log(time);
   }
-  std::cerr << std::endl;
-  std::cerr << "Parameters: ";
-  for (int i = 0; i < p; i++)
-  {
-    std::cerr << params[i] << " ";
-  }
-  std::cerr << std::endl;
-  std::cerr << "Rates: ";
-  for (int i = 0; i < r; i++)
-  {
-    std::cerr << rates[i] << " ";
-  }
-  std::cerr << std::endl;
+  log_line();
 }
 
 /**
@@ -70,48 +44,47 @@ void check_params(int n, int p, int r, std::vector<int> &pitches, std::vector<do
  * @return 0 on success, 1 on failure
  */
 int main(int argc, char *argv[]) {
+  // Initialize error signal handlers
   error_handler::initialize_error_handlers();
-  // Read n, p, r from args
-  int n = atoi(argv[1]);
-  int p = atoi(argv[2]);
-  int r = atoi(argv[3]);
 
-  // Read pitches, times, parameters, and rates from stdin
-  int pitches_size = n * sizeof(int);
-  if (n % 2 == 1)
-  {
-    pitches_size += sizeof(int);
+  // Read in file path arguments
+  if (argc != 5) {
+    log("Usage:", argv[0], "<tmp_dir> <params_path> <data_out_path> <num_notes>");
+    return 1;
   }
-  // Add padding to the int array to round it up to a multiple of 8
-  int times_size = n * sizeof(double);
-  int params_size = p * sizeof(int);
-  if (p % 2 == 1)
-  {
-    params_size += sizeof(int);
+  std::filesystem::path tmp_dir{argv[1]};
+  std::filesystem::path params_path{argv[2]};
+  std::filesystem::path data_out_path{argv[3]};
+  int num_notes = atoi(argv[4]);
+
+  // Read in JSON parameter object
+  std::ifstream params_in(params_path);
+  if (!params_in) {
+    throw std::runtime_error("Cannot open parameters.");
   }
-  // Add padding to the int array to round it up to a multiple of 8
-  int rates_size = r * sizeof(double);
-  int data_size = pitches_size + times_size + params_size + rates_size;
-  int padding = 4096 - (data_size) % 4096;
-  char *buffer = new char[data_size + padding];
-  std::cin.read(reinterpret_cast<char *>(buffer), data_size + padding);
+  nlohmann::json params;
+  try {
+    params_in >> params;
+  } catch (const std::exception &e) {
+    log("Error parsing JSON:", e.what());
+    return 1;
+  }
 
-  std::vector<int> pitches(n);
-  std::vector<double> times(n);
-  std::vector<int> params(p);
-  std::vector<double> rates(r);
+  // Read in note pitches and times
+  std::ifstream bin_in(data_out_path, std::ios::binary);
+  if (!bin_in) {
+    throw std::runtime_error("Cannot open binary file.");
+  }
+  std::vector<int> pitches(num_notes);
+  std::vector<double> times(num_notes);
+  bin_in.read(reinterpret_cast<char*>(pitches.data()), num_notes * sizeof(int));
+  bin_in.read(reinterpret_cast<char*>(times.data()), num_notes * sizeof(double));
 
-  memcpy(pitches.data(), buffer, n * sizeof(int));
-  memcpy(times.data(), buffer + pitches_size, n * sizeof(double));
-  memcpy(params.data(), buffer + pitches_size + times_size, p * sizeof(int));
-  memcpy(rates.data(), buffer + pitches_size + times_size + params_size, r * sizeof(double));
-  delete[] buffer;
+  // Log the data that was just read
+  check_params(num_notes, pitches, times, params);
 
-  check_params(n, p, r, pitches, times, params, rates);
-
-  cfg = new Config(n, params, rates);
+  cfg = new Config(num_notes, params, tmp_dir);
   assignment = new Assignment(pitches, times);
-  random_utils::seed(cfg->seed);
 
   try {
     assignment->assign();

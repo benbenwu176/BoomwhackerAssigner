@@ -23,9 +23,9 @@ typedef enum {
 // Basic variadic log function: prints each argument followed by a space
 template<typename... Args>
 inline void log(Args&&... args) {
-  ((std::cerr << std::forward<Args>(args) << ' '), ...);
+  ((std::cout << std::forward<Args>(args) << ' '), ...);
 }
 
 inline void log_line() {
-  std::cerr << std::endl;
+  std::cout << std::endl;
 }
