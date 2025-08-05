@@ -147,25 +147,21 @@
             <durationType>quarter</durationType>
             <Note>
               <eid>vhIb4DZMLUF_hieuvBdG4vD</eid>
-              <color r="255" g="0" b="0" a="255"/>
               <pitch>60</pitch>
               <tpc>14</tpc>
               </Note>
             <Note>
               <eid>xE+J+5o2BeF_Ywdbko31pOM</eid>
-              <color r="0" g="102" b="34" a="255"/>
               <pitch>64</pitch>
               <tpc>18</tpc>
               </Note>
             <Note>
               <eid>PoNMN979bbI_YZMHrtycLdO</eid>
-              <color r="0" g="102" b="34" a="255"/>
               <pitch>67</pitch>
               <tpc>15</tpc>
               </Note>
             <Note>
               <eid>ALYAaYDCz5B_h/egtsNNbpO</eid>
-              <color r="255" g="0" b="0" a="255"/>
               <pitch>71</pitch>
               <tpc>19</tpc>
               </Note>
@@ -176,13 +172,11 @@
             <durationType>half</durationType>
             <Note>
               <eid>IAigcd4pQDC_0ct+5MPU9GE</eid>
-              <color r="0" g="102" b="34" a="255"/>
               <pitch>64</pitch>
               <tpc>18</tpc>
               </Note>
             <Note>
               <eid>VTn5+7iT4qP_5HdtKi7m3d</eid>
-              <color r="0" g="102" b="34" a="255"/>
               <pitch>67</pitch>
               <tpc>15</tpc>
               </Note>
@@ -201,13 +195,11 @@
             <durationType>quarter</durationType>
             <Note>
               <eid>YP7QykFTZtH_HyDNTqDcb/N</eid>
-              <color r="255" g="0" b="0" a="255"/>
               <pitch>59</pitch>
               <tpc>19</tpc>
               </Note>
             <Note>
               <eid>NQ+j5Zm58/G_l6jh71TcycN</eid>
-              <color r="255" g="0" b="0" a="255"/>
               <pitch>62</pitch>
               <tpc>16</tpc>
               </Note>
@@ -217,7 +209,6 @@
             <durationType>quarter</durationType>
             <Note>
               <eid>slHL8xeUAiJ_XoQffg9c26O</eid>
-              <color r="0" g="102" b="34" a="255"/>
               <pitch>60</pitch>
               <tpc>14</tpc>
               </Note>

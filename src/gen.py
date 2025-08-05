@@ -19,6 +19,8 @@ score_path = args[1]
 params_path = args[2]
 gen_path = args[3]
 
+root_dir = os.path.dirname(os.path.dirname(__file__))
+gen_out_path_debug = os.path.join(root_dir, 'frontend', 'gen_output.log')
 gen_out_path = os.path.join(tmp_dir, 'gen_output.log')
 data_out_path = os.path.join(tmp_dir, 'data.bin')
 recolor_data_path = os.path.join(tmp_dir, 'recolor_data.bin')
@@ -41,10 +43,28 @@ chords_df = score.chords()
 measures_df = score.measures()
 
 notes_df.to_csv(notes_out_path)
-measures_df.to_csv(chords_out_path)
+chords_df.to_csv(chords_out_path)
 measures_df.to_csv(measures_out_path)
 
 print("Score parsed")
+
+def process_bs4():
+  note_id = 0
+  chord_id = 0
+  for mc, staves in score_bs4.tags.items():
+    for staff, voices in staves.items():
+        for voice, onsets in voices.items():
+            for onset, tag_dicts in onsets.items():
+                for tag_dict in tag_dicts:
+                    if tag_dict['name'] != 'Chord':
+                        continue
+                    rolled = tag_dict['tag'].find('TremoloSingleChord') is not None
+                    note_tags = tag_dict['tag'].find_all('Note')
+                    if (len(note_tags) > 0):
+                       for note_tag in note_tags:
+                          note_tag.contents[:] = [item for item in note_tag.contents if item.name != 'color']
+                          note_id += 1  
+                       chord_id += 1
 
 def to_fraction(val):
     if pd.isna(val) or val == '':
@@ -133,6 +153,13 @@ def gen():
   with open(gen_out_path, 'ab') as f:
     f.write(proc.stdout.decode('utf-8').encode())
     f.write(proc.stderr.decode('utf-8').encode())
+
+  # Write to local gen_out log for quick debug
+  with open(gen_out_path_debug, 'w') as f:
+    f.write(f"Date and Time: {current_datetime}\n")
+  with open(gen_out_path_debug, 'ab') as f:
+    f.write(proc.stdout.decode('utf-8').encode())
+    f.write(proc.stderr.decode('utf-8').encode())
     
   if (proc.returncode != 0):
     raise Exception("Assignment generation failed.")
@@ -202,6 +229,7 @@ def recolor(notes):
 # TODO: MRP creation from time using used whacker binary search indexing
 # TODO: Add more colors
 
+process_bs4()
 get_chord_timings()
 chords_time = time.perf_counter()
 notes = gen()

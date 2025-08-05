@@ -109,13 +109,6 @@ function generateAssignment(ws, params, fileName, fileBuf) {
       ws.send(JSON.stringify(debugMsg));
     }
 
-    // Write gen output to ./frontend for quick debug
-    const logName = 'gen_output.log';
-    const logPath = path.join(tmpDir, 'gen_output.log');
-    const logBuf = fs.readFileSync(logPath);
-    const outPath = path.join(__dirname, logName);
-    fs.writeFileSync(outPath, logBuf);
-
     // Format final zip file name
     const now = new Date();
     const mm = String(now.getMonth() + 1).padStart(2, '0');

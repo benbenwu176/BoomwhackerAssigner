@@ -3,14 +3,22 @@ import ms3
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-filename = 'colortest'
-score = ms3.Score(f'./BoomwhackerAssigner/data/{filename}.mscz').mscx    
+filename = 'test2.mscx'
+archive = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(archive)
+score_path = os.path.join(root_dir, 'data', filename)
+score = ms3.Score(score_path).mscx
 score_bs4 = score.parsed
 
 notes_df = score.notes()
+chords_df = score.chords()
+notes_df['rolls'] = None
 
 def rgb2html(r, g, b):
     return '#{:02x}{:02x}{:02x}'.format(int(r), int(g), int(b))
+
+id = 0
+rolls = []
 
 for mc, staves in score_bs4.tags.items():
     for staff, voices in staves.items():
@@ -19,14 +27,17 @@ for mc, staves in score_bs4.tags.items():
                 for tag_dict in tag_dicts:
                     if tag_dict['name'] != 'Chord':
                         continue
-                    for note_tag in tag_dict['tag'].find_all("Note"):
+                    rolled = tag_dict['tag'].find('TremoloSingleChord')
+                    for note_tag in tag_dict['tag'].find_all('Note'):
+                        rolls.append((id, rolled is not None))
                         idx = 0
-                        for item in note_tag.contents:
-                            if item.name == 'color':
-                                del note_tag.contents[idx]
-                            idx += 1
+                        note_tag.contents[:] = [item for item in note_tag.contents if item.name != 'color']
+                        id += 1
                                 
+notes_df['rolled'] = rolls
 
-output_file = f'./BoomwhackerAssigner/data/{filename}_stripped.mscx'
+print(notes_df)
+
+output_file = os.path.join(root_dir, 'output', filename)
 
 score.store_score(output_file)
