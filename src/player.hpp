@@ -18,6 +18,7 @@ public:
   std::vector<Note*> notes; // The notes that the player has played
 
   Player(int id, int hold_limit, double switch_time);
+  bool conflicts(Note* before, Note* after);
   std::vector<Note*> conflicts_back(std::vector<Note*>::iterator end, Note* note);
   std::vector<Note*> conflicts_front(std::vector<Note*>::iterator end, Note* note);
   void add_whacker(Boomwhacker* whacker);

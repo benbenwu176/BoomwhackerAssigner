@@ -15,10 +15,11 @@ let publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 const server = http.createServer(app);
 
-// Run websocket server
+// Run websocket server (bound to webserver)
 const wss = new WebSocketServer({ server });
 let connections = [];
 
+// Load progress messages
 const progressPath = path.join(__dirname, 'progress.txt');
 const progressMessages = fs.readFileSync(progressPath, 'utf-8').split(/\r?\n/);
 
@@ -57,7 +58,9 @@ function sendProgress(ws, progressIndex) {
   }
 }
 
+// Generate color assignment for client file
 function generateAssignment(ws, params, fileName, fileBuf) {
+  // Create temporary directory for this transfer
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'proc-'));
   
   // Isolate musescore name and extension
@@ -80,26 +83,25 @@ function generateAssignment(ws, params, fileName, fileBuf) {
   sendProgress(ws, 0);
   const ticker = setInterval(() => sendProgress(ws, Math.floor(Math.random() * progressMessages.length)), 5000);
 
-  // Collect stdout of python process
+  // Collect process stdout/stderr
   let stdoutBuf = '';
-  py.stdout.setEncoding('utf8');
-  py.stdout.on('data', chunk => {
-    stdoutBuf += chunk;
-  });
-
   let stderrBuf = '';
-  py.stderr.setEncoding('utf8');
-  py.stderr.on('data', chunk => {
-    stderrBuf += chunk;
-  });
+  py.stdout.setEncoding('utf8');
+  py.stdout.on('data', chunk => {stdoutBuf += chunk;});
+  py.stderr.on('data', chunk => {stderrBuf += chunk;});
 
+  // Handle when process is finished
   py.on('exit', code => {
+    // Stop sending progress messages
     clearInterval(ticker);
+
+    // Print python output to console
     console.log('Python:', stdoutBuf);
     if (stderrBuf.length > 0) {
       console.log('Python debug:', stderrBuf);
     }
 
+    // Notify client an error occurred
     if (code !== 0) {
       let errorMsg = {type: 'error', message: 'Python script failed.'};
       let debugMsg = {type: 'debug', message: stdoutBuf};
@@ -126,15 +128,17 @@ function generateAssignment(ws, params, fileName, fileBuf) {
     const zipName = `${fileBase}_${timestamp}_${h}-${m}-${s}.zip`;
     const zipPath = path.join(tmpDir, zipName);
 
-    // Zip all files in temporary directory and send zip file over websocket
+    // Zip all files in temporary directory
     zipDirectory(tmpDir, zipPath)
       .then(() => {
+        // Send zip file over websocket
         const zipBuf = fs.readFileSync(zipPath);
         let msg = {type: 'filename', message: zipName};
         ws.send(JSON.stringify(msg));
         ws.send(zipBuf);
         fs.rmSync(tmpDir, {recursive: true, force: true});
       }).catch(err => {
+        // Notify client of error
         let msg = {type: 'error', message: `Failed to zip files: ${err.message}`};
         ws.send(JSON.stringify(msg));
         fs.rmSync(tmpDir, {recursive: true, force: true});
@@ -142,16 +146,19 @@ function generateAssignment(ws, params, fileName, fileBuf) {
   });
 }
 
+// Listen for websocket connections
 wss.on('connection', ws => {
+  // Add to list of active connections
   connections.push(ws);
 
+  // Handle messages
   ws.on('message', data => {
     if (!Buffer.isBuffer(data)) {
       console.log('Unexpected text frame:', message);
       return;
     }
 
-    // Read message
+    // Read message (4 byte JSON length header, JSON object, mscz file buffer)
     let offset = 0;
     const jsonLen = data.readUInt32BE(0);
     offset += 4;
@@ -202,7 +209,7 @@ server.listen(wsPort, () => {
   console.log(`Listening on http://www.wulabs.com:${wsPort}`);
 });
 
-// 3) Helper to broadcast an error to *your* array
+// Broadcast server error to clients
 function broadcastError(text) {
   const msg = JSON.stringify({ type: 'shutdown', message: text});
   for (const sock of connections) {
@@ -212,7 +219,7 @@ function broadcastError(text) {
   }
 }
 
-// 4) On fatal server errors, notify everybody then exit
+// On fatal server errors, notify everybody then exit
 process.on('uncaughtException', err => {
   console.error('Fatal:', err);
   broadcastError('Server encountered a fatal error and will shut down.');
@@ -225,7 +232,7 @@ process.on('unhandledRejection', reason => {
   setTimeout(() => process.exit(1), 500);
 });
 
-// (Optional) graceful shutdown via signals
+// Handle graceful shutdown via signals
 ['SIGINT','SIGTERM'].forEach(sig => {
   process.on(sig, () => {
     console.log(`Received ${sig}, notifying clients…`);

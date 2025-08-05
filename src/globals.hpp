@@ -11,6 +11,8 @@
 #define PITCH_TO_INDEX(pitch) (pitch - C2_MIDI)
 
 #include <iostream>
+#include <cmath>
+#include <limits>
 
 typedef enum {
     BASIC = 0,        // Basic offload (no recursion or allocation)
@@ -28,4 +30,12 @@ inline void log(Args&&... args) {
 
 inline void log_line() {
   std::cout << std::endl;
+}
+
+inline bool double_equal(double a, double b, double eps = 1e-9) {
+  return std::fabs(a - b) <= eps;
+}
+
+inline double double_diff(double a, double b) {
+  return std::fabs(a - b);
 }

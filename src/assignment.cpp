@@ -152,31 +152,44 @@ std::vector<Boomwhacker*> Assignment::find_used_whackers(int pitch) {
   return ret;
 }
 
+bool comp_id(const Note* a, const Note* b) {
+  return a->id < b->id;
+}
+
+bool comp_time(const Note* a, const Note* b) {
+  return a->time < b->time;
+}
+
+// Find pitch-unique note in note array at or before the given note
+std::vector<Note*>::iterator find_closest_unique_before(std::vector<Note*>& notes, Note* target) {
+  // Find note at or before target
+  auto it = std::upper_bound(notes.begin(), notes.end(), target, comp_time);
+
+  // Step back until either the start has been reached or a unique note has been found
+  auto rbegin = std::make_reverse_iterator(it);
+  auto rend = std::make_reverse_iterator(notes.begin());
+  auto rIt = std::find_if(rbegin, rend, [&](const Note* n){return n->pitch != target->pitch;});
+
+  // If nothing matched, return end(); otherwise convert back
+  return (rIt == rend) ? notes.end() : std::prev(rIt.base());
+}
+
+// Find pitch-unique note in note array at or after the given time
+std::vector<Note*>::iterator find_closest_unique_after(std::vector<Note*>& notes, Note* target) {
+  // Find note at or after target
+  auto it = std::lower_bound(notes.begin(), notes.end(), target, comp_time);
+
+  // Step forward until either the end has been reached or a unique note has been found
+  return std::find_if(it, notes.end(), [&](const Note* n) {return n->pitch != target->pitch;});
+}
+
 // Find note in note array at or before the given time
-Note* find_closest_before(const std::vector<Note*> notes, double target) {
+Note* get_before_time(std::vector<Note*>& notes, double target) {
   auto comp = [](double value, const Note* note) {
     return value < note->time;
   };
   auto it = std::upper_bound(notes.begin(), notes.end(), target, comp);
-  if (it == notes.begin()) {
-    return nullptr;
-  } else {
-    --it;
-    return *it;
-  }
-}
-
-// Find note in note array at or after the given time
-Note* find_closest_after(const std::vector<Note*> notes, double target) {
-  auto comp = [](const Note* note, double value) {
-    return value > note->time;
-  };
-  auto it = std::lower_bound(notes.begin(), notes.end(), target, comp);
-  if (it == notes.end()) {
-    return nullptr;
-  } else {
-    return *it;
-  }
+  return (it == notes.begin()) ? nullptr : *(--it);
 }
 
 // Returns a list of the players who most recently played this note pitch at or before a given time.
@@ -188,7 +201,8 @@ std::vector<Note*> Assignment::get_mrp_queue(int pitch, double time) {
   std::vector<Note*> ret;
   for (auto& whacker : used_whackers) {
     std::vector<Note*> whacker_notes = whacker->notes;
-    Note* nearest = find_closest_before(whacker_notes, time);
+
+    Note* nearest = get_before_time(whacker_notes, time);
     if (nearest != nullptr) {
       // Insert to return vector
       int i = 0;
@@ -306,14 +320,6 @@ std::optional<std::vector<Note*>> Assignment::add_existing(Note* note) {
   return all_conflicts;
 }
 
-bool comp_time(Note* note, double target) {
-  return target < note->time;
-}
-
-bool comp_id(Note* a, Note* b) {
-  return a->id < b->id;
-}
-
 /*
  * Attempt to offload to other players that have this note
  *
@@ -343,6 +349,7 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
 
       // Offload the longest non-conflicting run of notes
       int num_offloaded = 0;
+      std::vector<Note*>& other_player_notes = other_player->notes;
       std::vector<Note*>& con_whacker_notes = con->whacker->notes;
       std::vector<Note*>& con_player_notes = con->player->notes;
       auto con_whacker_loc = find_by_id(con_whacker_notes, con->id);
@@ -351,20 +358,49 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
         Note* cur = con_whacker_notes[j];
         std::vector<Note*> conflicts;
 
-        // Find conflicts before
-        Note* to_check = find_closest_before(other_player->notes, cur->time);
-        assert(to_check != nullptr);
-        std::vector<Note*>::iterator player_loc = find_by_id(other_player->notes, to_check->id);
-        std::vector<Note*>::iterator insert_loc = player_loc;
-        std::vector<Note*> back_conflicts = other_player->conflicts_back(player_loc + 1, cur);
-        conflicts.insert(conflicts.end(), back_conflicts.begin(), back_conflicts.end());
+        // Find before and compute insert location
+        log("Before");
+        std::vector<Note*>::iterator before = find_closest_unique_before(other_player_notes, cur);
+        std::vector<Note*>::iterator insert_loc = before;
+        if (insert_loc == other_player_notes.end()) {
+          // Insert at beginning if no note was found
+          insert_loc = other_player_notes.begin();
+        } else {
+          if (!double_equal((*insert_loc)->time, cur->time) || cur->pitch > (*insert_loc)->pitch) {
+            // Insert cur after 'before' if times are inequal or times are equal but pitch is higher
+            ++insert_loc; 
+          }
+        }
 
-        // Find conflicts after
-        to_check = find_closest_after(other_player->notes, cur->time);
-        if (to_check != nullptr) {
-          std::vector<Note*>::iterator player_loc = find_by_id(other_player->notes, to_check->id);
-          std::vector<Note*> front_conflicts = other_player->conflicts_front(player_loc, cur);
+        // Check back tail for conflicts
+        std::vector<Note*> back_conflicts; // Only conflicts to be added for recursion
+        if (before != other_player_notes.begin() && before != other_player_notes.end()) {
+          back_conflicts = other_player->conflicts_back(before + 1, cur);
+          conflicts.insert(conflicts.end(), back_conflicts.begin(), back_conflicts.end());
+        }
+
+        // Check forward tail for conflicts
+        log("After");
+        std::vector<Note*>::iterator after = find_closest_unique_after(other_player_notes, cur);
+        if (after != other_player_notes.end()) {
+          std::vector<Note*> front_conflicts = other_player->conflicts_front(after, cur);
           conflicts.insert(conflicts.end(), front_conflicts.begin(), front_conflicts.end());
+        }
+
+        // Check middle (condition to check 'before' is intentionally different)
+        log("Mid");
+        if (before != other_player_notes.end() && after != other_player_notes.end()) {
+          // Two unique notes surrounding the note have been found
+          // Sorry 4 mallet players this doesn't account for your ability to hold more than 2 whackers (eat shit)
+          // This is a very fuckass function bc it doesn't account for 4 mallet holding and it doesn't add to back_conflicts as an option if
+          // mid conflicts have occurred but oh well
+          if (other_player->conflicts(*before, *after)) {
+            conflicts.push_back(*before);
+            conflicts.push_back(*after);
+            if (back_conflicts.empty()) {
+              back_conflicts.push_back(*before);
+            }
+          }
         }
         
         if (conflicts.empty()) {
@@ -373,17 +409,8 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
           auto cur_notes_it = find_by_id(con_player_notes, cur->id);
           con_player_notes.erase(cur_notes_it);
 
-          // Tiebreaker for notes that have the same time but different pitches
-          if (insert_loc != other_player->notes.begin()) {
-            if ((*insert_loc)->time == cur->time) {
-              if ((*insert_loc)->pitch < cur->pitch) {
-                ++insert_loc;
-              }
-            } else {
-              ++insert_loc;
-            }
-          }
-          other_player->notes.insert(insert_loc, cur);
+          // Insert into other player's notes
+          other_player_notes.insert(insert_loc, cur);
           
           std::vector<Note*>& other_whacker_notes = other->whacker->notes;
           auto it = std::lower_bound(other_whacker_notes.begin(), other_whacker_notes.end(), cur, comp_id);
@@ -420,6 +447,7 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
   //   for (int i = 0; i < conflicts.size(); i++) {
   //     Note* con = conflicts[i];
   //     if (add_new_whacker(con) == 0) {
+  //       log("Offloaded new whacker", con->whacker->get_real_pitch());
   //       return 0;
   //     } // else, continue
   //   }
@@ -525,7 +553,7 @@ int Assignment::add_note(Note* note) {
   log("Try Whacker");
   // Try to allocate new BW
   if (add_new_whacker(note) == 0) return 0;
-  // log("Try Offload LR");
+  log("Try Offload LR");
   if (add_offload(opt, LAST_RESORT) == 0) return 0;
 
   // All attempts to add have failed thus far. get fucked.

@@ -23,11 +23,13 @@ const col0 = document.getElementById('col0'),
 
 // Label each note in quantity table
 for (let i = 0; i < 32; i++) {
+  // Set displayed whacker name in table
   const label = document.createElement('label');
-  label.textContent = `Param${i}:`;
   let octave = octaves[Math.floor(i / 12)];
   let note = scale[i % 12];
   label.textContent = `${octave} ${note}`;
+
+  // Create input
   const input = document.createElement('input');
   input.type = 'number';
   input.name = `Param${i}`;
@@ -42,6 +44,8 @@ for (let i = 0; i < 32; i++) {
 // Create player table
 const numPlayersInput = document.getElementById('numPlayers');
 const playersBody = document.getElementById('players-body');
+
+// Update player display
 function renderPlayers(n) {
   playersBody.innerHTML = '';
   for (let i = 0; i < n; i++) {
@@ -64,10 +68,12 @@ renderPlayers(+numPlayersInput.value || 0);
 // Define configuration presets
 const examplePlayer = ({holdLimit: 2, switchTime: 2.0});
 const presets = {
+  // Basic preset
   basic: {
     whackers: Array.from({length: 32}, () => 2),
     players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
   },
+  // Texas SOUnD preset
   sound: {
     whackers: [
       2, 3, 5, 3, 5, 5, 3, 5, 3, 5, 3, 5,
@@ -76,21 +82,24 @@ const presets = {
     ],
     players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
   },
+  // Harvard THUD preset
   harvard: {
     whackers: Array.from({length:32}, () => 4),
     players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
   },
+  // A&M percussion studio preset
   studio: {
     whackers: Array.from({length:32}, ()=>1),
     players: Array.from({length: 6}, () => ({holdLimit: 1, switchTime: 4.0})),
   },
+  // Clear all values
   clear: {
     whackers: Array.from({length:32},()=>''), 
     players: []                    
   }
 };
 
-// --- Apply a preset ---
+// Apply selected preset
 document.querySelectorAll('.preset-btn').forEach(btn=>{
   btn.addEventListener('click', () => {
     const p = presets[btn.dataset.preset];
@@ -110,7 +119,7 @@ document.querySelectorAll('.preset-btn').forEach(btn=>{
   });
 });
 
-// --- Send logic ---
+// Send command request to server
 document.getElementById('sendBtn').onclick = async () => {
   // Collect file from document
   const fileInput = document.getElementById('scoreFile');
@@ -121,7 +130,7 @@ document.getElementById('sendBtn').onclick = async () => {
   const fileName = file.name;
   const fileBuf = await file.arrayBuffer();
   
-  // Collect players
+  // Collect player data
   const numPlayers = +numPlayersInput.value || 0;
   if (numPlayers == 0) {
     alert('Invalid configuration.');
@@ -168,35 +177,41 @@ document.getElementById('sendBtn').onclick = async () => {
   statusEl.textContent = 'Sent, waiting for response…';
 };
 
+// Initialize default receive status
 let incomingName = 'default.zip';
 let ok = true;
 
-// --- Response handling ---
+// Receive server message
 ws.onmessage = msg => {
-  // Handle non-binary messages
+  // Handle non-file messages
   if (typeof msg.data === 'string') {
     try {
       const pkt = JSON.parse(msg.data);
       switch (pkt.type) {
         case 'progress': 
+          // Update progress status
           statusEl.textContent = pkt.message;
           break;
         case 'filename':
+          // Set zip file name to download
           incomingName = pkt.message;
           break;
         case 'error': {
+          // Display error
           let errMsg = 'Error: ' + pkt.message;
           console.error(errMsg);
           ok = window.confirm(errMsg + "\nDownload anyway?");
           break;
         }
         case 'shutdown': {
+          // Server shutdown
           let errMsg = 'Error: ' + pkt.message;
           console.error(errMsg);
           alert(errMsg);
           break;
         }
         case 'debug':
+          // Debug message
           console.log('Debug:', pkt.message);
           break;
         default:
@@ -209,11 +224,14 @@ ws.onmessage = msg => {
     return;
   }
 
+  // Cancel download if user rejected
   if (!ok) {
+    statusEl.textContent = '';
+    ok = true;
     return;
   }
 
-  // Binary ZIP
+  // Download ZIP file from server
   statusEl.textContent = 'Download ready';
   const blob = new Blob([msg.data], { type: 'application/zip' });
   const url  = URL.createObjectURL(blob);

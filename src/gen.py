@@ -132,6 +132,7 @@ def gen():
     f.write(f"Date and Time: {current_datetime}\n")
   with open(gen_out_path, 'ab') as f:
     f.write(proc.stdout.decode('utf-8').encode())
+    f.write(proc.stderr.decode('utf-8').encode())
     
   if (proc.returncode != 0):
     raise Exception("Assignment generation failed.")
