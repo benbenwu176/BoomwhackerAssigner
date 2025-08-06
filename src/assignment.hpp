@@ -29,8 +29,8 @@ public:
   Graph* adjacency_graph;
 
   // Root functions
-  Assignment(std::vector<int> &pitches, std::vector<double> &times);
-  void init_notes(std::vector<int> &pitches, std::vector<double> &times);
+  Assignment(const std::vector<int> &pitches, const std::vector<double> &times, const std::vector<double>& durations);
+  void init_notes(const std::vector<int> &pitches, const std::vector<double> &times, const std::vector<double>& durations);
   void init_players();
   void init_whackers();
   void init_mrp();

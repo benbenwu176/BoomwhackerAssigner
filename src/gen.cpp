@@ -21,7 +21,8 @@ Config* cfg;
 Assignment* assignment;
 
 // Print the data from stdin containing pitches, times, parameters, and rates.
-void check_params(int num_notes, std::vector<int> pitches, std::vector<double> times, const nlohmann::json& params) {
+void check_params(int num_notes, const std::vector<int>& pitches, const std::vector<double>& times, 
+  const std::vector<double>& durations, const nlohmann::json& params) {
   log("Number of notes:", num_notes);
   log_line();
   log("Number of players:", params["numPlayers"]);
@@ -29,12 +30,21 @@ void check_params(int num_notes, std::vector<int> pitches, std::vector<double> t
   log("Parameters:", params.dump(2));
   log_line();
   log("Pitches:");
-  for (uint32_t pitch : pitches) {
+  for (int pitch : pitches) {
     log(pitch);
   }
   log_line();
+  log("Times:");
   for (double time : times) {
-    log(time);
+    log_double(time);
+  }
+  log_line();
+  log("Durations:");
+  for (int i = 0; i < num_notes; i++) {
+    double dur = durations[i];
+    if (dur != 0) {
+      log(i, ":", dur);
+    }
   }
   log_line();
 }
@@ -81,14 +91,16 @@ int main(int argc, char* argv[]) {
   }
   std::vector<int> pitches(num_notes);
   std::vector<double> times(num_notes);
+  std::vector<double> durations(num_notes);
   bin_in.read(reinterpret_cast<char*>(pitches.data()), num_notes * sizeof(int));
   bin_in.read(reinterpret_cast<char*>(times.data()), num_notes * sizeof(double));
+  bin_in.read(reinterpret_cast<char*>(durations.data()), num_notes * sizeof(double));
 
   // Log the data that was just read
-  check_params(num_notes, pitches, times, params);
+  check_params(num_notes, pitches, times, durations, params);
 
   cfg = new Config(num_notes, params, tmp_dir);
-  assignment = new Assignment(pitches, times);
+  assignment = new Assignment(pitches, times, durations);
 
   try {
     assignment->assign();

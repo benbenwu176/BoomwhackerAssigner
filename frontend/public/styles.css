@@ -1,6 +1,6 @@
 body {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
-  max-width: 1000px;
+  max-width: 1150px;
   margin: 2em auto;
 }
 .header {
@@ -69,14 +69,24 @@ body {
 #players-table td {
   border: 1px solid #999;
   padding: 0.3em 0.5em;
-  text-align: left;
+  text-align: center;
+  vertical-align: middle;
 }
 #players-table th {
   background: #f0f0f0;
 }
 #players-table input {
-  width: 4em;
-  margin: 0;
+  width: 75%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  display: block;
+  margin: 0 auto;
+}
+
+#players-table input[type="number"]::-webkit-outer-spin-button,
+#players-table input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 /* Tooltips */

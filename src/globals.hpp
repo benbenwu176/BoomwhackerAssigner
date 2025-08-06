@@ -13,6 +13,7 @@
 #include <iostream>
 #include <cmath>
 #include <limits>
+#include <iomanip>
 
 typedef enum {
     BASIC = 0,        // Basic offload (no recursion or allocation)
@@ -23,6 +24,14 @@ typedef enum {
 } add_flags;
 
 // Basic variadic log function: prints each argument followed by a space
+inline void log_double(double d) {
+    std::cout 
+      << std::fixed       // use fixed-point notation
+      << std::setprecision(3)  // three decimal places
+      << d << ' '
+    ;
+}
+
 template<typename... Args>
 inline void log(Args&&... args) {
   ((std::cout << std::forward<Args>(args) << ' '), ...);

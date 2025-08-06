@@ -54,6 +54,7 @@ function renderPlayers(n) {
       <td>Player ${i}</td>
       <td><input type="number" name="holdLimit${i}" min="0" max="99"></td>
       <td><input type="number" name="switchTime${i}" min="0" max="99"></td>
+      <td><input type="checkbox" name="oneHandedRolls${i}"></label></td>
     `;
     playersBody.appendChild(tr);
   }
@@ -66,12 +67,11 @@ numPlayersInput.addEventListener('input', () => {
 renderPlayers(+numPlayersInput.value || 0);
 
 // Define configuration presets
-const examplePlayer = ({holdLimit: 2, switchTime: 2.0});
 const presets = {
   // Basic preset
   basic: {
     whackers: Array.from({length: 32}, () => 2),
-    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
+    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0, oneHandedRoll: false})),
   },
   // Texas SOUnD preset
   sound: {
@@ -80,17 +80,17 @@ const presets = {
       7, 4, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4,
       2, 2, 2, 2, 2, 2, 2, 2
     ],
-    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
+    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0, oneHandedRoll: false})),
   },
   // Harvard THUD preset
   harvard: {
     whackers: Array.from({length:32}, () => 4),
-    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0})),
+    players: Array.from({length: 9}, () => ({holdLimit: 2, switchTime: 2.0, oneHandedRoll: false})),
   },
   // A&M percussion studio preset
   studio: {
     whackers: Array.from({length:32}, ()=>1),
-    players: Array.from({length: 6}, () => ({holdLimit: 1, switchTime: 4.0})),
+    players: Array.from({length: 6}, () => ({holdLimit: 1, switchTime: 4.0, oneHandedRoll: false})),
   },
   // Clear all values
   clear: {
@@ -115,6 +115,7 @@ document.querySelectorAll('.preset-btn').forEach(btn=>{
     p.players.forEach((pl,i) => {
       document.querySelector(`input[name=holdLimit${i}]`).value  = pl.holdLimit;
       document.querySelector(`input[name=switchTime${i}]`).value = pl.switchTime;
+      document.querySelector(`input[name=oneHandedRolls${i}]`).checked = pl.oneHandedRoll;
     });
   });
 });
@@ -138,9 +139,11 @@ document.getElementById('sendBtn').onclick = async () => {
   }
   const playerSwitchTimes = [];
   const playerHoldLimits = [];
+  const playerOneHandedRolls = [];
   for (let i = 0; i < numPlayers; i++) {
     playerSwitchTimes.push(Number(document.querySelector(`input[name=switchTime${i}]`).value) || 0);
     playerHoldLimits.push(Number(document.querySelector(`input[name=holdLimit${i}]`).value) || 0);
+    playerOneHandedRolls.push(Number(document.querySelector(`input[name=oneHandedRolls${i}]`).checked) || false);
   }
   
   // Collect whacker quantities
@@ -150,7 +153,7 @@ document.getElementById('sendBtn').onclick = async () => {
   }
 
   // Serialize JSON object with parameters
-  const cmd = {command: 'COLOR_NEW_MUSESCORE', params: {numPlayers, playerHoldLimits, playerSwitchTimes, whackerQuantities}, fileName};
+  const cmd = {command: 'COLOR_NEW_MUSESCORE', params: {numPlayers, playerHoldLimits, playerSwitchTimes, playerOneHandedRolls, whackerQuantities}, fileName};
   const encoder = new TextEncoder();
   const jsonBuf = encoder.encode(JSON.stringify(cmd)); 
 

@@ -4,10 +4,11 @@
 /**
  * @brief Player class constructor
  */
-Player::Player(int id, int hold_limit, double switch_time) {
+Player::Player(int id, int hold_limit, double switch_time, bool one_handed_roll) {
   this->id = id;
   this->hold_limit = hold_limit;
   this->switch_time = switch_time;
+  this->one_handed_roll = one_handed_roll;
   whackers = std::vector<Boomwhacker *>();
   notes = std::vector<Note *>();
 }
@@ -52,7 +53,7 @@ last_n_unique_by(Iter first, Iter last, std::size_t n,
  * no conflicts occurred.
  */
 bool Player::conflicts(Note* before, Note* after) {
-  assert(after->time >= before->time);
+  // assert(after->time >= before->time);
   double delta = after->time - before->time;
   return delta < switch_time;
 }

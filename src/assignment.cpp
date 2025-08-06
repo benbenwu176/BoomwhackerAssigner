@@ -24,8 +24,8 @@ find_by_id(std::vector<T*>& vec, int targetId) {
 /**
  * @brief Creates an Assignment object with no assigned notes.
  */
-Assignment::Assignment(std::vector<int> &pitches, std::vector<double> &times) {
-  init_notes(pitches, times);
+Assignment::Assignment(const std::vector<int> &pitches, const std::vector<double> &times, const std::vector<double>& durations) {
+  init_notes(pitches, times, durations);
   init_players();
   init_whackers();
   adjacency_graph = new Graph();
@@ -34,10 +34,10 @@ Assignment::Assignment(std::vector<int> &pitches, std::vector<double> &times) {
 /**
  * @brief Initialize the array of notes representing the piece.
  */
-void Assignment::init_notes(std::vector<int> &pitches, std::vector<double> &times) {
+void Assignment::init_notes(const std::vector<int> &pitches, const std::vector<double> &times, const std::vector<double>& durations) {
   notes.reserve(cfg->num_notes);
   for (int i = 0; i < cfg->num_notes; i++) {
-    notes.emplace_back(i, pitches[i], times[i]);
+    notes.emplace_back(i, pitches[i], times[i], durations[i]);
   }
 }
 
@@ -47,7 +47,7 @@ void Assignment::init_notes(std::vector<int> &pitches, std::vector<double> &time
 void Assignment::init_players() {
   players.reserve(cfg->num_players);
   for (int i = 0; i < cfg->num_players; i++) {
-    players.push_back(new Player(i, cfg->hold_limits[i], cfg->switch_times[i]));
+    players.push_back(new Player(i, cfg->hold_limits[i], cfg->switch_times[i], cfg->one_handed_rolls[i]));
   }
 }
 
@@ -427,13 +427,6 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
         }
       }
       if (num_offloaded > 0) {
-        auto it = con_old_player->get_whacker(note->pitch);
-        if (con_whacker_notes.empty()) {
-          // Remove whacker from old con player
-          log("Dealloc from player", con_old_player->id);
-          con_old_player->whackers.erase(it);
-        }
-
         // Add note to new now non-conflicting whacker/player
         Boomwhacker* new_whacker = *con_old_player->get_whacker(note->pitch);
         assign_note(note, new_whacker, con_old_player, false);
@@ -456,7 +449,11 @@ int Assignment::add_offload(Option* opt, add_flags flags) {
   // Attempt to recursively offload
   // if ((flags & RECURSE) != 0) {
   //   for (Option* opt : options) {
+  //     Player* con_old_player = opt->note->player;
   //     if (add_offload(opt, flags) == 0) {
+  //       // Add note to new now non-conflicting whacker/player
+  //       Boomwhacker* new_whacker = *con_old_player->get_whacker(note->pitch);
+  //       assign_note(note, new_whacker, con_old_player, false);
   //       return 0;
   //     }
   //     delete opt;
