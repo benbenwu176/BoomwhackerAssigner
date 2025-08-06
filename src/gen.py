@@ -107,7 +107,7 @@ def process_bs4():
       for color in note.find_all('color'):
         color.decompose()
 
-def get_chord_timings3():
+def get_chord_timings():
   global notes_df
   global chords_df
   df = chords_df.sort_values('quarterbeats').copy()
@@ -141,52 +141,6 @@ def get_chord_timings3():
   chords_df = df
   notes_df = notes_df.merge(
     chords_df[['chord_id','time', 'dur']],
-    on='chord_id',
-    how='left',
-    suffixes=('','_chord')
-  )
-  
-def qb_to_time(quarterbeats, qpm):
-  quarterbeats = float(quarterbeats)
-  time = (quarterbeats / qpm) * 60
-  return time
-
-# Computes the time and duration, in seconds, for each note
-# *Duration computation does not factor in tempo changes occur in the middle of the note
-# on the basis of https://en.wikipedia.org/wiki/Ostrich_algorithm
-def get_chord_timings2():
-  global notes_df
-  global chords_df
-  chords_df.sort_values(by=['quarterbeats'], inplace=True)
-  chords_df['time'] = None
-  chords_df['dur'] = None
-  prev_qb = 0
-  prev_time = 0
-  prev_qpm = 120
-  # Compute timings for each chord or 
-  for idx, row in chords_df.iterrows():
-    # Check row event for chord or tempo markings
-    if (row['event'] == 'Tempo'):
-      # Set tempo
-      prev_qpm = row['qpm']
-    elif (row['event'] == 'Chord'):
-      # Set chord time to previous time + the difference in quarterbeats nominalized
-      cur_qb = row['quarterbeats']
-      cur_time = prev_time + qb_to_time(cur_qb - prev_qb, prev_qpm)
-      chords_df.at[idx, 'time'] = cur_time
-      prev_qb = cur_qb
-      prev_time = cur_time
-
-      # Set duration if rolled, otherwise default to 0
-      rolled = chord_roll_dict.get(row['chord_id'])
-      if (rolled is None):
-        chords_df.at[idx, 'dur'] = 0
-      else:
-        chords_df.at[idx, 'dur'] = qb_to_time(row['duration_qb'], prev_qpm)
-
-  # Set note times corresponding to their chord_id
-  notes_df = notes_df.merge(
-    chords_df[['chord_id','time']],
     on='chord_id',
     how='left',
     suffixes=('','_chord')
@@ -247,41 +201,64 @@ def gen():
   
   return notes
 
-# Recolor the notes with the generated assignments
 def recolor(notes):
-  # Output assignment configuration to a CSV file
-  notes_df['time'] = [note.time for note in notes]
-  notes_df['player'] = [note.player for note in notes]
-  notes_df['capped'] = [note.capped for note in notes]
-  notes_df['conflicting'] = [note.conflicting for note in notes]
-  notes_df.to_csv(notes_out_path)
+  # 1) Extract all note attributes in one pass
+  times       = [n.time        for n in notes]
+  players     = [n.player      for n in notes]
+  capped      = [n.capped      for n in notes]
+  conflicting = [n.conflicting for n in notes]
+  mcs     = notes_df['mc'].tolist()
+  onsets  = notes_df['mc_onset'].tolist()
+  midis   = notes_df['midi'].tolist()
 
-  # Only relevant in rare edge case of bad writing where whacker notes are written longer than they should be and durations overlap
-  STUPID_PEOPLE_BUF = 0.001
-  num_conflicting = 0
-  # Recolor notes to their assigned player
-  with open(gen_out_path, 'a') as f:
-    for index, row in notes_df.iterrows():
-      color = ''
-      if (notes[index].player == -1):
-        color = "#000000"
-      elif (notes[index].player > len(colors)):
-        color = "#000000"
+  # 2) Bulk-assign to your DataFrame and write CSV once
+  notes_df['time']        = times
+  notes_df['player']      = players
+  notes_df['capped']      = capped
+  notes_df['conflicting'] = conflicting
+  notes_df.to_csv(notes_out_path, index=False)
+
+  # 3) Prep locals for the paint loop
+  buf           = 0.001
+  max_player    = len(colors) - 1
+  show_conf     = show_conflicting
+  paint         = score_bs4.color_notes
+  log_lines     = []
+  num_conflicts = 0
+
+  # 4) Iterate over Python data, not the DataFrame
+  for i, (p, mc, onset, midi, conf, t) in enumerate(
+      zip(players, mcs, onsets, midis, conflicting, times)):
+    # pick color
+    if p < 0 or p > max_player:
+      color = "#000000"
+      if p > max_player:
         print("Error: Player index out of range")
-      else:
-        color = colors[notes[index].player]
-      score_bs4.color_notes(row['mc'], row['mc_onset'], row['mc'], row['mc_onset'] + STUPID_PEOPLE_BUF,
-                  midi=[row['midi']], color_html = color)
-      if (show_conflicting and row['conflicting'] == True):
-        num_conflicting += 1
-        minutes, seconds = divmod(row['time'], 60)
-        f.write(f"Conflicting note {row['midi']} in measure {row['mc']}, time: {int(minutes)}:{seconds:05.2f}\n")
-  
-  print("Number of conflicts: " + str(num_conflicting))
-  # Write recolored assignment to file
-  root, ext = os.path.splitext(score_path)
-  mscx_path = root + "_colored" + ".mscx"
-  score.store_score(mscx_path)
+    else:
+      color = colors[p]
+
+    # paint the note
+    paint(mc, onset, mc, onset + buf, midi=[midi], color_html=color)
+
+    # accumulate conflict log
+    if show_conf and conf:
+      num_conflicts += 1
+      m, s = divmod(t, 60)
+      log_lines.append(
+        f"Conflicting note {midi} in measure {mc}, "
+        f"time: {int(m)}:{s:05.2f}"
+      )
+
+  # 5) write all logs at once
+  if log_lines:
+    with open(gen_out_path, 'a') as f:
+      f.write("\n".join(log_lines) + "\n")
+
+  print("Number of conflicts:", num_conflicts)
+
+  # 6) save recolored score
+  root, _ = os.path.splitext(score_path)
+  score.store_score(f"{root}_colored.mscx")
 
 # TODO: create a list of all the colors of each colored note in the piece
 # TODO: strip color tags from original musescore
@@ -299,7 +276,7 @@ def recolor(notes):
 # TODO: Add more colors
 
 process_bs4()
-get_chord_timings3()
+get_chord_timings()
 chords_time = time.perf_counter()
 notes = gen()
 if (notes == None):
