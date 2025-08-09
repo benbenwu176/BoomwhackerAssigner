@@ -96,15 +96,23 @@ void Assignment::write()
   }
   std::string scale[12] = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
   std::string octaves[4] = {"Low", "Low", "Mid", "High"};
+  // Print 'i|n|c|elem0|elem1|...'
   for (int i = 0; i < players.size(); i++) {
     Player* player = players[i];
-    log_line();
-    log("Player", i);
-    for (int j = 0; j < players[i]->whackers.size(); j++) {
+
+    // Print player index, num notes, and cap count
+    int num_notes = player->whackers.size();
+    auto capped = std::count_if(player->whackers.begin(), player->whackers.end(), 
+            [](Boomwhacker* whacker) {return whacker->capped;});
+    std::cout << i << "|" << num_notes << "|" << capped;
+
+    // Print notes
+    for (int j = 0; j < num_notes; j++) {
       Boomwhacker* whacker = player->whackers[j];
       int pitch = whacker->pitch;
-      std::cout << (whacker->capped ? "*" : "") << octaves[(pitch - C2_MIDI) / 12] << " " << scale[pitch % 12] << " ";
+      std::cout << "|" << (whacker->capped ? "*" : "") << octaves[(pitch - C2_MIDI) / 12] << " " << scale[pitch % 12];
     }
+    std::cout << std::endl;
   }
   log_line();
 

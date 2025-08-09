@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <type_traits>
 #include <cmath>
+#include <optional>
 
 class Player {
 public:

@@ -27,7 +27,7 @@ void check_params(int num_notes, const std::vector<int>& pitches, const std::vec
   log_line();
   log("Number of players:", params["numPlayers"]);
   log_line();
-  log("Parameters:", params.dump(2));
+  log("Parameters:", params.dump(-1));
   log_line();
   log("Pitches:");
   for (int pitch : pitches) {

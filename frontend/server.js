@@ -11,7 +11,7 @@ const { clearInterval } = require('timers');
 // Run webserver
 const wsPort = 81;
 const app = express();
-let publicPath = path.join(__dirname, 'public');
+let publicPath = path.join(__dirname, 'test');
 app.use(express.static(publicPath));
 const server = http.createServer(app);
 
@@ -96,7 +96,7 @@ function generateAssignment(ws, params, fileName, fileBuf) {
     clearInterval(ticker);
 
     // Print python output to console
-    console.log('Python:', stdoutBuf);
+    console.log('Python:\n' + stdoutBuf);
     if (stderrBuf.length > 0) {
       console.log('Python debug:', stderrBuf);
     }
@@ -168,7 +168,7 @@ wss.on('connection', ws => {
       return;
     }
 
-    console.log('Received message.');
+    console.log('Received request.');
 
     switch (message.command) {
       case 'COLOR_NEW_MUSESCORE': {

@@ -6,7 +6,8 @@ import struct
 import subprocess
 import time
 import os
-from fractions import Fraction
+from xlsxwriter import Workbook
+from collections import defaultdict
 from collections import namedtuple
 from datetime import datetime
 import sys
@@ -25,6 +26,7 @@ gen_out_path_debug = os.path.join(root_dir, 'frontend', 'gen_output.log')
 gen_out_path = os.path.join(tmp_dir, 'gen_output.log')
 data_out_path = os.path.join(tmp_dir, 'data.bin')
 recolor_data_path = os.path.join(tmp_dir, 'recolor_data.bin')
+dict_path = os.path.join(tmp_dir, 'dictionary.xlsx')
 notes_out_path = os.path.join(tmp_dir, 'notes.csv')
 chords_out_path = os.path.join(tmp_dir, 'chords.csv')
 rests_out_path = os.path.join(tmp_dir, 'rests.csv')
@@ -86,9 +88,67 @@ def rgba2html(
       return f"#{r:02X}{g:02X}{b:02X}"
   return f"rgba({r}, {g}, {b}, {a:.3f})"
 
-# Append 'color' column to notes_df
-notes_df['color'] = notes_df.apply(lambda row: rgba2html(row.get('r'), row.get('g'), row.get('b'), row.get('a')), axis=1)
+def create_player_columns_xlsx(
+    output_path: str,
+    bg_colors: list[str],
+    lines: list[str],
+    delimiter: str = "|",
+    col_width: int = 12
+):
+    # Parse: "i|n|c|elem1|elem2|..."
+    data = {i: {"notes": "0", "caps": "0", "elements": []} for i in range(len(bg_colors))}
+    for raw in lines:
+        parts = raw.split(delimiter)
+        idx = int(parts[0]); notes = parts[1]; caps = parts[2]
+        data[idx] = {"notes": notes, "caps": caps, "elements": parts[3:]}
 
+    max_elements = max(len(data[i]["elements"]) for i in range(len(bg_colors)))
+
+    wb = Workbook(output_path)
+    ws = wb.add_worksheet("Players")
+
+    # Column widths
+    for col in range(len(bg_colors)):
+        ws.set_column(col, col, col_width)
+
+    def title_format(bg_hex):
+        return wb.add_format({
+            "font_name": "Times New Roman", "font_size": 12, "bold": True,
+            "text_wrap": True, "valign": "vcenter", "align": "center",
+            "bg_color": bg_hex, "font_color": "#000000",
+            "left": 2, "right": 2, "top": 2, "bottom": 2  # thick borders
+        })
+
+    def element_format(font_hex, bottom=False):
+        base = {
+            "font_name": "Times New Roman", "font_size": 10,
+            "align": "left", "valign": "vcenter", "font_color": font_hex,
+            "left": 2, "right": 2  # column box sides
+        }
+        if bottom:
+            base["bottom"] = 2
+        return wb.add_format(base)
+
+    for col_index, bg_hex in enumerate(bg_colors):
+        info = data.get(col_index, {"notes": "0", "caps": "0", "elements": []})
+        notes, caps, elements = info["notes"], info["caps"], info["elements"]
+
+        # Title (row 0)
+        cap_str = "cap" if caps == 1 else "caps"
+        ws.write(0, col_index, f"Player {col_index}\n{notes} notes\n{caps} {cap_str}",
+                 title_format(bg_hex))
+        ws.set_row(0, 54)  # space for 3 lines
+
+        # Elements (rows 1..max_elements)
+        for r in range(1, max_elements + 1):
+            val = elements[r - 1] if r - 1 < len(elements) else ""
+            fmt = element_format(bg_hex, bottom=(r == max_elements))
+            ws.write(r, col_index, val, fmt)
+
+    ws.freeze_panes(1, 0)
+    wb.close()
+
+# Strip color tags
 def process_bs4():
   def iter_tag_dicts():
     for staves in score_bs4.tags.values():
@@ -110,14 +170,14 @@ def process_bs4():
 def get_chord_timings():
   global notes_df
   global chords_df
-  df = chords_df.sort_values('quarterbeats').copy()
+  df = chords_df.sort_values('quarterbeats_all_endings').copy()
 
   # Make a column that holds the tempo QPM only on Tempo rows, then ffill
   df['tempo_qpm'] = df['qpm'].where(df['event']=='Tempo')
   df['qpm_used']  = df['tempo_qpm'].ffill().fillna(120)
 
   # Compute the quarterbeat increments
-  df['delta_qb'] = df['quarterbeats'].diff().fillna(df['quarterbeats'])
+  df['delta_qb'] = df['quarterbeats_all_endings'].diff().fillna(df['quarterbeats_all_endings'])
 
   # Compute the time *increments*
   df['time_inc'] = df['delta_qb'] / df['qpm_used'] * 60
@@ -128,7 +188,7 @@ def get_chord_timings():
   # Only keep time for Chord rows
   df.loc[df['event']!='Chord', 'time'] = None
 
-  # Compute durations in one shot
+  # Compute durations
   # default 0, then for rolled chords use qb‐to‐time formula
   df['dur'] = 0
   mask = (df['event']=='Chord') & df['chord_id'].map(lambda cid: chord_roll_dict.get(cid) is not None)
@@ -156,12 +216,9 @@ def gen():
     pitches_arr.tofile(f)
     times_arr.tofile(f)
     dur_arr.tofile(f)
-    # f.write(pitches_arr.tobytes(order='C'))
-    # f.write(times_arr.tobytes(order='C'))
-    # f.write(dur_arr.tobytes(order='C'))
 
   # Run the assignment generation program
-  print("Number of notes:" + str(len(notes_df)))
+  print("Number of notes: " + str(len(notes_df)))
   cmd = [gen_path, tmp_dir, params_path, data_out_path, str(len(notes_df))]
   print(f"Running {cmd}")
   proc = subprocess.run(cmd, capture_output=True)
@@ -171,18 +228,20 @@ def gen():
   with open(gen_out_path, 'w') as f:
     f.write(f"Date and Time: {current_datetime}\n")
   with open(gen_out_path, 'ab') as f:
-    f.write(proc.stdout.decode('utf-8').encode())
     f.write(proc.stderr.decode('utf-8').encode())
 
   # Write to local gen_out log for quick debug
   with open(gen_out_path_debug, 'w') as f:
     f.write(f"Date and Time: {current_datetime}\n")
   with open(gen_out_path_debug, 'ab') as f:
-    f.write(proc.stdout.decode('utf-8').encode())
     f.write(proc.stderr.decode('utf-8').encode())
     
   if (proc.returncode != 0):
     raise Exception("Assignment generation failed.")
+  
+  # Write whacker dictionary (Written in proc.stdout)
+  lines = proc.stdout.decode('utf-8').splitlines()
+  create_player_columns_xlsx(dict_path, colors, lines)
 
   # IMPORTANT: Maintain this struct format with written fields in assignment.cpp
   Note = namedtuple('Note', ['time', 'player', 'capped', 'conflicting'])
@@ -202,7 +261,7 @@ def gen():
   return notes
 
 def recolor(notes):
-  # 1) Extract all note attributes in one pass
+  # Extract relevant note attributes
   times       = [n.time        for n in notes]
   players     = [n.player      for n in notes]
   capped      = [n.capped      for n in notes]
@@ -211,14 +270,14 @@ def recolor(notes):
   onsets  = notes_df['mc_onset'].tolist()
   midis   = notes_df['midi'].tolist()
 
-  # 2) Bulk-assign to your DataFrame and write CSV once
+  # Assign to dataframe
   notes_df['time']        = times
   notes_df['player']      = players
   notes_df['capped']      = capped
   notes_df['conflicting'] = conflicting
   notes_df.to_csv(notes_out_path, index=False)
 
-  # 3) Prep locals for the paint loop
+  # Locals for recoloring loop
   buf           = 0.001
   max_player    = len(colors) - 1
   show_conf     = show_conflicting
@@ -226,10 +285,10 @@ def recolor(notes):
   log_lines     = []
   num_conflicts = 0
 
-  # 4) Iterate over Python data, not the DataFrame
+  # Iterate over arrays
   for i, (p, mc, onset, midi, conf, t) in enumerate(
       zip(players, mcs, onsets, midis, conflicting, times)):
-    # pick color
+    # Pick color
     if p < 0 or p > max_player:
       color = "#000000"
       if p > max_player:
@@ -237,10 +296,10 @@ def recolor(notes):
     else:
       color = colors[p]
 
-    # paint the note
+    # Recolor note
     paint(mc, onset, mc, onset + buf, midi=[midi], color_html=color)
 
-    # accumulate conflict log
+    # Accumulate conflict log
     if show_conf and conf:
       num_conflicts += 1
       m, s = divmod(t, 60)
@@ -249,14 +308,14 @@ def recolor(notes):
         f"time: {int(m)}:{s:05.2f}"
       )
 
-  # 5) write all logs at once
+  # Write all logs at once
   if log_lines:
     with open(gen_out_path, 'a') as f:
       f.write("\n".join(log_lines) + "\n")
 
   print("Number of conflicts:", num_conflicts)
 
-  # 6) save recolored score
+  # Save recolored score
   root, _ = os.path.splitext(score_path)
   score.store_score(f"{root}_colored.mscx")
 
@@ -275,6 +334,8 @@ def recolor(notes):
 # TODO: MRP creation from time using used whacker binary search indexing
 # TODO: Add more colors
 
+# Append 'color' column to notes_df
+notes_df['color'] = notes_df.apply(lambda row: rgba2html(row.get('r'), row.get('g'), row.get('b'), row.get('a')), axis=1)
 process_bs4()
 get_chord_timings()
 chords_time = time.perf_counter()

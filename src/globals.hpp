@@ -25,7 +25,7 @@ typedef enum {
 
 // Basic variadic log function: prints each argument followed by a space
 inline void log_double(double d) {
-    std::cout 
+    std::cerr 
       << std::fixed       // use fixed-point notation
       << std::setprecision(3)  // three decimal places
       << d << ' '
@@ -34,11 +34,11 @@ inline void log_double(double d) {
 
 template<typename... Args>
 inline void log(Args&&... args) {
-  ((std::cout << std::forward<Args>(args) << ' '), ...);
+  ((std::cerr << std::forward<Args>(args) << ' '), ...);
 }
 
 inline void log_line() {
-  std::cout << std::endl;
+  std::cerr << std::endl;
 }
 
 inline bool double_equal(double a, double b, double eps = 1e-9) {
