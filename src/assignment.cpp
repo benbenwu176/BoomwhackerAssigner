@@ -47,7 +47,8 @@ void Assignment::init_notes(const std::vector<int> &pitches, const std::vector<d
 void Assignment::init_players() {
   players.reserve(cfg->num_players);
   for (int i = 0; i < cfg->num_players; i++) {
-    players.push_back(new Player(i, cfg->hold_limits[i], cfg->switch_times[i], cfg->one_handed_rolls[i]));
+    players.push_back(new Player(i, cfg->hold_limits[i], cfg->switch_times[i], 
+      cfg->one_handed_rolls[i], cfg->excluded_ranges[i]));
   }
 }
 

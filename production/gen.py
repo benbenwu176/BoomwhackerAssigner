@@ -22,7 +22,7 @@ params_path = args[2]
 gen_path = args[3]
 
 root_dir = os.path.dirname(os.path.dirname(__file__))
-gen_out_path_debug = os.path.join(root_dir, 'development', 'gen_output.log')
+gen_out_path_debug = os.path.join(root_dir, 'production', 'gen_output.log')
 gen_out_path = os.path.join(tmp_dir, 'gen_output.log')
 data_out_path = os.path.join(tmp_dir, 'data.bin')
 recolor_data_path = os.path.join(tmp_dir, 'recolor_data.bin')

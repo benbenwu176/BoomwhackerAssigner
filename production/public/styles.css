@@ -1,0 +1,142 @@
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  max-width: 1150px;
+  margin: 2em auto;
+}
+.header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.header h1,
+.header input,
+.header button {
+  display: inline-block;
+  margin: 0.5em;
+}
+#status {
+  color: green;
+  margin-top: 0.5em;
+}
+
+.main {
+  display: flex;
+  gap: 2em;
+}
+.column {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 4px;
+}
+.column h2 {
+  margin-top: 0;
+}
+
+/* Left: Params 0–31 grid */
+.param-grid {
+  display: flex;
+  gap: 1em;
+}
+.param-col {
+  flex: 1;
+}
+.param-col input[type="number"] {
+  width: 3em;
+  margin-left: 0.3em;
+}
+
+/* Make each label a flex container */
+.param-col label {
+  display: flex;
+  justify-content: space-between;  /* Text at left, input at right */
+  align-items: center;             /* Vertically center text+input */
+  margin-bottom: 0.5em;            /* Small gap between rows */
+}
+
+/* Prevent the input from growing or shrinking */
+.param-col label input {
+  flex: 0 0 3em;                   /* fixed 3em width */
+  margin-left: 0;                  /* reset any extra left margin */
+}
+
+/* Players table */
+#players-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+#players-table th,
+#players-table td {
+  border: 1px solid #999;
+  padding: 0.3em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+#players-table th {
+  background: #f0f0f0;
+}
+#players-table input {
+  width: 75%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: right;
+  display: block;
+  margin: 0 auto;
+}
+
+#players-table input[type="number"]::-webkit-outer-spin-button,
+#players-table input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.tooltip .tooltip-text {
+  font-size: 16px;
+  visibility: hidden;
+  width: max-content;
+  max-width: 200px;
+  background-color: rgba(60,60,60,0.9);
+  color: #fff;
+  text-align: left;
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(60,60,60,0.9) transparent transparent transparent;
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Input defaults */
+label {
+  display: block;
+  margin-top: 1em;
+}
+input[type="text"],
+input[type="number"] {
+  width: 6em;
+  margin-left: 0.5em;
+}

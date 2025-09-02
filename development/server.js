@@ -9,7 +9,7 @@ const archiver = require('archiver');
 const { clearInterval } = require('timers');
 
 // Run webserver
-const wsPort = 81;
+const wsPort = 8081;
 const app = express();
 let publicPath = path.join(__dirname, 'test');
 app.use(express.static(publicPath));

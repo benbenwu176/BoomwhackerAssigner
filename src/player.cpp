@@ -4,13 +4,198 @@
 /**
  * @brief Player class constructor
  */
-Player::Player(int id, int hold_limit, double switch_time, bool one_handed_roll) {
+Player::Player(int id, int hold_limit, double switch_time, bool one_handed_roll, 
+    std::vector<std::pair<double, double>>& excluded_ranges) {
   this->id = id;
   this->hold_limit = hold_limit;
   this->switch_time = switch_time;
   this->one_handed_roll = one_handed_roll;
+  this->excluded_ranges = excluded_ranges;
   whackers = std::vector<Boomwhacker *>();
   notes = std::vector<Note *>();
+}
+
+template<typename T>
+typename std::vector<T*>::iterator
+find_by_real_pitch(std::vector<T*>& vec, int target_pitch) {
+  auto it = std::lower_bound(vec.begin(), vec.end(), target_pitch, [](T* obj, int val) {
+    return obj->get_real_pitch() < val;
+  });
+
+  // Check for an exact match
+  if (it != vec.end() && (*it)->get_real_pitch() == target_pitch) {
+    return it;
+  }
+  return vec.end();
+}
+
+// Finds a whacker in this player's inventory that matches the given note's pitch
+std::vector<Boomwhacker*>::iterator Player::get_whacker(int pitch) {
+  auto it = find_by_real_pitch(whackers, pitch);
+  if (it == whackers.end()) {
+    std::string s = "Player " + std::to_string(id) + " lacks corresponding whacker of pitch: " + std::to_string(pitch);
+    throw std::runtime_error(s);
+  }
+
+  return it;
+}
+
+// Check if note lies within the player's excluded time ranges (exclusive)
+bool Player::excluded(Note* note) {
+  for (auto range : excluded_ranges) {
+    if (range.first < note->time && note->time < range.second) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool comp_time(const Note* a, const Note* b) {
+  return a->time < b->time;
+}
+
+// Find note in note array at or before the given note
+std::vector<Note*>::iterator Player::find_closest_before(Note* target) {
+  // Find note at or before target
+  auto it = std::upper_bound(notes.begin(), notes.end(), target, comp_time);
+
+  if (it == notes.begin()) {
+    return it;
+  } else {
+    return --it;
+  }
+}
+
+// Check if this player has a roll conflict with this note
+Note* Player::roll_conflict(Note* note, std::vector<Note*>::iterator bef) {
+  // No roll conflict if player can roll with one hand
+  if (one_handed_roll) {
+    return;
+  }
+
+  // Check if note is within before's roll duration
+  Note* before = *bef;
+  std::vector<Note*>::iterator aft;
+  if (before->time <= note->time) {
+    aft = std::next(bef);
+    if (before->duration > 0 && 
+        before->time <= note->time && note->time <= before->time + before->duration) {
+      return before;
+    }
+  } else {
+    aft = bef;
+  }
+
+  // Check if after is within note's roll duration
+  if (aft != notes.end()) {
+    Note* after = *aft;
+    if (note->duration > 0 &&
+        note->time <= after->time && after->time <= note->time + note->duration) {
+      return after;
+    }
+  }
+
+  // No roll conflict
+  return nullptr;
+}
+
+// Check if this player has any run conflicts with the note
+std::optional<std::vector<Run*>> Player::run_conflicts(Note* insert, std::vector<Note*>::iterator start) {
+  const double low  = insert->time - switch_time;
+  const double high = insert->time + switch_time;
+
+  // Create a subarray of notes in range [low, high]
+  auto L_it = std::lower_bound(notes.begin(), notes.end(), low, 
+                               [](const Note* n, double t){return n->time < t;});
+  auto R_it = std::upper_bound(L_it, notes.end(), high,
+                               [](double t, const Note* n){return t < n->time;});
+  
+  const size_t L = static_cast<size_t>(L_it - notes.begin());
+  const size_t R = static_cast<size_t>(R_it - notes.begin());
+  if (L == R) return std::nullopt;
+
+  // Two-pointer sweep on [L, R)
+  std::unordered_map<int, int> freq; // pitch -> count in window
+  freq.reserve(32);
+  int unique_pitches = 0;
+
+  size_t i = L;
+  size_t j = L;
+
+  // Helpers
+  auto add = [&](int pitch) {
+    int &c = freq[pitch];
+    if (c++ == 0) ++unique_pitches;
+  };
+
+  auto remove = [&](int pitch) {
+    auto it = freq.find(pitch);
+    if (it != freq.end() && --(it->second) == 0) {
+      freq.erase(it);
+      --unique_pitches;
+    }
+  };
+
+  for (; i < R && notes[i]->time <= insert->time; ++i) {
+
+    while (j < R && notes[j]->time <= notes[i]->time + switch_time) {
+      add(notes[j]->pitch);
+      ++j;
+    }
+
+    const bool insert_pitch_present = (freq.find(insert->pitch) != freq.end());
+    const int unique_with_insert = unique_pitches + (insert_pitch_present ? 0 : 1);
+
+    if (unique_with_insert > hold_limit) {
+      // Conflict! Collect runs from notes in [i, j)
+
+      std::unordered_map<int, std::vector<Note*>> by_pitch;
+      by_pitch.reserve(freq.size());
+
+      for (size_t k = i; k < j && notes[k]->time <= insert->time; ++k) {
+        by_pitch[notes[k]->pitch].push_back(notes[k]);
+      }
+    }
+  }
+}
+
+/*
+ * Returns if the player can play this note.
+ * nullopt if successful, a list of conflicting notes before
+ * the note time otherwise
+ */
+std::optional<std::vector<Run*>> Player::conflicts2(Note* note) {
+  std::vector<Run*> conflicts;
+
+  // Check if within excluded ranges
+  if (excluded(note)) {
+    return conflicts;
+  }
+
+  // Get the note closest at or before this note in the player array
+  std::vector<Note*>::iterator before = find_closest_before(note);
+
+  // Check if player has a roll conflict with this note
+  Note* rcon = roll_conflict(note, before);
+  if (rcon) {
+    if (rcon->time <= note->time) {
+      conflicts.push_back(new Run(rcon));
+    }
+    return conflicts;
+  }
+  
+  // Find start of relevant notes
+  auto it = before;
+  while (it != notes.begin() && (*it)->time >= (note->time - switch_time)) {
+    --it;
+  }
+  auto start = it;
+  if (it != notes.begin()) {
+    ++start;
+  }
+
+  // Find run conflicts
+  return run_conflicts(note, start);
 }
 
 /* 
@@ -158,30 +343,4 @@ void Player::add_whacker(Boomwhacker* whacker) {
 
 void Player::add_note(Note* note) {
   notes.push_back(note);
-}
-
-template<typename T>
-typename std::vector<T*>::iterator
-find_by_real_pitch(std::vector<T*>& vec, int target_pitch) {
-    auto it = std::lower_bound(vec.begin(), vec.end(), target_pitch, [](T* obj, int val) {
-        return obj->get_real_pitch() < val;
-      }
-    );
-
-  // check for an exact match
-  if (it != vec.end() && (*it)->get_real_pitch() == target_pitch) {
-    return it;
-  }
-  return vec.end();
-}
-
-// Finds a whacker in this player's inventory that matches the given note's pitch
-std::vector<Boomwhacker*>::iterator Player::get_whacker(int pitch) {
-  auto it = find_by_real_pitch(whackers, pitch);
-  if (it == whackers.end()) {
-    std::string s = "Player " + std::to_string(id) + " lacks corresponding whacker of pitch: " + std::to_string(pitch);
-    throw std::runtime_error(s);
-  }
-
-  return it;
 }

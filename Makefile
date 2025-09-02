@@ -45,4 +45,7 @@ test:
 	./archive/test
 
 server:
-	authbind node ./frontend/server.js
+	authbind node ./production/server.js
+
+dev:
+	authbind node ./development/server.js

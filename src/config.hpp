@@ -4,6 +4,7 @@
 #include "json.hpp"
 #include <cstdint>
 #include <filesystem>
+#include <utility>
 
 typedef struct Config {
   // Note data
@@ -14,6 +15,7 @@ typedef struct Config {
   std::vector<uint32_t> hold_limits;
   std::vector<double> switch_times;
   std::vector<bool> one_handed_rolls;
+  std::vector<std::vector<std::pair<double,double>>> excluded_ranges;
 
   // Whacker data
   std::vector<uint32_t> whacker_quantities;
@@ -31,6 +33,7 @@ inline Config::Config(int num_notes, const nlohmann::json& params, std::filesyst
   hold_limits = params["playerHoldLimits"].get<std::vector<uint32_t>>();
   switch_times = params["playerSwitchTimes"].get<std::vector<double>>();
   one_handed_rolls = params["playerOneHandedRolls"].get<std::vector<bool>>();
+  excluded_ranges = params["playerExcludeRanges"].get<std::vector<std::vector<std::pair<double,double>>>>();
   whacker_quantities = params["whackerQuantities"].get<std::vector<uint32_t>>();
   this->tmp_dir = tmp_dir;
 }

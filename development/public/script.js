@@ -1,5 +1,6 @@
 // WebSocket setup
-const ws = new WebSocket(`ws://www.wulabs.com:81`);
+const PORT = 8081;
+const ws = new WebSocket(`ws://www.wulabs.com:${PORT}`);
 ws.binaryType = 'arraybuffer';
 
 // Load tooltips
